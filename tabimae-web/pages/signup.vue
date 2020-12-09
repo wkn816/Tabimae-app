@@ -1,45 +1,51 @@
 <template>
+<v-app class="bg">
   <v-row>
     <v-col cols="12" md="4">
-      <h2>Sign Up</h2>
-      <form>
-        <v-text-field
-          v-model="name"
-          :counter="10"
-          label="Name"
-          data-vv-name="name"
-          required
-        ></v-text-field>
-        <v-text-field
-          v-model="email"
-          :counter="20"
-          label="Email"
-          data-vv-name="email"
-          required
-        ></v-text-field>
-        <v-text-field
-          v-model="password"
-          label="password"
-          data-vv-name="password"
-          required
-          :type="show1 ? 'text' : 'password'"
-          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="show1 = !show1"
-        ></v-text-field>
-        <v-text-field
-          v-model="passwordConfirm"
-          label="passwordConfirm"
-          data-vv-name="passwordConfirm"
-          required
-          :type="show2 ? 'text' : 'password'"
-          :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append="show2 = !show2"
-        ></v-text-field>
-        <v-btn class="mr-4" @click="signup">submit</v-btn>
-        <p v-if="error" class="errors">{{ error }}</p>
-      </form>
+      <div class="bod">
+        <h2>Sign Up</h2>
+        <form>
+          <v-text-field
+            v-model="name"
+            :counter="10"
+            label="Name"
+            data-vv-name="name"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="email"
+            :counter="20"
+            label="Email"
+            data-vv-name="email"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="password"
+            label="password"
+            data-vv-name="password"
+            required
+            :type="show1 ? 'text' : 'password'"
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="show1 = !show1"
+          ></v-text-field>
+          <v-text-field
+            v-model="passwordConfirm"
+            label="passwordConfirm"
+            data-vv-name="passwordConfirm"
+            required
+            :type="show2 ? 'text' : 'password'"
+            :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+            @click:append="show2 = !show2"
+          ></v-text-field>
+          <v-btn class="mr-4" @click="signup"
+            ><div class="submit">submit</div></v-btn
+          >
+          <p v-if="error" class="errors">{{ error }}</p>
+        </form>
+      </div>
     </v-col>
   </v-row>
+  </v-app>
 </template>
 <script>
 import firebase from "@/plugins/firebase";
@@ -52,7 +58,7 @@ export default {
       passwordConfirm: "",
       show1: false,
       show2: false,
-      error: "",
+      error: ""
     };
   },
   methods: {
@@ -64,8 +70,8 @@ export default {
       const res = await firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .catch((error) => {
-          this.error = ((code) => {
+        .catch(error => {
+          this.error = (code => {
             switch (code) {
               case "auth/email-already-in-use":
                 return "既にそのメールアドレスは使われています";
@@ -78,8 +84,8 @@ export default {
             }
           })(error.code);
         });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -88,4 +94,14 @@ export default {
   color: red;
   margin-top: 20px;
 }
+* {
+    margin: 0;
+  }
+  v-app {
+    background-size: 100%;
+  }
+  .bg {
+    background-color: #b0deec;
+    background-size: 100%;
+  }
 </style>

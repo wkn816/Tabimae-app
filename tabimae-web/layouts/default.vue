@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app class="bg">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -85,6 +85,7 @@
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
+    <nuxt />
   </v-app>
 </template>
 
@@ -115,3 +116,20 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.errors {
+  color: red;
+  margin-top: 20px;
+}
+* {
+    margin: 0;
+  }
+  v-app {
+    background-size: 100%;
+  }
+  .bg {
+    background-color: #b0deec;
+    background-size: 100%;
+  }
+</style>

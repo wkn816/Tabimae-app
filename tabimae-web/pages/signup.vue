@@ -95,14 +95,5 @@ export default {
   color: red;
   margin-top: 20px;
 }
-* {
-    margin: 0;
-  }
-  v-app {
-    background-size: 100%;
-  }
-  .bg {
-    background-color: #b0deec;
-    background-size: 100%;
-  }
+
 </style>

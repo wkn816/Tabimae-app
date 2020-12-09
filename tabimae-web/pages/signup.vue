@@ -45,6 +45,7 @@
       </div>
     </v-col>
   </v-row>
+ <nuxt />
   </v-app>
 </template>
 <script>

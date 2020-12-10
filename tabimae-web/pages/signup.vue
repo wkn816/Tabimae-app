@@ -49,6 +49,7 @@
   </v-app>
 </template>
 <script>
+import axios from "@/plugins/axios";
 import firebase from "@/plugins/firebase";
 export default {
   data() {
@@ -62,11 +63,21 @@ export default {
       error: ""
     };
   },
+  
   methods: {
     async signup() {
       if (this.password !== this.passwordConfirm) {
         this.error = "※パスワードとパスワード確認が一致していません";
       }
+      const user = {
+        email: res.user.email,
+        name: this.name,
+        uid: res.user.uid,
+      };
+       await axios.post("/v1/users", { user }).catch((err) => {
+         console.log({ err });
+        });
+        this.$router.push("/");
 
       const res = await firebase
         .auth()

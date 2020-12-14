@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "HOST=0.0.0.0 PORT=3000 nuxt",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",

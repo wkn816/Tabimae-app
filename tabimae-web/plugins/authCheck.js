@@ -2,14 +2,18 @@ import firebase from "@/plugins/firebase"
 import axios from "@/plugins/axios"
 
 const authCheck = ({ store, redirect }) => {
-    firebase.auth().onAuthStateChanged(async user => {
-        if (user) {
-            const { data } = await axios.get(`/v1/users?uid=${user.uid}`)
-            store.commit("setUser", data)
-        } else {
-            store.commit("setUser", null)
-        }
-    });
-}
+  firebase.auth().onAuthStateChanged(async user => {
+    if (user) {
+      const { data } = await axios.get('/v1/users', {
+        params: {
+          uid: user.uid,
+        },
+      });
+      store.commit("auth/setUser", data)
+    } else {
+      store.commit("auth/setUser", null)
+    }
+  });
+};
 
-export default authCheck
+export default authCheck;

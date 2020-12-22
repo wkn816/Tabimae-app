@@ -1,8 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
-require('dotenv').config(); 
+require('dotenv').config();
 export default {
   server: {
-    port: 8080 
+    port: 8080
   },
   mode: 'spa',
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
@@ -28,6 +28,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    // "@/plugins/vuetify",
+    "@/plugins/authCheck"
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

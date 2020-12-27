@@ -1,9 +1,7 @@
 <template>
   <div>
     <h1>新規登録画面</h1>
-    <v-container
-    class="px-0"
-    fluid>
+    <v-container class="px-0" fluid>
     <v-radio-group v-model="radioGroup">
       <v-radio
         label="列車"

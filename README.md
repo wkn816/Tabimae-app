@@ -28,7 +28,7 @@
 旅行出発前
 
 ## 設計書
-<...>
+https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing

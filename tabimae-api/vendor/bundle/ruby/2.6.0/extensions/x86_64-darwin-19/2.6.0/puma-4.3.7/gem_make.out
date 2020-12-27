@@ -1,0 +1,35 @@
+current directory: /Users/ootsuwakana/Desktop/TabimaeApp/tabimae-api/vendor/bundle/ruby/2.6.0/gems/puma-4.3.7/ext/puma_http11
+/Users/ootsuwakana/.rbenv/versions/2.6.3/bin/ruby -I /Users/ootsuwakana/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20201222-38665-f2yl1f.rb extconf.rb
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+checking for DTLS_method() in openssl/ssl.h... yes
+checking for TLS_server_method() in openssl/ssl.h... yes
+checking for SSL_CTX_set_min_proto_version in openssl/ssl.h... yes
+creating Makefile
+
+current directory: /Users/ootsuwakana/Desktop/TabimaeApp/tabimae-api/vendor/bundle/ruby/2.6.0/gems/puma-4.3.7/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/ootsuwakana/Desktop/TabimaeApp/tabimae-api/vendor/bundle/ruby/2.6.0/gems/puma-4.3.7/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+ext/puma_http11/http11_parser.c:44:18: warning: unused variable 'puma_parser_en_main' [-Wunused-const-variable]
+static const int puma_parser_en_main = 1;
+                 ^
+1 warning generated.
+compiling io_buffer.c
+compiling mini_ssl.c
+mini_ssl.c:145:7: warning: unused variable 'min' [-Wunused-variable]
+  int min, ssl_options;
+      ^
+mini_ssl.c:299:40: warning: function 'raise_error' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void raise_error(SSL* ssl, int result) {
+                                       ^
+2 warnings generated.
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+
+current directory: /Users/ootsuwakana/Desktop/TabimaeApp/tabimae-api/vendor/bundle/ruby/2.6.0/gems/puma-4.3.7/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20201222-38665-1cvo7ia/puma

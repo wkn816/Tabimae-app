@@ -36,8 +36,8 @@ https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTP
 - OS：Linux(CentOS)
 - 言語：JavaScript,Ruby,SQL
 - フレームワーク：backend⇨Ruby on Rails / frontend⇨Nuxt.js
-- JSライブラリ：
-- IDE：Cloud9?????
+- JSライブラリ：Node.js
+- IDE：Visual Studio Code
 
 ## 使用素材
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。

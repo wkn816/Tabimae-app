@@ -17,6 +17,6 @@ class V1::TravelsController < ApplicationController
   private
 
     def travel_params
-      params.require(:travel).permit(:transport, :name, :user_id)
+      params.require(:travel).permit(:name, :user_id)
     end
 end

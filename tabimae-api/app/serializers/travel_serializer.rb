@@ -1,5 +1,5 @@
 class TravelSerializer < ActiveModel::Serializer
-  attributes :id, :transpor, :name, :user_id, :username
+  attributes :id, :transport, :name, :user_id, :username
   belongs_to :user
 
   def username

@@ -26,17 +26,17 @@ export default {
         transport: "",
       }
     },
-  methods: {
-    handleSubmit() {
-      const travel = {
-        transport: this.transport,
-        user_id: this.user.id
-      };
-      this.transport = "";
-    async travelnew (travel) {
-      const res = await axios.post(travelnew, { travel });
-      }
-    }
-  }
+  // methods: {
+  //   handleSubmit() {
+  //     const travel = {
+  //       transport: this.transport,
+  //       user_id: this.user.id
+  //     };
+  //     this.transport = "";
+  //   async travelnew (travel) {
+  //     const res = await axios.post(travelnew, { travel });
+  //     }
+  //   }
+  // }
   };
 </script>

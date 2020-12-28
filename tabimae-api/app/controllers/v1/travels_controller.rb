@@ -8,7 +8,12 @@ class V1::TravelsController < ApplicationController
     end
   end
 
-
+  def destroy
+    travel = Travel.find(params[:id])
+    if travel.destroy
+        render json: travel
+    end
+  end
   private
 
     def travel_params

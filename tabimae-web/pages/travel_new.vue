@@ -41,7 +41,6 @@ export default {
     },
   methods: {
     async createTravel() {
-      console.log(this.$store.state.auth.currentUser);
       const travel = {
         name: this.name,
         user_id: this.$store.state.auth.currentUser.id
@@ -52,7 +51,6 @@ export default {
       } = await axios.post("/v1/travels", { travel });
       this.name = "";
       this.success = true;
-      console.log(data);
     }
   },
   computed: {

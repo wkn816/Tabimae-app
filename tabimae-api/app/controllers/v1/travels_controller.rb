@@ -14,6 +14,7 @@ class V1::TravelsController < ApplicationController
         render json: travel
     end
   end
+  
   private
 
     def travel_params

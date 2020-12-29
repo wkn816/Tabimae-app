@@ -1,0 +1,2 @@
+class Train < ApplicationRecord
+end

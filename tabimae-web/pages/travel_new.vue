@@ -5,7 +5,11 @@
     <h2 v-if="success">登録したよ!</h2>
     <v-container class="px-0" fluid>
 
-      <v-radio-group v-model="transport">
+    <v-container fluid>
+    <v-radio-group
+      v-model="transport"
+      mandatory
+    >
       <v-radio
         label="列車"
         value="train"
@@ -15,6 +19,7 @@
         value="air"
       ></v-radio>
     </v-radio-group>
+  </v-container>
 
       <v-col cols="12" md="4">
         <v-text-field
@@ -50,18 +55,18 @@ export default {
         name: this.name,
         user_id: this.$store.state.auth.currentUser.id
       };
-      console.log(travel);
+        console.log(travel);
       const {
         data
       } = await axios.post("/v1/travels", { travel });
-      this.transport ="";
+      this.transport = true;
       this.name = "";
       this.success = true;
     }
   },
   computed: {
-  user(){
-    return this.$store.state.auth.currentUser
+    user(){
+      return this.$store.state.auth.currentUser
   }
 }
 };

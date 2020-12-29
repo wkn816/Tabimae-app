@@ -1,0 +1,2 @@
+class Air < ApplicationRecord
+end

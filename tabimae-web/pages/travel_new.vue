@@ -4,30 +4,28 @@
     <nuxt-link to="/travel_list">旅程一覧</nuxt-link>
     <h2 v-if="success">登録したよ!</h2>
     <v-container class="px-0" fluid>
+      <v-container fluid>
+        <v-radio-group v-model="transport" mandatory>
+          <v-radio label="列車" value="train"></v-radio>
+          <v-radio label="飛行機" value="air"></v-radio>
+        </v-radio-group>
+      </v-container>
+      <template v-if="transport === 'train'">
+        <h1>aa</h1>
+      </template>
+      <template v-if="transport === 'air'">
+        <h1>飛行機</h1>
+      </template>
 
-    <!-- <v-container fluid>
-    <v-radio-group
-      v-model="transport"
-      mandatory
-    >
-      <v-radio
-        label="列車"
-        value="train"
-      ></v-radio>
-      <v-radio
-        label="飛行機"
-        value="air"
-      ></v-radio>
-    </v-radio-group>
-  </v-container> -->
+      <!-- <div v-if='train'>
+    form
+  </div>
+  <div v-else-if="air">
+    form
+      </div>-->
 
       <v-col cols="12" md="4">
-        <v-text-field
-          v-model="name"
-          :counter="10"
-          label="旅行のテーマ"
-          required
-        ></v-text-field>
+        <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
       </v-col>
 
       <v-btn @click="createTravel">決定</v-btn>
@@ -40,14 +38,15 @@
 import axios from "@/plugins/axios";
 
 export default {
-    data () {
-      return {
-        travel: "",
-        transport: "",
-        name: "",
-        success: false,
-      };
-    },
+  data() {
+    return {
+      travel: "",
+      transport: "",
+      name: "",
+      success: false
+      // departure_date: ''
+    };
+  },
   methods: {
     async createTravel() {
       const travel = {
@@ -55,19 +54,37 @@ export default {
         name: this.name,
         user_id: this.$store.state.auth.currentUser.id
       };
-        console.log(travel);
+      console.log(travel);
       const {
         data
       } = await axios.post("/v1/travels", { travel });
-      this.transport = true;
+      console.log(data.id);
+      this.transport = "";
       this.name = "";
       this.success = true;
+
+      // if(this.transport === 'air') {
+      //   const air_params = {
+      // travel_id: data.data.id,
+      //     departure_date: this.departure_date
+      //     //カラムたくさん追加します
+      //     //カラムたくさん追加します
+      //     //カラムたくさん追加します
+      //     //カラムたくさん追加します
+      //   }
+      //   const res_air = await axios.post("/v1/airs", { air_params });
+      // } else {
+      //   const train_params = { key: object }
+      //   const res_train = await axios.post("/v1/trains", { train_params })
+      // }
+      //this.$router.push 詳細画面へ遷移。
     }
   },
   computed: {
-    user(){
-      return this.$store.state.auth.currentUser
+    user() {
+      return this.$store.state.auth.currentUser;
+    }
   }
-}
 };
 </script>
+

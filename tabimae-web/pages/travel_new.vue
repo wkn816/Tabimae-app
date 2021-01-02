@@ -20,7 +20,8 @@
       </template>
 
       <template v-if="transport === 'air'">
-        <h1>飛行機</h1>
+      <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+      <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
       </template>
 
       <v-col cols="12" md="4">
@@ -73,6 +74,7 @@ export default {
           //カラムたくさん追加します
           //カラムたくさん追加します
         };
+        console.log(air_params);
         const res_air = await axios.post("/v1/airs", { air_params });
         console.log(res_air);
         this.departure_place = "";
@@ -84,11 +86,13 @@ export default {
           arrival_place: this.arrival_place,
           user_id: this.$store.state.auth.currentUser.id
         };
+        console.log(train_params);
         const res_train = await axios.post("/v1/trains", { train_params });
+        console.log(res_train);
         this.departure_place = "";
         this.arrival_place = "";
+
       }
-        console.log(res_train);
       // this.$router.push 詳細画面へ遷移。
     }
   },

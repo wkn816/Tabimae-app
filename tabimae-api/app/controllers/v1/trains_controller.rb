@@ -12,7 +12,7 @@ class V1::TrainsController < ApplicationController
     private
 
     def train_params
-      params.require(:train).permit(:departure_day, :departure_time, :arrival_time, :departure_place, :arrival_place, :user_id)
+      params.require(:train).permit(:departure_day, :departure_time, :arrival_time, :departure_place, :arrival_place, :travel_id, :user_id)
     end
 
 end

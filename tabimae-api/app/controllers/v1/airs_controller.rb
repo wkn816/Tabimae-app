@@ -12,6 +12,6 @@ class V1::AirsController < ApplicationController
     private
 
     def air_params
-      params.require(:air).permit(:departure_day, :departure_time, :arrival_time, :departure_place, :arrival_place, :user_id)
+      params.require(:air).permit(:departure_day, :departure_time, :arrival_time, :departure_place, :arrival_place, :flight_number, :airline, :travel_id, :user_id)
     end
 end

@@ -17,8 +17,7 @@
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
         </v-col>
-            <vue-timepicker  format="A:h:mm:"></vue-timepicker>
-
+          <vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
       </template>
 
       <template v-if="transport === 'air'">
@@ -44,9 +43,9 @@ import axios from "@/plugins/axios";
 import VueTimepicker from 'vue2-timepicker'
 import 'vue2-timepicker/dist/VueTimepicker.css'
 export default {
-   components: {
-            'vue-timepicker': VueTimepicker,
-        },
+  components: {
+      'vue-timepicker': VueTimepicker,
+  },
   data() {
     return {
       travel: "",
@@ -54,6 +53,7 @@ export default {
       name: "",
       departure_place: "",
       arrival_place: "",
+      departure_time: "",
       success: false,
     };
   },
@@ -93,6 +93,7 @@ export default {
           travel_id: data.id,
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
+          departure_time: this.departure_day,
           user_id: this.$store.state.auth.currentUser.id
         };
         console.log(train_params);
@@ -100,6 +101,8 @@ export default {
         console.log(res_train);
         this.departure_place = "";
         this.arrival_place = "";
+        this.departure_time = "";
+
 
       }
       // this.$router.push 詳細画面へ遷移。

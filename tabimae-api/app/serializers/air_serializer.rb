@@ -1,3 +1,8 @@
 class AirSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :departure_day, :departure_time, :arrival_time, :departure_place, :arrival_place, :flight_number, :airline, :user_id, :username
+  belongs_to :travel
+
+  def username
+    object.user.name
+  end
 end

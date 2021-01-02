@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :travels
     resources :users
+    resources :trains
+    resources :airs
   end
 end

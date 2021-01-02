@@ -10,19 +10,19 @@
           <v-radio label="飛行機" value="air"></v-radio>
         </v-radio-group>
       </v-container>
+
       <template v-if="transport === 'train'">
-        <h1>aa</h1>
-      </template>
-      <template v-if="transport === 'air'">
-        <h1>飛行機</h1>
+        <h1>列車で行く</h1>
+        <v-col cols="12" md="4">
+          <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+          <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
+        </v-col>
       </template>
 
-      <!-- <div v-if='train'>
-    form
-  </div>
-  <div v-else-if="air">
-    form
-      </div>-->
+      <template v-if="transport === 'air'">
+      <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+      <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
+      </template>
 
       <v-col cols="12" md="4">
         <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
@@ -43,8 +43,10 @@ export default {
       travel: "",
       transport: "",
       name: "",
-      success: false
-      // departure_date: ''
+      departure_place: "",
+      arrival_place: "",
+      success: false,
+      departure_date: ""
     };
   },
   methods: {
@@ -55,29 +57,43 @@ export default {
         user_id: this.$store.state.auth.currentUser.id
       };
       console.log(travel);
-      const {
-        data
-      } = await axios.post("/v1/travels", { travel });
+      const { data } = await axios.post("/v1/travels", { travel });
       console.log(data.id);
       this.transport = "";
       this.name = "";
       this.success = true;
 
-      // if(this.transport === 'air') {
-      //   const air_params = {
-      // travel_id: data.data.id,
-      //     departure_date: this.departure_date
-      //     //カラムたくさん追加します
-      //     //カラムたくさん追加します
-      //     //カラムたくさん追加します
-      //     //カラムたくさん追加します
-      //   }
-      //   const res_air = await axios.post("/v1/airs", { air_params });
-      // } else {
-      //   const train_params = { key: object }
-      //   const res_train = await axios.post("/v1/trains", { train_params })
-      // }
-      //this.$router.push 詳細画面へ遷移。
+      if (this.transport === "air") {
+        const air_params = {
+          travel_id: data.data.id,
+          departure_place: this.departure_place,
+          arrival_place: this.arrival_place,
+          user_id: this.$store.state.auth.currentUser.id
+          //カラムたくさん追加します
+          //カラムたくさん追加します
+          //カラムたくさん追加します
+          //カラムたくさん追加します
+        };
+        console.log(air_params);
+        const res_air = await axios.post("/v1/airs", { air_params });
+        console.log(res_air);
+        this.departure_place = "";
+        this.arrival_place = "";
+      } else {
+        const train_params = {
+          travel_id: data.data.id,
+          departure_place: this.departure_place,
+          arrival_place: this.arrival_place,
+          user_id: this.$store.state.auth.currentUser.id
+        };
+        console.log(train_params);
+        const res_train = await axios.post("/v1/trains", { train_params });
+        console.log(res_train);
+        this.departure_place = "";
+        this.arrival_place = "";
+
+      }
+      // this.$router.push 詳細画面へ遷移。
     }
   },
   computed: {

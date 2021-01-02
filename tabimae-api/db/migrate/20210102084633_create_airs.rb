@@ -5,7 +5,7 @@ class CreateAirs < ActiveRecord::Migration[6.0]
       t.time :departure_time
       t.time :arrival_time
       t.string :departure_place
-      t.string :arrival_plac
+      t.string :arrival_place
       t.integer :flight_number
       t.string :airline
       t.integer :user_id

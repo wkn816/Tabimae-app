@@ -17,24 +17,16 @@
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
         </v-col>
-        <v-row justify="center">
-        <v-col cols="8">
-          <v-text-field v-model="departure_day" single-line>
-            <template v-slot:append-outer>
-              <date-picker v-model="departure_day"/>
-            </template>
-          </v-text-field>
-        </v-col>
-        <v-col cols="8">
-          <p>日付： {{ departure_day }}</p>
-        </v-col>
-      </v-row>
+            <vue-timepicker  format="A:h:mm:"></vue-timepicker>
+
       </template>
 
       <template v-if="transport === 'air'">
         <h1>飛行機で行く</h1>
-      <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
-      <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
+        <v-col cols="12" md="4">
+          <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+          <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
+        </v-col>
       </template>
 
       <v-col cols="12" md="4">
@@ -49,8 +41,12 @@
 
 <script>
 import axios from "@/plugins/axios";
-
+import VueTimepicker from 'vue2-timepicker'
+import 'vue2-timepicker/dist/VueTimepicker.css'
 export default {
+   components: {
+            'vue-timepicker': VueTimepicker,
+        },
   data() {
     return {
       travel: "",
@@ -59,7 +55,6 @@ export default {
       departure_place: "",
       arrival_place: "",
       success: false,
-      departure_day: null,
     };
   },
   methods: {

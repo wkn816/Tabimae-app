@@ -93,7 +93,7 @@ export default {
           travel_id: data.id,
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
-          departure_time: this.departure_day,
+          departure_time: this.departure_time,
           user_id: this.$store.state.auth.currentUser.id
         };
         console.log(train_params);
@@ -110,7 +110,8 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.state.auth.currentUser;
+      return
+      this.$store.state.auth.currentUser;
     }
   }
 };

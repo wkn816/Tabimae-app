@@ -97,6 +97,8 @@ export default {
         console.log(res_air);
         this.departure_place = "";
         this.arrival_place = "";
+        this.departure_time = "";
+
       } else {
         const train_params = {
           travel_id: data.id,

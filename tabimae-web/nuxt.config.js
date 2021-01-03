@@ -40,8 +40,13 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
+    '@nuxtjs/moment'
 
   ],
+  moment: {
+    // ここにオプションが記述できる
+    locales: ['ja']
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [

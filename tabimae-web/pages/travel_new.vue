@@ -19,6 +19,28 @@
           <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
           <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
 
+          <v-menu
+            v-model="departure_day"
+            :close-on-content-click="false"
+            max-width="290"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field
+                :value="label"
+                clearable
+                :label="label"
+                readonly
+                v-bind="attrs"
+                v-on="on"
+                @click:clear="departure_day_date = null"
+              ></v-text-field>
+            </template>
+            <v-date-picker
+              v-model="departure_day_date"
+              @change="label = departure_day_date"
+            ></v-date-picker>
+          </v-menu>
+
       </template>
 
       <template v-if="transport === 'air'">
@@ -37,14 +59,18 @@
 
       <v-btn @click="createTravel">決定</v-btn>
       {{ user }}
+      <!-- {{ departure_day }} -->
     </v-container>
   </div>
 </template>
 
 <script>
 import axios from "@/plugins/axios";
-import VueTimepicker from 'vue2-timepicker'
-import 'vue2-timepicker/dist/VueTimepicker.css'
+import VueTimepicker from 'vue2-timepicker';
+import 'vue2-timepicker/dist/VueTimepicker.css';
+import moment from 'moment';
+import { format, parseISO } from 'date-fns';
+
 export default {
   components: {
       'vue-timepicker': VueTimepicker,
@@ -58,7 +84,9 @@ export default {
       arrival_place: "",
       departure_time: "",
       arrival_time: "",
-
+      departure_day: "",
+      label: "出発日",
+      departure_day_date: format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'),
       success: false,
     };
 
@@ -86,6 +114,8 @@ export default {
           arrival_place: this.arrival_place,
           departure_time: this.departure_time,
           arrival_time: this.arrival_time,
+          departure_day: this.departure_day,
+          // departure_day_date: this.departure_day_date,
           user_id: this.$store.state.auth.currentUser.id
           //カラムたくさん追加します
           //カラムたくさん追加します
@@ -126,9 +156,18 @@ export default {
     user() {
       return
       this.$store.state.auth.currentUser;
-    }
+    },
+    departure_day () {
+      return this.departure_day_date ? moment(this.departure_day_date).format('dddd, MMMM Do YYYY') : ''
+    },
 
+  },
+  created () {
+    console.log(format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'));
   }
 };
 </script>
 
+<style>
+
+</style>

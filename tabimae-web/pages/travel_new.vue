@@ -19,7 +19,7 @@
         </v-col>
           <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
           <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
-            
+
       </template>
 
       <template v-if="transport === 'air'">
@@ -28,6 +28,8 @@
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
         </v-col>
+        <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
+        <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
       </template>
 
       <v-col cols="12" md="4">
@@ -55,8 +57,8 @@ export default {
       name: "",
       departure_place: "",
       arrival_place: "",
-      departure_time: null,
-      arrival_time: null,
+      departure_time: "",
+      arrival_time: "",
 
       success: false,
     };
@@ -83,6 +85,8 @@ export default {
           travel_id: data.id,
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
+          departure_time: this.departure_time,
+          arrival_time: this.arrival_time,
           user_id: this.$store.state.auth.currentUser.id
           //カラムたくさん追加します
           //カラムたくさん追加します
@@ -94,6 +98,10 @@ export default {
         console.log(res_air);
         this.departure_place = "";
         this.arrival_place = "";
+        this.departure_time = "";
+        this.arrival_time = "";
+
+
       } else {
         const train_params = {
           travel_id: data.id,

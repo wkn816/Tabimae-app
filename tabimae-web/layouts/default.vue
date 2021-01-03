@@ -111,7 +111,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Tabimae'
     }
   }
 }
@@ -129,7 +129,8 @@ export default {
     background-size: 100%;
   }
   .bg {
-    background-color: #b0deec;
+    background-color: #DDDDDD;
     background-size: 100%;
+    color: #444444;
   }
 </style>

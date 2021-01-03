@@ -17,11 +17,17 @@
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
         </v-col>
+          <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
+          <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
+            
       </template>
 
       <template v-if="transport === 'air'">
-      <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
-      <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
+        <h1>飛行機で行く</h1>
+        <v-col cols="12" md="4">
+          <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+          <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
+        </v-col>
       </template>
 
       <v-col cols="12" md="4">
@@ -36,8 +42,12 @@
 
 <script>
 import axios from "@/plugins/axios";
-
+import VueTimepicker from 'vue2-timepicker'
+import 'vue2-timepicker/dist/VueTimepicker.css'
 export default {
+  components: {
+      'vue-timepicker': VueTimepicker,
+  },
   data() {
     return {
       travel: "",
@@ -45,27 +55,32 @@ export default {
       name: "",
       departure_place: "",
       arrival_place: "",
+      departure_time: null,
+      arrival_time: null,
+
       success: false,
-      departure_date: ""
     };
+
+
   },
   methods: {
     async createTravel() {
-      const travel = {
+      const travel_params = {
         transport: this.transport,
         name: this.name,
         user_id: this.$store.state.auth.currentUser.id
       };
-      console.log(travel);
-      const { data } = await axios.post("/v1/travels", { travel });
+      console.log(travel_params);
+      const { data } = await axios.post("/v1/travels", { travel: travel_params });
       console.log(data.id);
       this.transport = "";
       this.name = "";
       this.success = true;
 
       if (this.transport === "air") {
+        console.log(data);
         const air_params = {
-          travel_id: data.data.id,
+          travel_id: data.id,
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
           user_id: this.$store.state.auth.currentUser.id
@@ -75,22 +90,26 @@ export default {
           //カラムたくさん追加します
         };
         console.log(air_params);
-        const res_air = await axios.post("/v1/airs", { air_params });
+        const res_air = await axios.post("/v1/airs", { air: air_params });
         console.log(res_air);
         this.departure_place = "";
         this.arrival_place = "";
       } else {
         const train_params = {
-          travel_id: data.data.id,
+          travel_id: data.id,
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
+          departure_time: this.departure_time,
+          arrival_time: this.arrival_time,
           user_id: this.$store.state.auth.currentUser.id
         };
         console.log(train_params);
-        const res_train = await axios.post("/v1/trains", { train_params });
+        const res_train = await axios.post("/v1/trains", { train: train_params });
         console.log(res_train);
         this.departure_place = "";
         this.arrival_place = "";
+        this.departure_time = "";
+        this.arrival_time = "";
 
       }
       // this.$router.push 詳細画面へ遷移。
@@ -98,8 +117,10 @@ export default {
   },
   computed: {
     user() {
-      return this.$store.state.auth.currentUser;
+      return
+      this.$store.state.auth.currentUser;
     }
+
   }
 };
 </script>

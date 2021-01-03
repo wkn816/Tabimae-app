@@ -18,7 +18,7 @@
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
         </v-col>
           <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
-          <!-- <p></p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker> -->
+          <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
       </template>
 
       <template v-if="transport === 'air'">
@@ -54,7 +54,8 @@ export default {
       name: "",
       departure_place: "",
       arrival_place: "",
-      departure_time: "",
+      departure_time: null,
+      arrival_time: null,
       success: false,
     };
   },
@@ -95,6 +96,7 @@ export default {
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
           departure_time: this.departure_time,
+          arrival_time: this.arrival_time,
           user_id: this.$store.state.auth.currentUser.id
         };
         console.log(train_params);
@@ -103,7 +105,7 @@ export default {
         this.departure_place = "";
         this.arrival_place = "";
         this.departure_time = "";
-
+        this.arrival_time = "";
 
       }
       // this.$router.push 詳細画面へ遷移。

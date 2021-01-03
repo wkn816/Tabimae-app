@@ -19,6 +19,7 @@
         </v-col>
           <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
           <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
+            
       </template>
 
       <template v-if="transport === 'air'">
@@ -56,8 +57,11 @@ export default {
       arrival_place: "",
       departure_time: null,
       arrival_time: null,
+
       success: false,
     };
+
+
   },
   methods: {
     async createTravel() {
@@ -116,6 +120,7 @@ export default {
       return
       this.$store.state.auth.currentUser;
     }
+
   }
 };
 </script>

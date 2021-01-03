@@ -85,6 +85,7 @@ export default {
           travel_id: data.id,
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
+          departure_time: this.departure_time,
           user_id: this.$store.state.auth.currentUser.id
           //カラムたくさん追加します
           //カラムたくさん追加します

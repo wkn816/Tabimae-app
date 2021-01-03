@@ -17,7 +17,8 @@
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
         </v-col>
-          <vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
+          <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
+          <!-- <p></p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker> -->
       </template>
 
       <template v-if="transport === 'air'">

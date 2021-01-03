@@ -7,6 +7,7 @@
       fixed
       app
     >
+
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -15,6 +16,7 @@
           router
           exact
         >
+        <nuxt-link to="/travel_list">旅程一覧</nuxt-link>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>

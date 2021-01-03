@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>新規登録画面</h1>
-    <nuxt-link to="/travel_list">旅程一覧</nuxt-link>
     <h2 v-if="success">登録したよ!</h2>
     <v-container class="px-0" fluid>
       <v-container fluid>

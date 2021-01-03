@@ -86,6 +86,7 @@ export default {
           departure_place: this.departure_place,
           arrival_place: this.arrival_place,
           departure_time: this.departure_time,
+          arrival_time: this.arrival_time,
           user_id: this.$store.state.auth.currentUser.id
           //カラムたくさん追加します
           //カラムたくさん追加します
@@ -98,6 +99,8 @@ export default {
         this.departure_place = "";
         this.arrival_place = "";
         this.departure_time = "";
+        this.arrival_time = "";
+
 
       } else {
         const train_params = {

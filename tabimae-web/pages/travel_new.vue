@@ -150,6 +150,7 @@ export default {
         this.arrival_place = "";
         this.departure_time = "";
         this.arrival_time = "";
+        this.departure_day = "";
 
 
       } else {
@@ -159,6 +160,7 @@ export default {
           arrival_place: this.arrival_place,
           departure_time: this.departure_time,
           arrival_time: this.arrival_time,
+          departure_day: this.departure_day,
           user_id: this.$store.state.auth.currentUser.id
         };
         console.log(train_params);
@@ -168,6 +170,8 @@ export default {
         this.arrival_place = "";
         this.departure_time = "";
         this.arrival_time = "";
+        this.departure_day = "";
+
 
       }
       // this.$router.push 詳細画面へ遷移。

@@ -79,7 +79,11 @@
       </v-col>
 
       <v-btn @click="createTravel">決定</v-btn>
-      {{ user }}
+      <!-- {{ user() }} -->
+    {{this.$store.state.auth.currentUser}}
+    <!-- {{this.$store.state.auth.travels}} -->
+    <!-- {{this.}} -->
+    <!-- {{this.user}} -->
       <!-- {{ departure_day_test }} -->
     </v-container>
   </div>
@@ -182,7 +186,7 @@ export default {
 
   },
   created () {
-    console.log(format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'));
+    // console.log(this.$store.state.auth.currentUser);
   }
 };
 </script>

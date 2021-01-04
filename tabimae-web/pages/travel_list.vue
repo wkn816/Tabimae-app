@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import TravelNew from "@/pages/travel_new";
+
 
 export default {
   // components: {

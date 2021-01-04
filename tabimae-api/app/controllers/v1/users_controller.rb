@@ -3,6 +3,7 @@ class V1::UsersController < ApplicationController
 def index
   if params[:uid]
     @user = User.find_by(uid: params[:uid])
+    # 旅のデータを元にtrainを検索するロジックを書く
     render json: @user
   else
     @users = User.all

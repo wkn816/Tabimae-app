@@ -19,24 +19,24 @@
           <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
 
           <v-menu
-            v-model="departure_day"
+            v-model="menu1"
             :close-on-content-click="false"
             max-width="290"
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                :value="setday"
+                :value="departure_day"
                 clearable
                 :setday="setday"
                 readonly
                 v-bind="attrs"
                 v-on="on"
-                @click:clear="choice_departure_day = null"
+                @click:clear="departure_day = null"
               ></v-text-field>
             </template>
             <v-date-picker
-              v-model="choice_departure_day"
-              @change="setday = choice_departure_day"
+              v-model="departure_day"
+              @change="menu1 = false"
             ></v-date-picker>
           </v-menu>
 
@@ -80,7 +80,7 @@
 
       <v-btn @click="createTravel">決定</v-btn>
       {{ user }}
-      <!-- {{ departure_day }} -->
+      <!-- {{ departure_day_test }} -->
     </v-container>
   </div>
 </template>
@@ -109,6 +109,7 @@ export default {
       setday: "出発日",
       choice_departure_day: format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'),
       success: false,
+      menu1: true,
     };
 
 
@@ -135,13 +136,8 @@ export default {
           arrival_place: this.arrival_place,
           departure_time: this.departure_time,
           arrival_time: this.arrival_time,
-          choice_departure_day: this.departure_day,
-          // departure_day_date: this.departure_day_date,
+          departure_day: this.departure_day,
           user_id: this.$store.state.auth.currentUser.id
-          //カラムたくさん追加します
-          //カラムたくさん追加します
-          //カラムたくさん追加します
-          //カラムたくさん追加します
         };
         console.log(air_params);
         const res_air = await axios.post("/v1/airs", { air: air_params });
@@ -182,9 +178,9 @@ export default {
       return
       this.$store.state.auth.currentUser;
     },
-    departure_day () {
-      return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
-    },
+    // departure_day_test () {
+    //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
+    // },
 
   },
   created () {

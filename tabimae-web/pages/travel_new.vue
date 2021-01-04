@@ -19,7 +19,7 @@
           <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
 
           <v-menu
-            v-model="menu1"
+            v-model="choice_departure_day"
             :close-on-content-click="false"
             max-width="290"
           >
@@ -36,9 +36,9 @@
             </template>
             <v-date-picker
               v-model="departure_day"
-              @change="menu1 = false"
+              @change="choice_departure_day = false"
             ></v-date-picker>
-            
+
           </v-menu>
 
         </v-col>

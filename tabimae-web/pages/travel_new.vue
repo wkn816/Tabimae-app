@@ -84,6 +84,7 @@
     <!-- {{this.$store.state.auth.travels}} -->
     <!-- {{this.}} -->
     <!-- {{this.user}} -->
+    
       <!-- {{ departure_day_test }} -->
     </v-container>
   </div>

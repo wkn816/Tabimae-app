@@ -1,4 +1,9 @@
 class V1::TravelsController < ApplicationController
+
+  def index
+    travel = Travel.all
+  end
+
   def create
     travel = Travel.new(travel_params)
     if travel.save

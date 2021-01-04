@@ -1,58 +1,54 @@
 <template>
-  <div>
-    <h1>旅行一覧ページ</h1>
-    <nuxt-link to="/travel_new">新規登録</nuxt-link>
-    <v-data-table :headers="headers" :items="travels">
-      <template v-slot:item.action="{ item }">
-        <v-icon small @click="deleteItem(item)">delete</v-icon>
-      </template>
-    </v-data-table>
-  </div>
+  <v-card>
+    <v-card-title>
+      旅行一覧
+      <v-spacer></v-spacer>
+      <!-- <v-text-field
+        v-model="search"
+        append-icon="search"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field> -->
+    </v-card-title>
+    <v-data-table
+      :items="transport"
+    ></v-data-table>
+  </v-card>
 </template>
 
 <script>
-import axios from "@/plugins/axios";
+import TravelNew from "@/pages/travel_new";
 
 export default {
-  props: ["travels"], // <- これ！
+  // components: {
+  //   TravelNew,
+  // },
   data() {
     return {
-      singleSelect: true,
-      selected: [],
-      search: "",
-      headers: [
-        {
-          text: "タイトル",
-          align: "left",
-          sortable: false,
-          value: "title"
-        },
-        { text: "ユーザー名", value: "username" },
-        { text: "Actions", value: "action", sortable: false }
-      ]
-    };
-  },
-  computed: {
-    user() {
-      return this.$store.state.currentUser;
-    }
-  },
-  methods: {
-    async deleteItem(item) {
-      const res = confirm("本当に削除しますか？");
-      if (res) {
-        await axios.delete(`/v1/todos/${item.id}`);
-        const todos = this.user.todos.filter(todo => {
-          return todo.id !== item.id;
-        });
-        const newUser = {
-          ...this.user,
-          todos
+      // travel_params: "",
+      //   {
+      // travel: "",
+      transport: "",
+      // name: "",
+      // departure_place: "",
+      // arrival_place: "",
+      // departure_time: "",
+      // arrival_time: "",
+
         };
-        this.$store.commit("setUser", newUser);
-      }
-    }
-  }
+      // ],
+      // search: "",
+      // headers: [
+      //   {
+      //     text: "タイトル",
+      //     align: "left",
+      //     sortable: false,
+      //     value: "title",
+      //   },
+      //   { text: "ユーザー名", value: "username" },
+      // ],
+  },
 };
 </script>
 

@@ -51,27 +51,27 @@
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
         <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
         <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
-        <v-menu
-            v-model="departure_day"
+          <v-menu
+            v-model="choice_departure_day"
             :close-on-content-click="false"
             max-width="290"
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                :value="setday"
+                :value="departure_day"
                 clearable
                 :setday="setday"
                 readonly
                 v-bind="attrs"
                 v-on="on"
-                @click:clear="choice_departure_day = null"
+                @click:clear="departure_day = null"
               ></v-text-field>
             </template>
             <v-date-picker
-              v-model="choice_departure_day"
-              @change="setday = choice_departure_day"
+              v-model="departure_day"
+              @change="choice_departure_day = false"
             ></v-date-picker>
-          </v-menu>
+
         </v-col>
       </template>
 

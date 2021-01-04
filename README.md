@@ -39,5 +39,3 @@ https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTP
 - IDE：Visual Studio Code
 
 
-## ER図
-https://drive.google.com/file/d/1Co4aclr6Axivuetsd7CMCioOOXezoBVW/view?usp=sharing

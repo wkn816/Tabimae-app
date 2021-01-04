@@ -131,8 +131,8 @@ export default {
     background-size: 100%;
   }
   .bg {
-    background-color: #DDDDDD;
+    background-color: black;
     background-size: 100%;
-    color: #444444;
+    color: #ffffff;
   }
 </style>

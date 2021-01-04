@@ -5,7 +5,7 @@
     <v-container class="px-0" fluid>
       <v-container fluid>
         <v-radio-group v-model="transport" mandatory>
-          <v-radio label="列車" value="train"></v-radio>
+          <v-radio class="test" label="列車" value="train"></v-radio>
           <v-radio label="飛行機" value="air"></v-radio>
         </v-radio-group>
       </v-container>
@@ -15,8 +15,7 @@
         <v-col cols="12" md="4">
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
-        </v-col>
-          <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
+          <p>出発時間 </p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
           <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
 
           <v-menu
@@ -41,6 +40,7 @@
             ></v-date-picker>
           </v-menu>
 
+        </v-col>
       </template>
 
       <template v-if="transport === 'air'">
@@ -48,7 +48,6 @@
         <v-col cols="12" md="4">
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
-        </v-col>
         <p>出発時間</p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
         <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
         <v-menu
@@ -72,6 +71,7 @@
               @change="setday = choice_departure_day"
             ></v-date-picker>
           </v-menu>
+        </v-col>
       </template>
 
       <v-col cols="12" md="4">
@@ -135,7 +135,7 @@ export default {
           arrival_place: this.arrival_place,
           departure_time: this.departure_time,
           arrival_time: this.arrival_time,
-          departure_day: this.departure_day,
+          choice_departure_day: this.departure_day,
           // departure_day_date: this.departure_day_date,
           user_id: this.$store.state.auth.currentUser.id
           //カラムたくさん追加します

@@ -26,18 +26,18 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                :value="label"
+                :value="setday"
                 clearable
-                :label="label"
+                :setday="setday"
                 readonly
                 v-bind="attrs"
                 v-on="on"
-                @click:clear="departure_day_date = null"
+                @click:clear="choice_departure_day = null"
               ></v-text-field>
             </template>
             <v-date-picker
-              v-model="departure_day_date"
-              @change="label = departure_day_date"
+              v-model="choice_departure_day"
+              @change="setday = choice_departure_day"
             ></v-date-picker>
           </v-menu>
 
@@ -58,18 +58,18 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                :value="label"
+                :value="setday"
                 clearable
-                :label="label"
+                :setday="setday"
                 readonly
                 v-bind="attrs"
                 v-on="on"
-                @click:clear="departure_day_date = null"
+                @click:clear="choice_departure_day = null"
               ></v-text-field>
             </template>
             <v-date-picker
-              v-model="departure_day_date"
-              @change="label = departure_day_date"
+              v-model="choice_departure_day"
+              @change="setday = choice_departure_day"
             ></v-date-picker>
           </v-menu>
       </template>
@@ -106,8 +106,8 @@ export default {
       departure_time: "",
       arrival_time: "",
       departure_day: "",
-      label: "出発日",
-      departure_day_date: format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'),
+      setday: "出発日",
+      choice_departure_day: format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'),
       success: false,
     };
 
@@ -183,7 +183,7 @@ export default {
       this.$store.state.auth.currentUser;
     },
     departure_day () {
-      return this.departure_day_date ? moment(this.departure_day_date).format('dddd, MMMM Do YYYY') : ''
+      return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
     },
 
   },

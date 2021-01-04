@@ -38,6 +38,7 @@
               v-model="departure_day"
               @change="menu1 = false"
             ></v-date-picker>
+            
           </v-menu>
 
         </v-col>

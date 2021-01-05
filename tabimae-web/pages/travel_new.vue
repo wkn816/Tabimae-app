@@ -80,14 +80,12 @@
 
       <v-btn @click="createTravel">決定</v-btn>
       <!-- {{ user }} -->
-
-      hoge<input type="text" id="name" name="name" required
-      minlength="4" maxlength="8" size="10" :value="user">
     <!-- {{this.$store.state.auth.currentUser}} -->
     <!-- {{this.$store.state.auth.currentUser.travels}} -->
     <!-- {{this.}} -->
     <!-- {{this.user}} -->
     {{ travels }}
+    <!-- {{ trains }} -->
     <!-- {{user}} -->
       <!-- {{ departure_day_test }} -->
     </v-container>
@@ -187,6 +185,9 @@ export default {
     travels(){
       return this.$store.state.auth.travels;
     },
+    trains(){
+      return this.$store.state.auth.trains;
+    }
     // departure_day_test () {
     //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
     // },
@@ -202,6 +203,7 @@ export default {
   mounted (){
     console.log('computedのtravels', this.travels);
     console.log('vuexのtravels', this.$store.state.auth.travels);
+    console.log('vuexのtrains', this.$store.state.auth.trains);
   }
 
 };

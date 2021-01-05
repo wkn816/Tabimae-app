@@ -1,7 +1,8 @@
 export const state = () => ({
   currentUser: null,
 
-  travels: []
+  travels: [],
+  trains: []
 });
 
 export const mutations = {
@@ -11,6 +12,9 @@ export const mutations = {
 
   setTravels(state, payload) {
     state.travels = payload
+  },
+  setTrains(state, payload) {
+    // state.trains = payload
   },
 };
 

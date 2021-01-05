@@ -1,4 +1,9 @@
 class V1::TrainsController < ApplicationController
+
+  def index
+    train = Train.all
+  end
+
   def create
     train = Train.new(train_params)
     if train.save

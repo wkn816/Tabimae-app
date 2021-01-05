@@ -5,6 +5,7 @@ const authCheck = ({ store, redirect }) => {
     firebase.auth().onAuthStateChanged(async user => {
     if (user) {
     const { data } = await axios.get('/v1/users', {
+
         params: {
             uid: user.uid,
         },
@@ -15,7 +16,6 @@ const authCheck = ({ store, redirect }) => {
     // store.commit('auth/serTrains', data.trains)
     } else {
     store.commit("auth/setUser", null)
-
     store.commit('auth/travels', [])
     // store.commit('auth/trains', [])
 

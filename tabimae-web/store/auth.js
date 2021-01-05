@@ -1,6 +1,5 @@
 export const state = () => ({
   currentUser: null,
-
   travels: [],
   trains: []
 });

@@ -79,12 +79,16 @@
       </v-col>
 
       <v-btn @click="createTravel">決定</v-btn>
-      <!-- {{ user() }} -->
-    {{this.$store.state.auth.currentUser}}
-    <!-- {{this.$store.state.auth.travels}} -->
+      <!-- {{ user }} -->
+
+      hoge<input type="text" id="name" name="name" required
+      minlength="4" maxlength="8" size="10" :value="user">
+    <!-- {{this.$store.state.auth.currentUser}} -->
+    <!-- {{this.$store.state.auth.currentUser.travels}} -->
     <!-- {{this.}} -->
     <!-- {{this.user}} -->
-    
+    {{ travels }}
+    <!-- {{user}} -->
       <!-- {{ departure_day_test }} -->
     </v-container>
   </div>
@@ -178,17 +182,28 @@ export default {
   },
   computed: {
     user() {
-      return
-      this.$store.state.auth.currentUser;
+      return this.$store.state.auth.currentUser;
+    },
+    travels(){
+      return this.$store.state.auth.travels;
     },
     // departure_day_test () {
     //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
     // },
-
   },
-  created () {
-    // console.log(this.$store.state.auth.currentUser);
+
+  async created () {
+    // try{
+    //   const res =
+    // }
+    // console.log(this.travels);
+    // console.log(this.$store.state.auth.currentUser.travels);
+  },
+  mounted (){
+    console.log('computedのtravels', this.travels);
+    console.log('vuexのtravels', this.$store.state.auth.travels);
   }
+
 };
 </script>
 

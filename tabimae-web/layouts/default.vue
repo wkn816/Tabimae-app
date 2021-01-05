@@ -87,7 +87,9 @@
     >
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
-    <nuxt />
+    <template v-if="this.$store.state.auth.currentUser">
+        <nuxt />
+    </template>
   </v-app>
 </template>
 

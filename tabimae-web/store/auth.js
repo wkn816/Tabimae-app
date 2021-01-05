@@ -13,9 +13,9 @@ export const mutations = {
   setTravels(state, payload) {
     state.travels = payload
   },
-  setTrains(state, payload) {
-    // state.trains = payload
-  },
+  // setTrains(state, payload) {
+  //   state.trains = payload
+  // },
 };
 
 export const actions = {};

@@ -10,7 +10,7 @@ const authCheck = ({ store, redirect }) => {
         },
     });
     store.commit("auth/setUser", data)
-    // console.log('data', data)
+    console.log('data', data)
     store.commit('auth/setTravels', data.travels)
     // store.commit('auth/serTrains', data.trains)
     } else {

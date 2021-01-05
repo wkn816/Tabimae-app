@@ -203,7 +203,7 @@ export default {
   mounted (){
     console.log('computedのtravels', this.travels);
     console.log('vuexのtravels', this.$store.state.auth.travels);
-    console.log('vuexのtrains', this.$store.state.auth.trains);
+    // console.log('vuexのtrains', this.$store.state.auth.trains);
   }
 
 };

@@ -6,6 +6,11 @@
   <!-- {{ transport }} -->
   <!-- {{ travels }} -->
   <!-- {{ trains }} -->
+  <template v-model="travel_index">
+    <h1>旅行一覧画面</h1>
+    <v-btn @click="asyncData">表示</v-btn>
+
+  </template>
   {{result}}
 </div>
 </template>
@@ -22,6 +27,7 @@ export default {
 
   data() {
     return {
+      travel_index: "",
       result: "",
       travel: "",
       data: "",
@@ -44,8 +50,13 @@ export default {
   // },
     methods:{
       async asyncData() {
-        const result = await axios.get("/v1/users", { user });
-      console.log(result);
+        const user_params ={
+
+        }
+      //   const result = await axios.get("/v1/users", { user_params });
+      // console.log(result);
+        const travelresult = await axios.get("/v1/users", {  });
+        console.log(travelresult);
       // return {
         //   transport: this.transport
       // }

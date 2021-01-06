@@ -80,6 +80,7 @@
 
       <v-btn @click="createTravel">決定</v-btn>
       {{ user }}
+      {{ travels }}
       <!-- {{ departure_day_test }} -->
     </v-container>
   </div>
@@ -172,9 +173,14 @@ export default {
     }
   },
   computed: {
+    //82行目でuserが持っている値を画面上に表示
     user() {
       return this.$store.state.auth.currentUser;
     },
+    //83行目でtravelsが持っている値のみ画面上に表示
+    travels(){
+      return this.$store.state.auth.travels;
+    }
     // departure_day_test () {
     //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
     // },

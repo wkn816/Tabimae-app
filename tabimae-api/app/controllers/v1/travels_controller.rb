@@ -1,7 +1,8 @@
 class V1::TravelsController < ApplicationController
 
   def index
-    travel = Travel.all
+    @travels = Travel.all
+    render json: @travels
   end
 
   def create

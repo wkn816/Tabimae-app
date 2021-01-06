@@ -173,9 +173,11 @@ export default {
     }
   },
   computed: {
+    //82行目でuserが持っている値を画面上に表示
     user() {
       return this.$store.state.auth.currentUser;
     },
+    //83行目でtravelsが持っている値のみ画面上に表示¥
     travels(){
       return this.$store.state.auth.travels;
     },

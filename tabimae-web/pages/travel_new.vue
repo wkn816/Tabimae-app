@@ -80,6 +80,7 @@
 
       <v-btn @click="createTravel">決定</v-btn>
       {{ user }}
+      {{ travels }}
       <!-- {{ departure_day_test }} -->
     </v-container>
   </div>
@@ -173,8 +174,10 @@ export default {
   },
   computed: {
     user() {
-      return
-      this.$store.state.auth.currentUser;
+      return this.$store.state.auth.currentUser;
+    },
+    travels(){
+      return this.$store.state.auth.travels;
     },
     // departure_day_test () {
     //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
@@ -183,6 +186,10 @@ export default {
   },
   created () {
     console.log(format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'));
+  },
+  mounted (){
+    console.log('computedのtravels', this.travels);
+    console.log('vuexのtravels', this.$store.state.auth.travels);
   }
 };
 </script>

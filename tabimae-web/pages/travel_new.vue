@@ -173,8 +173,7 @@ export default {
   },
   computed: {
     user() {
-      return
-      this.$store.state.auth.currentUser;
+      return this.$store.state.auth.currentUser;
     },
     // departure_day_test () {
     //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''

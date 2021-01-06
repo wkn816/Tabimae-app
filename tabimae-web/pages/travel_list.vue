@@ -11,13 +11,17 @@
         hide-details
       ></v-text-field> -->
     </v-card-title>
-    <v-data-table
+    <!-- <v-data-table
       :items="transport"
-    ></v-data-table>
+    ></v-data-table> -->
+    <!-- {{ travelData }} -->
+    <!-- {{ returnUserName }} -->
+    {{ userName }}
   </v-card>
 </template>
 
 <script>
+import axios from "@/plugins/axios";
 import TravelNew from "@/pages/travel_new";
 
 export default {
@@ -28,29 +32,48 @@ export default {
     return {
       // travel_params: "",
       //   {
-      // travel: "",
+      travelData: {},
+      travel: "",
       transport: "",
+      userName: {}
       // name: "",
       // departure_place: "",
       // arrival_place: "",
       // departure_time: "",
       // arrival_time: "",
-
-        };
-      // ],
-      // search: "",
-      // headers: [
-      //   {
-      //     text: "タイトル",
-      //     align: "left",
-      //     sortable: false,
-      //     value: "title",
-      //   },
-      //   { text: "ユーザー名", value: "username" },
-      // ],
+    };
   },
+  async fetch() {
+    this.travelData = await axios.get("/v1/travels");
+    this.filteingUserName();
+    //filterで作り直された配列がtravelNameに入る
+  },
+  // created() {
+  //   this.userName = this.travelData.data.filter(function(value) {
+  //     console.log(value);
+  //   });
+  // },
+  methods: {
+    filteingUserName() {
+      console.log(this.travelData);
+      this.userName = this.travelData.data.map(function(value) {
+        console.log(value.username);
+        return value.username;
+      });
+      console.log(this.userName);
+    }
+  },
+  computed: {
+    // returnUserName() {
+    //   if (this.travelData !== undefined){ return }
+    //   console.log(this.travelData.data);
+    //   const userName = this.travelData.data.filter(function(value) {
+    //     console.log(value);
+    //   });
+    //   // return "アイウエオ";
+    // }
+  }
 };
 </script>
 
-<style>
-</style>
+<style></style>

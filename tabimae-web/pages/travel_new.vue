@@ -110,8 +110,6 @@ export default {
       success: false,
       choice_departure_day : false,
     };
-
-
   },
   methods: {
     async createTravel() {

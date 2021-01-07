@@ -35,8 +35,7 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
-              color = "green--text"
-            close-on-complete></vue-timepicker>
+              close-on-complete></vue-timepicker>
           </p>
 
           <v-menu
@@ -52,7 +51,6 @@
                 readonly
                 v-bind="attrs"
                 v-on="on"
-                class="p"
                 @click:clear="departure_day = null"
               ></v-text-field>
             </template>
@@ -237,18 +235,11 @@ export default {
 </script>
 
 <style scoped>
-  /* .p{
-    color:red !important
-  }
-  .vue-timepicker{
-    color: red;
-  } */
-.test{
-  color: brown;
-}
 .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active,
-    .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:focus,
-    .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:hover {
-        background: #999;
-    }
+.my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:focus,
+.my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:hover {
+  background: #999;
+}
+
+
 </style>

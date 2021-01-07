@@ -49,9 +49,7 @@ export default {
       console.log(this.travelData);
     }
   },
-  // return axios.get("/football_club_calendar", {
-  //     params: { target: target }
-  //   });
+  
   // created() {
   //   this.userName = this.travelData.data.filter(function(value) {
   //     console.log(value);

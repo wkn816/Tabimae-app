@@ -57,8 +57,8 @@ export default {
     filteingUserName() {
       console.log(this.travelData);
       this.userName = this.travelData.data.map(function(value) {
-        console.log(value.username);
-        return value.username;
+        console.log(value.trains);
+        return value.trains;
       });
       console.log(this.userName);
     }

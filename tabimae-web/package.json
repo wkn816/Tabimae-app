@@ -17,6 +17,7 @@
     "firebase": "^8.1.2",
     "nuxt": "^2.14.6",
     "vue2-timepicker": "^1.1.5",
+    "vuedraggable": "^2.24.3",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {

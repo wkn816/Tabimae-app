@@ -5,10 +5,15 @@ class V1::TravelsController < ApplicationController
     #   @travel = Travel.find_by(id: params[:id])
     #   render json: @travel
     # else
-    @travels = Travel.all
-    render json: @travels
+
+    id = JSON.parse!(params[:user], symbolize_names: true)[:id]
+    # binding.pry
+    user = User.find(id)
+    @travels = user.travels
+    render json: @travels,include: [:trains]
     # end
   end
+
 
   def create
     travel = Travel.new(travel_params)

@@ -1,31 +1,17 @@
 <template>
     <v-card>
-    <!-- <v-card-title> --> 
+    <!-- <v-card-title> -->
     <ul v-for="travel in travelData.data">
       <li>{{ travel.transport }}</li>
-      <li>{{ travel.id }}</li>
+      <li>{{ travel.name }}</li>
       <ul v-for="train in travel.trains">
+        <li>{{ train.departure_day }}</li>
+        <li>{{ train.departure_place }}</li>
         <li>{{ train.arrival_place }}</li>
+        <li>{{ train.departure_time }}</li>
+        <li>{{ train.arrival_time }}</li>
       </ul>
     </ul>
-      <!-- 旅行一覧 -->
-      <!-- <v-spacer></v-spacer> -->
-      <!-- <v-text-field
-        v-model="search"
-        append-icon="search"
-        label="Search"
-        single-line
-        hide-details
-      ></v-text-field>-->
-    <!-- </v-card-title> -->
-    <!-- <v-data-table
-      :items="transport"
-    ></v-data-table>-->
-    <!-- {{ travelData }} -->
-    <!-- {{ returnUserName }} -->
-    <!-- <p>{{user}}</p> -->
-    <!-- {{ $store.state.auth.currentUser.name }} -->
-
   </v-card>
 </template>
 

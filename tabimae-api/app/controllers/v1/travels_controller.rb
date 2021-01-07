@@ -1,9 +1,19 @@
 class V1::TravelsController < ApplicationController
 
   def index
-    @travels = Travel.all
-    render json: @travels
+    # if params[:id]
+    #   @travel = Travel.find_by(id: params[:id])
+    #   render json: @travel
+    # else
+
+    id = JSON.parse!(params[:user], symbolize_names: true)[:id]
+    # binding.pry
+    user = User.find(id)
+    @travels = user.travels
+    render json: @travels,include: [:trains]
+    # end
   end
+
 
   def create
     travel = Travel.new(travel_params)
@@ -25,6 +35,6 @@ class V1::TravelsController < ApplicationController
   private
 
     def travel_params
-      params.permit(:name, :transport, :user_id)
+      params.require(:travel).permit(:name, :transport, :user_id)
     end
 end

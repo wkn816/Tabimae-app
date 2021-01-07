@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="user">
     <h1>新規登録画面</h1>
     <h2 v-if="success">登録したよ!</h2>
     <v-container class="px-0" fluid>
@@ -187,7 +187,6 @@ export default {
     // departure_day_test () {
     //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
     // },
-
   },
   created () {
     console.log(format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'));

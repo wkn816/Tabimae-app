@@ -9,11 +9,11 @@
         label="Search"
         single-line
         hide-details
-      ></v-text-field> -->
+      ></v-text-field>-->
     </v-card-title>
     <!-- <v-data-table
       :items="transport"
-    ></v-data-table> -->
+    ></v-data-table>-->
     <!-- {{ travelData }} -->
     <!-- {{ returnUserName }} -->
     {{ userName }}
@@ -57,8 +57,8 @@ export default {
     filteingUserName() {
       console.log(this.travelData);
       this.userName = this.travelData.data.map(function(value) {
-        console.log(value.trains);
-        return value.trains;
+        console.log(value.username);
+        return value.username;
       });
       console.log(this.userName);
     }

@@ -1,8 +1,13 @@
 class V1::TravelsController < ApplicationController
 
   def index
+    # if params[:id]
+    #   @travel = Travel.find_by(id: params[:id])
+    #   render json: @travel
+    # else
     @travels = Travel.all
     render json: @travels
+    # end
   end
 
   def create
@@ -25,6 +30,6 @@ class V1::TravelsController < ApplicationController
   private
 
     def travel_params
-      params.permit(:name, :transport, :user_id)
+      params.require(:travel).permit(:name, :transport, :user_id)
     end
 end

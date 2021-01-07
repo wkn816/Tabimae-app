@@ -16,6 +16,8 @@
     ></v-data-table>-->
     <!-- {{ travelData }} -->
     <!-- {{ returnUserName }} -->
+        <!-- <p>{{user}}</p> -->
+
     {{ userName }}
   </v-card>
 </template>
@@ -72,7 +74,11 @@ export default {
     //   });
     //   // return "アイウエオ";
     // }
-  }
+    // user() {
+    //   return this.$store.state.auth.currentUser;
+    // }
+  },
+
 };
 </script>
 

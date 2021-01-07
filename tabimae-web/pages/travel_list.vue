@@ -1,8 +1,15 @@
 <template>
-  <v-card>
-    <v-card-title>
-      旅行一覧
-      <v-spacer></v-spacer>
+    <v-card>
+    <!-- <v-card-title> --> 
+    <ul v-for="travel in travelData.data">
+      <li>{{ travel.transport }}</li>
+      <li>{{ travel.id }}</li>
+      <ul v-for="train in travel.trains">
+        <li>{{ train.arrival_place }}</li>
+      </ul>
+    </ul>
+      <!-- 旅行一覧 -->
+      <!-- <v-spacer></v-spacer> -->
       <!-- <v-text-field
         v-model="search"
         append-icon="search"
@@ -10,15 +17,15 @@
         single-line
         hide-details
       ></v-text-field>-->
-    </v-card-title>
+    <!-- </v-card-title> -->
     <!-- <v-data-table
       :items="transport"
     ></v-data-table>-->
     <!-- {{ travelData }} -->
     <!-- {{ returnUserName }} -->
-        <!-- <p>{{user}}</p> -->
+    <!-- <p>{{user}}</p> -->
+    <!-- {{ $store.state.auth.currentUser.name }} -->
 
-    {{ userName }}
   </v-card>
 </template>
 
@@ -46,10 +53,19 @@ export default {
     };
   },
   async fetch() {
-    this.travelData = await axios.get("/v1/travels");
-    this.filteingUserName();
-    //filterで作り直された配列がtravelNameに入る
+    // console.log(this.$store.state.auth.currentUser.id);
+    const user = this.$store.state.auth.currentUser;
+    // debugger
+    if (user) {
+      this.travelData = await axios.get("/v1/travels", { params: { user } });
+
+      //filterで作り直された配列がtravelNameに入る
+      console.log(this.travelData);
+    }
   },
+  // return axios.get("/football_club_calendar", {
+  //     params: { target: target }
+  //   });
   // created() {
   //   this.userName = this.travelData.data.filter(function(value) {
   //     console.log(value);
@@ -57,12 +73,12 @@ export default {
   // },
   methods: {
     filteingUserName() {
-      console.log(this.travelData);
-      this.userName = this.travelData.data.map(function(value) {
-        console.log(value.username);
-        return value.username;
-      });
-      console.log(this.userName);
+      // console.log(this.travelData);
+      // this.userName = this.travelData.data.map(function(value) {
+      //   console.log(value.username.user);
+      //   return value.username;
+      // });
+      // console.log(this.userName);
     }
   },
   computed: {
@@ -77,8 +93,7 @@ export default {
     // user() {
     //   return this.$store.state.auth.currentUser;
     // }
-  },
-
+  }
 };
 </script>
 

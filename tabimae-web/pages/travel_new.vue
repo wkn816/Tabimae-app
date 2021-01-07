@@ -13,9 +13,12 @@
       <template v-if="transport === 'train'">
         <h1>列車で行く</h1>
         <v-col cols="12" md="4">
-          <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+          <v-text-field v-model="departure_place" :counter="10" label="出発地" required
+          ></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
-          <p>出発時間 </p><vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
+          <p>出発時間
+          <vue-timepicker v-model="departure_time" format="A:h:mm:"></vue-timepicker>
+          </p>
           <p>到着時間</p><vue-timepicker v-model="arrival_time" format="A:h:mm:"></vue-timepicker>
 
           <v-menu
@@ -31,6 +34,7 @@
                 readonly
                 v-bind="attrs"
                 v-on="on"
+                class="p"
                 @click:clear="departure_day = null"
               ></v-text-field>
             </template>
@@ -92,6 +96,7 @@ import VueTimepicker from 'vue2-timepicker';
 import 'vue2-timepicker/dist/VueTimepicker.css';
 import moment from 'moment';
 import { format, parseISO } from 'date-fns';
+
 
 export default {
   components: {
@@ -194,6 +199,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+  /* .p{
+    color:red !important
+  }
+  .vue-timepicker{
+    color: red;
+  } */
 
 </style>

@@ -11,6 +11,9 @@
         <li>{{ train.departure_time }}</li>
         <li>{{ train.arrival_time }}</li>
       </ul>
+      <ul v-for="train in travel.airs">
+        <li>{{ air.departure_day }}</li>
+      </ul>
     </ul>
   </v-card>
 </template>
@@ -49,7 +52,7 @@ export default {
       console.log(this.travelData);
     }
   },
-  
+
   // created() {
   //   this.userName = this.travelData.data.filter(function(value) {
   //     console.log(value);

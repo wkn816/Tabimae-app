@@ -10,7 +10,7 @@ class V1::TravelsController < ApplicationController
     # binding.pry
     user = User.find(id)
     @travels = user.travels
-    render json: @travels,include: [:trains]
+    render json: @travels,include: [:trains, :airs]
     # end
   end
 

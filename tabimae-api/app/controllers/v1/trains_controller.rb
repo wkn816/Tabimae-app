@@ -1,6 +1,7 @@
 class V1::TrainsController < ApplicationController
   def create
     train = Train.new(train_params)
+    # binding.pry
     if train.save
       render json: train, status: :created
     else

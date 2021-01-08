@@ -204,6 +204,7 @@ export default {
         this.arrival_time = "";
         this.departure_day = "";
       }
+      
         this.$router.push("/travel_list");
     }
   },

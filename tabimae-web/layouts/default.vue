@@ -19,6 +19,7 @@
         <nuxt-link to="/travel_list"></nuxt-link>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
+
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title v-text="item.title" />
@@ -48,10 +49,12 @@
         icon
         @click.stop="fixed = !fixed"
       >
+
         <v-icon>mdi-minus</v-icon>
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-btn @click="logOut">ログアウト</v-btn>
       <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
@@ -94,6 +97,7 @@
 </template>
 
 <script>
+import firebase from "@/plugins/firebase";
 export default {
   data () {
     return {
@@ -117,7 +121,25 @@ export default {
       rightDrawer: false,
       title: 'Tabimae'
     }
-  }
+  },
+  computed: {
+    user() {
+      return this.$store.state.auth.currentUser;
+    },
+  },
+  methods: {
+    async logOut() {
+      await firebase
+        .auth()
+        .signOut()
+        .catch((error) => {
+          console.log(error);
+        });
+
+      this.$store.commit("setUser", null);
+      this.$router.push("/login");
+    },
+  },
 }
 </script>
 

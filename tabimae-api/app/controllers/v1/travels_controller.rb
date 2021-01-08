@@ -14,6 +14,9 @@ class V1::TravelsController < ApplicationController
     # end
   end
 
+  def show
+    
+  end
 
   def create
     travel = Travel.new(travel_params)

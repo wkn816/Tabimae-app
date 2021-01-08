@@ -161,7 +161,7 @@ export default {
       };
       console.log(travel_params);
       const { data } = await axios.post("/v1/travels", { travel: travel_params });
-      console.log(data.id);
+      console.log(data);
       this.transport = "";
       this.name = "";
       this.success = true;
@@ -185,8 +185,6 @@ export default {
         this.departure_time = "";
         this.arrival_time = "";
         this.departure_day = "";
-
-
       } else {
         const train_params = {
           travel_id: data.id,
@@ -205,10 +203,8 @@ export default {
         this.departure_time = "";
         this.arrival_time = "";
         this.departure_day = "";
-
-
       }
-      // this.$router.push 詳細画面へ遷移。
+        this.$router.push("/travel_list");
     }
   },
   computed: {

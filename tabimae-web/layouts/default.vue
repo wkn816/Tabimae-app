@@ -16,7 +16,7 @@
           router
           exact
         >
-        <nuxt-link to="/travel_list">旅程一覧</nuxt-link>
+        <nuxt-link to="/travel_list"></nuxt-link>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
@@ -103,13 +103,13 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
+          title: '新規登録',
+          to: '/travel_new'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: '旅行一覧',
+          to: '/travel_list'
         }
       ],
       miniVariant: false,

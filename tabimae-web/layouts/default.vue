@@ -104,13 +104,13 @@ export default {
         return [
           {
             icon: "mdi-apps",
-            title: "Todos",
-            to: "/"
+            title: "新規登録",
+            to: "/travel_new"
           },
           {
             icon: "mdi-chart-bubble",
-            title: "mypage",
-            to: "/mypage"
+            title: "旅行一覧",
+            to: "/travel_list"
           }
         ];
       } else {

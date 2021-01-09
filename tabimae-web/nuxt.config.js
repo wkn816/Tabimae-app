@@ -4,6 +4,10 @@ export default {
   server: {
     port: 8080
   },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+
   mode: 'spa',
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   // ssr: false,

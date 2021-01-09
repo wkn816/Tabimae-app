@@ -6,6 +6,7 @@ const authCheck = ({
     redirect
 }) => {
     firebase.auth().onAuthStateChanged(async user => {
+        // debugger
     if (user) {
     const {
         data
@@ -16,7 +17,7 @@ const authCheck = ({
     });
     store.commit("auth/setUser", data)
     //   debuggerCh
-    store.commit('auth/setTravels', data.travels)
+    store.commit('auth/setTravels', [])
 
     } else {
     store.commit("auth/setUser", null)

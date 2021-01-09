@@ -76,7 +76,7 @@
             err
           });
         });
-        this.$router.push("/travel_new");
+        this.$router.push("/travel_list");
       },
     },
   };

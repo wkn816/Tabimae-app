@@ -1,36 +1,15 @@
 <template>
-    <v-card>
-    <h1>一覧</h1>
-    <ul v-for="travel in travelData.data">
-      <li>{{ travel.transport }}</li>
-      <li>{{ travel.name }}</li>
-      <ul v-for="train in travel.trains">
-        <li>{{ train.departure_day }}</li>
-        <li>{{ train.departure_place }}</li>
-        <li>{{ train.arrival_place }}</li>
-        <li>{{ train.departure_time }}</li>
-        <li>{{ train.arrival_time }}</li>
-
-        <nuxt-link :to="`/travel/${travel.id}`">詳細</nuxt-link>
-
-        <nuxt-link :to="`/travels/${travel.id}`">詳細</nuxt-link>
-
-      </ul>
-      <ul v-for="train in travel.airs">
-        <li>{{ air.departure_day }}</li>
-      </ul>
-    </ul>
+  <v-card>
+    <h1>詳細画面</h1>
+    {{ travelData }}
+    {{ id }}
   </v-card>
 </template>
 
 <script>
 import axios from "@/plugins/axios";
-import TravelNew from "@/pages/travel_new";
 
 export default {
-  // components: {
-  //   TravelNew,
-  // },
   data() {
     return {
       // travel_params: "",
@@ -38,7 +17,8 @@ export default {
       travelData: {},
       travel: "",
       transport: "",
-      userName: {}
+      userName: {},
+      id: ""
       // name: "",
       // departure_place: "",
       // arrival_place: "",
@@ -46,15 +26,36 @@ export default {
       // arrival_time: "",
     };
   },
-  async fetch() {
-    // console.log(this.$store.state.auth.currentUser.id);
-    const user = this.$store.state.auth.currentUser;
-    // debugger
-    if (user) {
-      this.travelData = await axios.get("/v1/travels", { params: { user } });
+  // async asyncData({ params }) {
+  //   // console.log(this.$store.state.auth.currentUser.id);
+  //   // const user = this.$store.state.auth.currentUser;
+  //   // debugger
+  //   if (user) {
+  //     //this.travelData = await axios.get("/v1/travels/${ travel.id }");
+  //     // console.log(travel.id);
+  //     this.travelData = await axios.get(
+  //       `${process.env.BASE_URL}/travels/${params.id}`
+  //     );
+  //     console.log(this.travelData);
 
-      //filterで作り直された配列がtravelNameに入る
-      console.log(this.travelData);
+  //     //filterで作り直された配列がtravelNameに入る
+  //     console.log(this.travelData);
+  //   }
+  // },
+  async asyncData({ params }) {
+    try {
+      // debugger
+      const res = await axios.get(
+        // `${process.env.BASE_URL}/v1/travels/${params.id}`
+        // `http://localhost:8080/travels/${params.id}`
+        `/v1/travels/${params.id}`
+      );
+      console.log(res);
+      return {
+        res
+      };
+    } catch (err) {
+      console.log("err", err);
     }
   },
 

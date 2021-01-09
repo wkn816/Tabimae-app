@@ -16,9 +16,15 @@ class V1::TravelsController < ApplicationController
 
   def show
     travel = Travel.find(params[:id])
+
+    render json: travel,include: [:trains, :airs]
+  end
+
+
     # binding.pry
     render json: travel,include: [:trains, :airs]
   end
+
 
   def create
     travel = Travel.new(travel_params)

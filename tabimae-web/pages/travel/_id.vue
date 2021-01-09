@@ -1,8 +1,9 @@
 <template>
   <v-card>
     <h1>詳細画面</h1>
-    {{ travelData }}
-    {{ id }}
+    <!-- {{res_travel_show}} -->
+    {{res_travel_show.data.name}}
+
   </v-card>
 </template>
 
@@ -18,7 +19,8 @@ export default {
       travel: "",
       transport: "",
       userName: {},
-      id: ""
+      id: "",
+      res_travel_show: {}
       // name: "",
       // departure_place: "",
       // arrival_place: "",
@@ -45,14 +47,14 @@ export default {
   async asyncData({ params }) {
     try {
       // debugger
-      const res = await axios.get(
+      const res_travel_show = await axios.get(
         // `${process.env.BASE_URL}/v1/travels/${params.id}`
         // `http://localhost:8080/travels/${params.id}`
         `/v1/travels/${params.id}`
       );
-      console.log(res);
+      console.log(res_travel_show);
       return {
-        res
+        res_travel_show
       };
     } catch (err) {
       console.log("err", err);

@@ -10,6 +10,7 @@
         <li>{{ train.arrival_place }}</li>
         <li>{{ train.departure_time }}</li>
         <li>{{ train.arrival_time }}</li>
+        <nuxt-link :to="`/travels/${travel.id}`">詳細</nuxt-link>
       </ul>
       <ul v-for="train in travel.airs">
         <li>{{ air.departure_day }}</li>

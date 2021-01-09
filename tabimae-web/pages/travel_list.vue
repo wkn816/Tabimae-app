@@ -13,8 +13,6 @@
 
         <nuxt-link :to="`/travel/${travel.id}`">詳細</nuxt-link>
 
-        <nuxt-link :to="`/travels/${travel.id}`">詳細</nuxt-link>
-
       </ul>
       <ul v-for="train in travel.airs">
         <li>{{ air.departure_day }}</li>

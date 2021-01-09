@@ -3,6 +3,8 @@
     <h1>詳細画面</h1>
     <!-- {{res_travel_show}} -->
     {{res_travel_show.data.name}}
+    {{res_travel_show.data}}
+    {{res_travel_show.data.trains.departure_day}}
 
   </v-card>
 </template>
@@ -13,19 +15,7 @@ import axios from "@/plugins/axios";
 export default {
   data() {
     return {
-      // travel_params: "",
-      //   {
-      travelData: {},
-      travel: "",
-      transport: "",
-      userName: {},
-      id: "",
       res_travel_show: {}
-      // name: "",
-      // departure_place: "",
-      // arrival_place: "",
-      // departure_time: "",
-      // arrival_time: "",
     };
   },
   // async asyncData({ params }) {
@@ -52,7 +42,7 @@ export default {
         // `http://localhost:8080/travels/${params.id}`
         `/v1/travels/${params.id}`
       );
-      console.log(res_travel_show);
+      console.log(res_travel_show.data.trains);
       return {
         res_travel_show
       };

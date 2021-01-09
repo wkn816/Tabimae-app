@@ -13,29 +13,44 @@
       <template v-if="transport === 'train'">
         <h1>列車で行く</h1>
         <v-col cols="12" md="4">
-          <v-text-field v-model="departure_place" :counter="10" label="出発地" required
+          <v-text-field
+            v-model="departure_place"
+            :counter="10"
+            label="出発地"
+            required
           ></v-text-field>
-          <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
-          <p class="my-time-picker">出発時間
-            <vue-timepicker v-model="departure_time"
+          <v-text-field
+            v-model="arrival_place"
+            :counter="10"
+            label="到着地"
+            required
+          ></v-text-field>
+          <p class="my-time-picker">
+            出発時間
+            <vue-timepicker
+              v-model="departure_time"
               format="A:h:mm:"
               hour-label="時"
               minute-label="分"
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
-              close-on-complete>
+              close-on-complete
+            >
             </vue-timepicker>
           </p>
-          <p class="my-time-picker">到着時間
-            <vue-timepicker v-model="arrival_time"
+          <p class="my-time-picker">
+            到着時間
+            <vue-timepicker
+              v-model="arrival_time"
               format="A:h:mm:"
               hour-label="時"
               minute-label="分"
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
-              close-on-complete></vue-timepicker>
+              close-on-complete
+            ></vue-timepicker>
           </p>
 
           <v-menu
@@ -59,38 +74,53 @@
               @change="choice_departure_day = departure_day"
             ></v-date-picker>
           </v-menu>
-
         </v-col>
       </template>
 
       <template v-if="transport === 'air'">
         <h1>飛行機で行く</h1>
         <v-col cols="12" md="4">
-          <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
-          <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
-        <p class="my-time-picker">出発時間
-          <vue-timepicker v-model="departure_time"
-            format="A:h:mm:"
-            hour-label="時"
-            minute-label="分"
-            apm-label="区分"
-            am-text="午前"
-            pm-text="午後"
-            close-on-complete>
-          </vue-timepicker>
-        </p>
-        <p class="my-time-picker">到着時間
-          <vue-timepicker v-model="arrival_time"
-            format="A:h:mm:"
-            hour-label="時"
-            minute-label="分"
-            apm-label="区分"
-            am-text="午前"
-            pm-text="午後"
-            close-on-complete>
-          </vue-timepicker>
-        </p>
-        <v-menu
+          <v-text-field
+            v-model="departure_place"
+            :counter="10"
+            label="出発地"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="arrival_place"
+            :counter="10"
+            label="到着地"
+            required
+          ></v-text-field>
+          <p class="my-time-picker">
+            出発時間
+            <vue-timepicker
+              v-model="departure_time"
+              format="A:h:mm:"
+              hour-label="時"
+              minute-label="分"
+              apm-label="区分"
+              am-text="午前"
+              pm-text="午後"
+              close-on-complete
+            >
+            </vue-timepicker>
+          </p>
+          <p class="my-time-picker">
+            到着時間
+            <vue-timepicker
+              v-model="arrival_time"
+              format="A:h:mm:"
+              hour-label="時"
+              minute-label="分"
+              apm-label="区分"
+              am-text="午前"
+              pm-text="午後"
+              close-on-complete
+            >
+            </vue-timepicker>
+          </p>
+          <v-menu
             v-model="choice_departure_day"
             :close-on-content-click="false"
             max-width="290"
@@ -115,7 +145,12 @@
       </template>
 
       <v-col cols="12" md="4">
-        <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
+        <v-text-field
+          v-model="name"
+          :counter="10"
+          label="旅行のテーマ"
+          required
+        ></v-text-field>
       </v-col>
 
       <v-btn @click="createTravel">決定</v-btn>
@@ -128,15 +163,14 @@
 
 <script>
 import axios from "@/plugins/axios";
-import VueTimepicker from 'vue2-timepicker';
-import 'vue2-timepicker/dist/VueTimepicker.css';
-import moment from 'moment';
-import { format, parseISO } from 'date-fns';
-
+import VueTimepicker from "vue2-timepicker";
+import "vue2-timepicker/dist/VueTimepicker.css";
+import moment from "moment";
+import { format, parseISO } from "date-fns";
 
 export default {
   components: {
-      'vue-timepicker': VueTimepicker,
+    "vue-timepicker": VueTimepicker
   },
   data() {
     return {
@@ -149,7 +183,7 @@ export default {
       arrival_time: "",
       departure_day: "",
       success: false,
-      choice_departure_day : false,
+      choice_departure_day: false
     };
   },
   methods: {
@@ -160,7 +194,9 @@ export default {
         user_id: this.$store.state.auth.currentUser.id
       };
       console.log(travel_params);
-      const { data } = await axios.post("/v1/travels", { travel: travel_params });
+      const { data } = await axios.post("/v1/travels", {
+        travel: travel_params
+      });
       console.log(data);
       this.transport = "";
       this.name = "";
@@ -196,7 +232,9 @@ export default {
           user_id: this.$store.state.auth.currentUser.id
         };
         console.log(train_params);
-        const res_train = await axios.post("/v1/trains", { train: train_params });
+        const res_train = await axios.post("/v1/trains", {
+          train: train_params
+        });
         console.log(res_train);
         this.departure_place = "";
         this.arrival_place = "";
@@ -214,29 +252,35 @@ export default {
       return this.$store.state.auth.currentUser;
     },
     //83行目でtravelsが持っている値のみ画面上に表示¥
-    travels(){
+    travels() {
       return this.$store.state.auth.travels;
-    },
+    }
     // departure_day_test () {
     //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
     // },
   },
-  created () {
-    console.log(format(parseISO(new Date().toISOString()), 'yyyy-MM-dd'));
+  created() {
+    console.log(format(parseISO(new Date().toISOString()), "yyyy-MM-dd"));
   },
-  mounted (){
-    console.log('computedのtravels', this.travels);
-    console.log('vuexのtravels', this.$store.state.auth.travels);
+  mounted() {
+    console.log("computedのtravels", this.travels);
+    console.log("vuexのtravels", this.$store.state.auth.travels);
   }
 };
 </script>
 
 <style scoped>
 .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active,
-.my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:focus,
-.my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:hover {
+.my-time-picker
+  >>> .vue__time-picker
+  .dropdown
+  ul
+  li:not([disabled]).active:focus,
+.my-time-picker
+  >>> .vue__time-picker
+  .dropdown
+  ul
+  li:not([disabled]).active:hover {
   background: #999;
 }
-
-
 </style>

@@ -48,7 +48,7 @@ export default {
       const res = await axios.get(
         // `${process.env.BASE_URL}/v1/travels/${params.id}`
         // `http://localhost:8080/travels/${params.id}`
-        "/v1/travels/${ travel.id }"
+        `/v1/travels/${params.id}`
       );
       console.log(res);
       return {

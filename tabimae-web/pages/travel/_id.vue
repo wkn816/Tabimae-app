@@ -3,8 +3,8 @@
     <h1>詳細画面</h1>
     <!-- {{res_travel_show}} -->
     {{res_travel_show.data.name}}
-    {{res_travel_show.data}}
-    {{res_travel_show.data.trains.departure_day}}
+    <!-- {{res_travel_show.data}} -->
+    {{res_travel_show.data.trains[0].departure_place}}
 
   </v-card>
 </template>
@@ -18,6 +18,8 @@ export default {
       res_travel_show: {}
     };
   },
+// console.log(array1[0]);
+
   // async asyncData({ params }) {
   //   // console.log(this.$store.state.auth.currentUser.id);
   //   // const user = this.$store.state.auth.currentUser;
@@ -42,7 +44,7 @@ export default {
         // `http://localhost:8080/travels/${params.id}`
         `/v1/travels/${params.id}`
       );
-      console.log(res_travel_show.data.trains);
+      console.log(res_travel_show);
       return {
         res_travel_show
       };

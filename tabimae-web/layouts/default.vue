@@ -158,8 +158,8 @@ v-app {
   background-size: 100%;
 }
 .bg {
-  background-color: seagreen;
+  background-color: #000;
   background-size: 100%;
-  color: red;
+  color: #ffffff;
 }
 </style>

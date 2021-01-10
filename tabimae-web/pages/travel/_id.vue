@@ -4,6 +4,7 @@
     <!-- {{res_travel_show}} -->
     {{res_travel_show.data.name}}
     <!-- {{res_travel_show.data}} -->
+    {{res_travel_show.data.trains[0].departure_day}}
     {{res_travel_show.data.trains[0].departure_place}}
 
   </v-card>

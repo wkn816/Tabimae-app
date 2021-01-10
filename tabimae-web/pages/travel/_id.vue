@@ -6,6 +6,7 @@
     <!-- {{res_travel_show.data}} -->
     {{res_travel_show.data.trains[0].departure_day}}
     {{res_travel_show.data.trains[0].departure_place}}
+    {{res_travel_show.data.trains[0].arrival_place}}
 
   </v-card>
 </template>

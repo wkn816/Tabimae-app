@@ -13,18 +13,8 @@
       <template v-if="transport === 'train'">
         <h1>列車で行く</h1>
         <v-col cols="12" md="4">
-          <v-text-field
-            v-model="departure_place"
-            :counter="10"
-            label="出発地"
-            required
-          ></v-text-field>
-          <v-text-field
-            v-model="arrival_place"
-            :counter="10"
-            label="到着地"
-            required
-          ></v-text-field>
+          <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+          <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
           <p class="my-time-picker">
             出発時間
             <vue-timepicker
@@ -35,9 +25,9 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              input-class="time-font"
               close-on-complete
-            >
-            </vue-timepicker>
+            ></vue-timepicker>
           </p>
           <p class="my-time-picker">
             到着時間
@@ -49,15 +39,12 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              input-class="time-font"
               close-on-complete
             ></vue-timepicker>
           </p>
 
-          <v-menu
-            v-model="choice_departure_day"
-            :close-on-content-click="false"
-            max-width="290"
-          >
+          <v-menu v-model="choice_departure_day" :close-on-content-click="false" max-width="290">
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
                 label="出発日"
@@ -69,10 +56,7 @@
                 @click:clear="departure_day = null"
               ></v-text-field>
             </template>
-            <v-date-picker
-              v-model="departure_day"
-              @change="choice_departure_day = departure_day"
-            ></v-date-picker>
+            <v-date-picker v-model="departure_day" @change="choice_departure_day = departure_day"></v-date-picker>
           </v-menu>
         </v-col>
       </template>
@@ -80,18 +64,8 @@
       <template v-if="transport === 'air'">
         <h1>飛行機で行く</h1>
         <v-col cols="12" md="4">
-          <v-text-field
-            v-model="departure_place"
-            :counter="10"
-            label="出発地"
-            required
-          ></v-text-field>
-          <v-text-field
-            v-model="arrival_place"
-            :counter="10"
-            label="到着地"
-            required
-          ></v-text-field>
+          <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
+          <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
           <p class="my-time-picker">
             出発時間
             <vue-timepicker
@@ -102,9 +76,9 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              input-class="time-font"
               close-on-complete
-            >
-            </vue-timepicker>
+            ></vue-timepicker>
           </p>
           <p class="my-time-picker">
             到着時間
@@ -116,15 +90,11 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              input-class="time-font"
               close-on-complete
-            >
-            </vue-timepicker>
+            ></vue-timepicker>
           </p>
-          <v-menu
-            v-model="choice_departure_day"
-            :close-on-content-click="false"
-            max-width="290"
-          >
+          <v-menu v-model="choice_departure_day" :close-on-content-click="false" max-width="290">
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
                 label="出発日"
@@ -136,21 +106,13 @@
                 @click:clear="departure_day = null"
               ></v-text-field>
             </template>
-            <v-date-picker
-              v-model="departure_day"
-              @change="choice_departure_day = departure_day"
-            ></v-date-picker>
+            <v-date-picker v-model="departure_day" @change="choice_departure_day = departure_day"></v-date-picker>
           </v-menu>
         </v-col>
       </template>
 
       <v-col cols="12" md="4">
-        <v-text-field
-          v-model="name"
-          :counter="10"
-          label="旅行のテーマ"
-          required
-        ></v-text-field>
+        <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
       </v-col>
 
       <v-btn @click="createTravel">決定</v-btn>
@@ -243,7 +205,7 @@ export default {
         this.departure_day = "";
       }
 
-        this.$router.push("/travel_list");
+      this.$router.push("/travel_list");
     }
   },
   computed: {
@@ -269,7 +231,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active,
 .my-time-picker
   >>> .vue__time-picker
@@ -282,5 +244,9 @@ export default {
   ul
   li:not([disabled]).active:hover {
   background: #999;
+}
+
+.time-font {
+  color: #ffffff;
 }
 </style>

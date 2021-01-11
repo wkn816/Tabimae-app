@@ -4,6 +4,10 @@ export default {
   server: {
     port: 8080
   },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+
   mode: 'spa',
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   // ssr: false,
@@ -29,7 +33,9 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     // "@/plugins/vuetify",
-    "@/plugins/authCheck"
+    "@/plugins/authCheck",
+    // '@/plugins/dateformat'
+
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -40,13 +46,17 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/dotenv',
+    '@nuxtjs/moment'
 
   ],
+  moment: {
+    // ここにオプションが記述できる
+    locales: ['ja']
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // '@nuxtjs/axios',
-
+    '@nuxtjs/axios',
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
@@ -71,4 +81,5 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
+
 }

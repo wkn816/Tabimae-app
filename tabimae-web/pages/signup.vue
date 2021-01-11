@@ -68,7 +68,7 @@
           name: this.name,
           uid: res.user.uid,
         };
-        
+
         await axios.post("/v1/users", {
           user
         }).catch((err) => {
@@ -76,7 +76,7 @@
             err
           });
         });
-        this.$router.push("/");
+        this.$router.push("/travel_list");
       },
     },
   };

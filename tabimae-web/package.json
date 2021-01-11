@@ -3,20 +3,30 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "HOST=0.0.0.0 PORT=3000 nuxt",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.12.2",
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "css-loader": "^5.0.1",
+    "date-fns": "^2.16.1",
+    "dateformat": "^4.4.1",
     "firebase": "^8.1.2",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "vue2-timepicker": "^1.1.5",
+    "vuedraggable": "^2.24.3",
+    "vuetify": "^2.4.0"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/vuetify": "^1.11.2"
+    "@nuxtjs/moment": "^1.6.1",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.11.2",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.0"
   }
 }

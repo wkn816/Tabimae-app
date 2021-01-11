@@ -28,7 +28,6 @@
 旅行出発前
 
 ## 設計書
-https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
@@ -40,5 +39,3 @@ https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTP
 - IDE：Visual Studio Code
 
 
-## ER図
-https://drive.google.com/file/d/1Co4aclr6Axivuetsd7CMCioOOXezoBVW/view?usp=sharing

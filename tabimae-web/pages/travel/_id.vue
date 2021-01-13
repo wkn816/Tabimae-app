@@ -9,9 +9,7 @@
     {{res_travel_show.data.trains[0].arrival_place}}
     {{res_travel_show.data.trains[0].departure_time}}
     {{res_travel_show.data.trains[0].arrival_time}}
-    
     <v-icon small @click="deleteItem(item)">削除</v-icon>
-
   </v-card>
 </template>
 
@@ -72,7 +70,22 @@ export default {
       //   return value.username;
       // });
       // console.log(this.userName);
-    }
+    },
+    methods: {
+    async deleteItem(item) {
+      const res = confirm("本当に削除しますか？");
+      if (res) {
+        await axios.delete(`/v1/travels/${travel.id}`);
+        const travels = this.user.travels.filter((travel) => {
+          return travel.id !== travel.id;
+        });
+        const newUser = {
+          ...this.user,
+          todos,
+        };
+        this.$store.commit("auth/setUser", newUser);
+      }
+    },
   },
   computed: {
     // returnUserName() {

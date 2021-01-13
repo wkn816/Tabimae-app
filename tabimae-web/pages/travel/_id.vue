@@ -1,15 +1,13 @@
 <template>
   <v-card>
     <h1>詳細画面</h1>
-    <!-- {{res_travel_show}} -->
-    {{res_travel_show.data.name}}
-    <!-- {{res_travel_show.data}} -->
-    {{res_travel_show.data.trains[0].departure_day}}
-    {{res_travel_show.data.trains[0].departure_place}}
-    {{res_travel_show.data.trains[0].arrival_place}}
-    {{res_travel_show.data.trains[0].departure_time}}
-    {{res_travel_show.data.trains[0].arrival_time}}
-    <v-icon small @click="deleteItem(item)">削除</v-icon>
+    {{ res_travel_show.data.name }}
+    {{ res_travel_show.data.trains[0].departure_day }}
+    {{ res_travel_show.data.trains[0].departure_place }}
+    {{ res_travel_show.data.trains[0].arrival_place }}
+    {{ res_travel_show.data.trains[0].departure_time }}
+    {{ res_travel_show.data.trains[0].arrival_time }}
+    <v-icon small @click="deleteItem(travel)">削除</v-icon>
   </v-card>
 </template>
 
@@ -17,12 +15,14 @@
 import axios from "@/plugins/axios";
 
 export default {
+  props: ["travel"],
   data() {
     return {
-      res_travel_show: {}
+      res_travel_show: {},
+      res_delete: {}
     };
   },
-// console.log(array1[0]);
+  // console.log(array1[0]);
 
   // async asyncData({ params }) {
   //   // console.log(this.$store.state.auth.currentUser.id);
@@ -62,6 +62,11 @@ export default {
   //     console.log(value);
   //   });
   // },
+  computed: {
+    user() {
+      return this.$store.state.auth.currentUser;
+    }
+  },
   methods: {
     filteingUserName() {
       // console.log(this.travelData);
@@ -71,23 +76,38 @@ export default {
       // });
       // console.log(this.userName);
     },
-    methods: {
-    async deleteItem(item) {
-      const res = confirm("本当に削除しますか？");
-      if (res) {
-        await axios.delete(`/v1/travels/${travel.id}`);
-        const travels = this.user.travels.filter((travel) => {
-          return travel.id !== travel.id;
-        });
-        const newUser = {
-          ...this.user,
-          todos,
-        };
-        this.$store.commit("auth/setUser", newUser);
+    async deleteItem(travel) {
+      const user = this.$store.state.auth.currentUser;
+        console.log(user);
+      if(user){
+        const res_delete = this.$axios.$delete(`/v1/travels/${params.id}`);
       }
-    },
-  },
-  computed: {
+    }
+
+
+    // methods: {
+    // async deleteItem(item) {
+    //   const res = confirm("本当に削除しますか？");
+    //   if (res) {
+    //     await axios.delete(`/v1/travels/${travel.id}`);
+    //     const travels = this.user.travels.filter((travel) => {
+    //       return travel.id !== travel.id;
+    //     });
+    //     const newUser = {
+    //       ...this.user,
+    //       todos,
+    //     };
+    //     this.$store.commit("auth/setUser", newUser);
+    //   }
+    // },
+    // }
+    // methods: {
+    // async deleteItem(id) {
+    //   console.log(IDBCursor);
+    //   const res_delete = await this.$axios.$delete(`/v1/travels/${params.id}`);
+    // }
+    // }
+    // computed: {
     // returnUserName() {
     //   if (this.travelData !== undefined){ return }
     //   console.log(this.travelData.data);

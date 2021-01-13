@@ -55,7 +55,7 @@ export default {
         res_travel_show.data.trains[0].departure_day
       );
       // // debugger
-      // const daylimit = departure_day.diff(moment(), "days"); // 91
+      const daylimit = departure_day.diff(moment(), "days"); // 91
       // let text;
       // if (daylimit > 10) {
       //   text = "ゆっくりでOK";

@@ -9,7 +9,11 @@
     {{res_travel_show.data.trains[0].arrival_place}}
     {{res_travel_show.data.trains[0].departure_time}}
     {{res_travel_show.data.trains[0].arrival_time}}
-
+  <v-icon
+    @click="
+    editItem(travel);
+    open(travel);"
+  >編集</v-icon>
   </v-card>
 </template>
 
@@ -22,6 +26,16 @@ export default {
       res_travel_show: {}
     };
   },
+  async editItem(travel) {
+      // this.dialog = true;
+      // this.dialoTodo = todo;
+      // 参照渡し（入力最中の文章を受け取る役割をしています）
+      this.dialogText = {
+        id: todo.id,
+        title: todo.title,
+        point: todo.point
+      };
+    },
 // console.log(array1[0]);
 
   // async asyncData({ params }) {

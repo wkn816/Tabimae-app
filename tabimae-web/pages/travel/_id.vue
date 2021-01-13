@@ -92,9 +92,9 @@ export default {
         );
       }
       // debugger
-      // if (deleteres.status == 200) {
-      //   this.$router.push("/travel_list");
-      // }
+      if (deleteres.status == 200) {
+        this.$router.push("/travel_list");
+      }
     }
 
     // }

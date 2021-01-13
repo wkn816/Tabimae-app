@@ -1,8 +1,8 @@
 <template>
   <v-card>
     <h1>詳細画面</h1>
-    <!-- {{ `あと${daylimit}日で出発` }}
-    {{ text }} -->
+    {{ `あと${daylimit}日で出発` }}
+    <!-- {{ text }}  -->
     {{ res_travel_show.data.name }}
     {{ res_travel_show.data.trains[0].departure_day }}
     {{ res_travel_show.data.trains[0].departure_place }}

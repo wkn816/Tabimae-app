@@ -59,11 +59,18 @@ export default {
 
   methods: {
     async deleteItem(res_travel_show) {
+      // debugger
       console.log(res_travel_show);
       const res = confirm("本当に削除しますか？");
+      let deleteres;
       if (res) {
-        await axios.delete(`/v1/travels/${params.id}`);
+        deleteres = await axios.delete(`/v1/travels/${res_travel_show.res_travel_show.data.id}`);
       }
+      // debugger
+      if (deleteres.status == 200){
+        this.$router.push("/travel_list");
+      }
+
   　　},
     // }
     // methods: {

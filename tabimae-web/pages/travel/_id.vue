@@ -61,8 +61,8 @@ export default {
         text = "ゆっくりでOK";
       } else if (daylimit > 2 && daylimit < 10) {
         text = "そろそろ";
-      // } else if (daylimit == 1) {
-      //   text = "寝坊しないように";
+      } else if (daylimit == 1) {
+        text = "寝坊しないように";
       // } else if (daylimit == 0) {
       //   text = "当日";
       // } else {

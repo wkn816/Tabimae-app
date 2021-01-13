@@ -63,8 +63,8 @@ export default {
         text = "そろそろ";
       } else if (daylimit == 1) {
         text = "寝坊しないように";
-      // } else if (daylimit == 0) {
-      //   text = "当日";
+      } else if (daylimit == 0) {
+        text = "当日";
       // } else {
       //   text = "おわた";
       // }

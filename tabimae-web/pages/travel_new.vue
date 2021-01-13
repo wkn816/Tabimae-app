@@ -231,20 +231,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active,
-.my-time-picker
-  >>> .vue__time-picker
-  .dropdown
-  ul
-  li:not([disabled]).active:focus,
-.my-time-picker
-  >>> .vue__time-picker
-  .dropdown
-  ul
-  li:not([disabled]).active:hover {
-  background: #999;
-}
+    .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:focus,
+    .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:hover {
+        background: #999;
+    }
+</style>
+
+<style>
 
 .time-font {
   color: #ffffff;

@@ -30,7 +30,6 @@
             ></vue-timepicker>
           </p>
           <p class="my-time-picker">
-            到着時間
             <vue-timepicker
               v-model="arrival_time"
               format="A:h:mm:"
@@ -39,6 +38,7 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              placeholder="到着時間"
               input-class="time-font"
               close-on-complete
             ></vue-timepicker>

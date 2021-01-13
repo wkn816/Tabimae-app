@@ -33,7 +33,7 @@ class V1::TravelsController < ApplicationController
   def destroy
     travel = Travel.find(params[:id])
     if travel.destroy
-        render json: travel
+        render json: travel,include: [:trains, :airs]
     end
   end
 

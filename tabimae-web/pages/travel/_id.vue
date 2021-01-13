@@ -51,9 +51,9 @@ export default {
         // `http://localhost:8080/travels/${params.id}`
         `/v1/travels/${params.id}`
       );
-      // const departure_day = moment(
-      //   res_travel_show.data.trains[0].departure_day
-      // );
+      const departure_day = moment(
+        res_travel_show.data.trains[0].departure_day
+      );
       // // debugger
       // const daylimit = departure_day.diff(moment(), "days"); // 91
       // let text;

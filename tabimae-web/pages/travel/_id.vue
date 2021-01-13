@@ -60,7 +60,7 @@ export default {
       if (daylimit > 10) {
         text = "ゆっくりでOK";
       } else if (daylimit > 2 && daylimit < 10) {
-      //   text = "そろそろ";
+        text = "そろそろ";
       // } else if (daylimit == 1) {
       //   text = "寝坊しないように";
       // } else if (daylimit == 0) {

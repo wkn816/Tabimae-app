@@ -65,9 +65,9 @@ export default {
         text = "寝坊しないように";
       } else if (daylimit == 0) {
         text = "当日";
-      // } else {
-      //   text = "おわた";
-      // }
+      } else {
+        text = "おわた";
+      }
       // console.log(res_travel_show);
       return {
         res_travel_show,

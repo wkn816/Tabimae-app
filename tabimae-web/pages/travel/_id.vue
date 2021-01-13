@@ -71,7 +71,7 @@ export default {
       // console.log(res_travel_show);
       return {
         res_travel_show,
-        // daylimit,
+        daylimit,
         // text
       };
     } catch (err) {

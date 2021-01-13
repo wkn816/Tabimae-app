@@ -7,7 +7,7 @@
     {{ res_travel_show.data.trains[0].arrival_place }}
     {{ res_travel_show.data.trains[0].departure_time }}
     {{ res_travel_show.data.trains[0].arrival_time }}
-    <v-icon small @click="deleteItem(travel)">削除</v-icon>
+    <v-icon small @click="deleteItem({res_travel_show})">削除</v-icon>
   </v-card>
 </template>
 
@@ -15,7 +15,7 @@
 import axios from "@/plugins/axios";
 
 export default {
-  props: ["travel"],
+  // props: ["travel"],
   data() {
     return {
       res_travel_show: {},
@@ -67,39 +67,32 @@ export default {
       return this.$store.state.auth.currentUser;
     }
   },
+  // methods: {
+  //   filteingUserName() {
+  //     // console.log(this.travelData);
+  //     // this.userName = this.travelData.data.map(function(value) {
+  //     //   console.log(value.username.user);
+  //     //   return value.username;
+  //     // });
+  //     // console.log(this.userName);
+  //   },
+  //   async deleteItem(travel) {
+  //     const user = this.$store.state.auth.currentUser;
+  //       console.log(user);
+  //     if(user){
+  //       const res_delete = this.$axios.$delete(`/v1/travels/${params.id}`);
+  //     }
+  //   }
+
+
   methods: {
-    filteingUserName() {
-      // console.log(this.travelData);
-      // this.userName = this.travelData.data.map(function(value) {
-      //   console.log(value.username.user);
-      //   return value.username;
-      // });
-      // console.log(this.userName);
-    },
-    async deleteItem(travel) {
-      const user = this.$store.state.auth.currentUser;
-        console.log(user);
-      if(user){
-        const res_delete = this.$axios.$delete(`/v1/travels/${params.id}`);
+    async deleteItem(res_travel_show) {
+      console.log(res_travel_show);
+      const res = confirm("本当に削除しますか？");
+      if (res) {
+        await axios.delete(`/v1/travels/${params.id}`);
       }
-    }
-
-
-    // methods: {
-    // async deleteItem(item) {
-    //   const res = confirm("本当に削除しますか？");
-    //   if (res) {
-    //     await axios.delete(`/v1/travels/${travel.id}`);
-    //     const travels = this.user.travels.filter((travel) => {
-    //       return travel.id !== travel.id;
-    //     });
-    //     const newUser = {
-    //       ...this.user,
-    //       todos,
-    //     };
-    //     this.$store.commit("auth/setUser", newUser);
-    //   }
-    // },
+  　　},
     // }
     // methods: {
     // async deleteItem(id) {

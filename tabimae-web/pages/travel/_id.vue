@@ -57,9 +57,9 @@ export default {
       // // debugger
       const daylimit = departure_day.diff(moment(), "days"); // 91
       let text;
-      // if (daylimit > 10) {
-      //   text = "ゆっくりでOK";
-      // } else if (daylimit > 2 && daylimit < 10) {
+      if (daylimit > 10) {
+        text = "ゆっくりでOK";
+      } else if (daylimit > 2 && daylimit < 10) {
       //   text = "そろそろ";
       // } else if (daylimit == 1) {
       //   text = "寝坊しないように";

@@ -24,6 +24,7 @@ import axios from "@/plugins/axios";
 import TravelNew from "@/pages/travel_new";
 
 export default {
+  props: ["travels"],
   // components: {
   //   TravelNew,
   // },
@@ -53,6 +54,7 @@ export default {
       console.log(this.travelData);
     }
   },
+
 
   // created() {
   //   this.userName = this.travelData.data.filter(function(value) {

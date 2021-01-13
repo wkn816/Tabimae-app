@@ -9,9 +9,16 @@ class V1::TravelsController < ApplicationController
     id = JSON.parse!(params[:user], symbolize_names: true)[:id]
     # binding.pry
     user = User.find(id)
-    @travels = user.travels
+    # @travels = user.travels.where('departure_day > ?', Date.today)
+    @travels = user.travels.select do |travel|
+      travel.trains[0].departure_day > Date.today
+    end
     render json: @travels,include: [:trains, :airs]
     # end
+  end
+
+  def sabdelete
+    
   end
 
   def show

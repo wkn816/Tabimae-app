@@ -9,6 +9,7 @@
     {{res_travel_show.data.trains[0].arrival_place}}
     {{res_travel_show.data.trains[0].departure_time}}
     {{res_travel_show.data.trains[0].arrival_time}}
+    
     <v-icon small @click="deleteItem(item)">削除</v-icon>
 
   </v-card>

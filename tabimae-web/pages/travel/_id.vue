@@ -57,34 +57,6 @@ export default {
     }
   },
 
-  // created() {
-  //   this.userName = this.travelData.data.filter(function(value) {
-  //     console.log(value);
-  //   });
-  // },
-  computed: {
-    user() {
-      return this.$store.state.auth.currentUser;
-    }
-  },
-  // methods: {
-  //   filteingUserName() {
-  //     // console.log(this.travelData);
-  //     // this.userName = this.travelData.data.map(function(value) {
-  //     //   console.log(value.username.user);
-  //     //   return value.username;
-  //     // });
-  //     // console.log(this.userName);
-  //   },
-  //   async deleteItem(travel) {
-  //     const user = this.$store.state.auth.currentUser;
-  //       console.log(user);
-  //     if(user){
-  //       const res_delete = this.$axios.$delete(`/v1/travels/${params.id}`);
-  //     }
-  //   }
-
-
   methods: {
     async deleteItem(res_travel_show) {
       console.log(res_travel_show);

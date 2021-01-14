@@ -16,7 +16,7 @@
       <button @click="show">忘れ物リスト</button>
 
       <modal name="modal-content">
-        <p style="color:black">モーダルウィンドウで表示されるコンテンツ</p>
+        <h2 style="color:black">忘れ物リスト</h2>
         <button @click="hide">
           <p style="color:black">閉じる</p>
         </button>

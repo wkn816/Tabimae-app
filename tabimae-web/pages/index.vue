@@ -24,7 +24,7 @@ export default {
     async guestLogin() {
         firebase
           .auth()
-          .signInWithEmailAndPassword("testtest777@gmail.com", process.env.GUESTPW)
+          .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
           .catch(error => {
             console.log(error);
             this.error = (code => {

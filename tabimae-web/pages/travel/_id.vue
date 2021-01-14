@@ -10,12 +10,25 @@
     {{ res_travel_show.data.trains[0].departure_time }}
     {{ res_travel_show.data.trains[0].arrival_time }}
     <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div>
+    <button @click="show">クリックする</button>
+
+    <modal name="modal-content" width="80%" height="auto" :scrollable="true" :draggable="true">
+      <p>モーダルウィンドウで表示されるコンテンツ</p>
+    </modal>
+</div>
   </v-card>
 </template>
 
 <script>
 import axios from "@/plugins/axios";
 import moment from "moment";
+import Vue from 'vue'
+import VModal from 'vue-js-modal'
+
+Vue.use(VModal)
 
 export default {
   // props: ["travel"],
@@ -95,6 +108,12 @@ export default {
       if (deleteres.status == 200) {
         this.$router.push("/travel_list");
       }
+    },
+    show() {
+      this.$modal.show("modal-content");
+    },
+    hide() {
+      this.$modal.hide("modal-content");
     }
 
     // }
@@ -120,7 +139,8 @@ export default {
 };
 </script>
 
-<style
-
+<style>
 
 </style>
+
+

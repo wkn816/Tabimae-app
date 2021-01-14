@@ -13,7 +13,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <div>
-      <button @click="show">クリックする</button>
+      <button @click="show">忘れ物リスト</button>
 
       <modal name="modal-content">
         <p style="color:black">モーダルウィンドウで表示されるコンテンツ</p>

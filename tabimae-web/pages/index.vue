@@ -1,7 +1,7 @@
 <template>
   <v-hover v-slot:default="{ hover }">
     <v-btn class="guest-btn" @click="guestLogin">
-      <v-icon v-text="hover ? 'mdi-heart' : ''"></v-icon>ゲストログイン
+      <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
     </v-btn>
   </v-hover>
 </template>

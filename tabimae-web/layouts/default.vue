@@ -38,6 +38,11 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-hover v-slot:default="{ hover }">
+    <v-btn class="guest-btn" @click="guestLogin">
+      <v-icon v-text="hover ? 'mdi-heart' : ''"></v-icon>サッソク試してみる
+    </v-btn>
+  </v-hover>
       <v-btn @click="logOut">ログアウト</v-btn>
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>

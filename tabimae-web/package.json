@@ -17,6 +17,7 @@
     "dateformat": "^4.4.1",
     "firebase": "^8.1.2",
     "nuxt": "^2.14.6",
+    "vue-js-modal": "^2.0.0-rc.6",
     "vue2-timepicker": "^1.1.5",
     "vuedraggable": "^2.24.3",
     "vuetify": "^2.4.0"

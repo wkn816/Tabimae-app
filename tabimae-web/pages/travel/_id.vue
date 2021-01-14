@@ -12,15 +12,12 @@
     <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<div>
-    <button @click="show">クリックする</button>
-
-    <modal name="modal-content" width="80%" height="auto" :scrollable="true" :draggable="true">
-      <p>モーダルウィンドウで表示されるコンテンツ</p>
-    </modal>
-</div>
+<modal name="hello-world">
+  {hello, world!}
+</modal>
   </v-card>
 </template>
+
 
 <script>
 import axios from "@/plugins/axios";
@@ -35,7 +32,9 @@ export default {
   data() {
     return {
       res_travel_show: {},
-      res_delete: {}
+      res_delete: {},
+      test: {}
+
     };
   },
   // console.log(array1[0]);
@@ -109,8 +108,10 @@ export default {
         this.$router.push("/travel_list");
       }
     },
+
     show() {
       this.$modal.show("modal-content");
+      {test =aaa}
     },
     hide() {
       this.$modal.hide("modal-content");

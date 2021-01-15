@@ -122,13 +122,6 @@
 </script>
 
 <style>
-  .ttt {
-    color: black;
-    background-color: blue;
-  }
-
-  .test {
-    color: blue;
-  }
+  
 
 </style>

@@ -16,16 +16,9 @@
       <button @click="show">忘れ物リスト</button>
 
       <modal name="modal-content">
-        <h2fix- style="color:black">忘れ物リスト</h2fix->
-        <v-container
-    class="ttt"
-    fluid
-  >
-        <v-checkbox
-            class="ttt"
-            v-model="checkbox"
-            :label="`Checkbox 1: ${"aaaaa"}`"
-        ></v-checkbox>
+        <h2fix- class="ttt">忘れ物リスト</h2fix->
+        <v-container fluid>
+          <v-checkbox style="color:black" v-model="checkbox" :label="`Checkbox 1: ${checkbox.toString()}`"></v-checkbox>
         </v-container>
 
 
@@ -165,7 +158,9 @@
 </script>
 
 <style>
-.ttt{
-  color: black;
-}
+  .ttt {
+    color: black;
+    background-color: blue;
+  }
+
 </style>

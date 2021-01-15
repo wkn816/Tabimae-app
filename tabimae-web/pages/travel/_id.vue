@@ -19,8 +19,8 @@
       </button>
       <Modal v-if="modalFlag">
         <ul>
-        <li v-for="user in users" :key="user">
-          <v-checkbox v-model="selected" :label="user" :value="user"></v-checkbox>
+        <li v-for="item in items" :key="item">
+          <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
         </li>
         </ul>
         <button @click="closeModal">閉じる</button>
@@ -49,7 +49,7 @@
         checkbox: true,
         modalFlag: false,
         showMessage: true,
-        users: ["Taro", "Hanako", "Daisuke", "Aki"],
+        items: ["Taro", "Hanako", "Daisuke", "Aki"],
 
       };
     },
@@ -124,6 +124,7 @@
 </script>
 
 <style>
-
-
+ul {
+  list-style: none;
+}
 </style>

@@ -103,6 +103,9 @@ Vue.use(VModal)
       }
       // const daylimit =
     },
+    components: {
+    Modal
+  },
     methods: {
       async deleteItem(res_travel_show) {
         // debugger

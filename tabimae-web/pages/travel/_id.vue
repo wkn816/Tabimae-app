@@ -13,10 +13,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <div>
-      <button @click="show">クリックする</button>
+      <button @click="show">忘れ物リスト</button>
 
       <modal name="modal-content">
-        <p style="color:black">モーダルウィンドウで表示されるコンテンツ</p>
+        <h2fix- class="ttt">忘れ物リスト</h2fix->
+        <v-container fluid>
+          <v-checkbox style="color:black" v-model="checkbox" :label="`Checkbox 1: ${checkbox.toString()}`"></v-checkbox>
+        </v-container>
+
+
         <button @click="hide">
           <p style="color:black">閉じる</p>
         </button>
@@ -41,7 +46,9 @@
       return {
         res_travel_show: {},
         res_delete: {},
-        test: {}
+        test: {},
+        checkbox: true,
+
 
       };
     },
@@ -151,5 +158,9 @@
 </script>
 
 <style>
+  .ttt {
+    color: black;
+    background-color: blue;
+  }
 
 </style>

@@ -17,6 +17,18 @@
 
       <modal name="modal-content">
         <h2fix- style="color:black">忘れ物リスト</h2fix->
+        <v-container
+    class="ttt"
+    fluid
+  >
+        <v-checkbox
+            class="ttt"
+            v-model="checkbox"
+            :label="`Checkbox 1: ${"aaaaa"}`"
+        ></v-checkbox>
+        </v-container>
+
+
         <button @click="hide">
           <p style="color:black">閉じる</p>
         </button>
@@ -41,7 +53,9 @@
       return {
         res_travel_show: {},
         res_delete: {},
-        test: {}
+        test: {},
+        checkbox: true,
+
 
       };
     },
@@ -151,5 +165,7 @@
 </script>
 
 <style>
-
+.ttt{
+  color: black;
+}
 </style>

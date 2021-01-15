@@ -13,25 +13,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-      <button @click="show">忘れ物リスト</button>
-
-      <modal name="modal-content">
-        <h2 style="color:black">忘れ物リスト</h2>
-        <v-container fluid class="ttt">
-          <v-checkbox
-            v-model="checkbox"
-            :label="`Checkbox 1: ${checkbox.toString()}`"
-          ></v-checkbox>
-          <v-checkbox
-            v-model="checkbox"
-            :label="`Checkbox 1: ${checkbox.toString()}`"
-          ></v-checkbox>
-        </v-container>
-
-        <button @click="hide">
-          <p style="color:black">閉じる</p>
-        </button>
-      </modal>
+      
   </v-card>
 
 </template>
@@ -129,7 +111,7 @@ Vue.use(VModal)
       hide() {
         this.$modal.hide("modal-content");
       }
-      
+
     }
   };
 </script>

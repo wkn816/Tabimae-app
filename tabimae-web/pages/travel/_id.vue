@@ -16,7 +16,7 @@
       <button @click="show">忘れ物リスト</button>
 
       <modal name="modal-content">
-        <h2fix- class="ttt">忘れ物リスト</h2fix->
+        <h2 style="color:black">忘れ物リスト</h2>
         <v-container fluid>
           <v-checkbox style="color:black" v-model="checkbox" :label="`Checkbox 1: ${checkbox.toString()}`"></v-checkbox>
         </v-container>

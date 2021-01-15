@@ -49,7 +49,7 @@
         checkbox: true,
         modalFlag: false,
         showMessage: true,
-        items: ["Taro", "Hanako", "Daisuke", "Aki"],
+        items: ["運転免許証", "保険証", "クレジットカード","切符類", "モバイルバッテリー","マスク","アルコール消毒液","常備薬"],
 
       };
     },

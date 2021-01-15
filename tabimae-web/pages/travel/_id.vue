@@ -13,7 +13,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-      
+      <div >
+    <button class="help_link__button" @click="openModal">
+      モーダルを開く
+    </button>
+    <Modal v-if="modalFlag">
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <button @click="closeModal">閉じる</button>
+    </Modal>
+  </div>
   </v-card>
 
 </template>

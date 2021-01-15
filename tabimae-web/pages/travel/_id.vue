@@ -109,12 +109,6 @@
           this.$router.push("/travel_list");
         }
       },
-      show() {
-        this.$modal.show("modal-content");
-      },
-      hide() {
-        this.$modal.hide("modal-content");
-      },
       openModal() {
         this.modalFlag = true
       },

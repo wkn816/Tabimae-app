@@ -15,7 +15,7 @@
 
     <div>
       <button class="help_link__button" @click="openModal">
-        モーダルを開く
+        忘れ物リスト
       </button>
       <Modal v-if="modalFlag">
         <div>モーダルの内容</div>

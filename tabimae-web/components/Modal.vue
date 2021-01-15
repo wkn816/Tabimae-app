@@ -15,6 +15,7 @@
   &__overlay {
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
     position: fixed;
     z-index: 100;
@@ -34,7 +35,7 @@
 
   &__content {
     height: 100%;
-    padding: 30px;
+    padding: 200px;
   }
 }
 

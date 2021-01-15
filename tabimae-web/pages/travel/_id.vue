@@ -141,25 +141,7 @@
       this.modalFlag = false
     }
 
-      // }
-      // methods: {
-      // async deleteItem(id) {
-      //   console.log(IDBCursor);
-      //   const res_delete = await this.$axios.$delete(`/v1/travels/${params.id}`);
-      // }
-      // }
-      // computed: {
-      // returnUserName() {
-      //   if (this.travelData !== undefined){ return }
-      //   console.log(this.travelData.data);
-      //   const userName = this.travelData.data.filter(function(value) {
-      //     console.log(value);
-      //   });
-      //   // return "アイウエオ";
-      // }
-      // user() {
-      //   return this.$store.state.auth.currentUser;
-      // }
+      
     },
     components: {
     Modal

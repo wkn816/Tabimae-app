@@ -47,6 +47,8 @@ Vue.use(VModal)
         res_delete: {},
         test: {},
         checkbox: true,
+        modalFlag: false
+
       };
     },
     // console.log(array1[0]);

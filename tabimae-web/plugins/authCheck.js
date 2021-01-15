@@ -6,7 +6,6 @@ const authCheck = ({
     redirect
 }) => {
     firebase.auth().onAuthStateChanged(async user => {
-        // debugger
     if (user) {
     const {
         data

@@ -16,7 +16,6 @@
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
           <p class="my-time-picker">
-            出発時間
             <vue-timepicker
               v-model="departure_time"
               format="A:h:mm:"
@@ -25,12 +24,12 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              placeholder="出発時間"
               input-class="time-font"
               close-on-complete
             ></vue-timepicker>
           </p>
           <p class="my-time-picker">
-            到着時間
             <vue-timepicker
               v-model="arrival_time"
               format="A:h:mm:"
@@ -39,6 +38,7 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              placeholder="到着時間"
               input-class="time-font"
               close-on-complete
             ></vue-timepicker>
@@ -67,7 +67,6 @@
           <v-text-field v-model="departure_place" :counter="10" label="出発地" required></v-text-field>
           <v-text-field v-model="arrival_place" :counter="10" label="到着地" required></v-text-field>
           <p class="my-time-picker">
-            出発時間
             <vue-timepicker
               v-model="departure_time"
               format="A:h:mm:"
@@ -76,12 +75,12 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              placeholder="出発時間"
               input-class="time-font"
               close-on-complete
             ></vue-timepicker>
           </p>
           <p class="my-time-picker">
-            到着時間
             <vue-timepicker
               v-model="arrival_time"
               format="A:h:mm:"
@@ -90,6 +89,7 @@
               apm-label="区分"
               am-text="午前"
               pm-text="午後"
+              placeholder="到着時間"
               input-class="time-font"
               close-on-complete
             ></vue-timepicker>
@@ -231,20 +231,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active,
-.my-time-picker
-  >>> .vue__time-picker
-  .dropdown
-  ul
-  li:not([disabled]).active:focus,
-.my-time-picker
-  >>> .vue__time-picker
-  .dropdown
-  ul
-  li:not([disabled]).active:hover {
-  background: #999;
-}
+    .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:focus,
+    .my-time-picker >>> .vue__time-picker .dropdown ul li:not([disabled]).active:hover {
+        background: #999;
+    }
+</style>
+
+<style>
 
 .time-font {
   color: #ffffff;

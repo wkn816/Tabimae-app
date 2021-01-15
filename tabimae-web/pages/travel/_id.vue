@@ -12,33 +12,36 @@
     <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <div>
+
       <button @click="show">忘れ物リスト</button>
 
       <modal name="modal-content">
         <h2 style="color:black">忘れ物リスト</h2>
-        <v-container fluid>
-          <v-checkbox style="color:black" v-model="checkbox" :label="`Checkbox 1: ${checkbox.toString()}`"></v-checkbox>
+        <v-container fluid class="ttt">
+          <v-checkbox
+            v-model="checkbox"
+            :label="`Checkbox 1: ${checkbox.toString()}`"
+          ></v-checkbox>
+          <v-checkbox
+            v-model="checkbox"
+            :label="`Checkbox 1: ${checkbox.toString()}`"
+          ></v-checkbox>
         </v-container>
-
 
         <button @click="hide">
           <p style="color:black">閉じる</p>
         </button>
-
       </modal>
-    </div>
   </v-card>
+
 </template>
 
-
 <script>
-  import axios from "@/plugins/axios";
-  import moment from "moment";
-  import Vue from 'vue'
-  import VModal from 'vue-js-modal'
-
-  Vue.use(VModal)
+import axios from "@/plugins/axios";
+import moment from "moment";
+import Vue from 'vue'
+import VModal from 'vue-js-modal'
+Vue.use(VModal)
 
   export default {
     // props: ["travel"],
@@ -48,12 +51,9 @@
         res_delete: {},
         test: {},
         checkbox: true,
-
-
       };
     },
     // console.log(array1[0]);
-
     // async asyncData({ params }) {
     //   // console.log(this.$store.state.auth.currentUser.id);
     //   // const user = this.$store.state.auth.currentUser;
@@ -65,7 +65,6 @@
     //       `${process.env.BASE_URL}/travels/${params.id}`
     //     );
     //     console.log(this.travelData);
-
     //     //filterで作り直された配列がtravelNameに入る
     //     console.log(this.travelData);
     //   }
@@ -108,7 +107,6 @@
       }
       // const daylimit =
     },
-
     methods: {
       async deleteItem(res_travel_show) {
         // debugger
@@ -125,14 +123,12 @@
           this.$router.push("/travel_list");
         }
       },
-
       show() {
         this.$modal.show("modal-content");
       },
       hide() {
         this.$modal.hide("modal-content");
       }
-
       // }
       // methods: {
       // async deleteItem(id) {
@@ -154,7 +150,6 @@
       // }
     }
   };
-
 </script>
 
 <style>
@@ -162,5 +157,7 @@
     color: black;
     background-color: blue;
   }
-
+  .test{
+    color: blue;
+  }
 </style>

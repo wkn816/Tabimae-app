@@ -18,11 +18,18 @@
         忘れ物リスト
       </button>
       <Modal v-if="modalFlag">
+        <v-checkbox v-model="showMessage" :label="`showMessage is ${showMessage}`" color="success">
+        </v-checkbox>
         <div>モーダルの内容</div>
         <div>モーダルの内容</div>
         <div>モーダルの内容</div>
         <div>モーダルの内容</div>
         <div>モーダルの内容</div>
+        <ul>
+        <li v-for="user in users" :key="user">
+          <v-checkbox v-model="selected" :label="user" :value="user"></v-checkbox>
+        </li>
+        </ul>
         <button @click="closeModal">閉じる</button>
       </Modal>
     </div>
@@ -47,7 +54,9 @@
         res_delete: {},
         test: {},
         checkbox: true,
-        modalFlag: false
+        modalFlag: false,
+        showMessage: true,
+        users: ["Taro", "Hanako", "Daisuke", "Aki"],
 
       };
     },
@@ -122,6 +131,6 @@
 </script>
 
 <style>
-  
+
 
 </style>

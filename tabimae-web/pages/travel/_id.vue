@@ -129,7 +129,13 @@ Vue.use(VModal)
       },
       hide() {
         this.$modal.hide("modal-content");
-      }
+      },
+      openModal() {
+      this.modalFlag = true
+    },
+    closeModal() {
+      this.modalFlag = false
+    }
 
     }
   };

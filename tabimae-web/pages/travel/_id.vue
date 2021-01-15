@@ -51,22 +51,7 @@ Vue.use(VModal)
 
       };
     },
-    // console.log(array1[0]);
-    // async asyncData({ params }) {
-    //   // console.log(this.$store.state.auth.currentUser.id);
-    //   // const user = this.$store.state.auth.currentUser;
-    //   // debugger
-    //   if (user) {
-    //     //this.travelData = await axios.get("/v1/travels/${ travel.id }");
-    //     // console.log(travel.id);
-    //     this.travelData = await axios.get(
-    //       `${process.env.BASE_URL}/travels/${params.id}`
-    //     );
-    //     console.log(this.travelData);
-    //     //filterで作り直された配列がtravelNameに入る
-    //     console.log(this.travelData);
-    //   }
-    // },
+    
     async asyncData({
       params
     }) {

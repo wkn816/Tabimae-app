@@ -13,31 +13,31 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-      <div >
-    <button class="help_link__button" @click="openModal">
-      モーダルを開く
-    </button>
-    <Modal v-if="modalFlag">
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <button @click="closeModal">閉じる</button>
-    </Modal>
-  </div>
+    <div>
+      <button class="help_link__button" @click="openModal">
+        モーダルを開く
+      </button>
+      <Modal v-if="modalFlag">
+        <div>モーダルの内容</div>
+        <div>モーダルの内容</div>
+        <div>モーダルの内容</div>
+        <div>モーダルの内容</div>
+        <div>モーダルの内容</div>
+        <button @click="closeModal">閉じる</button>
+      </Modal>
+    </div>
   </v-card>
 
 </template>
 
 <script>
-import axios from "@/plugins/axios";
-import moment from "moment";
-import Vue from 'vue'
-import VModal from 'vue-js-modal'
-import Modal from '~/components/Modal.vue'
+  import axios from "@/plugins/axios";
+  import moment from "moment";
+  import Vue from 'vue'
+  import VModal from 'vue-js-modal'
+  import Modal from '~/components/Modal.vue'
 
-Vue.use(VModal)
+  Vue.use(VModal)
 
   export default {
     // props: ["travel"],
@@ -51,7 +51,7 @@ Vue.use(VModal)
 
       };
     },
-    
+
     async asyncData({
       params
     }) {
@@ -91,8 +91,8 @@ Vue.use(VModal)
       // const daylimit =
     },
     components: {
-    Modal
-  },
+      Modal
+    },
     methods: {
       async deleteItem(res_travel_show) {
         // debugger
@@ -116,14 +116,15 @@ Vue.use(VModal)
         this.$modal.hide("modal-content");
       },
       openModal() {
-      this.modalFlag = true
-    },
-    closeModal() {
-      this.modalFlag = false
-    }
+        this.modalFlag = true
+      },
+      closeModal() {
+        this.modalFlag = false
+      }
 
     }
   };
+
 </script>
 
 <style>
@@ -131,7 +132,9 @@ Vue.use(VModal)
     color: black;
     background-color: blue;
   }
-  .test{
+
+  .test {
     color: blue;
   }
+
 </style>

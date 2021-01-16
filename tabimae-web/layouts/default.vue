@@ -38,7 +38,7 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      
+
       <v-btn @click="logOut">ログアウト</v-btn>
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
@@ -46,7 +46,9 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <nuxt />
+      <template v-if="this.$store.state.auth.currentUser">
+      <nuxt />
+    </template>
       </v-container>
     </v-main>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -64,9 +66,7 @@
     <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
-    <template v-if="this.$store.state.auth.currentUser">
-      <nuxt />
-    </template>
+
   </v-app>
 </template>
 

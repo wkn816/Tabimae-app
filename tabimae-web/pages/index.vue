@@ -14,7 +14,7 @@ import firebase from "@/plugins/firebase";
 export default {
   components: {
     NewTravel,
-    TravelList
+    TravelList,
   },
   data() {
     return {

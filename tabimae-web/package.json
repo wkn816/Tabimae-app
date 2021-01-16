@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
@@ -25,12 +28,7 @@
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/vuetify": "^1.11.2",
-    "babel-jest": "^26.6.3",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "node-sass": "^5.0.0",
-    "regenerator-runtime": "^0.13.7",
-    "sass-loader": "^10.1.0",
-    "ts-jest": "^26.4.4",
-    "vue-jest": "^3.0.7"
+    "sass-loader": "^10.1.0"
   }
 }

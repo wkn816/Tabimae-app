@@ -1,22 +1,8 @@
 module.exports = {
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
-    '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js'
-  },
-  moduleFileExtensions: [
-    'js',
-    'vue',
-    'json'
-  ],
   transform: {
-    '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest'
+      '^.+\\.js$'  : '<rootDir>/node_modules/babel-jest',
+      '.*\\.(ts)$' : '<rootDir>/node_modules/ts-jest',    // TypeScriptファイルをテストする場合
+      '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'    // Vueファイルをテストする場合
   },
-  collectCoverage: true,
-  collectCoverageFrom: [
-    '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue'
-  ],
-  setupFiles: ['./spec/setup.js']
+  moduleFileExtensions: ['js', 'ts', 'vue'] // テスト対象の拡張子を列挙する
 }

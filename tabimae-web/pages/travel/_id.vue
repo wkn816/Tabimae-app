@@ -12,22 +12,21 @@
     <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <div>
-      <button @click="show">忘れ物リスト</button>
 
-      <modal name="modal-content">
-        <h2fix- class="ttt">忘れ物リスト</h2fix->
-        <v-container fluid>
-          <v-checkbox style="color:black" v-model="checkbox" :label="`Checkbox 1: ${checkbox.toString()}`"></v-checkbox>
-        </v-container>
+    <div >
+    <button class="help_link__button" @click="openModal">
+      モーダルを開く
+    </button>
+    <Modal v-if="modalFlag">
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <button @click="closeModal">閉じる</button>
+    </Modal>
+  </div>
 
-
-        <button @click="hide">
-          <p style="color:black">閉じる</p>
-        </button>
-
-      </modal>
-    </div>
   </v-card>
 </template>
 
@@ -37,6 +36,8 @@
   import moment from "moment";
   import Vue from 'vue'
   import VModal from 'vue-js-modal'
+  import Modal from '~/components/Modal.vue'
+
 
   Vue.use(VModal)
 
@@ -48,6 +49,7 @@
         res_delete: {},
         test: {},
         checkbox: true,
+      modalFlag: false
 
 
       };
@@ -131,28 +133,19 @@
       },
       hide() {
         this.$modal.hide("modal-content");
-      }
-
-      // }
-      // methods: {
-      // async deleteItem(id) {
-      //   console.log(IDBCursor);
-      //   const res_delete = await this.$axios.$delete(`/v1/travels/${params.id}`);
-      // }
-      // }
-      // computed: {
-      // returnUserName() {
-      //   if (this.travelData !== undefined){ return }
-      //   console.log(this.travelData.data);
-      //   const userName = this.travelData.data.filter(function(value) {
-      //     console.log(value);
-      //   });
-      //   // return "アイウエオ";
-      // }
-      // user() {
-      //   return this.$store.state.auth.currentUser;
-      // }
+      },
+      openModal() {
+      this.modalFlag = true
+    },
+    closeModal() {
+      this.modalFlag = false
     }
+
+      
+    },
+    components: {
+    Modal
+  },
   };
 
 </script>

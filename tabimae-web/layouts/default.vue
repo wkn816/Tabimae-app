@@ -34,7 +34,7 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <template v-if="this.$store.state.auth.currentUser">
+        <template>
           <nuxt />
         </template>
       </v-container>

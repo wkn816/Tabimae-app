@@ -136,13 +136,10 @@
     },
     closeModal() {
       this.modalFlag = false
-      closeModal() {
-        this.modalFlag = false
-      }
 
     }
 
-      
+
     },
     components: {
     Modal

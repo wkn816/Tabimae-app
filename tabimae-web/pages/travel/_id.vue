@@ -25,9 +25,6 @@
         </ul>
         <button @click="closeModal">閉じる</button>
       </Modal>
-
-    <main-bus />
-
     </div>
   </v-card>
 
@@ -39,7 +36,6 @@
   import Vue from 'vue'
   import VModal from 'vue-js-modal'
   import Modal from '~/components/Modal.vue'
-  import MainBus from '~/components/MainBus.vue'
 
 
   Vue.use(VModal)
@@ -97,7 +93,6 @@
     },
     components: {
       Modal,
-      MainBus
     },
     methods: {
       async deleteItem(res_travel_show) {

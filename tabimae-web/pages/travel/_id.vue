@@ -27,9 +27,22 @@
     </Modal>
   </div>
 
+    <div>
+      <button class="help_link__button" @click="openModal">
+        忘れ物リスト
+      </button>
+      <Modal v-if="modalFlag">
+        <ul>
+        <li v-for="item in items" :key="item">
+          <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
+        </li>
+        </ul>
+        <button @click="closeModal">閉じる</button>
+      </Modal>
+    </div>
   </v-card>
-</template>
 
+</template>
 
 <script>
   import axios from "@/plugins/axios";
@@ -37,7 +50,6 @@
   import Vue from 'vue'
   import VModal from 'vue-js-modal'
   import Modal from '~/components/Modal.vue'
-
 
   Vue.use(VModal)
 
@@ -49,29 +61,13 @@
         res_delete: {},
         test: {},
         checkbox: true,
-      modalFlag: false
-
+      modalFlag: false,
+        modalFlag: false,
+        items: ["運転免許証", "保険証", "クレジットカード","切符類", "モバイルバッテリー","マスク","アルコール消毒液","常備薬"],
 
       };
     },
-    // console.log(array1[0]);
 
-    // async asyncData({ params }) {
-    //   // console.log(this.$store.state.auth.currentUser.id);
-    //   // const user = this.$store.state.auth.currentUser;
-    //   // debugger
-    //   if (user) {
-    //     //this.travelData = await axios.get("/v1/travels/${ travel.id }");
-    //     // console.log(travel.id);
-    //     this.travelData = await axios.get(
-    //       `${process.env.BASE_URL}/travels/${params.id}`
-    //     );
-    //     console.log(this.travelData);
-
-    //     //filterで作り直された配列がtravelNameに入る
-    //     console.log(this.travelData);
-    //   }
-    // },
     async asyncData({
       params
     }) {
@@ -110,7 +106,9 @@
       }
       // const daylimit =
     },
-
+    components: {
+      Modal
+    },
     methods: {
       async deleteItem(res_travel_show) {
         // debugger
@@ -127,9 +125,8 @@
           this.$router.push("/travel_list");
         }
       },
-
-      show() {
-        this.$modal.show("modal-content");
+      openModal() {
+        this.modalFlag = true
       },
       hide() {
         this.$modal.hide("modal-content");
@@ -139,6 +136,10 @@
     },
     closeModal() {
       this.modalFlag = false
+      closeModal() {
+        this.modalFlag = false
+      }
+
     }
 
       
@@ -151,9 +152,7 @@
 </script>
 
 <style>
-  .ttt {
-    color: black;
-    background-color: blue;
-  }
-
+ul {
+  list-style: none;
+}
 </style>

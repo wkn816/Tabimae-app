@@ -35,7 +35,7 @@ export default {
     // "@/plugins/vuetify",
     "@/plugins/authCheck",
     // '@/plugins/dateformat'
-
+    
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)

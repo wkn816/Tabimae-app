@@ -37,6 +37,7 @@
   import VModal from 'vue-js-modal'
   import Modal from '~/components/Modal.vue'
 
+
   Vue.use(VModal)
 
   export default {
@@ -48,7 +49,7 @@
         test: {},
         modalFlag: false,
         items: ["運転免許証", "保険証", "クレジットカード","切符類", "モバイルバッテリー","マスク","アルコール消毒液","常備薬"],
-
+        main: "main",
       };
     },
 
@@ -91,7 +92,7 @@
       // const daylimit =
     },
     components: {
-      Modal
+      Modal,
     },
     methods: {
       async deleteItem(res_travel_show) {

@@ -10,6 +10,7 @@
       <v-row>
         <Train />
         <Air />
+        <TravelEtiquette />
       </v-row>
     </v-container>
   </div>
@@ -24,6 +25,7 @@
   import Home from '~/components/Home.vue'; // 今回追加
   import Train from '~/components/Train.vue';
   import Air from '~/components/Air.vue';
+  import TravelEtiquette from '~/components/TravelEtiquette.vue';
 
 
 

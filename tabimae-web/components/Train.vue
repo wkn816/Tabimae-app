@@ -1,12 +1,10 @@
 <template>
   <div>
-    <v-container class="train-info">
-      <v-row>
-        <v-col cols="4" sm="10" md="10" lg="10">
+
+        <v-col sm="10" md="10" lg="10">
       <img :src="image_src" @click="openModal" class="train-img">
         </v-col>
-      </v-row>
-    </v-container>
+
       <Modal v-if="modalFlag">
         <ul>
           <li v-for="item in items" :key="item">
@@ -58,7 +56,7 @@
   }
 
   .train-img {
-    width: 240px;
+    width: 320px;
   }
   // .main-introduction {
   //     margin: 2em 0;

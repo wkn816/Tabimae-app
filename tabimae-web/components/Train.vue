@@ -1,10 +1,5 @@
 <template>
 <div>
-  <h1>aaaaa</h1>
-
-<v-btn class="help_link__button" @click="openModal">
-        列車で行く場合の注意点
-      </v-btn>
       <img :src="image_src" @click="openModal">
       <Modal v-if="modalFlag">
         <ul>
@@ -29,7 +24,7 @@ export default {
   data(){
     return{
     modalFlag: false,
-    image_src: require("../assets/img/pf.jpeg") // ←
+    image_src: require("../assets/img/train_info.JPG") // ←
 
     }
   },
@@ -49,20 +44,6 @@ components: {
 }
 </script>
 <style  lang="scss" scoped>
-.home-hero__content {
-  // background: url("../assets/img/pf.jpeg");
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100vh;
-
-  &-text {
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-  }
-}
 
 h1{
   color: black;

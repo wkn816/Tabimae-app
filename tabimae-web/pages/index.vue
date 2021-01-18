@@ -1,13 +1,17 @@
 <template>
-<div class="test">
+  <div class="test">
     <v-hover v-slot:default="{ hover }">
       <v-btn class="guest-btn" @click="guestLogin">
         <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
       </v-btn>
     </v-hover>
-    <Home/>
-    <Train/>
-    <Air/>
+    <Home />
+    <v-container class="train-info">
+      <v-row>
+        <Train />
+        <Air />
+      </v-row>
+    </v-container>
   </div>
 
 </template>
@@ -81,20 +85,21 @@
 
 </script>
 
-<style  lang="scss" scoped>
-.test {
-  background: url("../assets/img/ppf.jpg");
-  background-size: cover;
-  background-position: center center;
-  object-fit: cover;
-  width: 100%;
-  height: 100vh;
+<style lang="scss" scoped>
+  .test {
+    background: url("../assets/img/ppf.jpg");
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
 
-  &-text {
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
+    &-text {
+      color: white;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
   }
-}
+
 </style>

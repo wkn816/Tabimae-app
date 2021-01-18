@@ -1,12 +1,12 @@
 <template>
 <div class="test">
-    <Home/>
     <v-hover v-slot:default="{ hover }">
       <v-btn class="guest-btn" @click="guestLogin">
         <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
       </v-btn>
     </v-hover>
-
+    <Home/>
+    <Train/>
   </div>
 
 </template>
@@ -16,7 +16,8 @@
   import TravelList from "@/components/TravelList";
   import axios from "@/plugins/axios";
   import firebase from "@/plugins/firebase";
-  import Home from '~/components/Home.vue' // 今回追加
+  import Home from '~/components/Home.vue'; // 今回追加
+  import Train from '~/components/Train.vue';
 
 
 
@@ -33,7 +34,6 @@
       };
 
     },
-
     methods: {
       async guestLogin() {
         firebase
@@ -54,6 +54,12 @@
           });
         this.$router.push("/travel_list");
       },
+      openModal() {
+        this.modalFlag = true
+      },
+      closeModal() {
+        this.modalFlag = false
+      }
       // .catch(error => {
       //   console.log(error);
       //   this.error = (code => {
@@ -78,6 +84,7 @@
   background: url("../assets/img/ppf.jpg");
   background-size: cover;
   background-position: center center;
+  object-fit: cover;
   width: 100%;
   height: 100vh;
 

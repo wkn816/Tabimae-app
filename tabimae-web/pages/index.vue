@@ -7,6 +7,7 @@
     </v-hover>
     <Home/>
     <Train/>
+    <Air/>
   </div>
 
 </template>
@@ -18,6 +19,7 @@
   import firebase from "@/plugins/firebase";
   import Home from '~/components/Home.vue'; // 今回追加
   import Train from '~/components/Train.vue';
+  import Air from '~/components/Air.vue';
 
 
 

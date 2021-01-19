@@ -29,11 +29,12 @@ components: {
 </script>
 <style  lang="scss" scoped>
 .home-hero__content {
-  // background: url("../assets/img/ppf.jpg");
+  background: url("../assets/img/top2.jpg");
   background-size: cover;
   background-position: center center;
+  object-fit: cover;
   width: 100%;
-  height: 100vh;
+  height: 60vh;
 
   &-text {
     color: white;

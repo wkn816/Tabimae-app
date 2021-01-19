@@ -3,12 +3,11 @@
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app color=#f3d2c1>
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
-          <nuxt-link to="/travel_list"></nuxt-link>
           <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon color=#001858>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title class="list-item" v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -150,5 +149,7 @@
     background-size: 100%;
     color: #001858;
   }
-
+.list-item{
+  color:#001858;
+}
 </style>

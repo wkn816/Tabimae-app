@@ -6,7 +6,10 @@
         <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
       </v-btn>
     </v-hover>
-    <v-container class="train-info">
+    <v-container>
+      <v-row>
+        <About />
+      </v-row>
       <v-row>
         <Train />
         <Air />
@@ -26,6 +29,7 @@
   import Train from '~/components/Train.vue';
   import Air from '~/components/Air.vue';
   import TravelEtiquette from '~/components/TravelEtiquette.vue';
+  import About from '~/components/About.vue';
 
 
 
@@ -88,6 +92,6 @@
 </script>
 
 <style lang="scss" scoped>
-  
+
 
 </style>

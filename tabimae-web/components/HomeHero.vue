@@ -37,11 +37,16 @@ components: {
   height: 60vh;
 
   &-text {
-    color: white;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
   }
 }
 
+
+</style>
+<style>
+.vue-typer .custom.char{
+    color: #001858;
+  }
 </style>

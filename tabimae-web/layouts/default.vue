@@ -49,9 +49,9 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
+    <!-- <v-footer :absolute="!fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
@@ -146,9 +146,9 @@
   }
 
   .bg {
-    background-color: #000;
+    background-color:#fef6e4;
     background-size: 100%;
-    color: #ffffff;
+    color: #001858;
   }
 
 </style>

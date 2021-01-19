@@ -3,11 +3,11 @@
     <v-container fluid fill-height class="home-hero__content">
       <v-row>
         <v-col class="home-hero__content-text">
-          <vue-typer text="タビマエ" :repeat="1"></vue-typer></br>
+          <vue-typer text="タビマエ" :repeat="1"></vue-typer><br>
           <vue-typer :text="[
-        '＊出発前に抜かりのない準備と',
-        '＊お役立ち情報をGETして',
-        '＊いつもよりワンランク上の',
+        '＊旅は行く前から始まっている',
+        '＊旅が織りなす物語を',
+        '＊’タビマエ’で管理しよう',
         '旅行をたのしみましょう！',
         ]" erase-style="clear" :type-delay="150" :pre-type-delay="90" :erase-delay="300" :repeat="Infinity">
           </vue-typer>

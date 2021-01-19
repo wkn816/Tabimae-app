@@ -1,12 +1,15 @@
 <template>
   <div class="test">
+    <Home />
     <v-hover v-slot:default="{ hover }">
       <v-btn class="guest-btn" @click="guestLogin">
         <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
       </v-btn>
     </v-hover>
-    <Home />
-    <v-container class="train-info">
+    <v-container>
+      <v-row>
+        <About />
+      </v-row>
       <v-row>
         <Train />
         <Air />
@@ -26,6 +29,7 @@
   import Train from '~/components/Train.vue';
   import Air from '~/components/Air.vue';
   import TravelEtiquette from '~/components/TravelEtiquette.vue';
+  import About from '~/components/About.vue';
 
 
 
@@ -88,20 +92,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .test {
-    background: url("../assets/img/ppf.jpg");
-    background-size: cover;
-    background-position: center center;
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
 
-    &-text {
-      color: white;
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-    }
-  }
 
 </style>

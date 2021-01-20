@@ -30,7 +30,7 @@
       height: 70%;
       width: 70%;
       overflow: hidden;
-      background-color: #C0C0C0;
+      background-color: #fef6e4;
     }
 
     &__content {

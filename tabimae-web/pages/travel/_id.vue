@@ -13,6 +13,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+    <div >
+    <button class="help_link__button" @click="openModal">
+      モーダルを開く
+    </button>
+    <Modal v-if="modalFlag">
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <div>モーダルの内容</div>
+      <button @click="closeModal">閉じる</button>
+    </Modal>
+  </div>
+
     <div>
       <button class="help_link__button" @click="openModal">
         忘れ物リスト
@@ -47,6 +61,8 @@
         res_travel_show: {},
         res_delete: {},
         test: {},
+        checkbox: true,
+      modalFlag: false,
         modalFlag: false,
         items: ["運転免許証", "保険証", "クレジットカード","切符類", "モバイルバッテリー","マスク","アルコール消毒液","常備薬"],
         main: "main",
@@ -113,11 +129,22 @@
       openModal() {
         this.modalFlag = true
       },
-      closeModal() {
-        this.modalFlag = false
-      }
+      hide() {
+        this.$modal.hide("modal-content");
+      },
+      openModal() {
+      this.modalFlag = true
+    },
+    closeModal() {
+      this.modalFlag = false
 
     }
+
+
+    },
+    components: {
+    Modal
+  },
   };
 
 </script>

@@ -57,6 +57,8 @@
 
   .air-img {
     width: 320px;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
+
   }
   // .main-introduction {
   //     margin: 2em 0;

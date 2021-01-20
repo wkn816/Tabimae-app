@@ -100,13 +100,18 @@
         } else {
           return [{
               icon: "mdi-apps",
-              title: "ログイン",
-              to: "/login"
+              title: "TOP画面",
+              to: "/"
             },
             {
               icon: "mdi-chart-bubble",
-              title: "新規登録",
+              title: "新規会員登録",
               to: "/signup"
+            },
+            {
+              icon: "mdi-chart-bubble",
+              title: "ログイン",
+              to: "/login"
             }
           ];
         }

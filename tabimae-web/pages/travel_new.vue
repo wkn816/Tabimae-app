@@ -5,8 +5,8 @@
     <v-container class="px-0" fluid>
       <v-container fluid>
         <v-radio-group v-model="transport" mandatory>
-          <v-radio class="test" label="列車" value="train"></v-radio>
-          <v-radio label="飛行機" value="air"></v-radio>
+          <v-radio label="列車" value="train" color=#001858></v-radio>
+          <v-radio label="飛行機" value="air" color=#001858></v-radio>
         </v-radio-group>
       </v-container>
 
@@ -242,6 +242,6 @@ export default {
 <style>
 
 .time-font {
-  color: #ffffff;
+  color:#001858;
 }
 </style>

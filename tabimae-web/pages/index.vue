@@ -16,7 +16,7 @@
                     mdi-account-plus
                   </v-icon>
                   新規会員登録
-                <p class="btn-text">はじめてご利用で履歴を残したい方</p>
+                  <p class="btn-text">はじめてご利用で履歴を残したい方</p>
                 </template>
               </ButtonDefault>
             </v-col>
@@ -36,7 +36,7 @@
                 <template v-slot:label>
                   <v-icon large color=#001858>
                     mdi-briefcase-account
-                    </v-icon>
+                  </v-icon>
                   ゲストログイン
                   <p class="btn-text">初めてのご利用で一回限りご利用の方</p>
                 </template>
@@ -46,13 +46,26 @@
         </div>
       </v-row>
 
-      <v-row>
-        <Train />
-        <Air />
-        <TravelEtiquette />
-      </v-row>
+      <v-card color=#f3d2c1>
+        <v-card-title primary-title class="justify-center">
+          <v-icon large color=#001858>
+            mdi-bag-checked
+          </v-icon>
+          <span class="title">旅行出発前に知っておきたいこと</span>
+        </v-card-title>
+        <v-card-text color=#001858>
+          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
+        </v-card-text>
+        <v-row>
+          <Train />
+          <Air />
+          <TravelEtiquette />
+        </v-row>
+      </v-card>
+
+
     </v-container>
-<v-hover v-slot:default="{ hover }">
+    <v-hover v-slot:default="{ hover }">
       <v-btn block dark class="guest-btn" @click="guestLogin">
         <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
       </v-btn>
@@ -160,7 +173,24 @@
       >.button {}
     }
   }
-.btn-text{
-  font-size: 12px;
+
+  .btn-text {
+    font-size: 12px;
+  }
+
+  p {
+    color: #001858;
+    text-align: center;
+  }
+
+  .v-card-title {
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .title{
+  color: #001858;
+  text-align: center;
 }
+
 </style>

@@ -41,6 +41,7 @@ export default {
 .v-card{
   width: 100%;
   text-align: center;
+  margin-bottom: 40px;
 }
 .v-card-title{
   text-align: center;

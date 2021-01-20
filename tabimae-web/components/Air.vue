@@ -1,7 +1,7 @@
 <template>
   <div>
 
-        <v-col sm="10" md="10" lg="10">
+        <v-col cols="4" sm="10" md="10" lg="10">
       <img :src="image_src" @click="openModal" class="air-img">
         </v-col>
 

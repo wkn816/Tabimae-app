@@ -3,44 +3,65 @@
     <v-container fluid fill-height class="home-hero__content">
       <v-row>
         <v-col class="home-hero__content-text">
-          <vue-typer text="タビマエ" :repeat="1"></vue-typer></br>
-
-<vue-typer style="font-family: dot; text-align:center;" :text="[
-        '＊出発前に抜かりのない準備と',
-        '＊お役立ち情報をGETして',
-        '＊いつもよりワンランク上の',
+          <vue-typer text="タビマエ" :repeat="1"></vue-typer><br>
+          <vue-typer :text="[
+        '＊旅は行く前から始まっている',
+        '＊旅が織りなす物語を',
+        '＊’タビマエ’で管理しよう',
         '旅行をたのしみましょう！',
-        ]" erase-style="clear" :type-delay="150" :pre-type-delay="90"	:erase-delay="300" :repeat="Infinity"></vue-typer>
-      </v-col>
+        ]" erase-style="clear" :type-delay="150" :pre-type-delay="90" :erase-delay="300" :repeat="Infinity">
+          </vue-typer>
+        </v-col>
+
       </v-row>
     </v-container>
   </section>
 </template>
 
 <script>
-import { VueTyper } from 'vue-typer'
-
-
-export default {
-components: {
+  import {
     VueTyper
-  },
-}
-</script>
-<style  lang="scss" scoped>
-.home-hero__content {
-  // background: url("../assets/img/ppf.jpg");
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100vh;
+  } from 'vue-typer'
 
-  &-text {
-    color: white;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
+
+  export default {
+    components: {
+      VueTyper
+    },
   }
-}
+
+</script>
+<style lang="scss" scoped>
+  .home-hero__content {
+    background: url("../assets/img/top2.jpg");
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 60vh;
+
+    &-text {
+      // text-align: center;
+      padding-left: 200px;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: 'ヒラギノ角ゴシック', 'Hiragino Sans',
+        sans-serif;
+    }
+  }
+
+  .test {
+    font-size: 100px;
+  }
+
+</style>
+<style>
+  .vue-typer .custom.char {
+    color: #001858;
+  }
+
+  .vue-typer .custom.caret {
+    width: 5px;
+    background-color: #001858;
+  }
 
 </style>

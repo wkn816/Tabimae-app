@@ -9,32 +9,36 @@
       <v-row>
         <div class="page">
           <div class="buttons">
-            <v-col cols="12" sm="10" md="10" lg="8">
+            <v-col cols="12" sm="10" md="10" lg="5">
               <ButtonDefault to="/signup" class="button">
                 <template v-slot:label>
                   <v-icon large color=#001858>
                     mdi-account-plus
                   </v-icon>
-                  新規登録
+                  新規会員登録
+                <p class="btn-text">はじめてご利用で履歴を残したい方</p>
                 </template>
               </ButtonDefault>
             </v-col>
-            <v-col cols="12" sm="10" md="10" lg="8">
+            <v-col cols="12" sm="10" md="10" lg="5">
               <ButtonDefault to="login" class="button">
                 <template v-slot:label>
                   <v-icon large color=#001858>
                     mdi-account-search
                   </v-icon>
                   ログイン
+                  <p class="btn-text">既に会員登録がお済みの方</p>
                 </template>
               </ButtonDefault>
             </v-col>
-            <v-col cols="12" sm="10" md="10" lg="8">
+            <v-col cols="12" sm="10" md="10" lg="5">
               <ButtonDefault to="" class="button">
                 <template v-slot:label>
                   <v-icon large color=#001858>
-                    mdi-briefcase-account </v-icon>
+                    mdi-briefcase-account
+                    </v-icon>
                   ゲストログイン
+                  <p class="btn-text">初めてのご利用で一回限りご利用の方</p>
                 </template>
               </ButtonDefault>
             </v-col>
@@ -156,5 +160,7 @@
       >.button {}
     }
   }
-
+.btn-text{
+  font-size: 12px;
+}
 </style>

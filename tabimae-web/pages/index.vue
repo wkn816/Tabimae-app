@@ -1,11 +1,6 @@
 <template>
   <div class="test">
     <Home />
-    <v-hover v-slot:default="{ hover }">
-      <v-btn block dark class="guest-btn" @click="guestLogin">
-        <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
-      </v-btn>
-    </v-hover>
     <v-container>
       <v-row>
         <About />
@@ -53,8 +48,12 @@
         <TravelEtiquette />
       </v-row>
     </v-container>
+<v-hover v-slot:default="{ hover }">
+      <v-btn block dark class="guest-btn" @click="guestLogin">
+        <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
+      </v-btn>
+    </v-hover>
   </div>
-
 </template>
 
 <script>
@@ -144,6 +143,7 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
+    box-shadow: 4px 4px #f582ae;
   }
 
   .page {

@@ -16,7 +16,7 @@
           <v-text-field v-model="password" label="password" data-vv-name="password" required
             :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="show1 = !show1"></v-text-field>
-          <v-btn class="mr-4" @click="login" color="#001858">ログイン</v-btn>
+          <v-btn block dark class="mr-4" @click="login" color="#001858">ログイン</v-btn>
           <p v-if="error" class="errors">{{ error }}</p>
         </form>
         </v-card-text>
@@ -27,6 +27,7 @@
 
 <script>
   import firebase from "@/plugins/firebase";
+  import axios from "@/plugins/axios";
   export default {
     data() {
       return {
@@ -54,9 +55,9 @@
               }
             })(error.code);
           });
-
         this.$router.push("travel_new");
       },
+      
     },
   };
 

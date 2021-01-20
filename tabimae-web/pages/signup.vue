@@ -10,7 +10,6 @@
             <span class="title">新規会員登録</span>
           </v-card-title>
           <v-card-text color=#001858>
-
             <form>
               <v-text-field v-model="name" :counter="10" label="Name" data-vv-name="name" required></v-text-field>
               <v-text-field v-model="email" :counter="20" label="Email" data-vv-name="email" required></v-text-field>
@@ -20,7 +19,7 @@
               <v-text-field v-model="passwordConfirm" label="passwordConfirm" data-vv-name="passwordConfirm" required
                 :type="show2 ? 'text' : 'password'" :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="show2 = !show2"></v-text-field>
-              <v-btn class="mr-4" @click="signup" color="#001858">
+              <v-btn block dark class="mr-4" @click="signup" color="#001858">
                 <div class="submit">登録</div>
               </v-btn>
               <p v-if="error" class="errors">{{ error }}</p>
@@ -30,7 +29,27 @@
         </v-card>
       </v-col>
     </v-row>
-    <nuxt />
+
+    <v-row>
+      <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
+
+        <v-card color=#f3d2c1>
+          <v-card-title primary-title class="justify-center">
+            <v-icon large color=#001858>
+              mdi-bag-checked
+            </v-icon>
+            <span class="title">登録せずにすぐご利用になりたい方はこちら</span>
+          </v-card-title>
+          <v-card-text color=#001858>
+            <v-hover v-slot:default="{ hover }">
+              <v-btn block dark class="guest-btn" @click="guestLogin" color="#001858">
+                <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
+              </v-btn>
+            </v-hover>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-app>
 </template>
 <script>
@@ -87,6 +106,25 @@
         });
         this.$router.push("/travel_list");
       },
+      async guestLogin() {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
+          .catch(error => {
+            console.log(error);
+            this.error = (code => {
+              switch (code) {
+                case "auth/user-not-found":
+                  return "メールアドレスが間違っています";
+                case "auth/wrong-password":
+                  return "※パスワードが正しくありません";
+                default:
+                  return "※メールアドレスとパスワードをご確認ください";
+              }
+            })(error.code);
+          });
+        this.$router.push("/travel_list");
+      },
     },
   };
 
@@ -97,5 +135,14 @@
     color: red;
     margin-top: 20px;
   }
+.guest-btn{
+  cursor: pointer;
+    display: block;
+    text-align: center;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    box-shadow: 4px 4px #f582ae;
+}
 
 </style>

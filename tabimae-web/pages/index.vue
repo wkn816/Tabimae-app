@@ -2,8 +2,7 @@
   <div class="test">
     <Home />
     <v-hover v-slot:default="{ hover }">
-      <v-btn  block
-        dark class="guest-btn" @click="guestLogin">
+      <v-btn block dark class="guest-btn" @click="guestLogin">
         <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
       </v-btn>
     </v-hover>
@@ -11,6 +10,43 @@
       <v-row>
         <About />
       </v-row>
+
+      <v-row>
+        <div class="page">
+          <div class="buttons">
+            <v-col cols="12" sm="10" md="10" lg="8">
+              <ButtonDefault to="/signup" class="button">
+                <template v-slot:label>
+                  <v-icon large color=#001858>
+                    mdi-account-plus
+                  </v-icon>
+                  新規登録
+                </template>
+              </ButtonDefault>
+            </v-col>
+            <v-col cols="12" sm="10" md="10" lg="8">
+              <ButtonDefault to="login" class="button">
+                <template v-slot:label>
+                  <v-icon large color=#001858>
+                    mdi-account-search
+                  </v-icon>
+                  ログイン
+                </template>
+              </ButtonDefault>
+            </v-col>
+            <v-col cols="12" sm="10" md="10" lg="8">
+              <ButtonDefault to="" class="button">
+                <template v-slot:label>
+                  <v-icon large color=#001858>
+                    mdi-briefcase-account </v-icon>
+                  ゲストログイン
+                </template>
+              </ButtonDefault>
+            </v-col>
+          </div>
+        </div>
+      </v-row>
+
       <v-row>
         <Train />
         <Air />
@@ -31,6 +67,7 @@
   import Air from '~/components/Air.vue';
   import TravelEtiquette from '~/components/TravelEtiquette.vue';
   import About from '~/components/About.vue';
+  import ButtonDefault from '~/components/ButtonDefault.vue';
 
 
 
@@ -39,6 +76,8 @@
       NewTravel,
       TravelList,
       Home,
+      ButtonDefault,
+
     },
 
     data() {
@@ -93,6 +132,29 @@
 </script>
 
 <style lang="scss" scoped>
+  .button {
+    /* background-color: #f3d2c1; */
+    border: solid 5px #001858;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
 
+  .page {
+    padding: 30px;
+
+    >.buttons {
+      display: -webkit-flex;
+
+
+      >.button {}
+    }
+  }
 
 </style>

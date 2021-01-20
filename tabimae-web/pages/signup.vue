@@ -1,24 +1,33 @@
 <template>
   <v-app class="bg">
     <v-row>
-      <v-col cols="12" md="4">
-        <div class="bod">
-          <h2>Sign Up</h2>
-          <form>
-            <v-text-field v-model="name" :counter="10" label="Name" data-vv-name="name" required></v-text-field>
-            <v-text-field v-model="email" :counter="20" label="Email" data-vv-name="email" required></v-text-field>
-            <v-text-field v-model="password" label="password" data-vv-name="password" required
-              :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="show1 = !show1"></v-text-field>
-            <v-text-field v-model="passwordConfirm" label="passwordConfirm" data-vv-name="passwordConfirm" required
-              :type="show2 ? 'text' : 'password'" :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="show2 = !show2"></v-text-field>
-            <v-btn class="mr-4" @click="signup">
-              <div class="submit">submit</div>
-            </v-btn>
-            <p v-if="error" class="errors">{{ error }}</p>
-          </form>
-        </div>
+      <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
+        <v-card color=#f3d2c1>
+          <v-card-title primary-title class="justify-center">
+            <v-icon large color=#001858>
+              mdi-bag-checked
+            </v-icon>
+            <span class="title">新規会員登録</span>
+          </v-card-title>
+          <v-card-text color=#001858>
+
+            <form>
+              <v-text-field v-model="name" :counter="10" label="Name" data-vv-name="name" required></v-text-field>
+              <v-text-field v-model="email" :counter="20" label="Email" data-vv-name="email" required></v-text-field>
+              <v-text-field v-model="password" label="password" data-vv-name="password" required
+                :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                @click:append="show1 = !show1"></v-text-field>
+              <v-text-field v-model="passwordConfirm" label="passwordConfirm" data-vv-name="passwordConfirm" required
+                :type="show2 ? 'text' : 'password'" :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+                @click:append="show2 = !show2"></v-text-field>
+              <v-btn class="mr-4" @click="signup" color="#001858">
+                <div class="submit">登録</div>
+              </v-btn>
+              <p v-if="error" class="errors">{{ error }}</p>
+            </form>
+          </v-card-text>
+
+        </v-card>
       </v-col>
     </v-row>
     <nuxt />

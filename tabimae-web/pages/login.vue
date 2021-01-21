@@ -57,7 +57,7 @@
           });
         this.$router.push("travel_new");
       },
-      
+
     },
   };
 
@@ -86,6 +86,5 @@
     border-radius: 8px;
     border: 1px solid #dddddd;
     box-shadow: 4px 4px #f582ae;
-
 }
 </style>

@@ -13,6 +13,7 @@
             <h2 v-if="success">登録したよ!</h2>
             <!-- <v-container class="px-0" fluid> -->
             <v-container fluid class="ttt">
+                <v-text>交通手段を選択してください</v-text>
               <v-radio-group row v-model="transport" mandatory>
                 <v-radio label="列車" value="train" color=#f582ae></v-radio>
                 <v-radio label="飛行機" value="air" color=#f582ae></v-radio>
@@ -65,8 +66,18 @@
                         </p>
                       </v-col>
                     </v-row>
-
-
+                    <!-- 旅行の名前入力フォーム -->
+                    <v-row>
+                      <v-col cols="12" sm="11" md="12" lg="6">
+                        <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <!-- 決定ボタン -->
+                    <v-row align="right" justify="right">
+                      <v-col cols="12" sm="11" md="12" lg="12">
+                        <v-btn @click="createTravel">決定</v-btn>
+                      </v-col>
+                    </v-row>
                   </template>
                 </v-col>
               </v-row>
@@ -93,13 +104,13 @@
                   <v-date-picker v-model="departure_day" @change="choice_departure_day = departure_day"></v-date-picker>
                 </v-menu>
                 <!-- </v-col> -->
+                <!-- <v-col cols="12" md="4"> -->
+                <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
+                <!-- </v-col> -->
+                <v-btn @click="createTravel">決定</v-btn>
               </template>
 
-              <!-- <v-col cols="12" md="4"> -->
-              <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
-              <!-- </v-col> -->
 
-              <v-btn @click="createTravel">決定</v-btn>
               <!-- {{ user }}
             {{ travels }} -->
               <!-- {{ departure_day_test }} -->

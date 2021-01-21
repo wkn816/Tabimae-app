@@ -18,28 +18,34 @@
                 <v-radio label="飛行機" value="air" color=#f582ae></v-radio>
               </v-radio-group>
             </v-container>
-
             <v-container fluid class="ttt">
               <v-row>
                 <v-col cols="12" sm="11" md="11" lg="12">
                   <template v-if="transport === 'train'">
                     <h1>列車で行く</h1>
-                    <!-- <v-col cols="12" md="4"> -->
-                    <v-row>
-                      <v-col cols="12" sm="11" md="12" lg="5">
+                    <!-- 出発日入力フォーム -->
+                    <v-col cols="12" sm="11" md="12" lg="7">
+                    <v-menu v-model="choice_departure_day" :close-on-content-click="false" max-width="290">
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-text-field label="出発日" :value="departure_day" clearable readonly v-bind="attrs" v-on="on"
+                          @click:clear="departure_day = null"></v-text-field>
+                      </template>
+                      <v-date-picker v-model="departure_day" @change="choice_departure_day = departure_day">
+                      </v-date-picker>
+                    </v-menu>
+                    </v-col>
+
+                    <v-row align="center" justify="center">
+                      <v-col cols="12" sm="11" md="12" lg="6">
                         <v-text-field class="test" v-model="departure_place" :counter="10" label="出発地" required>
                         </v-text-field>
                       </v-col>
-                      <v-col cols="12" sm="11" md="12" lg="2">
-                        <v-icon style="font-size: 100px;">
-                          mdi-arrow-right
-                        </v-icon>
-                      </v-col>
-                      <v-col cols="12" sm="11" md="12" lg="5">
+                      <v-col cols="12" sm="11" md="12" lg="6">
                         <v-text-field class="test" v-model="arrival_place" :counter="10" label="到着地" required>
                         </v-text-field>
                       </v-col>
                     </v-row>
+
                     <p class="my-time-picker">
                       <vue-timepicker v-model="departure_time" format="A:h:mm:" hour-label="時" minute-label="分"
                         apm-label="区分" am-text="午前" pm-text="午後" placeholder="出発時間" input-class="time-font"
@@ -52,14 +58,7 @@
                       </vue-timepicker>
                     </p>
 
-                    <v-menu v-model="choice_departure_day" :close-on-content-click="false" max-width="290">
-                      <template v-slot:activator="{ on, attrs }">
-                        <v-text-field label="出発日" :value="departure_day" clearable readonly v-bind="attrs" v-on="on"
-                          @click:clear="departure_day = null"></v-text-field>
-                      </template>
-                      <v-date-picker v-model="departure_day" @change="choice_departure_day = departure_day">
-                      </v-date-picker>
-                    </v-menu>
+
                   </template>
                 </v-col>
               </v-row>

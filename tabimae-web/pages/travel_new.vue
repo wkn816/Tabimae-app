@@ -34,7 +34,7 @@
                       </v-date-picker>
                     </v-menu>
                     </v-col>
-
+                    <!-- 出発地・到着地入力フォーム -->
                     <v-row align="center" justify="center">
                       <v-col cols="12" sm="11" md="12" lg="6">
                         <v-text-field class="test" v-model="departure_place" :counter="10" label="出発地" required>
@@ -45,7 +45,7 @@
                         </v-text-field>
                       </v-col>
                     </v-row>
-
+                    <!-- 出発時間・到着時間入力フォーム -->
                     <p class="my-time-picker">
                       <vue-timepicker v-model="departure_time" format="A:h:mm:" hour-label="時" minute-label="分"
                         apm-label="区分" am-text="午前" pm-text="午後" placeholder="出発時間" input-class="time-font"

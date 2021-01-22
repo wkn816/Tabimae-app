@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
@@ -14,89 +15,54 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-simple-table>
+      <thead>
+        <tr>
+          <th>
+            詳細
+          </th>
+          <th>
+            出発日
+          </th>
+          <th>
+            出発地
+          </th>
+          <th>
+            到着地
+          </th>
+          <th>
+            出発時間
+          </th>
+          <th>
+            到着時間
+          </th>
+        </tr>
+      </thead>
 
-      <v-ul v-for="travel in travelData.data">
 
-        <router-link style="text-decoration: none; color: inherit;" :to="`/travel/${travel.id}`">
-        <v-container>
-          <v-row>
-            <v-col cols="12" sm="6" md="6" lg="12">
-    <v-card elevation="20" color=#f3d2c1>
-            <!-- <li>{{ travel.transport }}</li> -->
-            <v-ul v-for="train in travel.trains">
-              <v-row>
-                <v-col cols="12" sm="6" md="6" lg="6">
-                  <v-li>
-                    <h5 class="item-title">出発日</h5>
-                    <v-card-text class="item-text">
-                      {{ train.departure_day }}
-                    </v-card-text>
-                  </v-li>
-                </v-col>
-
-                <v-col cols="12" sm="6" md="6" lg="2">
-                  <v-card-text class="travel-name">
-                    <v-li>{{ travel.name }}</v-li>
-                  </v-card-text>
-                </v-col>
-                  <v-col cols="12" sm="6" md="6" lg="2">
-                  <v-card-text class="travel-show-link">
-                  <v-li>
-                    <nuxt-link :to="`/travel/${travel.id}`">詳細へ遷移
-                  </nuxt-link>
-                  </v-li>
-                  </v-card-text>
-                  </v-col>
-              </v-row>
-
-              <v-row>
-                <v-col cols="12" sm="6" md="6" lg="6">
-                  <v-li>
-                    <h5 class="item-title">出発地</h5>
-                    <v-card-text class="item-text">
-                      {{ train.departure_place }}
-                    </v-card-text>
-                  </v-li>
-                </v-col>
-
-                <v-col cols="12" sm="6" md="6" lg="6">
-                  <v-li>
-                    <h5 class="item-title">到着地</h5>
-                    <v-card-text class="item-text">
-                      {{ train.arrival_place }}
-                    </v-card-text>
-                  </v-li>
-                </v-col>
-              </v-row>
-
-              <v-row>
-                <v-col cols="12" sm="6" md="6" lg="6">
-                  <v-li>
-                    <h5 class="item-title">出発時間</h5>
-                    <v-card-text class="item-text">
-                      {{ train.departure_time }}
-                    </v-card-text>
-                  </v-li>
-                </v-col>
-
-                <v-col cols="12" sm="6" md="6" lg="6">
-                  <v-li>
-                    <h5 class="item-title">到着時間</h5>
-                    <v-card-text class="item-text">
-                      {{ train.arrival_time }}
-                    </v-card-text>
-                  </v-li>
-                </v-col>
-              </v-row>
-            </v-ul>
-
-    <!-- </v-row> -->
-    </v-card>
-            </v-col>
-          </v-row>
-    </v-container>
-    </router-link>
-    </v-ul>
+        <li v-for="travel in travelData.data">
+      <tbody>
+          <router-link style="text-decoration: none; color: inherit;" :to="`/travel/${travel.id}`">
+            <!-- <v-card elevation="20" color=#f3d2c1> -->
+            <!-- <router-link style=“text-decoration: none; color: inherit;” :to=“`/travel/${travel.id}`“>詳細へ遷移
+                  </router-link> -->
+            <tr v-for="train in travel.trains">
+              <!-- <tr v-for="train in travelData.data"> -->
+              <td>
+                <v-btn>aaa</v-btn>
+              </td>
+              <td>{{ train.departure_day }}</td>
+              <td>{{ travel.name }}</td>
+              <td>{{ train.departure_place }}</td>
+              <td>{{ train.arrival_place }}</td>
+              <td>{{ train.departure_time }}</td>
+              <td>{{ train.arrival_time }}</td>
+            </tr>
+            <!-- </v-card> -->
+          </router-link>
+      </tbody>
+        </li>
+    </v-simple-table>
   </div>
 </template>
 
@@ -172,71 +138,11 @@
 </script>
 
 <style lang="scss" scoped>
-  .item-text {
-    color: #001858;
-    // font-size: 35px;
-  }
-
   .v-card {
     width: 100%;
     // text-align: center;
     margin-bottom: 30px;
 
   }
-
-  .v-card-title {
-    text-align: center;
-    font-weight: bolder;
-
-  }
-
-  .title {
-    color: #001858;
-    text-align: center;
-  }
-
-  .item-text {
-    font-size: 23px;
-    color: #001858;
-    // text-shadow:
-    //     1px 0 0 #f582ae,
-    //     0 1px 0 #f582ae,
-    //     -1px 0 0 #f582ae,
-    //     0 -1px 0 #f582ae
-    text-align: center;
-  }
-
-  .item-title {
-    font-size: 15px;
-    background-color: #001858;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    border-bottom-left-radius: 40px;
-    color: #f3d2c1;
-    text-align: center;
-  }
-  .travel-name{
-    background-color: #001858;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    border-bottom-left-radius: 40px;
-    color: #f3d2c1;
-    text-align: center;
-    font-size: 18px;
-  }
-  .travel-show-link{
-    background-color: #001858;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    border-bottom-left-radius: 40px;
-    color: #f3d2c1;
-    text-align: center;
-    font-size: 18px;
-box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
-  }
-
 
 </style>

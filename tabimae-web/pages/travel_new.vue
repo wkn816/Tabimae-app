@@ -273,8 +273,4 @@
     float: left;
   }
 
-  .v-icon {
-    font-size: px;
-  }
-
 </style>

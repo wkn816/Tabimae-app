@@ -17,8 +17,9 @@
 
       <v-ul v-for="travel in travelData.data">
         <v-container>
+          <v-row>
+            <v-col cols="12" sm="6" md="6" lg="12">
     <v-card elevation="20" color=#f3d2c1>
-          <!-- <v-row> -->
             <!-- <li>{{ travel.transport }}</li> -->
             <v-ul v-for="train in travel.trains">
               <v-row>
@@ -30,11 +31,20 @@
                     </v-card-text>
                   </v-li>
                 </v-col>
-                <v-col cols="12" sm="6" md="6" lg="6">
-                  <v-card-text class="item-text">
+
+                <v-col cols="12" sm="6" md="6" lg="2">
+                  <v-card-text class="travel-name">
                     <v-li>{{ travel.name }}</v-li>
                   </v-card-text>
                 </v-col>
+                  <v-col cols="12" sm="6" md="6" lg="2">
+                  <v-card-text class="travel-show-link">
+                  <v-li>
+                    <nuxt-link :to="`/travel/${travel.id}`">詳細へ遷移
+                  </nuxt-link>
+                  </v-li>
+                  </v-card-text>
+                  </v-col>
               </v-row>
 
               <v-row>
@@ -76,11 +86,12 @@
                   </v-li>
                 </v-col>
               </v-row>
-              <nuxt-link :to="`/travel/${travel.id}`">詳細へ遷移</nuxt-link>
             </v-ul>
 
     <!-- </v-row> -->
     </v-card>
+            </v-col>
+          </v-row>
     </v-container>
     </v-ul>
   </div>
@@ -186,11 +197,39 @@
     //     0 1px 0 #f582ae,
     //     -1px 0 0 #f582ae,
     //     0 -1px 0 #f582ae
+    text-align: center;
   }
 
   .item-title {
     font-size: 15px;
-    color: #001858;
+    background-color: #001858;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    color: #f3d2c1;
+    text-align: center;
+  }
+  .travel-name{
+    background-color: #001858;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    color: #f3d2c1;
+    text-align: center;
+    font-size: 18px;
+  }
+  .travel-show-link{
+    background-color: #001858;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    color: #f3d2c1;
+    text-align: center;
+    font-size: 18px;
+box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
   }
 
 </style>

@@ -16,6 +16,7 @@
               <!-- <li>{{ travel.transport }}</li> -->
 
               <v-ul v-for="train in travel.trains">
+                <v-row>
                 <v-col cols="12" sm="11" md="11" lg="12">
                   <v-li>
                     <v-card-text class="item-text">
@@ -23,8 +24,10 @@
                     </v-card-text>
                   </v-li>
                 </v-col>
+                </v-row>
 
-                <v-col cols="12" sm="11" md="11" lg="12">
+              <v-row>
+                <v-col cols="12" sm="11" md="11" lg="6">
                   <v-li>
                     <v-card-text class="item-text">
                       {{ train.departure_place }}
@@ -32,15 +35,17 @@
                   </v-li>
                 </v-col>
 
-                <v-col cols="12" sm="11" md="11" lg="12">
+                <v-col cols="12" sm="11" md="11" lg="6">
                   <v-li>
                     <v-card-text class="item-text">
                       {{ train.arrival_place }}
                     </v-card-text>
                   </v-li>
                 </v-col>
+              </v-row>
 
-                <v-col cols="12" sm="11" md="11" lg="12">
+              <v-row>
+                <v-col cols="12" sm="11" md="11" lg="6">
                   <lv-i>
                     <v-card-text class="item-text">
                       {{ train.departure_time }}
@@ -48,13 +53,14 @@
                   </lv-i>
                 </v-col>
 
-                <v-col cols="12" sm="11" md="11" lg="12">
+                <v-col cols="12" sm="11" md="11" lg="6">
                   <v-li>
                     <v-card-text class="item-text">
                       {{ train.arrival_time }}
                     </v-card-text>
                   </v-li>
                 </v-col>
+                </v-row>
                 <nuxt-link :to="`/travel/${travel.id}`">詳細へ遷移</nuxt-link>
               </v-ul>
               <!-- <ul v-for="train in travel.airs">

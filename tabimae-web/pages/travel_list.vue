@@ -15,25 +15,25 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-simple-table class="list-table">
+    <v-simple-table class="list-table" style="color:#001858">
       <thead>
         <tr>
-          <th>
+          <th style="color:#001858">
             詳細
           </th>
-          <th>
+          <th style="color:#001858">
             出発日
           </th>
-          <th>
+          <th style="color:#001858">
             出発地
           </th>
-          <th>
+          <th style="color:#001858">
             到着地
           </th>
-          <th>
+          <th style="color:#001858">
             出発時間
           </th>
-          <th>
+          <th style="color:#001858">
             到着時間
           </th>
         </tr>
@@ -146,5 +146,11 @@
   }
 .list-table{
   background-color:#f3d2c1;
+  // font-size: 100px;
+  color: red;
 }
+.list-th{
+  color: red;
+}
+
 </style>

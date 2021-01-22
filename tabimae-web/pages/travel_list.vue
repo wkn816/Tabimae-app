@@ -4,7 +4,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color=#f3d2c1>
+          <v-card color=#f3d2c1 elevation=“20”>
             <v-card-title primary-title class="justify-center">
               <v-icon large color=#001858>
                 mdi-bag-checked
@@ -15,54 +15,63 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-simple-table class="list-table" style="color:#001858">
-      <thead>
-        <tr>
-          <th style="color:#001858">
-            詳細
-          </th>
-          <th style="color:#001858">
-            出発日
-          </th>
-          <th style="color:#001858">
-            出発地
-          </th>
-          <th style="color:#001858">
-            到着地
-          </th>
-          <th style="color:#001858">
-            出発時間
-          </th>
-          <th style="color:#001858">
-            到着時間
-          </th>
-        </tr>
-      </thead>
+
+    <v-container>
+      <v-row>
+        <v-col cols="12" sm="11" md="11" lg="12">
+          <v-card elevation=“20” color=#f3d2c1>
+            <v-table class="list-table" style="color:#001858">
+              <thead>
+                <tr>
+                  <th style="color:#001858">
+                    詳細
+                  </th>
+                  <th style="color:#001858">
+                    出発日
+                  </th>
+                  <th style="color:#001858">
+                    出発地
+                  </th>
+                  <th style="color:#001858">
+                    到着地
+                  </th>
+                  <th style="color:#001858">
+                    出発時間
+                  </th>
+                  <th style="color:#001858">
+                    到着時間
+                  </th>
+                </tr>
+              </thead>
 
 
-        <li v-for="travel in travelData.data">
-      <tbody>
-          <router-link style="text-decoration: none; color: inherit;" :to="`/travel/${travel.id}`">
-            <!-- <v-card elevation="20" color=#f3d2c1> -->
-            <!-- <router-link style=“text-decoration: none; color: inherit;” :to=“`/travel/${travel.id}`“>詳細へ遷移
+              <!-- <v-card elevation="20" color=#f3d2c1> -->
+              <!-- <router-link style=“text-decoration: none; color: inherit;” :to=“`/travel/${travel.id}`“>詳細へ遷移
                   </router-link> -->
-            <tr v-for="train in travel.trains">
-              <!-- <tr v-for="train in travelData.data"> -->
-              <td>
-                <v-btn>aaa</v-btn>
-              </td>
-              <td>{{ train.departure_day }}</td>
-              <td>{{ travel.name }}</td>
-              <td>{{ train.departure_place }}</td>
-              <td>{{ train.arrival_place }}</td>
-              <td>{{ train.departure_time }}</td>
-              <td>{{ train.arrival_time }}</td>
-            </tr>
-            <!-- </v-card> -->
-          </router-link>
-      </tbody>
-        </li>
-    </v-simple-table>
+              <tbody>
+                <tr v-for="travel in travelData.data">
+                  <router-link style="text-decoration: none; color: inherit;" :to="`/travel/${travel.id}`">
+                <tr v-for="train in travel.trains">
+                  <!-- <tr v-for="train in travelData.data"> -->
+                  <td class="show-btn">
+                    <v-icon>mdi-feature-search-outline</v-icon>
+                  </td>
+                  <td>{{ train.departure_day }}</td>
+                  <td>{{ travel.name }}</td>
+                  <td>{{ train.departure_place }}</td>
+                  <td>{{ train.arrival_place }}</td>
+                  <td>{{ train.departure_time }}</td>
+                  <td>{{ train.arrival_time }}</td>
+                </tr>
+                <!-- </v-card> -->
+                </router-link>
+                </tr>
+              </tbody>
+            </v-table>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -144,14 +153,25 @@
     margin-bottom: 30px;
 
   }
-.list-table{
-  background-color:#f3d2c1;
-  // font-size: 100px;
-  color: red;
-}
-.list-th{
-  color: red;
-}
 
+  .list-table {
+    background-color: #f3d2c1;
+    // font-size: 100px;
+  }
+
+  .show-btn {
+    background-color: #001858;
+    border: solid 3px #001858;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  }
 
 </style>

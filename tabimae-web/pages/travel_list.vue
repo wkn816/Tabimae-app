@@ -151,7 +151,9 @@
     width: 100%;
     // text-align: center;
     margin-bottom: 30px;
-
+  }
+  .title{
+    color: #001858;
   }
 
   .list-table {
@@ -172,6 +174,10 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    &:hover {
+      transform: scale(1.09);
+      transition-duration: 10ms;
+    }
   }
 
 </style>

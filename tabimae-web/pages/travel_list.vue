@@ -16,6 +16,8 @@
     </v-container>
 
       <v-ul v-for="travel in travelData.data">
+
+        <router-link style="text-decoration: none; color: inherit;" :to="`/travel/${travel.id}`">
         <v-container>
           <v-row>
             <v-col cols="12" sm="6" md="6" lg="12">
@@ -93,6 +95,7 @@
             </v-col>
           </v-row>
     </v-container>
+    </router-link>
     </v-ul>
   </div>
 </template>
@@ -177,11 +180,14 @@
   .v-card {
     width: 100%;
     // text-align: center;
+    margin-bottom: 30px;
+
   }
 
   .v-card-title {
     text-align: center;
     font-weight: bolder;
+
   }
 
   .title {
@@ -231,5 +237,6 @@
     font-size: 18px;
 box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
   }
+
 
 </style>

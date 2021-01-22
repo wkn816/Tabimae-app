@@ -250,7 +250,7 @@
 
 <style>
   .time-font {
-    color: #001858;
+    color: seashell;
   }
 
   .ttt {

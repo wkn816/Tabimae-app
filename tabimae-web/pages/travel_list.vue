@@ -14,7 +14,7 @@
           <v-card color=#f3d2c1>
             <v-ul v-for="travel in travelData.data">
               <!-- <li>{{ travel.transport }}</li> -->
-              <v-li>{{ travel.name }}</v-li>
+
               <v-ul v-for="train in travel.trains">
                 <v-col cols="12" sm="11" md="11" lg="12">
                   <v-li>
@@ -23,23 +23,47 @@
                     </v-card-text>
                   </v-li>
                 </v-col>
+
                 <v-col cols="12" sm="11" md="11" lg="12">
-                  <v-li>{{ train.departure_place }}</v-li>
+                  <v-li>
+                    <v-card-text class="item-text">
+                      {{ train.departure_place }}
+                    </v-card-text>
+                  </v-li>
                 </v-col>
+
                 <v-col cols="12" sm="11" md="11" lg="12">
-                  <v-li>{{ train.arrival_place }}</v-li>
+                  <v-li>
+                    <v-card-text class="item-text">
+                      {{ train.arrival_place }}
+                    </v-card-text>
+                  </v-li>
                 </v-col>
+
                 <v-col cols="12" sm="11" md="11" lg="12">
-                  <lv-i>{{ train.departure_time }}</lv-i>
+                  <lv-i>
+                    <v-card-text class="item-text">
+                      {{ train.departure_time }}
+                    </v-card-text>
+                  </lv-i>
                 </v-col>
+
                 <v-col cols="12" sm="11" md="11" lg="12">
-                  <v-li>{{ train.arrival_time }}</v-li>
+                  <v-li>
+                    <v-card-text class="item-text">
+                      {{ train.arrival_time }}
+                    </v-card-text>
+                  </v-li>
                 </v-col>
                 <nuxt-link :to="`/travel/${travel.id}`">詳細へ遷移</nuxt-link>
               </v-ul>
               <!-- <ul v-for="train in travel.airs">
                 <li>{{ air.departure_day }}</li>
               </ul> -->
+              <v-card-title primary-title>
+                <span class="title">旅行テーマ</span>
+                <v-li>{{ travel.name }}</v-li>
+              </v-card-title>
             </v-ul>
           </v-card>
         </v-col>
@@ -122,6 +146,7 @@
 <style lang="scss" scoped>
   .item-text {
     color: red;
+    font-size: 35px;
   }
 
   .v-card {

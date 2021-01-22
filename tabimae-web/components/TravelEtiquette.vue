@@ -56,7 +56,10 @@
   .new_travel_info-img {
     width: 290px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
-
+    &:hover {
+      transform: scale(1.04);
+      transition-duration: 40ms;
+    }
   }
   // .main-introduction {
   //     margin: 2em 0;

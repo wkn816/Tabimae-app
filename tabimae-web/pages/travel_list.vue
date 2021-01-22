@@ -15,7 +15,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-simple-table>
+    <v-simple-table class="list-table">
       <thead>
         <tr>
           <th>
@@ -144,5 +144,7 @@
     margin-bottom: 30px;
 
   }
-
+.list-table{
+  background-color:#f3d2c1;
+}
 </style>

@@ -11,21 +11,31 @@
               <span class="title">旅行一覧</span>
             </v-card-title>
           </v-card>
-          <v-card elevation="20" color=#f3d2c1>
-            <v-ul v-for="travel in travelData.data">
-              <!-- <li>{{ travel.transport }}</li> -->
+        </v-col>
+      </v-row>
+    </v-container>
 
-              <v-ul v-for="train in travel.trains">
-                <v-row>
-                <v-col cols="12" sm="6" md="6" lg="12">
+      <v-ul v-for="travel in travelData.data">
+        <v-container>
+    <v-card elevation="20" color=#f3d2c1>
+          <!-- <v-row> -->
+            <!-- <li>{{ travel.transport }}</li> -->
+            <v-ul v-for="train in travel.trains">
+              <v-row>
+                <v-col cols="12" sm="6" md="6" lg="6">
                   <v-li>
-                      <h5 class="item-title">出発日</h5>
+                    <h5 class="item-title">出発日</h5>
                     <v-card-text class="item-text">
                       {{ train.departure_day }}
                     </v-card-text>
                   </v-li>
                 </v-col>
-                </v-row>
+                <v-col cols="12" sm="6" md="6" lg="6">
+                  <v-card-text class="item-text">
+                    <v-li>{{ travel.name }}</v-li>
+                  </v-card-text>
+                </v-col>
+              </v-row>
 
               <v-row>
                 <v-col cols="12" sm="6" md="6" lg="6">
@@ -65,21 +75,14 @@
                     </v-card-text>
                   </v-li>
                 </v-col>
-                </v-row>
-                <nuxt-link :to="`/travel/${travel.id}`">詳細へ遷移</nuxt-link>
-              </v-ul>
-              <!-- <ul v-for="train in travel.airs">
-                <li>{{ air.departure_day }}</li>
-              </ul> -->
-              <v-card-title primary-title>
-                <span class="title">旅行テーマ</span>
-                <v-li>{{ travel.name }}</v-li>
-              </v-card-title>
+              </v-row>
+              <nuxt-link :to="`/travel/${travel.id}`">詳細へ遷移</nuxt-link>
             </v-ul>
-          </v-card>
-        </v-col>
-      </v-row>
+
+    <!-- </v-row> -->
+    </v-card>
     </v-container>
+    </v-ul>
   </div>
 </template>
 
@@ -163,7 +166,6 @@
   .v-card {
     width: 100%;
     // text-align: center;
-    margin-bottom: 40px;
   }
 
   .v-card-title {
@@ -175,8 +177,20 @@
     color: #001858;
     text-align: center;
   }
-  .item-title{
-    font-size: 20px;
+
+  .item-text {
+    font-size: 23px;
+    color: #001858;
+    // text-shadow:
+    //     1px 0 0 #f582ae,
+    //     0 1px 0 #f582ae,
+    //     -1px 0 0 #f582ae,
+    //     0 -1px 0 #f582ae
+  }
+
+  .item-title {
+    font-size: 15px;
+    color: #001858;
   }
 
 </style>

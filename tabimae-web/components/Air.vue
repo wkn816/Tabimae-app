@@ -1,10 +1,8 @@
 <template>
   <div>
-
         <v-col cols="4" sm="10" md="10" lg="12">
       <img :src="image_src" @click="openModal" class="air-img">
         </v-col>
-
       <Modal v-if="modalFlag">
         <ul>
           <li v-for="item in items" :key="item">

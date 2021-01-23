@@ -28,7 +28,7 @@
             <v-btn class="help_link__button" @click="openModal" style="background-color:#f3d2c1">
               忘れ物リスト
             </v-btn>
-    {{ text }}
+            {{ text }}
             <Modal v-if="modalFlag">
               <ul>
                 <li v-for="item in items" :key="item">
@@ -39,17 +39,38 @@
             </Modal>
           </v-card>
         </v-col>
+
+        <v-col cols="12" sm="11" md="11" lg="9">
+          <v-card color=#001858>
+            <v-row>
+              <v-col cols="12" sm="11" md="11" lg="7">
+            <v-card-title primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>{{ `あと${daylimit}日で出発` }}</span>
+            </v-card-title>
+            </v-col>
+            <v-col cols="12" sm="11" md="11" lg="5">
+            <v-card-title primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>{{ res_travel_show.data.name }}</span>
+            </v-card-title>
+            </v-col>
+            </v-row>
+            {{ res_travel_show.data.name }}
+            {{ res_travel_show.data.trains[0].departure_day }}
+            {{ res_travel_show.data.trains[0].departure_place }}
+            {{ res_travel_show.data.trains[0].arrival_place }}
+            {{ res_travel_show.data.trains[0].departure_time }}
+            {{ res_travel_show.data.trains[0].arrival_time }}
+            <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
+          </v-card>
+        </v-col>
       </v-row>
     </v-container>
-    {{ `あと${daylimit}日で出発` }}
-    {{ res_travel_show.data.name }}
-    {{ res_travel_show.data.trains[0].departure_day }}
-    {{ res_travel_show.data.trains[0].departure_place }}
-    {{ res_travel_show.data.trains[0].arrival_place }}
-    {{ res_travel_show.data.trains[0].departure_time }}
-    {{ res_travel_show.data.trains[0].arrival_time }}
-    <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </div>
 </template>
@@ -163,7 +184,8 @@
   ul {
     list-style: none;
   }
-  .help_link__button{
+
+  .help_link__button {
     font-weight: bolder;
     border: solid 5px #f582ae;
     /*線*/

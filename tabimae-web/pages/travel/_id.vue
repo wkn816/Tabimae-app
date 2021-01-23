@@ -5,10 +5,10 @@
         <v-col cols="12" sm="11" md="11" lg="12">
           <v-card color=#f3d2c1>
             <v-card-title primary-title class="justify-center">
-              <v-icon large color=##001858>
+              <v-icon large color=#001858>
                 mdi-bag-checked
               </v-icon>
-              <span class="title">旅行詳細</span>
+              <span class="test">旅行詳細</span>
             </v-card-title>
           </v-card>
         </v-col>
@@ -25,10 +25,10 @@
               </v-icon>
               <span class="title"></span>
             </v-card-title>
-            <v-btn class="help_link__button" @click="openModal" style="background-color:#f3d2c1">
-              忘れ物リスト
+            <v-btn class="justify-center" @click="openModal" style="background-color:#f3d2c1">
+              <h3 style="color:#001858">忘れ物リスト</h3>
             </v-btn>
-            {{ text }}
+            <h3>{{ text }}</h3>
             <Modal v-if="modalFlag">
               <ul>
                 <li v-for="item in items" :key="item">
@@ -45,7 +45,7 @@
             <v-row>
               <v-col cols="12" sm="11" md="11" lg="12">
                 <v-card-title primary-title>
-                  <span class="display-1">{{ res_travel_show.data.name }}まで{{ `あと${daylimit}日で出発` }}</span>
+                  <span class="display-1">{{ res_travel_show.data.name }}まで{{ `あと${daylimit}日` }}</span>
                 </v-card-title>
               </v-col>
             </v-row>
@@ -114,11 +114,24 @@
                 </v-card-text>
               </v-col>
             </v-row>
-
-            <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
           </v-card>
         </v-col>
       </v-row>
+
+      <v-row>
+      <v-col cols="12" offset-lg="11" sm="11" md="11" lg="1">
+      <v-btn
+        class="ma-2"
+        fab
+        outlined
+        color="#001858"
+        @click="deleteItem({ res_travel_show })"
+      >
+        <v-icon>mdi-trash-can-outline</v-icon>
+      </v-btn>
+      </v-col>
+      </v-row>
+
     </v-container>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </div>
@@ -230,13 +243,8 @@
 </script>
 
 <style>
-  ul {
-    list-style: none;
-  }
-
   .help_link__button {
-    font-weight: bolder;
-    border: solid 5px #f582ae;
+    border: solid 1px #f582ae;
     /*線*/
     border-radius: 10px;
     /*角の丸み*/
@@ -246,7 +254,8 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px #f582ae;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    color: #001858;
   }
   .{
     font-size: 15px;
@@ -263,6 +272,13 @@
   }
 .v-card-title{
 font-size: 60px;
+}
+.test{
+  color: #001858;
+}
+.ma-2{
+  margin-top: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 </style>

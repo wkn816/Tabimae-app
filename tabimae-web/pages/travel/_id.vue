@@ -1,8 +1,47 @@
 <template>
-  <v-card>
-    <h1>詳細画面</h1>
-    {{ `あと${daylimit}日で出発` }}
+  <div>
+    <v-container>
+      <v-row>
+        <v-col cols="12" sm="11" md="11" lg="12">
+          <v-card color=#f3d2c1>
+            <v-card-title primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>旅行詳細</span>
+            </v-card-title>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <v-container>
+      <v-row>
+        <v-col cols="12" sm="11" md="11" lg="3">
+          <v-card color=#001858>
+            <v-card-title primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”></span>
+            </v-card-title>
+            <v-btn class="help_link__button" @click="openModal" style="background-color:#f3d2c1">
+              忘れ物リスト
+            </v-btn>
     {{ text }}
+            <Modal v-if="modalFlag">
+              <ul>
+                <li v-for="item in items" :key="item">
+                  <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
+                </li>
+              </ul>
+              <button @click="closeModal">閉じる</button>
+            </Modal>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    {{ `あと${daylimit}日で出発` }}
     {{ res_travel_show.data.name }}
     {{ res_travel_show.data.trains[0].departure_day }}
     {{ res_travel_show.data.trains[0].departure_place }}
@@ -12,36 +51,7 @@
     <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <div >
-    <button class="help_link__button" @click="openModal">
-      モーダルを開く
-    </button>
-    <Modal v-if="modalFlag">
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <div>モーダルの内容</div>
-      <button @click="closeModal">閉じる</button>
-    </Modal>
   </div>
-
-    <div>
-      <button class="help_link__button" @click="openModal">
-        忘れ物リスト
-      </button>
-      <Modal v-if="modalFlag">
-        <ul>
-        <li v-for="item in items" :key="item">
-          <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
-        </li>
-        </ul>
-        <button @click="closeModal">閉じる</button>
-      </Modal>
-    </div>
-  </v-card>
-
 </template>
 
 <script>
@@ -62,9 +72,9 @@
         res_delete: {},
         test: {},
         checkbox: true,
-      modalFlag: false,
         modalFlag: false,
-        items: ["運転免許証", "保険証", "クレジットカード","切符類", "モバイルバッテリー","マスク","アルコール消毒液","常備薬"],
+        modalFlag: false,
+        items: ["運転免許証", "保険証", "クレジットカード", "切符類", "モバイルバッテリー", "マスク", "アルコール消毒液", "常備薬"],
         main: "main",
       };
     },
@@ -133,24 +143,39 @@
         this.$modal.hide("modal-content");
       },
       openModal() {
-      this.modalFlag = true
-    },
-    closeModal() {
-      this.modalFlag = false
+        this.modalFlag = true
+      },
+      closeModal() {
+        this.modalFlag = false
 
-    }
+      }
 
 
     },
     components: {
-    Modal
-  },
+      Modal
+    },
   };
 
 </script>
 
 <style>
-ul {
-  list-style: none;
-}
+  ul {
+    list-style: none;
+  }
+  .help_link__button{
+    font-weight: bolder;
+    border: solid 5px #f582ae;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px #f582ae;
+  }
+
 </style>

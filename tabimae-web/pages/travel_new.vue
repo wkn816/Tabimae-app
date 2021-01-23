@@ -248,7 +248,7 @@
 
 </style>
 
-<style>
+<style lang="scss" scoped>
   .time-font {
     color: seashell;
   }

@@ -20,18 +20,19 @@
       <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
+      <!-- <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-toolbar-title v-text="title" />
       <v-spacer />
 
       <v-container v-if="user">
         <v-row>
           <v-col cols="12" offset-lg="7" sm="11" md="11" lg="5">
-            <v-btn @click="travelNew" class="wawa" style="background-color:#f3d2c1">旅行新規登録</v-btn>
-            <v-btn @click="travelList">旅行一覧画面</v-btn>
-            <v-btn @click="logOut">ログアウト</v-btn>
+            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOPへ</v-btn>
+            <v-btn @click="travelNew" class="header-item" style="background-color:#f3d2c1">旅行登録</v-btn>
+            <v-btn @click="travelList" class="header-item" style="background-color:#f3d2c1">旅行一覧</v-btn>
+            <v-btn @click="logOut" class="header-item" style="background-color:#f3d2c1">ログアウト</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -82,7 +83,7 @@
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: "Tabimae"
+        title: "タビマエ"
       };
     },
     computed: {
@@ -91,9 +92,15 @@
       },
       items() {
         if (this.user) {
-          return [{
+          return [
+            {
+              icon: "mdi-chart-bubble",
+              title: "TOP",
+              to: "/"
+            },
+            {
               icon: "mdi-apps",
-              title: "新規登録",
+              title: "旅行新規登録",
               to: "/travel_new"
             },
             {
@@ -140,7 +147,10 @@
       },
       async travelList() {
         this.$router.push("/travel_list");
-      }
+      },
+      async travelTop() {
+        this.$router.push("/");
+      },
     }
   };
 
@@ -169,7 +179,7 @@
   .list-item {
     color: #001858;
   }
-.wawa{
+.header-item{
 color: #001858;
 }
 </style>

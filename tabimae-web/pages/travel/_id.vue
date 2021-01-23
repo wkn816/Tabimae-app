@@ -43,11 +43,6 @@
         <v-col cols="12" sm="11" md="11" lg="9">
           <v-card color=#001858 elevation="20">
             <v-row>
-              <!-- <v-col cols="12" sm="11" md="11" lg="7">
-                <v-card-title primary-title class="justify-center">
-                  <span class="display-1">{{ `あと${daylimit}日で出発` }}</span>
-                </v-card-title>
-              </v-col> -->
               <v-col cols="12" sm="11" md="11" lg="12">
                 <v-card-title primary-title>
                   <span class="display-1">{{ res_travel_show.data.name }}まで{{ `あと${daylimit}日で出発` }}</span>
@@ -66,17 +61,27 @@
             </v-row>
 
             <v-row>
-              <v-col cols="12" sm="11" md="11" lg="7">
+              <v-col cols="12" sm="11" md="11" lg="5">
                 <v-card-title primary-title class="justify-center">
-                  <h5 class="item-title">出発日</h5>
+                  <h5 class="item-title">出発地</h5>
                 </v-card-title>
                 <v-card-text primary-title class="justify-center">
                   <span class="display-1">{{ res_travel_show.data.trains[0].departure_place }}</span>
                 </v-card-text>
               </v-col>
+
+              <v-col cols="12" sm="11" md="11" lg="2">
+                <v-card-title primary-title class="justify-center">
+                  <h5 class="item-title"></h5>
+                </v-card-title>
+                <v-icon x-large color=##001858>
+                mdi-arrow-right
+              </v-icon>
+              </v-col>
+
               <v-col cols="12" sm="11" md="11" lg="5">
                 <v-card-title primary-title class="justify-center">
-                  <h5 class="item-title">出発日</h5>
+                  <h5 class="item-title">到着地</h5>
                 </v-card-title>
                 <v-card-text primary-title class="justify-center">
                   <span class="display-1">{{ res_travel_show.data.trains[0].arrival_place }}</span>
@@ -85,17 +90,24 @@
             </v-row>
 
             <v-row>
-              <v-col cols="12" sm="11" md="11" lg="7">
+              <v-col cols="12" sm="11" md="11" lg="5">
                 <v-card-title primary-title class="justify-center">
-                  <h5 class="item-title">出発日</h5>
+                  <h5 class="item-title">出発時間</h5>
                 </v-card-title>
                 <v-card-text primary-title class="justify-center">
                   <span class="title">{{ res_travel_show.data.trains[0].departure_time }}</span>
                 </v-card-text>
               </v-col>
+              <v-col cols="12" sm="11" md="11" lg="2">
+                <v-card-title primary-title class="justify-center">
+                  <h5 class="item-title"></h5>
+                </v-card-title>
+                <v-icon x-large color=##001858>
+              </v-icon>
+              </v-col>
               <v-col cols="12" sm="11" md="11" lg="5">
                 <v-card-title primary-title class="justify-center">
-                  <h5 class="item-title">出発日</h5>
+                  <h5 class="item-title">到着時間</h5>
                 </v-card-title>
                 <v-card-text primary-title class="justify-center">
                   <span class="title">{{ res_travel_show.data.trains[0].arrival_time }}</span>

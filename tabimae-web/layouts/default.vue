@@ -28,11 +28,21 @@
 
       <v-container v-if="user">
         <v-row>
-          <v-col cols="12" offset-lg="7" sm="11" md="11" lg="5">
+          <v-col cols="12" offset-lg="6" sm="11" md="11" lg="6">
             <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOPへ</v-btn>
             <v-btn @click="travelNew" class="header-item" style="background-color:#f3d2c1">旅行登録</v-btn>
             <v-btn @click="travelList" class="header-item" style="background-color:#f3d2c1">旅行一覧</v-btn>
             <v-btn @click="logOut" class="header-item" style="background-color:#f3d2c1">ログアウト</v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-container v-else="user">
+        <v-row>
+          <v-col cols="12" offset-lg="6" sm="11" md="11" lg="6">
+            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOPへ</v-btn>
+            <v-btn @click="signup" class="header-item" style="background-color:#f3d2c1">会員登録</v-btn>
+            <v-btn @click="login" class="header-item" style="background-color:#f3d2c1">ログイン</v-btn>
+            <v-btn @click="guestLogin" class="header-item" style="background-color:#f3d2c1">ゲストログイン</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -150,6 +160,31 @@
       },
       async travelTop() {
         this.$router.push("/");
+      },
+      async signup() {
+        this.$router.push("/signup");
+      },
+      async login() {
+        this.$router.push("/login");
+      },
+      async guestLogin() {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
+          .catch(error => {
+            console.log(error);
+            this.error = (code => {
+              switch (code) {
+                case "auth/user-not-found":
+                  return "メールアドレスが間違っています";
+                case "auth/wrong-password":
+                  return "※パスワードが正しくありません";
+                default:
+                  return "※メールアドレスとパスワードをご確認ください";
+              }
+            })(error.code);
+          });
+        this.$router.push("/travel_list");
       },
     }
   };

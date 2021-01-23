@@ -4,11 +4,11 @@
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
           <v-card color=#f3d2c1>
-            <v-card-title primary-title class=“justify-center”>
+            <v-card-title primary-title class="justify-center">
               <v-icon large color=##001858>
                 mdi-bag-checked
               </v-icon>
-              <span class=“title”>旅行詳細</span>
+              <span class="title">旅行詳細</span>
             </v-card-title>
           </v-card>
         </v-col>
@@ -18,12 +18,12 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="3">
-          <v-card color=#001858>
-            <v-card-title primary-title class=“justify-center”>
+          <v-card color=#001858 elevation="24">
+            <v-card-title primary-title class="justify-center">
               <v-icon large color=##001858>
                 mdi-bag-checked
               </v-icon>
-              <span class=“title”></span>
+              <span class="title"></span>
             </v-card-title>
             <v-btn class="help_link__button" @click="openModal" style="background-color:#f3d2c1">
               忘れ物リスト
@@ -41,72 +41,66 @@
         </v-col>
 
         <v-col cols="12" sm="11" md="11" lg="9">
-          <v-card color=#001858>
+          <v-card color=#001858 elevation="20">
             <v-row>
-              <v-col cols="12" sm="11" md="11" lg="7">
-            <v-card-title primary-title class=“justify-center”>
-              <v-icon large color=##001858>
-                mdi-bag-checked
-              </v-icon>
-              <span class=“title”>{{ `あと${daylimit}日で出発` }}</span>
-            </v-card-title>
-            </v-col>
-            <v-col cols="12" sm="11" md="11" lg="5">
-            <v-card-title primary-title class=“justify-center”>
-              <v-icon large color=##001858>
-                mdi-bag-checked
-              </v-icon>
-              <span class=“title”>{{ res_travel_show.data.name }}</span>
-            </v-card-title>
-            </v-col>
+              <!-- <v-col cols="12" sm="11" md="11" lg="7">
+                <v-card-title primary-title class="justify-center">
+                  <span class="display-1">{{ `あと${daylimit}日で出発` }}</span>
+                </v-card-title>
+              </v-col> -->
+              <v-col cols="12" sm="11" md="11" lg="12">
+                <v-card-title primary-title>
+                  <span class="display-1">{{ res_travel_show.data.name }}まで{{ `あと${daylimit}日で出発` }}</span>
+                </v-card-title>
+              </v-col>
             </v-row>
             <v-row>
               <v-col cols="12" sm="11" md="11" lg="12">
-            <v-card-text primary-title class=“justify-center”>
-              <v-icon large color=##001858>
-                mdi-bag-checked
-              </v-icon>
-              <span class=“title”>{{ res_travel_show.data.trains[0].departure_day }}</span>
-            </v-card-text>
-            </v-col>
+                <v-card-title primary-title class="justify-center">
+                  <h5 class="item-title">出発日</h5>
+                </v-card-title>
+                <v-card-text primary-title class="justify-center">
+                  <span class="display-1">{{ res_travel_show.data.trains[0].departure_day }}</span>
+                </v-card-text>
+              </v-col>
             </v-row>
 
             <v-row>
               <v-col cols="12" sm="11" md="11" lg="7">
-            <v-card-text primary-title class=“justify-center”>
-              <v-icon large color=##001858>
-                mdi-bag-checked
-              </v-icon>
-              <span class=“title”>{{ res_travel_show.data.trains[0].departure_place }}</span>
-            </v-card-text>
-            </v-col>
-            <v-col cols="12" sm="11" md="11" lg="5">
-            <v-card-text primary-title class=“justify-center”>
-              <v-icon large color=##001858>
-                mdi-bag-checked
-              </v-icon>
-              <span class=“title”>{{ res_travel_show.data.trains[0].arrival_place }}</span>
-            </v-card-text>
-            </v-col>
+                <v-card-title primary-title class="justify-center">
+                  <h5 class="item-title">出発日</h5>
+                </v-card-title>
+                <v-card-text primary-title class="justify-center">
+                  <span class="display-1">{{ res_travel_show.data.trains[0].departure_place }}</span>
+                </v-card-text>
+              </v-col>
+              <v-col cols="12" sm="11" md="11" lg="5">
+                <v-card-title primary-title class="justify-center">
+                  <h5 class="item-title">出発日</h5>
+                </v-card-title>
+                <v-card-text primary-title class="justify-center">
+                  <span class="display-1">{{ res_travel_show.data.trains[0].arrival_place }}</span>
+                </v-card-text>
+              </v-col>
             </v-row>
 
             <v-row>
               <v-col cols="12" sm="11" md="11" lg="7">
-            <v-card-text primary-title class=“justify-center”>
-              <v-icon large color=##001858>
-                mdi-bag-checked
-              </v-icon>
-              <span class=“title”>{{ res_travel_show.data.trains[0].departure_time }}</span>
-            </v-card-text>
-            </v-col>
-            <v-col cols="12" sm="11" md="11" lg="5">
-            <v-card-text primary-title class=“justify-center”>
-              <v-icon large color=##001858>
-                mdi-bag-checked
-              </v-icon>
-              <span class=“title”>{{ res_travel_show.data.trains[0].arrival_time }}</span>
-            </v-card-text>
-            </v-col>
+                <v-card-title primary-title class="justify-center">
+                  <h5 class="item-title">出発日</h5>
+                </v-card-title>
+                <v-card-text primary-title class="justify-center">
+                  <span class="title">{{ res_travel_show.data.trains[0].departure_time }}</span>
+                </v-card-text>
+              </v-col>
+              <v-col cols="12" sm="11" md="11" lg="5">
+                <v-card-title primary-title class="justify-center">
+                  <h5 class="item-title">出発日</h5>
+                </v-card-title>
+                <v-card-text primary-title class="justify-center">
+                  <span class="title">{{ res_travel_show.data.trains[0].arrival_time }}</span>
+                </v-card-text>
+              </v-col>
             </v-row>
 
             <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
@@ -242,5 +236,21 @@
     align-items: center;
     box-shadow: 4px 4px #f582ae;
   }
+  .{
+    font-size: 15px;
+    background-color: #001858;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    color: #F3D2C1;
+    text-align: center;
+  }
+  .v-card{
+    text-align: center;
+  }
+.v-card-title{
+font-size: 60px;
+}
 
 </style>

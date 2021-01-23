@@ -60,12 +60,55 @@
             </v-card-title>
             </v-col>
             </v-row>
-            {{ res_travel_show.data.name }}
-            {{ res_travel_show.data.trains[0].departure_day }}
-            {{ res_travel_show.data.trains[0].departure_place }}
-            {{ res_travel_show.data.trains[0].arrival_place }}
-            {{ res_travel_show.data.trains[0].departure_time }}
-            {{ res_travel_show.data.trains[0].arrival_time }}
+            <v-row>
+              <v-col cols="12" sm="11" md="11" lg="12">
+            <v-card-text primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>{{ res_travel_show.data.trains[0].departure_day }}</span>
+            </v-card-text>
+            </v-col>
+            </v-row>
+
+            <v-row>
+              <v-col cols="12" sm="11" md="11" lg="7">
+            <v-card-text primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>{{ res_travel_show.data.trains[0].departure_place }}</span>
+            </v-card-text>
+            </v-col>
+            <v-col cols="12" sm="11" md="11" lg="5">
+            <v-card-text primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>{{ res_travel_show.data.trains[0].arrival_place }}</span>
+            </v-card-text>
+            </v-col>
+            </v-row>
+
+            <v-row>
+              <v-col cols="12" sm="11" md="11" lg="7">
+            <v-card-text primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>{{ res_travel_show.data.trains[0].departure_time }}</span>
+            </v-card-text>
+            </v-col>
+            <v-col cols="12" sm="11" md="11" lg="5">
+            <v-card-text primary-title class=“justify-center”>
+              <v-icon large color=##001858>
+                mdi-bag-checked
+              </v-icon>
+              <span class=“title”>{{ res_travel_show.data.trains[0].arrival_time }}</span>
+            </v-card-text>
+            </v-col>
+            </v-row>
+
             <v-icon small @click="deleteItem({ res_travel_show })">削除</v-icon>
           </v-card>
         </v-col>

@@ -28,8 +28,8 @@
 
       <v-container v-if="user">
         <v-row>
-          <v-col cols="12" offset-lg="6" sm="11" md="11" lg="6">
-            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOPへ</v-btn>
+          <v-col cols="12" offset-lg="7" offset-sm="7" offset-md="7" sm="5" md="5" lg="6">
+            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOP</v-btn>
             <v-btn @click="travelNew" class="header-item" style="background-color:#f3d2c1">旅行登録</v-btn>
             <v-btn @click="travelList" class="header-item" style="background-color:#f3d2c1">旅行一覧</v-btn>
             <v-btn @click="logOut" class="header-item" style="background-color:#f3d2c1">ログアウト</v-btn>
@@ -38,7 +38,7 @@
       </v-container>
       <v-container v-else="user">
         <v-row>
-          <v-col cols="12" offset-lg="6" sm="11" md="11" lg="6">
+          <v-col cols="12" offset-lg="7" sm="11" md="11" lg="6">
             <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOPへ</v-btn>
             <v-btn @click="signup" class="header-item" style="background-color:#f3d2c1">会員登録</v-btn>
             <v-btn @click="login" class="header-item" style="background-color:#f3d2c1">ログイン</v-btn>

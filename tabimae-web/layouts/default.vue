@@ -26,15 +26,20 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
 
-      <v-btn @click="logOut">ログアウト</v-btn>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <v-container v-if="user">
+        <v-row>
+          <v-col cols="12" offset-lg="7" sm="11" md="11" lg="5">
+            <v-btn @click="travelNew" class="wawa" style="background-color:#f3d2c1">旅行新規登録</v-btn>
+            <v-btn @click="travelList">旅行一覧画面</v-btn>
+            <v-btn @click="logOut">ログアウト</v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-app-bar>
     <v-main>
-              <template>
-          <nuxt />
-        </template>
+      <template>
+        <nuxt />
+      </template>
     </v-main>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
@@ -129,6 +134,12 @@
 
         this.$store.commit("setUser", null);
         this.$router.push("/login");
+      },
+      async travelNew() {
+        this.$router.push("/travel_new");
+      },
+      async travelList() {
+        this.$router.push("/travel_list");
       }
     }
   };
@@ -150,11 +161,15 @@
   }
 
   .bg {
-    background-color:#fef6e4;
+    background-color: #fef6e4;
     background-size: 100%;
     color: #001858;
   }
-.list-item{
-  color:#001858;
+
+  .list-item {
+    color: #001858;
+  }
+.wawa{
+color: #001858;
 }
 </style>

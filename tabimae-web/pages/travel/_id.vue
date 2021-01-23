@@ -20,15 +20,25 @@
         <v-col cols="12" sm="11" md="11" lg="3">
           <v-card color=#001858 elevation="24">
             <v-card-title primary-title class="justify-center">
-              <v-icon large color=##001858>
+              <v-icon large>
                 mdi-bag-checked
               </v-icon>
               <span class="title"></span>
             </v-card-title>
-            <v-btn class="justify-center" @click="openModal" style="background-color:#f3d2c1">
-              <h3 style="color:#001858">忘れ物リスト</h3>
+            <v-btn large class="justify-center" @click="openModal" style="background-color:#f3d2c1">
+              <h3 style="color:#001858">忘れ物リストを開く</h3>
             </v-btn>
-            <h3>{{ text }}</h3>
+            <v-card raised class="ma-2" color=#fef6e4 elevation="24">
+              <v-alert
+        border="left"
+        colored-border
+        color="#8bd3dd"
+        elevation="2"
+        class="list"
+      >
+        <h5 class="remind-ms">{{ text }}</h5></v-alert>
+
+            </v-card>
             <Modal v-if="modalFlag">
               <ul>
                 <li v-for="item in items" :key="item">
@@ -38,7 +48,7 @@
               <button @click="closeModal">閉じる</button>
             </Modal>
           </v-card>
-        </v-col>
+          </v-col>
 
         <v-col cols="12" sm="11" md="11" lg="9">
           <v-card color=#001858 elevation="20">
@@ -242,9 +252,9 @@
 
 </script>
 
-<style>
+<style lang="scss" scoped>
   .help_link__button {
-    border: solid 1px #f582ae;
+    border: solid px #f582ae;
     /*線*/
     border-radius: 10px;
     /*角の丸み*/
@@ -256,16 +266,6 @@
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     color: #001858;
-  }
-  .{
-    font-size: 15px;
-    background-color: #001858;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    border-bottom-left-radius: 40px;
-    color: #F3D2C1;
-    text-align: center;
   }
   .v-card{
     text-align: center;
@@ -279,6 +279,12 @@ font-size: 60px;
 .ma-2{
   margin-top: 10px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.remind-ms{
+  color: #001858;
+}
+.list{
+  background-color: #fef6e4;
 }
 
 </style>

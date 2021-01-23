@@ -29,14 +29,9 @@
               <h3 style="color:#001858">忘れ物リストを開く</h3>
             </v-btn>
             <v-card raised class="ma-2" color=#fef6e4 elevation="24">
-              <v-alert
-        border="left"
-        colored-border
-        color="#8bd3dd"
-        elevation="2"
-        class="list"
-      >
-        <h5 class="remind-ms">{{ text }}</h5></v-alert>
+              <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
+                <h5 class="remind-ms">{{ text }}</h5>
+              </v-alert>
 
             </v-card>
             <Modal v-if="modalFlag">
@@ -48,7 +43,7 @@
               <button @click="closeModal">閉じる</button>
             </Modal>
           </v-card>
-          </v-col>
+        </v-col>
 
         <v-col cols="12" sm="11" md="11" lg="9">
           <v-card color=#001858 elevation="20">
@@ -85,8 +80,8 @@
                   <h5 class="item-title"></h5>
                 </v-card-title>
                 <v-icon x-large color=##001858>
-                mdi-arrow-right
-              </v-icon>
+                  mdi-arrow-right
+                </v-icon>
               </v-col>
 
               <v-col cols="12" sm="11" md="11" lg="5">
@@ -113,7 +108,7 @@
                   <h5 class="item-title"></h5>
                 </v-card-title>
                 <v-icon x-large color=##001858>
-              </v-icon>
+                </v-icon>
               </v-col>
               <v-col cols="12" sm="11" md="11" lg="5">
                 <v-card-title primary-title class="justify-center">
@@ -129,17 +124,11 @@
       </v-row>
 
       <v-row>
-      <v-col cols="12" offset-lg="11" sm="11" md="11" lg="1">
-      <v-btn
-        class="ma-2"
-        fab
-        outlined
-        color="#001858"
-        @click="deleteItem({ res_travel_show })"
-      >
-        <v-icon>mdi-trash-can-outline</v-icon>
-      </v-btn>
-      </v-col>
+        <v-col cols="12" offset-lg="11" sm="11" md="11" lg="1">
+          <v-btn class="ma-2" fab outlined color="#001858" @click="deleteItem({ res_travel_show })">
+            <v-icon>mdi-trash-can-outline</v-icon>
+          </v-btn>
+        </v-col>
       </v-row>
 
     </v-container>
@@ -267,24 +256,30 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     color: #001858;
   }
-  .v-card{
+
+  .v-card {
     text-align: center;
   }
-.v-card-title{
-font-size: 60px;
-}
-.test{
-  color: #001858;
-}
-.ma-2{
-  margin-top: 10px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
-}
-.remind-ms{
-  color: #001858;
-}
-.list{
-  background-color: #fef6e4;
-}
+
+  .v-card-title {
+    font-size: 60px;
+  }
+
+  .test {
+    color: #001858;
+  }
+
+  .ma-2 {
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .remind-ms {
+    color: #001858;
+  }
+
+  .list {
+    background-color: #fef6e4;
+  }
 
 </style>

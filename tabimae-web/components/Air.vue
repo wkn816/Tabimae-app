@@ -4,12 +4,16 @@
       <img :src="image_src" @click="openModal" class="air-img">
         </v-col>
       <Modal v-if="modalFlag">
+        <v-col sm="11" md="10" lg="10">
+
         <ul>
           <li v-for="item in items" :key="item">
             <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
           </li>
         </ul>
-        <button @click="closeModal">閉じる</button>
+        <button @click="closeModal" class="modal-close">閉じる</button>
+        </v-col>
+
       </Modal>
   </div>
 </template>
@@ -61,15 +65,8 @@
       transition-duration: 40ms;
     }
   }
-  // .main-introduction {
-  //     margin: 2em 0;
-  //     position: relative;
-  //     padding: 0.5em 1.5em;
-  //     border-top: solid 2px white;
-  //     border-bottom: solid 2px white;
-  //     font-size: 20px;
-  //     font-family: "dot";
-  //     letter-spacing: 10px;
-  // }
+.modal-close{
+  
+}
 
 </style>

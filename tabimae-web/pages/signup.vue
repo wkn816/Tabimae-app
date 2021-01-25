@@ -130,7 +130,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .errors {
     color: red;
     margin-top: 20px;

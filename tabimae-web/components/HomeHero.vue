@@ -7,9 +7,9 @@
           <vue-typer :text="[
         '＊旅は行く前から始まっている',
         '＊旅が織りなす物語を',
-        '＊’タビマエ’で管理しよう',
+        '＊[タビマエ]で管理して',
         '旅行をたのしみましょう！',
-        ]" erase-style="clear" :type-delay="150" :pre-type-delay="90" :erase-delay="300" :repeat="Infinity">
+        ]" erase-style="clear" :type-delay="100" :pre-type-delay="70" :erase-delay="300" :repeat="Infinity">
           </vue-typer>
         </v-col>
 

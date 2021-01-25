@@ -63,7 +63,7 @@
 
 </script>
 
-<style>
+<style lang="scss" scoped>
   .errors {
     color: red;
     margin-top: 20px;

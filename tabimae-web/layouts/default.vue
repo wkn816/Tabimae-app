@@ -20,21 +20,37 @@
       <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
+      <!-- <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-toolbar-title v-text="title" />
       <v-spacer />
 
-      <v-btn @click="logOut">ログアウト</v-btn>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      <v-container v-if="user">
+        <v-row>
+          <v-col cols="12" offset-lg="7" offset-sm="7" offset-md="7" sm="5" md="5" lg="6">
+            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOP</v-btn>
+            <v-btn @click="travelNew" class="header-item" style="background-color:#f3d2c1">旅行登録</v-btn>
+            <v-btn @click="travelList" class="header-item" style="background-color:#f3d2c1">旅行一覧</v-btn>
+            <v-btn @click="logOut" class="header-item" style="background-color:#f3d2c1">ログアウト</v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-container v-else="user">
+        <v-row>
+          <v-col cols="12" offset-lg="7" sm="11" md="11" lg="6">
+            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOPへ</v-btn>
+            <v-btn @click="signup" class="header-item" style="background-color:#f3d2c1">会員登録</v-btn>
+            <v-btn @click="login" class="header-item" style="background-color:#f3d2c1">ログイン</v-btn>
+            <v-btn @click="guestLogin" class="header-item" style="background-color:#f3d2c1">ゲストログイン</v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-app-bar>
     <v-main>
-              <template>
-          <nuxt />
-        </template>
+      <template>
+        <nuxt />
+      </template>
     </v-main>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
@@ -77,7 +93,7 @@
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: "Tabimae"
+        title: "タビマエ"
       };
     },
     computed: {
@@ -86,9 +102,15 @@
       },
       items() {
         if (this.user) {
-          return [{
+          return [
+            {
+              icon: "mdi-chart-bubble",
+              title: "TOP",
+              to: "/"
+            },
+            {
               icon: "mdi-apps",
-              title: "新規登録",
+              title: "旅行新規登録",
               to: "/travel_new"
             },
             {
@@ -129,7 +151,41 @@
 
         this.$store.commit("setUser", null);
         this.$router.push("/login");
-      }
+      },
+      async travelNew() {
+        this.$router.push("/travel_new");
+      },
+      async travelList() {
+        this.$router.push("/travel_list");
+      },
+      async travelTop() {
+        this.$router.push("/");
+      },
+      async signup() {
+        this.$router.push("/signup");
+      },
+      async login() {
+        this.$router.push("/login");
+      },
+      async guestLogin() {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
+          .catch(error => {
+            console.log(error);
+            this.error = (code => {
+              switch (code) {
+                case "auth/user-not-found":
+                  return "メールアドレスが間違っています";
+                case "auth/wrong-password":
+                  return "※パスワードが正しくありません";
+                default:
+                  return "※メールアドレスとパスワードをご確認ください";
+              }
+            })(error.code);
+          });
+        this.$router.push("/travel_list");
+      },
     }
   };
 
@@ -150,11 +206,15 @@
   }
 
   .bg {
-    background-color:#fef6e4;
+    background-color: #fef6e4;
     background-size: 100%;
     color: #001858;
   }
-.list-item{
-  color:#001858;
+
+  .list-item {
+    color: #001858;
+  }
+.header-item{
+color: #001858;
 }
 </style>

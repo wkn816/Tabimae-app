@@ -7,12 +7,6 @@
 
       <Modal v-if="modalFlag">
         <v-col sm="11" md="10" lg="10">
-        <!-- <ul>
-          <li v-for="item in items" :key="item">
-
-            <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
-          </li>
-        </ul> -->
         <h2 class="train-info-title">列車ご乗車の際のご注意事項</h2>
         <ul class="train-info-text">
           <h3>新幹線ご利用の場合</h3>

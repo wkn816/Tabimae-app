@@ -4,13 +4,19 @@
       <img :src="image_src" @click="openModal" class="new_travel_info-img">
         </v-col>
       <Modal v-if="modalFlag">
-        <ul>
-          <li v-for="item in items" :key="item">
-            <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
-          </li>
-        </ul>
-        <button @click="closeModal">閉じる</button>
-      </Modal>
+<v-badge>
+<img src="../assets/img/new_travel_style.png" height="500" width="400" alt="サンプル画像" align="bottom" ><br>
+
+<v-btn class="mx-2"
+        fab
+        dark
+        small
+        color="primary"
+        @click="closeModal">
+          <v-icon>mdi-close-thick</v-icon>
+        </v-btn>
+</v-badge>
+            </Modal>
   </div>
 </template>
 
@@ -28,8 +34,7 @@
     data() {
       return {
         modalFlag: false,
-        image_src: require("../assets/img/new_travel_info.png") // ←
-
+        image_src: require("../assets/img/new_travel_info.png"),
       }
     },
     components: {
@@ -70,6 +75,5 @@
   //     font-size: 20px;
   //     font-family: "dot";
   //     letter-spacing: 10px;
-  // }
-
+  //
 </style>

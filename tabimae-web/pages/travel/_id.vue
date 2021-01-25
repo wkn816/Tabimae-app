@@ -34,7 +34,7 @@
               </v-alert>
 
             </v-card>
-            <Modal v-if="modalFlag">
+            <Modal v-if="modalFlag" @close-modal="closeModal">
               <ul  style="background-color:#001858">
                 <li v-for="item in items" :key="item" class="belonging-list">
                   <v-checkbox :label="item" :value="item"

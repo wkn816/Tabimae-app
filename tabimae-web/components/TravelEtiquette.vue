@@ -3,7 +3,7 @@
         <v-col sm="10" md="10" lg="10">
       <img :src="image_src" @click="openModal" class="new_travel_info-img">
         </v-col>
-      <Modal v-if="modalFlag">
+      <Modal v-if="modalFlag" @close-modal="closeModal">
 <v-badge>
 <img src="../assets/img/new_travel_style.png" height="500" width="400" alt="サンプル画像" align="bottom" ><br>
 

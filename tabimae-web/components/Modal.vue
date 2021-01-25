@@ -27,7 +27,7 @@
     }
 
     &__window {
-      height: 73%;
+      height: 80%;
       width: 70%;
       overflow: hidden;
       background-color: #fef6e4;

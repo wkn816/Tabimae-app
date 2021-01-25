@@ -35,12 +35,17 @@
 
             </v-card>
             <Modal v-if="modalFlag">
-              <ul>
-                <li v-for="item in items" :key="item">
-                  <v-checkbox v-model="selected" :label="item" :value="item"></v-checkbox>
+              <ul  style="background-color:#001858">
+                <li v-for="item in items" :key="item" class="belonging-list">
+                  <v-checkbox :label="item" :value="item"
+                v-model="ex4"
+                color="#001858"
+                hide-details></v-checkbox>
                 </li>
               </ul>
-              <button @click="closeModal">閉じる</button>
+              <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
+                <v-icon>mdi-close-thick</v-icon>
+              </v-btn>
             </Modal>
           </v-card>
         </v-col>
@@ -280,6 +285,14 @@
 
   .list {
     background-color: #fef6e4;
+  }
+
+  .belonging-list {
+    color: #001858;
+  }
+  .items{
+    color: #001858;
+
   }
 
 </style>

@@ -25,7 +25,15 @@
           <li>購入した列車に乗り遅れてしまった場合、払い戻しは不可で、同日の後続列車の自由席にご乗車いただけます。</li>
           <li>切符の払い戻しは、出発前の場合のみ可能です。その際「払戻手数料」が発生します。</li>
         </ul>
-        <button @click="closeModal" class="modal-close">閉じる</button>
+        <v-btn  class="mx-2"
+        fab
+        dark
+        small
+        color="primary"
+        @click="closeModal"
+        >
+        <v-icon>mdi-close-thick</v-icon>
+        </v-btn>
         </v-col>
       </Modal>
   </div>
@@ -96,6 +104,7 @@
 }
 .train-info-title{
   color: #001858;
+  text-align: center;
 }
 .train-info-text{
   color: #001858;

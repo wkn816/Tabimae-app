@@ -32,9 +32,34 @@
               <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
                 <h5 class="remind-ms">{{ text }}</h5>
               </v-alert>
-
             </v-card>
-            <Modal v-if="modalFlag" @close-modal="closeModal">
+            <v-card raised class="ma-2" color=#fef6e4 elevation="24">
+              <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
+                <h5 class="remind-ms">{{ text2 }}</h5>
+              </v-alert>
+            </v-card>
+            <v-card raised class="ma-2" color=#fef6e4 elevation="24">
+              <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
+                <h5 class="remind-ms">{{ text3 }}</h5>
+              </v-alert>
+            </v-card>
+            <v-card raised class="ma-2" color=#fef6e4 elevation="24">
+              <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
+                <h5 class="remind-ms">{{ text4 }}</h5>
+              </v-alert>
+            </v-card>
+            <v-card raised class="ma-2" color=#fef6e4 elevation="24">
+              <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
+                <h5 class="remind-ms">{{ text5 }}</h5>
+              </v-alert>
+            </v-card>
+            <v-card raised class="ma-2" color=#fef6e4 elevation="24">
+              <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
+                <h5 class="remind-ms">{{ text6 }}</h5>
+              </v-alert>
+            </v-card>
+
+            <Modal v-if="modalFlag">
               <ul  style="background-color:#001858">
                 <li v-for="item in items" :key="item" class="belonging-list">
                   <v-checkbox :label="item" :value="item"
@@ -182,10 +207,12 @@
         // // debugger
         const daylimit = departure_day.diff(moment(), "days"); // 91
         let text;
+        let text2;
         if (daylimit > 10) {
           text = "ゆっくりでOK";
         } else if (daylimit > 2 && daylimit < 10) {
           text = "そろそろ";
+          text2 = "風邪ひかないように";
         } else if (daylimit == 1) {
           text = "寝坊しないように";
         } else if (daylimit == 0) {
@@ -197,7 +224,8 @@
         return {
           res_travel_show,
           daylimit,
-          text
+          text,
+          text2
         };
       } catch (err) {
         console.log("err", err);

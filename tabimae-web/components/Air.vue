@@ -3,7 +3,7 @@
     <v-col cols="4" sm="10" md="10" lg="12">
       <img :src="image_src" @click="openModal" class="air-img">
     </v-col>
-    <Modal v-if="modalFlag">
+    <Modal v-if="modalFlag" @close-modal="closeModal">
       <v-col sm="11" md="10" lg="10">
         <h2 class="air-info-title">飛行機ご搭乗の際のご注意事項</h2>
         <ul class="air-info-text">

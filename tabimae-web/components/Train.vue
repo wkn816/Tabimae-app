@@ -5,7 +5,7 @@
       <img :src="image_src" @click="openModal" class="train-img">
         </v-col>
 
-      <Modal v-if="modalFlag">
+      <Modal v-if="modalFlag" @close-modal="closeModal">
         <v-col sm="11" md="10" lg="10">
         <h2 class="train-info-title">列車ご乗車の際のご注意事項</h2>
         <ul class="train-info-text">

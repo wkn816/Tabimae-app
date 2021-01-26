@@ -38,15 +38,18 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card  v-if="transport === 'train'"color=#f3d2c1>
+          <v-card  v-if="transport === 'train'"color=#001858>
             <!-- <template v-if="transport === 'train'"> -->
-              <h1 class="transport-title">列車で行く</h1>
+              <h1 class="transport-title">
+                <v-icon large color=#fef6e4>mdi-train</v-icon>
+                列車で行く
+                </h1>
               <!-- 出発日入力フォーム -->
               <v-row>
-                <v-col cols="12" sm="11" md="12" lg="7">
+                <v-col cols="12" sm="11" md="12" offset-lg="2" lg="2">
                   <v-menu v-model="choice_departure_day" :close-on-content-click="false" max-width="290">
                     <template v-slot:activator="{ on, attrs }">
-                      <v-text-field label="出発日" :value="departure_day" clearable readonly v-bind="attrs" v-on="on"
+                      <v-text-field outlined append-icon="mdi-calendar-month-outline" label="出発日" :value="departure_day" clearable readonly v-bind="attrs" v-on="on"
                         @click:clear="departure_day = null"></v-text-field>
                     </template>
                     <v-date-picker v-model="departure_day" @change="choice_departure_day = departure_day">
@@ -56,25 +59,25 @@
               </v-row>
               <!-- 出発地・到着地入力フォーム -->
               <v-row align="center" justify="center">
-                <v-col cols="12" sm="11" md="12" lg="6">
-                  <v-text-field class="test" v-model="departure_place" :counter="10" label="出発地" required>
+                <v-col cols="12" sm="11" md="12" offset-lg="2" lg="4">
+                  <v-text-field class="test" outlined append-icon="mdi-map-marker" v-model="departure_place" :counter="10" label="出発地" required>
                   </v-text-field>
                 </v-col>
-                <v-col cols="12" sm="11" md="12" lg="6">
-                  <v-text-field class="test" v-model="arrival_place" :counter="10" label="到着地" required>
+                <v-col cols="12" sm="11" md="12" offset-lg="1" lg="4">
+                  <v-text-field class="test"  outlined append-icon="mdi-map-marker" v-model="arrival_place" :counter="10" label="到着地" required>
                   </v-text-field>
                 </v-col>
               </v-row>
               <!-- 出発時間・到着時間入力フォーム -->
               <v-row align="center" justify="center">
-                <v-col cols="12" sm="11" md="12" lg="6">
+                <v-col cols="12" sm="11" md="12" offset-lg="2" lg="4">
                   <p class="my-time-picker">
                     <vue-timepicker v-model="departure_time" format="A:h:mm:" hour-label="時" minute-label="分"
                       apm-label="区分" am-text="午前" pm-text="午後" placeholder="出発時間" input-class="time-font"
                       close-on-complete></vue-timepicker>
                   </p>
                 </v-col>
-                <v-col cols="12" sm="11" md="12" lg="6">
+                <v-col cols="12" sm="11" md="12" offset-lg="1" lg="4">
                   <p class="my-time-picker">
                     <vue-timepicker v-model="arrival_time" format="A:h:mm:" hour-label="時" minute-label="分"
                       apm-label="区分" am-text="午前" pm-text="午後" placeholder="到着時間" input-class="time-font"
@@ -85,8 +88,8 @@
               </v-row>
               <!-- 旅行の名前入力フォーム -->
               <v-row>
-                <v-col cols="12" sm="11" md="12" lg="6">
-                  <v-text-field v-model="name" :counter="10" label="旅行のテーマ" required></v-text-field>
+                <v-col cols="12" sm="11" md="12" offset-lg="2" lg="3">
+                  <v-text-field v-model="name" :counter="15" label="旅行のテーマ" required></v-text-field>
                 </v-col>
               </v-row>
               <!-- 決定ボタン -->
@@ -284,7 +287,8 @@
   color: #001858;
 }
 .transport-title{
-    color: #001858;
+  color: #fef6e4;
+  text-align: center;
 }
 
 </style>

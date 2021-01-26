@@ -3,7 +3,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" sm="11" md="11" offset-lg="1" lg="10">
+        <v-col cols="12" offset-ms="1" sm="10" offset-md="1" md=10 offset-lg="1" lg="10">
           <v-card color=#f3d2c1 elevation=“20”>
             <v-card-title primary-title class="justify-center">
               <v-icon large color=#001858>
@@ -93,7 +93,7 @@
                 <v-text-field outlined append-icon="mdi-comment-edit-outline" v-model="name" :counter="15"
                   label="旅行のテーマ" required></v-text-field>
               </v-col>
-              <v-col cols="12" sm="11" md="12" offset-lg="1" lg="3">
+              <v-col cols="12" offset-sm="1" sm="11" md="12" offset-lg="1" lg="3">
                 <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1" class="create">決定</v-btn>
               </v-col>
             </v-row>

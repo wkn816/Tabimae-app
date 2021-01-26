@@ -25,9 +25,11 @@
               </v-icon>
               <span class="title"></span>
             </v-card-title>
+
             <v-btn large class="justify-center" @click="openModal" style="background-color:#f3d2c1">
               <h3 style="color:#001858">忘れ物リストを開く</h3>
             </v-btn>
+
             <v-card raised class="ma-2" color=#fef6e4 elevation="24">
               <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
                 <h5 class="remind-ms">{{ text }}</h5>
@@ -60,14 +62,27 @@
             </v-card>
 
             <Modal v-if="modalFlag">
-              <ul  style="background-color:#001858">
+              <ul style="background-color:#001858">
                 <li v-for="item in items" :key="item" class="belonging-list">
-                  <v-checkbox :label="item" :value="item"
-                v-model="ex4"
-                color="#001858"
-                hide-details></v-checkbox>
+                  <v-checkbox :label="item" :value="item" v-model="ex4" color="#001858" hide-details></v-checkbox>
+                </li>
+                <li>
+              <v-text-field
+              label="持ち物追加"
+              filled
+              required
+              v-model="name" :counter="10"
+            >
+            </v-text-field>
+            <v-col cols="12" sm="11" md="12" lg="12">
+                  <v-btn @click="travelitem">追加</v-btn>
+                </v-col>
                 </li>
               </ul>
+
+              <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
+                <v-icon>mdi-plus-box </v-icon>
+              </v-btn>
               <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
                 <v-icon>mdi-close-thick</v-icon>
               </v-btn>
@@ -188,6 +203,7 @@
         modalFlag: false,
         items: ["運転免許証", "保険証", "クレジットカード", "切符類", "モバイルバッテリー", "マスク", "アルコール消毒液", "常備薬"],
         main: "main",
+        name: "",
       };
     },
 
@@ -262,8 +278,22 @@
       },
       closeModal() {
         this.modalFlag = false
+      },
+    async travelitem(){
+      const travelitem_params = {
+          name: this.name,
+          // travel_id: data.id,
+          // user_id: this.$store.state.auth.currentUser.id
+        };
+        console.log(travelitem_params);
+      //   const res_item = await axios.post("/v1/travelitems",{
+      //     travelitem: travelitem_params
+      //   });
+      //   console.log(res_item);
+      //   this.name = ""
+      // this.$router.push("/travel_list");
+    }
 
-      }
 
 
     },
@@ -318,7 +348,8 @@
   .belonging-list {
     color: #001858;
   }
-  .items{
+
+  .items {
     color: #001858;
 
   }

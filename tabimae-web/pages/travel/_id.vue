@@ -95,7 +95,7 @@
             <v-row>
               <v-col cols="12" sm="11" md="11" lg="12">
                 <v-card-title primary-title>
-                  <span class="display-1">{{ res_travel_show.data.name }}まで{{ `あと${daylimit}日` }}</span>
+                  <span class="display-1">{{ res_travel_show.data.name }}まで{{ `あと${daylimit+1}日` }}</span>
                 </v-card-title>
               </v-col>
             </v-row>
@@ -221,7 +221,7 @@
           res_travel_show.data.trains[0].departure_day
         );
         // // debugger
-        const daylimit = departure_day.diff(moment(), "days"); // 91
+        const daylimit = departure_day.diff(moment(), "days");
         let text;
         let text2;
         if (daylimit > 10) {

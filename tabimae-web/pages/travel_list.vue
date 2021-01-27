@@ -98,7 +98,7 @@
             user
           }
         });
-        // debugger
+          // debugger
 
         //filterで作り直された配列がtravelNameに入る
         console.log(this.travelData);

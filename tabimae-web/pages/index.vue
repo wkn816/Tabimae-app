@@ -32,8 +32,8 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="10" md="10" lg="5">
-              <ButtonDefault to="" class="button">
-                <template v-slot:label>
+              <ButtonDefault to="travel_list" class="button">
+                <template v-slot:label @click="guestLogin">
                   <v-icon large color=#001858>
                     mdi-briefcase-account
                   </v-icon>

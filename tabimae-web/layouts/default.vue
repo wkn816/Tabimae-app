@@ -39,7 +39,7 @@
       <v-container v-else="user">
         <v-row>
           <v-col cols="12" offset-lg="7" sm="11" md="11" lg="6">
-            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOPへ</v-btn>
+            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOP</v-btn>
             <v-btn @click="signup" class="header-item" style="background-color:#f3d2c1">会員登録</v-btn>
             <v-btn @click="login" class="header-item" style="background-color:#f3d2c1">ログイン</v-btn>
             <v-btn @click="guestLogin" class="header-item" style="background-color:#f3d2c1">ゲストログイン</v-btn>

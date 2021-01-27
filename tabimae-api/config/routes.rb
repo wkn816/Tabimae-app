@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :users
     resources :trains
     resources :airs
+    resources :travelitems
   end
 end

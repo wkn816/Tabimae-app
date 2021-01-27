@@ -1,6 +1,6 @@
 <template>
   <transition name="modal" appear>
-    <div class="modal__overlay">
+    <div class="modal__overlay"  @click="closeModal">
       <div class="modal__window">
         <div class="modal__content">
           <slot />
@@ -9,6 +9,17 @@
     </div>
   </transition>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  methods: {
+    closeModal() {
+      this.$emit('close-modal')
+    }
+  }
+})
+</script>
 
 <style lang="scss" scoped>
   .modal {
@@ -27,7 +38,7 @@
     }
 
     &__window {
-      height: 73%;
+      height: 80%;
       width: 70%;
       overflow: hidden;
       background-color: #fef6e4;

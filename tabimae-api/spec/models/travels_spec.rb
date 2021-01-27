@@ -8,12 +8,11 @@ RSpec.describe Travel, type: :model do
 
     it 'Todoを追加' do
       user = @user
-      todo = Todo.new(
+      Travel = Travel.new(
         user_id: 1,
-        title: "test",
-        point: 1,
+        name: "test",
       )
-      expect(todo).to be_valid
+      expect(Travel).to be_valid
     end
 
     it 'Todoを削除' do

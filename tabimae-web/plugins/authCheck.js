@@ -15,7 +15,6 @@ const authCheck = ({
         },
     });
     store.commit("auth/setUser", data)
-    //   debuggerCh
     store.commit('auth/setTravels', [])
 
     } else {

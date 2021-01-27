@@ -222,7 +222,7 @@
         this.transport = "";
         this.name = "";
         this.success = true;
-
+        
         if (this.transport === "air") {
           console.log(data);
           const air_params = {

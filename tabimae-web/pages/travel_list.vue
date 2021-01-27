@@ -1,14 +1,11 @@
 <template>
   <div>
-
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color=#f3d2c1 elevation=“20”>
+          <v-card color="#f3d2c1" elevation="“20”">
             <v-card-title primary-title class="justify-center">
-              <v-icon large color=#001858>
-                mdi-bag-checked
-              </v-icon>
+              <v-icon large color="#001858">mdi-bag-checked</v-icon>
               <span class="title">旅行一覧</span>
             </v-card-title>
           </v-card>
@@ -19,55 +16,47 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card elevation=“20” color=#f3d2c1>
-            <v-table class="list-table" style="color:#001858">
+          <v-card elevation="“20”" color="#f3d2c1">
+            <v-simple-table class="list-table" style="color:#001858">
               <thead>
                 <tr>
-                  <th style="color:#001858">
-                    詳細
-                  </th>
-                  <th style="color:#001858">
-                    出発日
-                  </th>
-                  <th style="color:#001858">
-                    出発地
-                  </th>
-                  <th style="color:#001858">
-                    到着地
-                  </th>
-                  <th style="color:#001858">
-                    出発時間
-                  </th>
-                  <th style="color:#001858">
-                    到着時間
-                  </th>
+                  <th style="color:#001858">詳細</th>
+                  <th style="color:#001858">出発日</th>
+                  <th style="color:#001858">出発地</th>
+                  <th style="color:#001858">到着地</th>
+                  <th style="color:#001858">出発時間</th>
+                  <th style="color:#001858">到着時間</th>
                 </tr>
               </thead>
-
-
               <!-- <v-card elevation="20" color=#f3d2c1> -->
               <!-- <router-link style=“text-decoration: none; color: inherit;” :to=“`/travel/${travel.id}`“>詳細へ遷移
-                  </router-link> -->
+              </router-link>-->
               <tbody>
-                <tr v-for="travel in travelData.data">
-                  <router-link style="text-decoration: none; color: inherit;" :to="`/travel/${travel.id}`">
-                <tr v-for="train in travel.trains">
+                <!-- <div v-for="travel in travelData.data"> -->
+                <!-- <router-link
+                  style="text-decoration: none; color: inherit;"
+                  :to="`/travel/${travel.id}`"
+                > -->
+                <tr v-for="train in trains">
                   <!-- <tr v-for="train in travelData.data"> -->
                   <td class="show-btn">
-                    <v-icon>mdi-feature-search-outline</v-icon>
+                    <router-link style="text-decoration: none;" :to="`/travel/${travel}`">
+                      <v-icon>mdi-feature-search-outline</v-icon>
+                    </router-link>
                   </td>
-                  <td>{{ train.departure_day }}</td>
-                  <td>{{ travel.name }}</td>
+                  <td>
+                    {{ train.departure_day }}
+
+                  </td>
                   <td>{{ train.departure_place }}</td>
                   <td>{{ train.arrival_place }}</td>
                   <td>{{ train.departure_time }}</td>
                   <td>{{ train.arrival_time }}</td>
                 </tr>
                 <!-- </v-card> -->
-                </router-link>
-                </tr>
+                <!-- </div> -->
               </tbody>
-            </v-table>
+            </v-simple-table>
           </v-card>
         </v-col>
       </v-row>
@@ -87,7 +76,8 @@
       return {
         // travel_params: "",
         //   {
-        travelData: {},
+        travelData: [],
+        trains: [],
         travel: "",
         transport: "",
         userName: {}
@@ -108,9 +98,12 @@
             user
           }
         });
+          // debugger
 
         //filterで作り直された配列がtravelNameに入る
         console.log(this.travelData);
+        this.trains = this.travelData.data[0].trains;
+        this.travel = this.travelData.data[0].id;
       }
     },
 
@@ -151,7 +144,6 @@
     width: 100%;
     // text-align: center;
     margin-bottom: 30px;
-
   }
 
   .list-table {

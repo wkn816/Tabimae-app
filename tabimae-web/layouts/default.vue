@@ -36,7 +36,7 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-container v-else="user">
+      <v-container v-else>
         <v-row>
           <v-col cols="12" offset-lg="7" sm="11" md="11" lg="6">
             <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOP</v-btn>

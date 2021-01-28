@@ -18,7 +18,7 @@
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
       </v-btn>
       <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
+        <v-icon>mdi-bag-checked</v-icon>
       </v-btn>
       <!-- <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
@@ -104,17 +104,17 @@
         if (this.user) {
           return [
             {
-              icon: "mdi-chart-bubble",
+              icon: "mdi-bag-checked",
               title: "TOP",
               to: "/"
             },
             {
-              icon: "mdi-apps",
+              icon: "mdi-briefcase-plus-outline",
               title: "旅行新規登録",
               to: "/travel_new"
             },
             {
-              icon: "mdi-chart-bubble",
+              icon: "mdi-format-list-bulleted",
               title: "旅行一覧",
               to: "/travel_list"
             }
@@ -211,6 +211,12 @@
     color: #001858;
   }
 
+  .list-item {
+    color: #001858;
+  }
+.header-item{
+color: #001858;
+}
   .list-item {
     color: #001858;
   }

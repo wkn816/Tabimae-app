@@ -61,12 +61,32 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <v-container>
+      <v-card color="#f3d2c1">
+        <v-card-title primary-title class="justify-center">
+          <v-icon large color="#001858">mdi-bag-checked</v-icon>
+          <span class="title">旅行出発前に知っておきたいこと</span>
+        </v-card-title>
+        <v-card-text color="#001858">
+          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
+        </v-card-text>
+        <v-row>
+          <Train />
+          <Air />
+          <TravelEtiquette />
+        </v-row>
+      </v-card>
+    </v-container>
+
   </div>
 </template>
 
 <script>
   import axios from "@/plugins/axios";
-  import TravelNew from "@/pages/travel_new";
+  import TravelNew from "@/pages/travel_new";import Train from "~/components/Train.vue";
+import Air from "~/components/Air.vue";
+import TravelEtiquette from "~/components/TravelEtiquette.vue";
 
   export default {
     // components: {
@@ -98,7 +118,7 @@
             user
           }
         });
-          // debugger
+        // debugger
 
         //filterで作り直された配列がtravelNameに入る
         console.log(this.travelData);
@@ -165,5 +185,14 @@
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   }
+
+  .title {
+  color: #001858;
+  text-align: center;
+}
+p {
+  color: #001858;
+  text-align: center;
+}
 
 </style>

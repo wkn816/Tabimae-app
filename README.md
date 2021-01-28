@@ -31,6 +31,8 @@
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
+##機能一覧
+https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：JavaScript,Ruby,SQL

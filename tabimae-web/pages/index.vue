@@ -124,7 +124,7 @@ export default {
   },
   methods: {
     async guestLogin() {
-      firebase
+      await firebase
         .auth()
         .signInWithEmailAndPassword(
           process.env.GUEST_LOGIN_EMAIL,

@@ -148,6 +148,7 @@ export default {
     openModal() {
       this.modalFlag = true;
     },
+
     closeModal() {
       this.modalFlag = false;
     }
@@ -168,6 +169,31 @@ export default {
   computed: {
       user() {
         return this.$store.state.auth.currentUser;
+    methods: {
+      async guestLogin() {
+        console.log(process.env.GUEST_LOGIN_EMAIL);
+        await firebase
+          .auth()
+          .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
+          .catch(error => {
+            console.log(error);
+            console.log("test");
+            this.error = (code => {
+              switch (code) {
+                case "auth/user-not-found":
+                  return "メールアドレスが間違っています";
+                case "auth/wrong-password":
+                  return "※パスワードが正しくありません";
+                default:
+                  return "※メールアドレスとパスワードをご確認ください";
+              }
+            })(error.code);
+          });
+        this.$router.push("/travel_list");
+      },
+      openModal() {
+        this.modalFlag = true
+
       },
   }
 

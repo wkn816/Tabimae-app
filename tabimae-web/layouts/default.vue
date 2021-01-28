@@ -212,15 +212,10 @@
   }
 
   .list-item {
-    color: #001858;
+    color: #001858 !important;
   }
-.header-item{
-color: #001858;
-}
-  .list-item {
-    color: #001858;
+  .header-item{
+    color: #001858 !important;
   }
-.header-item{
-color: #001858;
-}
+
 </style>

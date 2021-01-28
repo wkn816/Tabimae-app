@@ -1,7 +1,6 @@
 <template>
 <div>
-    <v-col sm="11" md="11" lg="12"
-          offset-lg="1">
+    <v-col sm="11" md="11" offset-lg="1" lg="12">
 <v-card color=#f3d2c1>
   <v-card-title primary-title class="justify-center">
     <v-icon

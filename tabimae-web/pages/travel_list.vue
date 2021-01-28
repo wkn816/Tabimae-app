@@ -159,7 +159,7 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
   }
 
   .list-table {
-    background-color: #f3d2c1;
+    background-color: #f3d2c1 !important;
     // font-size: 100px;
   }
 

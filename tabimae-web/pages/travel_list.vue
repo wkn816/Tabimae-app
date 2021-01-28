@@ -18,7 +18,7 @@
         <v-col cols="12" sm="11" md="11" lg="12">
           <v-card elevation="“20”" color="#f3d2c1">
             <v-simple-table class="list-table" style="color:#001858">
-              <thead>
+              <thead class="list-thead">
                 <tr>
                   <th style="color:#001858">詳細</th>
                   <th style="color:#001858">出発日</th>
@@ -44,17 +44,18 @@
                       <v-icon>mdi-feature-search-outline</v-icon>
                     </router-link>
                   </td>
-                  <td>
+                  <td class="blue lighten-5">
                     {{ train.departure_day }}
-
                   </td>
-                  <td>{{ train.departure_place }}</td>
-                  <td>{{ train.arrival_place }}</td>
-                  <td>{{ train.departure_time }}</td>
-                  <td>{{ train.arrival_time }}</td>
+                  <td class="blue lighten-5">{{ train.departure_place }}</td>
+                  <td class="blue lighten-5">{{ train.arrival_place }}</td>
+                  <td class="blue lighten-5">{{ train.departure_time }}</td>
+                  <td class="blue lighten-5">{{ train.arrival_time }}</td>
+
                 </tr>
                 <!-- </v-card> -->
                 <!-- </div> -->
+
               </tbody>
             </v-simple-table>
           </v-card>
@@ -132,16 +133,7 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
     //     console.log(value);
     //   });
     // },
-    methods: {
-      filteingUserName() {
-        // console.log(this.travelData);
-        // this.userName = this.travelData.data.map(function(value) {
-        //   console.log(value.username.user);
-        //   return value.username;
-        // });
-        // console.log(this.userName);
-      }
-    },
+
     computed: {
       // returnUserName() {
       //   if (this.travelData !== undefined){ return }
@@ -194,5 +186,7 @@ p {
   color: #001858;
   text-align: center;
 }
+
+
 
 </style>

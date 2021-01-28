@@ -97,11 +97,13 @@
     },
     methods: {
       async guestLogin() {
-        firebase
+        console.log(process.env.GUEST_LOGIN_EMAIL);
+        await firebase
           .auth()
           .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
           .catch(error => {
             console.log(error);
+            console.log("test");
             this.error = (code => {
               switch (code) {
                 case "auth/user-not-found":

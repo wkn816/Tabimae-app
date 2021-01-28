@@ -303,14 +303,10 @@
 </style>
 
 <style lang="scss" scoped>
-  .time-font {
-    color: seashell;
-  }
-
   .ttt {
     background-color: #001858;
     font-weight: bolder;
-    // border: solid 5px #f582ae;
+    border: solid 5px #f3d2c1;
     /*線*/
     border-radius: 10px;
     /*角の丸み*/
@@ -337,11 +333,15 @@
     padding-bottom: 20px;
   }
   .create{
-    color: black;
+    color: black !important;
     &:hover {
       transform: scale(1.04);
       transition-duration: 40ms;
     }
   }
-
+</style>
+<style>
+.time-font {
+    color: seashell !important;
+  }
 </style>

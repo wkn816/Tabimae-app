@@ -68,7 +68,7 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="6">
-              <ButtonDefault to="travel_list" class="button">
+              <ButtonDefault to="signup" class="button">
                 <template v-slot:label @click="guestLogin">
                   <v-icon large color="#001858">mdi-briefcase-account</v-icon>ゲストログイン
                   <p class="btn-text">初めてのご利用で一回限りご利用の方</p>

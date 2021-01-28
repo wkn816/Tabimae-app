@@ -68,13 +68,13 @@
                     hide-details
                   ></v-checkbox>
                 </li>
-
+<!--
                 <li>
                   <v-text-field label="持ち物追加" filled required v-model="item" :counter="10"></v-text-field>
                   <v-col cols="12" sm="11" md="12" lg="12">
                     <v-btn @click="travelitem">追加</v-btn>
                   </v-col>
-                </li>
+                </li> -->
               </ul>
 
               <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
@@ -204,7 +204,7 @@ export default {
         "常備薬"
       ],
       main: "main",
-      item: ""
+      // item: ""
     };
   },
 

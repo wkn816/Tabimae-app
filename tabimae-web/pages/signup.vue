@@ -2,7 +2,7 @@
   <v-app class="bg">
     <v-row>
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
-        <v-card color=#f3d2c1>
+        <v-card color=#f3d2c1 class="signup-card">
           <v-card-title primary-title class="justify-center">
             <v-icon large color=#001858>
               mdi-bag-checked
@@ -19,7 +19,7 @@
               <v-text-field v-model="passwordConfirm" label="passwordConfirm" data-vv-name="passwordConfirm" required
                 :type="show2 ? 'text' : 'password'" :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="show2 = !show2"></v-text-field>
-              <v-btn block dark class="mr-4" @click="signup" color="#001858" elevation="10">
+              <v-btn block dark class="mr-4" @click="signup" color="#001858" elevation="5">
                 <div class="submit">登録</div>
               </v-btn>
               <p v-if="error" class="errors">{{ error }}</p>
@@ -123,7 +123,7 @@
               }
             })(error.code);
           });
-        this.$router.push("/travel_list");
+        this.$router.push("/");
       },
     },
   };
@@ -147,6 +147,9 @@
 .title{
   color: #001858;
   text-align: center;
+}
+.signup-card{
+  margin: 12px;
 }
 
 </style>

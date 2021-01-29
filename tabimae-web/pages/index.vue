@@ -71,7 +71,7 @@
               <ButtonDefault to="signup" class="button">
                 <template v-slot:label @click="guestLogin">
                   <v-icon large color="#001858">mdi-briefcase-account</v-icon>ゲストログイン
-                  <p class="btn-text">初めてのご利用で一回限りご利用の方</p>
+                  <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
                 </template>
               </ButtonDefault>
             </v-col>
@@ -143,7 +143,7 @@
               }
             })(error.code);
           });
-        this.$router.push("/travel_list");
+        this.$router.push("/");
       },
       openModal() {
         this.modalFlag = true;

@@ -19,7 +19,7 @@
               <v-text-field v-model="passwordConfirm" label="passwordConfirm" data-vv-name="passwordConfirm" required
                 :type="show2 ? 'text' : 'password'" :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="show2 = !show2"></v-text-field>
-              <v-btn block dark class="mr-4" @click="signup" color="#001858">
+              <v-btn block dark class="mr-4" @click="signup" color="#001858" elevation="10">
                 <div class="submit">登録</div>
               </v-btn>
               <p v-if="error" class="errors">{{ error }}</p>
@@ -42,7 +42,7 @@
           </v-card-title>
           <v-card-text color=#001858>
             <v-hover v-slot:default="{ hover }">
-              <v-btn block dark class="guest-btn" @click="guestLogin" color="#001858">
+              <v-btn block dark class="guest-btn" @click="guestLogin" color="#001858" elevation="10">
                 <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
               </v-btn>
             </v-hover>
@@ -143,6 +143,10 @@
     border-radius: 8px;
     border: 1px solid #dddddd;
     box-shadow: 4px 4px #f582ae;
+}
+.title{
+  color: #001858;
+  text-align: center;
 }
 
 </style>

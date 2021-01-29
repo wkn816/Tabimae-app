@@ -121,20 +121,25 @@
           ];
         } else {
           return [{
-              icon: "mdi-apps",
+              icon: "mdi-bag-checked",
               title: "TOP画面",
               to: "/"
             },
             {
-              icon: "mdi-chart-bubble",
+              icon: "mdi-account-plus",
               title: "新規会員登録",
               to: "/signup"
             },
             {
-              icon: "mdi-chart-bubble",
+              icon: "mdi-account-search",
               title: "ログイン",
               to: "/login"
-            }
+            },
+            {
+              icon: "mdi-briefcase-account",
+              title: "ゲストログイン",
+              to: "/guestLogin"
+            },
           ];
         }
       }

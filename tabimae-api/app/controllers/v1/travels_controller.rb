@@ -17,7 +17,7 @@ class V1::TravelsController < ApplicationController
       travel.airs[0].departure_day > Date.today
       end
     end
-    render json: @travels,include: [:trains, :airs]
+    render json: @travels,include: [:trains, :airs, :travelitems]
     # end
   end
 
@@ -27,7 +27,7 @@ class V1::TravelsController < ApplicationController
 
   def show
     travel = Travel.find(params[:id])
-    render json: travel,include: [:trains, :airs]
+    render json: travel,include: [:trains, :airs, :travelitems]
   end
 
 

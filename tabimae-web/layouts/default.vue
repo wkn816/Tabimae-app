@@ -155,7 +155,7 @@
           });
 
         this.$store.commit("setUser", null);
-        this.$router.push("/login");
+        this.$router.push("/");
       },
       async travelNew() {
         this.$router.push("/travel_new");

@@ -104,7 +104,7 @@
             err
           });
         });
-        this.$router.push("/travel_list");
+        this.$router.push("/");
       },
       async guestLogin() {
         firebase

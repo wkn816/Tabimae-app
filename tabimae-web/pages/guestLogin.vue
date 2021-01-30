@@ -12,27 +12,24 @@
         <v-card-text color=#001858 class="text">
           <span class="text">ゲストログインでのご利用の場合履歴を残すことは出来ません。</span><br>
           <span class="text">よろしいですか？</span><br>
-            <v-card-text class="text">はい
-              <v-icon medium color=#001858>
-                mdi-arrow-right-bold-outline
-              </v-icon>
+            <v-card-text class="text">
             <v-hover v-slot:default="{ hover }">
-              <v-btn dark class="guest-btn" @click="guestLogin" color="#001858" elevation="10">
-                <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログイン
+              <v-btn large dark class="guest-btn" @click="guestLogin" color="#001858" elevation="10">
+                <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>YES
               </v-btn>
             </v-hover><br>
             </v-card-text>
 
-            <sv-card-text class="text">いいえ
-              <v-icon medium color=#001858>
-                mdi-arrow-right-bold-outline
-              </v-icon>
+            <v-card-text class="text">
             <v-hover v-slot:default="{ hover }">
-              <v-btn dark class="guest-btn" to="signup" color="#001858" elevation="10">
-                <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>新規会員登録　
+              <v-btn large dark class="guest-btn" to="signup" color="#001858" elevation="10">
+                <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>NO
               </v-btn>
             </v-hover>
-            </sv-card-text>
+<br>※『NO』の場合、新規会員登録画面にて<br>会員登録を行ってください。
+            </v-card-text>
+                        <v-card-text class="text">
+            </v-card-text>
 
         </v-card-text>
       </v-card>

@@ -66,15 +66,17 @@
                     v-model="ex4"
                     color="#001858"
                     hide-details
+                    @change="onChange(item);"
                   ></v-checkbox>
                 </li>
-<!--
+
                 <li>
                   <v-text-field label="持ち物追加" filled required v-model="item" :counter="10"></v-text-field>
                   <v-col cols="12" sm="11" md="12" lg="12">
                     <v-btn @click="travelitem">追加</v-btn>
+                    <v-btn @click="itemsubmit">送信</v-btn>
                   </v-col>
-                </li> -->
+                </li>
               </ul>
 
               <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
@@ -203,8 +205,9 @@ export default {
         "アルコール消毒液",
         "常備薬"
       ],
+      checkeditems: [],
       main: "main",
-      // item: ""
+      item: ""
     };
   },
 
@@ -219,39 +222,66 @@ export default {
       const departure_day = moment(
         res_travel_show.data.trains[0].departure_day
       );
-      //const items = res_travel_show.data.items
-      // // debugger
+      const checkeditems = res_travel_show.data.travelitems;
       const daylimit = departure_day.diff(moment(), "days");
       let text;
       let text2;
+      let text3;
+      let text4;
+      let text5;
+      let text6;
       if (daylimit > 20) {
         text = "切符・航空券の手配はできた？";
-        text2 = "必要であればレンタカーも予約しよう！";
-        // text3 = "ゆとりをもった計画にしようね";
-        // text4 = "宿泊日の間違いに注意だよ";
-        // text5 = "三密はしっかり回避！";
-        // text6 = "素敵な旅行になりますように♪";
+        text2 = "必要ならレンタカーも予約しよう";
+        text3 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+        text4 = "最新の時刻表を確認しよう";
+        text5 = "三密はしっかり回避！";
+        text6 = "素敵な旅行になりますように♪";
       } else if (daylimit > 2 && daylimit < 20) {
-        text = "そろそろ♡";
-        text2 = "風邪ひかないように";
+        text = "準備はばっちり？";
+        text2 = "体調管理には気を付けてね";
+        text3 = "お土産袋を持っていくと便利かも";
+        text4 = "三密はしっかり回避！";
+        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+        text6 = "天気予報もしっかり確認しよう";
       } else if (daylimit == 1) {
-        text = "寝坊しないように";
+        text = "準備はばっちり？";
+        text2 = "体調管理には気を付けてね";
+        text3 = "お土産袋を持っていくと便利かも";
+        text4 = "三密はしっかり回避！";
+        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+        text6 = "天気予報もしっかり確認しよう";
       } else if (daylimit == 0) {
-        text = "当日";
+        text = "準備はばっちり？";
+        text2 = "体調管理には気を付けてね";
+        text3 = "お土産袋を持っていくと便利かも";
+        text4 = "三密はしっかり回避！";
+        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+        text6 = "天気予報もしっかり確認しよう";
       } else {
-        text = "おわた";
+        text = "乗り継ぎ時間は余裕を持ってね♪";
+        text2 = "体調管理には気を付けてね";
+        text3 = "お土産袋を持っていくと便利かも";
+        text4 = "三密はしっかり回避！";
+        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+        text6 = "天気予報もしっかり確認しよう";
       }
       // console.log(res_travel_show);
       return {
         res_travel_show,
-        //items,
+        checkeditems,
         daylimit,
         text,
-        text2
+        text2,
+        text3,
+        text4,
+        text5,
+        text6,
       };
     } catch (err) {
       console.log("err", err);
     }
+
     // const daylimit =
   },
   components: {
@@ -270,7 +300,7 @@ export default {
       }
       // debugger
       if (deleteres.status == 200) {
-        this.$router.push("/travel_list");
+        this.$router.push("/");
       }
     },
     openModal() {
@@ -288,6 +318,24 @@ export default {
     travelitem() {
       this.items.push(this.item);
       this.item = "";
+    },
+    async itemsubmit() {
+      const { data } = await axios.post("/v1/travelitems", {
+        travelitems: this.checkeditems,
+        travel: this.res_travel_show.data.id
+      });
+    },
+    onChange(item) {
+      const checkeditem = this.checkeditems.some(
+        checkeditem => checkeditem === item
+      ); //アロー関数
+      if (checkeditem) {
+        this.checkeditems = this.checkeditems.filter(n => n !== item);
+        console.log(this.checkeditems);
+      } else {
+        this.checkeditems.push(item);
+        console.log(this.checkeditems);
+      }
     }
   },
   components: {

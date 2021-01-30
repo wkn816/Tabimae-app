@@ -74,17 +74,17 @@
                   <v-text-field label="持ち物追加" filled required v-model="item" :counter="10"></v-text-field>
                   <v-col cols="12" sm="11" md="12" lg="12">
                     <v-btn @click="travelitem">追加</v-btn>
-                    <v-btn @click="itemsubmit">送信</v-btn>
+                    <!-- <v-btn @click="itemsubmit">送信</v-btn> -->
                   </v-col>
-                </li>
-              </ul>
-
-              <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
-                <v-icon>mdi-plus-box</v-icon>
-              </v-btn>
               <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
                 <v-icon>mdi-close-thick</v-icon>
               </v-btn>
+                </li>
+              </ul>
+
+              <!-- <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
+                <v-icon>mdi-plus-box</v-icon>
+              </v-btn> -->
             </Modal>
           </v-card>
         </v-col>

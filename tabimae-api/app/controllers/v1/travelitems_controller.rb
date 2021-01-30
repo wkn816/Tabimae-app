@@ -6,12 +6,13 @@ def index
 end
 
 def create
-  @travelitem = Travelitem.new(travelitem_params)
-  if travelitem.save
-    render json: @travelitem
-  else
-    render json: @travelitem.errors, status: :unprocessable_entity
+  items = params[:travelitems]
+  if items.present?
+    items.each do |item|
+      Travelitem.create!(name: item, travel_id: params[:travel])
+    end
   end
+  render status: 201
 end
 
 private

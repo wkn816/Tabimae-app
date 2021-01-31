@@ -52,16 +52,16 @@ Bundler version 2.2.0
 rack-cors: 1.1.1
 gem 'mysql2'  
 - フロントエンド  
-@nuxt/core:3.6.5
-@babel/core:7.12.9
-@nuxtjs/axios:5.12.2
-vuex:3.6.9
-vuedraggable:2.24.3
-firebase:8.1.2
-vue-typer:1.2.0
-vue2-timepicker:1.1.5
-vuedraggable:2.24.3
-vue-js-modal:2.0.0.6
-vuetify:2.4.0
+@nuxt/core:3.6.5  
+@babel/core:7.12.9  
+@nuxtjs/axios:5.12.2  
+vuex:3.6.9  
+vuedraggable:2.24.3  
+firebase:8.1.2  
+vue-typer:1.2.0  
+vue2-timepicker:1.1.5  
+vuedraggable:2.24.3  
+vue-js-modal:2.0.0.6  
+vuetify:2.4.0  
 
 

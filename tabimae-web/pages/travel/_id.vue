@@ -61,11 +61,11 @@
 
               <ul style="background-color:#001858">
                 <li v-for="item in items" :key="item" class="belonging-list">
-                  <v-checkbox :label="item" :value="item" v-model="ex4" color="#001858" hide-details
+                  <v-checkbox :label="item" :value="item" v-model="ex4" color="#fef6e4" hide-details
                     @change="onChange(item);"></v-checkbox>
                 </li>
 
-                <li>
+                <!-- <li> -->
                   <v-col cols="12" sm="11" md="12" lg="6">
                     <v-text-field label="持ち物追加" filled required v-model="item" :counter="15"></v-text-field>
                     <v-btn fab dark small color="#f582ae" @click="travelitem">追加</v-btn>
@@ -75,7 +75,7 @@
                   <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
                     <v-icon>mdi-close-thick</v-icon>
                   </v-btn>
-                </li>
+                <!-- </／li> -->
               </ul>
 
               <!-- <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">

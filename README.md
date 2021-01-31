@@ -37,10 +37,27 @@ https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTP
 
 
 ## 開発環境
-- OS：Linux(CentOS)
-- 言語：JavaScript,Ruby,SQL
-- フレームワーク：backend⇨Ruby on Rails / frontend⇨Nuxt.js
-- JSライブラリ：Node.js
-- IDE：Visual Studio Code
+- OS：Linux(CentOS)  
+- 環境  
+Ruby: 2.6.3  
+Rails 6.0.2.2  
+npm 6.14.8  
+Node: 14.15.0  
+Bundler version 2.2.0  
+- バックエンド  
+rack-cors: 1.1.1
+gem 'mysql2'  
+- フロントエンド  
+@nuxt/core:3.6.5
+@babel/core:7.12.9
+@nuxtjs/axios:5.12.2
+vuex:3.6.9
+vuedraggable:2.24.3
+firebase:8.1.2
+vue-typer:1.2.0
+vue2-timepicker:1.1.5
+vuedraggable:2.24.3
+vue-js-modal:2.0.0.6
+vuetify:2.4.0
 
 

@@ -58,33 +58,30 @@
             </v-card>
 
             <Modal v-if="modalFlag">
+
               <ul style="background-color:#001858">
                 <li v-for="item in items" :key="item" class="belonging-list">
-                  <v-checkbox
-                    :label="item"
-                    :value="item"
-                    v-model="ex4"
-                    color="#001858"
-                    hide-details
-                    @change="onChange(item);"
-                  ></v-checkbox>
+                  <v-checkbox :label="item" :value="item" v-model="ex4" color="#001858" hide-details
+                    @change="onChange(item);"></v-checkbox>
                 </li>
 
                 <li>
-                  <v-text-field label="持ち物追加" filled required v-model="item" :counter="10"></v-text-field>
-                  <v-col cols="12" sm="11" md="12" lg="12">
-                    <v-btn @click="travelitem">追加</v-btn>
-                    <!-- <v-btn @click="itemsubmit">送信</v-btn> -->
+                  <v-col cols="12" sm="11" md="12" lg="6">
+                    <v-text-field label="持ち物追加" filled required v-model="item" :counter="15"></v-text-field>
+                    <v-btn fab dark small color="#f582ae" @click="travelitem">追加</v-btn>
                   </v-col>
-              <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
-                <v-icon>mdi-close-thick</v-icon>
-              </v-btn>
+
+                  <!-- <v-btn @click="itemsubmit">送信</v-btn> -->
+                  <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
+                    <v-icon>mdi-close-thick</v-icon>
+                  </v-btn>
                 </li>
               </ul>
 
               <!-- <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
                 <v-icon>mdi-plus-box</v-icon>
               </v-btn> -->
+
             </Modal>
           </v-card>
         </v-col>
@@ -177,219 +174,225 @@
 </template>
 
 <script>
-import axios from "@/plugins/axios";
-import moment from "moment";
-import Vue from "vue";
-import VModal from "vue-js-modal";
-import Modal from "~/components/Modal.vue";
+  import axios from "@/plugins/axios";
+  import moment from "moment";
+  import Vue from "vue";
+  import VModal from "vue-js-modal";
+  import Modal from "~/components/Modal.vue";
 
-Vue.use(VModal);
+  Vue.use(VModal);
 
-export default {
-  // props: ["travel"],
-  data() {
-    return {
-      res_travel_show: {},
-      res_delete: {},
-      test: {},
-      checkbox: true,
-      modalFlag: false,
-      modalFlag: false,
-      items: [
-        "運転免許証",
-        "保険証",
-        "クレジットカード",
-        "切符類",
-        "モバイルバッテリー",
-        "マスク",
-        "アルコール消毒液",
-        "常備薬"
-      ],
-      checkeditems: [],
-      main: "main",
-      item: ""
-    };
-  },
-
-  async asyncData({ params }) {
-    try {
-      // debugger
-      const res_travel_show = await axios.get(
-        // `${process.env.BASE_URL}/v1/travels/${params.id}`
-        // `http://localhost:8080/travels/${params.id}`
-        `/v1/travels/${params.id}`
-      );
-      const departure_day = moment(
-        res_travel_show.data.trains[0].departure_day
-      );
-      const checkeditems = res_travel_show.data.travelitems;
-      const daylimit = departure_day.diff(moment(), "days");
-      let text;
-      let text2;
-      let text3;
-      let text4;
-      let text5;
-      let text6;
-      if (daylimit > 20) {
-        text = "切符・航空券の手配はできた？";
-        text2 = "必要ならレンタカーも予約しよう";
-        text3 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
-        text4 = "最新の時刻表を確認しよう";
-        text5 = "三密はしっかり回避！";
-        text6 = "素敵な旅行になりますように♪";
-      } else if (daylimit > 2 && daylimit < 20) {
-        text = "準備はばっちり？";
-        text2 = "体調管理には気を付けてね";
-        text3 = "お土産袋を持っていくと便利かも";
-        text4 = "三密はしっかり回避！";
-        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
-        text6 = "天気予報もしっかり確認しよう";
-      } else if (daylimit == 1) {
-        text = "準備はばっちり？";
-        text2 = "体調管理には気を付けてね";
-        text3 = "お土産袋を持っていくと便利かも";
-        text4 = "三密はしっかり回避！";
-        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
-        text6 = "天気予報もしっかり確認しよう";
-      } else if (daylimit == 0) {
-        text = "準備はばっちり？";
-        text2 = "体調管理には気を付けてね";
-        text3 = "お土産袋を持っていくと便利かも";
-        text4 = "三密はしっかり回避！";
-        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
-        text6 = "天気予報もしっかり確認しよう";
-      } else {
-        text = "乗り継ぎ時間は余裕を持ってね♪";
-        text2 = "体調管理には気を付けてね";
-        text3 = "お土産袋を持っていくと便利かも";
-        text4 = "三密はしっかり回避！";
-        text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
-        text6 = "天気予報もしっかり確認しよう";
-      }
-      // console.log(res_travel_show);
+  export default {
+    // props: ["travel"],
+    data() {
       return {
-        res_travel_show,
-        checkeditems,
-        daylimit,
-        text,
-        text2,
-        text3,
-        text4,
-        text5,
-        text6,
+        res_travel_show: {},
+        res_delete: {},
+        test: {},
+        checkbox: true,
+        modalFlag: false,
+        modalFlag: false,
+        items: [
+          "運転免許証",
+          "保険証",
+          "クレジットカード",
+          "切符類",
+          "モバイルバッテリー",
+          "マスク",
+          "アルコール消毒液",
+          "常備薬"
+        ],
+        checkeditems: [],
+        main: "main",
+        item: ""
       };
-    } catch (err) {
-      console.log("err", err);
-    }
+    },
 
-    // const daylimit =
-  },
-  components: {
-    Modal
-  },
-  methods: {
-    async deleteItem(res_travel_show) {
-      // debugger
-      console.log(res_travel_show);
-      const res = confirm("本当に削除しますか？");
-      let deleteres;
-      if (res) {
-        deleteres = await axios.delete(
-          `/v1/travels/${res_travel_show.res_travel_show.data.id}`
+    async asyncData({
+      params
+    }) {
+      try {
+        // debugger
+        const res_travel_show = await axios.get(
+          // `${process.env.BASE_URL}/v1/travels/${params.id}`
+          // `http://localhost:8080/travels/${params.id}`
+          `/v1/travels/${params.id}`
         );
+        const departure_day = moment(
+          res_travel_show.data.trains[0].departure_day
+        );
+        const checkeditems = res_travel_show.data.travelitems;
+        const daylimit = departure_day.diff(moment(), "days");
+        let text;
+        let text2;
+        let text3;
+        let text4;
+        let text5;
+        let text6;
+        if (daylimit > 20) {
+          text = "切符・航空券の手配はできた？";
+          text2 = "必要ならレンタカーも予約しよう";
+          text3 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+          text4 = "最新の時刻表を確認しよう";
+          text5 = "三密はしっかり回避！";
+          text6 = "素敵な旅行になりますように♪";
+        } else if (daylimit > 2 && daylimit < 20) {
+          text = "準備はばっちり？";
+          text2 = "体調管理には気を付けてね";
+          text3 = "お土産袋を持っていくと便利かも";
+          text4 = "三密はしっかり回避！";
+          text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+          text6 = "天気予報もしっかり確認しよう";
+        } else if (daylimit == 1) {
+          text = "準備はばっちり？";
+          text2 = "体調管理には気を付けてね";
+          text3 = "お土産袋を持っていくと便利かも";
+          text4 = "三密はしっかり回避！";
+          text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+          text6 = "天気予報もしっかり確認しよう";
+        } else if (daylimit == 0) {
+          text = "準備はばっちり？";
+          text2 = "体調管理には気を付けてね";
+          text3 = "お土産袋を持っていくと便利かも";
+          text4 = "三密はしっかり回避！";
+          text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+          text6 = "天気予報もしっかり確認しよう";
+        } else {
+          text = "乗り継ぎ時間は余裕を持ってね♪";
+          text2 = "体調管理には気を付けてね";
+          text3 = "お土産袋を持っていくと便利かも";
+          text4 = "三密はしっかり回避！";
+          text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
+          text6 = "天気予報もしっかり確認しよう";
+        }
+        // console.log(res_travel_show);
+        return {
+          res_travel_show,
+          checkeditems,
+          daylimit,
+          text,
+          text2,
+          text3,
+          text4,
+          text5,
+          text6,
+        };
+      } catch (err) {
+        console.log("err", err);
       }
-      // debugger
-      if (deleteres.status == 200) {
-        this.$router.push("/");
+
+      // const daylimit =
+    },
+    components: {
+      Modal
+    },
+    methods: {
+      async deleteItem(res_travel_show) {
+        // debugger
+        console.log(res_travel_show);
+        const res = confirm("本当に削除しますか？");
+        let deleteres;
+        if (res) {
+          deleteres = await axios.delete(
+            `/v1/travels/${res_travel_show.res_travel_show.data.id}`
+          );
+        }
+        // debugger
+        if (deleteres.status == 200) {
+          this.$router.push("/");
+        }
+      },
+      openModal() {
+        this.modalFlag = true;
+      },
+      hide() {
+        this.$modal.hide("modal-content");
+      },
+      openModal() {
+        this.modalFlag = true;
+      },
+      closeModal() {
+        this.modalFlag = false;
+      },
+      travelitem() {
+        this.items.push(this.item);
+        this.item = "";
+      },
+      async itemsubmit() {
+        const {
+          data
+        } = await axios.post("/v1/travelitems", {
+          travelitems: this.checkeditems,
+          travel: this.res_travel_show.data.id
+        });
+      },
+      onChange(item) {
+        const checkeditem = this.checkeditems.some(
+          checkeditem => checkeditem === item
+        ); //アロー関数
+        if (checkeditem) {
+          this.checkeditems = this.checkeditems.filter(n => n !== item);
+          console.log(this.checkeditems);
+        } else {
+          this.checkeditems.push(item);
+          console.log(this.checkeditems);
+        }
       }
     },
-    openModal() {
-      this.modalFlag = true;
-    },
-    hide() {
-      this.$modal.hide("modal-content");
-    },
-    openModal() {
-      this.modalFlag = true;
-    },
-    closeModal() {
-      this.modalFlag = false;
-    },
-    travelitem() {
-      this.items.push(this.item);
-      this.item = "";
-    },
-    async itemsubmit() {
-      const { data } = await axios.post("/v1/travelitems", {
-        travelitems: this.checkeditems,
-        travel: this.res_travel_show.data.id
-      });
-    },
-    onChange(item) {
-      const checkeditem = this.checkeditems.some(
-        checkeditem => checkeditem === item
-      ); //アロー関数
-      if (checkeditem) {
-        this.checkeditems = this.checkeditems.filter(n => n !== item);
-        console.log(this.checkeditems);
-      } else {
-        this.checkeditems.push(item);
-        console.log(this.checkeditems);
-      }
+    components: {
+      Modal
     }
-  },
-  components: {
-    Modal
-  }
-};
+  };
+
 </script>
 
 <style lang="scss" scoped>
-.help_link__button {
-  border: solid px #f582ae;
-  /*線*/
-  border-radius: 10px;
-  /*角の丸み*/
-  text-decoration: none;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-  color: #001858;
-}
+  .help_link__button {
+    border: solid px #f582ae;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    color: #001858;
+  }
 
-.v-card {
-  text-align: center;
-}
+  .v-card {
+    text-align: center;
+  }
 
-.v-card-title {
-  font-size: 60px;
-}
+  .v-card-title {
+    font-size: 60px;
+  }
 
-.test {
-  color: #001858;
-}
+  .test {
+    color: #001858;
+  }
 
-.ma-2 {
-  margin-top: 10px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
-}
+  .ma-2 {
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
 
-.remind-ms {
-  color: #001858;
-}
+  .remind-ms {
+    color: #001858;
+  }
 
-.list {
-  background-color: #fef6e4;
-}
+  .list {
+    background-color: #fef6e4;
+  }
 
-.belonging-list {
-  color: #001858;
-}
+  .belonging-list {
+    color: #001858;
+  }
 
-.items {
-  color: #001858;
-}
+  .items {
+    color: #001858;
+  }
+
 </style>

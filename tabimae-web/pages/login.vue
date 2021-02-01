@@ -16,7 +16,7 @@
           <v-text-field v-model="password" label="password" data-vv-name="password" required
             :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="show1 = !show1"></v-text-field>
-          <v-btn block dark class="mr-4" @click="login" color="#001858">ログイン</v-btn>
+          <v-btn block dark class="mr-4" @click="login" color="#001858" elevation="5">ログイン</v-btn>
           <p v-if="error" class="errors">{{ error }}</p>
         </form>
         </v-card-text>
@@ -55,7 +55,7 @@
               }
             })(error.code);
           });
-        this.$router.push("travel_new");
+        this.$router.push("/");
       },
 
     },

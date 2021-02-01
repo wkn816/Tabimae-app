@@ -51,7 +51,7 @@
       <v-row>
         <div class="page">
           <div class="buttons">
-            <v-col cols="12" sm="10" md="10" lg="5">
+            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="5">
               <ButtonDefault to="/signup" class="button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-account-plus</v-icon>新規会員登録
@@ -59,7 +59,7 @@
                 </template>
               </ButtonDefault>
             </v-col>
-            <v-col cols="12" sm="10" md="10" lg="5">
+            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="5">
               <ButtonDefault to="login" class="button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-account-search</v-icon>ログイン
@@ -67,11 +67,11 @@
                 </template>
               </ButtonDefault>
             </v-col>
-            <v-col cols="12" sm="10" md="10" lg="5">
-              <ButtonDefault to="travel_list" class="button">
+            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="6">
+              <ButtonDefault to="signup" class="button">
                 <template v-slot:label @click="guestLogin">
                   <v-icon large color="#001858">mdi-briefcase-account</v-icon>ゲストログイン
-                  <p class="btn-text">初めてのご利用で一回限りご利用の方</p>
+                  <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
                 </template>
               </ButtonDefault>
             </v-col>
@@ -143,7 +143,7 @@
               }
             })(error.code);
           });
-        this.$router.push("/travel_list");
+        this.$router.push("/");
       },
       openModal() {
         this.modalFlag = true;
@@ -220,5 +220,6 @@
     color: #001858;
     text-align: center;
   }
+
 
 </style>

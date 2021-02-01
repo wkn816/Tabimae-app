@@ -121,20 +121,25 @@
           ];
         } else {
           return [{
-              icon: "mdi-apps",
+              icon: "mdi-bag-checked",
               title: "TOP画面",
               to: "/"
             },
             {
-              icon: "mdi-chart-bubble",
+              icon: "mdi-account-plus",
               title: "新規会員登録",
               to: "/signup"
             },
             {
-              icon: "mdi-chart-bubble",
+              icon: "mdi-account-search",
               title: "ログイン",
               to: "/login"
-            }
+            },
+            {
+              icon: "mdi-briefcase-account",
+              title: "ゲストログイン",
+              to: "/guestLogin"
+            },
           ];
         }
       }
@@ -150,7 +155,7 @@
           });
 
         this.$store.commit("setUser", null);
-        this.$router.push("/login");
+        this.$router.push("/");
       },
       async travelNew() {
         this.$router.push("/travel_new");
@@ -212,15 +217,10 @@
   }
 
   .list-item {
-    color: #001858;
+    color: #001858 !important;
   }
-.header-item{
-color: #001858;
-}
-  .list-item {
-    color: #001858;
+  .header-item{
+    color: #001858 !important;
   }
-.header-item{
-color: #001858;
-}
+
 </style>

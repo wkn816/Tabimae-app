@@ -1,6 +1,7 @@
 <template>
   <v-app class="bg">
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app color=#f3d2c1>
+    <v-navigation-drawer absolute
+        temporary v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed color=#f3d2c1>
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>
@@ -12,15 +13,15 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar fixed app color="rgba(10,10,100,0.2)">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
+    <v-app-bar fixed color="rgba(10,10,100,0.2)">
+      <v-app-bar-nav-icon color="#001858" @click.stop="drawer = !drawer" />
+      <!-- <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
       </v-btn>
       <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-bag-checked</v-icon>
       </v-btn>
-      <!-- <v-btn icon @click.stop="fixed = !fixed">
+      <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn> -->
       <v-toolbar-title v-text="title" />
@@ -28,21 +29,21 @@
 
       <v-container v-if="user">
         <v-row>
-          <v-col cols="12" offset-lg="7" offset-sm="7" offset-md="7" sm="5" md="5" lg="6">
-            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOP</v-btn>
-            <v-btn @click="travelNew" class="header-item" style="background-color:#f3d2c1">旅行登録</v-btn>
-            <v-btn @click="travelList" class="header-item" style="background-color:#f3d2c1">旅行一覧</v-btn>
-            <v-btn @click="logOut" class="header-item" style="background-color:#f3d2c1">ログアウト</v-btn>
+          <v-col cols="12" offset-lg="6" offset-sm="7" offset-md="7" sm="5" md="5" lg="6">
+            <v-btn text color="#001858" @click="travelTop">TOP</v-btn>
+            <v-btn text color="#001858" @click="travelNew">旅行登録</v-btn>
+            <v-btn text color="#001858" @click="travelList">旅行一覧</v-btn>
+            <v-btn text color="#001858" @click="logOut">ログアウト</v-btn>
           </v-col>
         </v-row>
       </v-container>
       <v-container v-else>
         <v-row>
-          <v-col cols="12" offset-lg="7" sm="11" md="11" lg="6">
-            <v-btn @click="travelTop" class="header-item" style="background-color:#f3d2c1">TOP</v-btn>
-            <v-btn @click="signup" class="header-item" style="background-color:#f3d2c1">会員登録</v-btn>
-            <v-btn @click="login" class="header-item" style="background-color:#f3d2c1">ログイン</v-btn>
-            <v-btn @click="guestLogin" class="header-item" style="background-color:#f3d2c1">ゲストログイン</v-btn>
+          <v-col cols="12" offset-lg="6" sm="11" md="11" lg="6">
+            <v-btn text color="#001858" @click="travelTop">TOP</v-btn>
+            <v-btn text color="#001858" @click="signup">会員登録</v-btn>
+            <v-btn text color="#001858" @click="login">ログイン</v-btn>
+            <v-btn text color="#001858" @click="guestLogin">ゲストログイン</v-btn>
           </v-col>
         </v-row>
       </v-container>
@@ -52,7 +53,7 @@
         <nuxt />
       </template>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
+    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed app>
       <v-list>
         <v-list-item @click.native="right = !right">
           <v-list-item-action>
@@ -206,6 +207,8 @@
 
   * {
     margin: 0;
+    padding: 0;
+
   }
 
   v-app {
@@ -213,7 +216,7 @@
   }
 
   .bg {
-    background-color: #fef6e4;
+    background-color: #ffffff;
     background-size: 100%;
     color: #001858;
   }
@@ -224,11 +227,16 @@
   .header-item{
     color: #001858 !important;
   }
+  .v-toolbar__title{
+    color: #001858;
+  }
 </style>
 <style>
 
 .v-app-bar{
 background: rgba(10,10,100,0.2);
-
+position: relative;
+	height: 50vh;
 }
+
 </style>>

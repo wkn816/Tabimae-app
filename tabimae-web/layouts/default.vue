@@ -12,7 +12,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app color=#8bd3dd>
+    <v-app-bar fixed app color="rgba(10,10,100,0.2)">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
@@ -72,6 +72,8 @@
 
 <script>
   import firebase from "@/plugins/firebase";
+  import axios from "@/plugins/axios";
+
   export default {
     data() {
       return {
@@ -222,5 +224,11 @@
   .header-item{
     color: #001858 !important;
   }
-
 </style>
+<style>
+
+.v-app-bar{
+background: rgba(10,10,100,0.2);
+
+}
+</style>>

@@ -24,7 +24,7 @@
       <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn> -->
-      <v-toolbar-title v-text="title" />
+      <v-btn text color="#001858" @click="travelTop" v-text="title" />
       <v-spacer />
 
       <v-container v-if="user">

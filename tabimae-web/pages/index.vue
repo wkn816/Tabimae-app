@@ -118,9 +118,20 @@
       Home,
       ButtonDefault
     },
-
+// created() {
+//      console.log("API_KEY:", process.env.API_KEY);
+//   },
     data() {
       return {};
+    },
+    computed: {
+      user() {
+        return this.$store.state.auth.currentUser;
+      }
+    },
+    async fetch() {
+      // console.log(this.$store.state.auth.currentUser.id);
+      const user = this.$store.state.auth.currentUser;
     },
     methods: {
       async guestLogin() {
@@ -166,12 +177,7 @@
       //   })(error.code);
       // });
     },
-    computed: {
-      user() {
-        return this.$store.state.auth.currentUser;
-      }
 
-    },
   };
 
 </script>

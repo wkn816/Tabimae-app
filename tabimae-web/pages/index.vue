@@ -3,7 +3,6 @@
     <Home />
 
     <v-container v-if="user">
-
       <v-row>
         <div class="page">
           <div class="buttons">
@@ -45,10 +44,6 @@
 
     <v-container v-else>
       <v-row>
-        <About />
-      </v-row>
-
-      <v-row>
         <div class="page">
           <div class="buttons">
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="5">
@@ -78,7 +73,9 @@
           </div>
         </div>
       </v-row>
-
+<v-row>
+        <About />
+      </v-row>
       <v-card color="#f3d2c1">
         <v-card-title primary-title class="justify-center">
           <v-icon large color="#001858">mdi-bag-checked</v-icon>

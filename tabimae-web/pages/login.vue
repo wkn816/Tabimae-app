@@ -17,7 +17,12 @@
           <v-text-field v-model="password" label="password" data-vv-name="password" required
             :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="show1 = !show1"></v-text-field>
-          <v-btn block dark class="mr-4" @click="login" color="#001858" elevation="5">ログイン</v-btn>
+<v-hover v-slot:default="{ hover }">
+          <v-btn block dark class="mr-4" @click="login" color="#001858" elevation="5">
+                          <v-icon v-text="hover ? 'mdi-account-search' : ''">mdi-account-search-outline</v-icon>ログイン
+
+          </v-btn>
+</v-hover>
           <p v-if="error" class="errors">{{ error }}</p>
         </form>
         </v-card-text>

@@ -1,6 +1,6 @@
 <template>
   <div>
-        <v-col offset-sm="3" sm="3" offset-md="3" md="3" offset-lg="6" lg="3">
+        <v-col offset-sm="6" sm="4" offset-md="6" md="4" offset-lg="6" lg="3">
       <img :src="image_src" @click="openModal" class="air-img">
     </v-col>
     <Modal v-if="modalFlag" @close-modal="closeModal">

@@ -2,15 +2,14 @@
   <v-app class="bg">
     <v-row>
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
-        <v-card color=#f3d2c1 class="ttt">
+        <v-card color=#8bd3dd class="ttt">
           <v-card-title primary-title class="justify-center">
             <v-icon large color=#001858>
               mdi-bag-checked
             </v-icon>
-            <span class="title">ログイン</span>
-
+            <span class="login-title">ログイン</span>
           </v-card-title>
-          <v-card-text color=#001858>
+          <v-card-text color=#fef6e4>
             <form>
               <v-text-field v-model="email" :counter="20" label="email" data-vv-name="email" required input-class="ttt">
               </v-text-field>
@@ -37,7 +36,7 @@
             <v-icon large color=#001858>
               mdi-bag-checked
             </v-icon>
-            <span class="title">初めてご利用の方はこちらから</span>
+            <span class="signin-title">初めてご利用の方はこちらから</span>
           </v-card-title>
           <v-card-text color=#001858>
             <v-hover v-slot:default="{ hover }">
@@ -97,15 +96,22 @@
     color: red;
     margin-top: 20px;
   }
+  template{
+    
+  }
 
   .v-card-title {
     text-align: center;
     font-weight: bolder;
   }
 
-  .title {
+  .login-title {
     color: #001858;
     text-align: center;
+  }
+  .signin-title{
+  color: #001858;
+  text-align: center;
   }
 
   .mr-4 {

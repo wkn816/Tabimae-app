@@ -77,7 +77,7 @@
 
 
         <About />
-        
+
       <v-card color="#f3d2c1">
         <v-card-title primary-title class="justify-center">
           <v-icon large color="#001858">mdi-bag-checked</v-icon>

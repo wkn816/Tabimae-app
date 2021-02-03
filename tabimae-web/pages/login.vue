@@ -1,7 +1,8 @@
 <template>
+<v-app class="bg">
   <v-row>
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
-      <v-card color=#f3d2c1>
+      <v-card color=#f3d2c1 class="ttt">
         <v-card-title primary-title class="justify-center">
           <v-icon large color=#001858>
             mdi-bag-checked
@@ -23,6 +24,29 @@
       </v-card>
     </v-col>
   </v-row>
+  <v-row>
+      <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
+
+        <v-card color=#f3d2c1>
+          <v-card-title primary-title class="justify-center">
+            <v-icon large color=#001858>
+              mdi-bag-checked
+            </v-icon>
+            <span class="title">初めてご利用の方はこちらから</span>
+          </v-card-title>
+          <v-card-text color=#001858>
+            <v-hover v-slot:default="{ hover }">
+              <v-btn block dark class="guest-btn" to="/signup" nuxt color="#001858" elevation="10">
+                <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>会員登録
+              </v-btn>
+            </v-hover>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
+</v-app>
+
 </template>
 
 <script>
@@ -86,5 +110,8 @@
     border-radius: 8px;
     border: 1px solid #dddddd;
     box-shadow: 4px 4px #f582ae;
+}
+.ttt{
+  margin-top: 200px;
 }
 </style>

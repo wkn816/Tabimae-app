@@ -2,7 +2,7 @@
   <v-app class="bg">
     <v-row>
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
-        <v-card color=#f3d2c1 class="signup-card">
+        <v-card color=#8bd3dd class="signup-card">
           <v-card-title primary-title class="justify-center">
             <v-icon large color=#001858>
               mdi-bag-checked
@@ -19,9 +19,12 @@
               <v-text-field v-model="passwordConfirm" label="passwordConfirm" data-vv-name="passwordConfirm" required
                 :type="show2 ? 'text' : 'password'" :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="show2 = !show2"></v-text-field>
-              <v-btn block dark class="mr-4" @click="signup" color="#001858" elevation="5">
-                <div class="submit">登録</div>
-              </v-btn>
+              <v-hover v-slot:default="{ hover }">
+                <v-btn block dark class="mr-4" @click="signup" color="#001858" elevation="5">
+                  <v-icon v-text="hover ? 'mdi-account-plus' : ''">mdi-account-plus-outline</v-icon>会員登録
+
+                </v-btn>
+              </v-hover>
               <p v-if="error" class="errors">{{ error }}</p>
             </form>
           </v-card-text>
@@ -135,21 +138,28 @@
     color: red;
     margin-top: 20px;
   }
-.guest-btn{
-  cursor: pointer;
+
+  .bg {
+    background-color: #fef6e4;
+  }
+
+  .guest-btn {
+    cursor: pointer;
     display: block;
     text-align: center;
     height: 150px;
     border-radius: 8px;
     border: 1px solid #dddddd;
     box-shadow: 4px 4px #f582ae;
-}
-.title{
-  color: #001858;
-  text-align: center;
-}
-.signup-card{
-  margin: 12px;
-}
+  }
+
+  .title {
+    color: #001858;
+    text-align: center;
+  }
+
+  .signup-card {
+    margin-top: 100px;
+  }
 
 </style>

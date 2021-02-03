@@ -2,7 +2,7 @@
   <v-app class="bg">
     <v-row>
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
-        <v-card color=#8bd3dd class="ttt">
+        <v-card color=#8bd3dd class="login-card">
           <v-card-title primary-title class="justify-center">
             <v-icon large color=#001858>
               mdi-bag-checked
@@ -11,7 +11,7 @@
           </v-card-title>
           <v-card-text color=#fef6e4>
             <form>
-              <v-text-field v-model="email" :counter="20" label="email" data-vv-name="email" required input-class="ttt">
+              <v-text-field v-model="email" :counter="20" label="email" data-vv-name="email" required>
               </v-text-field>
               <v-text-field v-model="password" label="password" data-vv-name="password" required
                 :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -96,8 +96,9 @@
     color: red;
     margin-top: 20px;
   }
-  .bg{
-background-color: #fef6e4;
+
+  .bg {
+    background-color: #fef6e4;
   }
 
   .v-card-title {
@@ -109,9 +110,10 @@ background-color: #fef6e4;
     color: #001858;
     text-align: center;
   }
-  .signin-title{
-  color: #001858;
-  text-align: center;
+
+  .signin-title {
+    color: #001858;
+    text-align: center;
   }
 
   .mr-4 {
@@ -124,7 +126,7 @@ background-color: #fef6e4;
     box-shadow: 4px 4px #f582ae;
   }
 
-  .ttt {
+  .login-card {
     margin-top: 200px;
   }
 

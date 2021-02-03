@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
-      <v-card color=#f3d2c1>
+      <v-card color=#f3d2c1 class="guestcard">
         <v-card-title primary-title class="justify-center">
           <v-icon large color=#001858>
             mdi-bag-checked
@@ -26,7 +26,7 @@
                 <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>NO
               </v-btn>
             </v-hover>
-<br>※『NO』の場合、新規会員登録画面にて<br>会員登録を行ってください。
+<br>※『NO』の場合新規会員登録画面に移動します。
             </v-card-text>
                         <v-card-text class="text">
             </v-card-text>
@@ -103,6 +103,9 @@
   }
   .yes-card{
     margin: 30px 0 30px 0;
+  }
+  .guestcard{
+    margin-top: 100px;
   }
 
 </style>

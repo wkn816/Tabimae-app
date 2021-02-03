@@ -96,8 +96,8 @@
     color: red;
     margin-top: 20px;
   }
-  template{
-    
+  .bg{
+background-color: #fef6e4;
   }
 
   .v-card-title {

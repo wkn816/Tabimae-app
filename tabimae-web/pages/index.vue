@@ -63,7 +63,7 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="6">
-              <ButtonDefault to="signup" class="button">
+              <ButtonDefault to="signup" class="guestLogin-button">
                 <template v-slot:label @click="guestLogin">
                   <v-icon large color="#001858">mdi-briefcase-account</v-icon>ゲストログイン
                   <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
@@ -76,7 +76,7 @@
       </v-container>
 
         <About />
-        
+
     <v-col sm="11" md="11" lg="12">
       <v-card color="#f3d2c1">
         <v-card-title primary-title class="justify-center">
@@ -194,8 +194,23 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 4px 4px #f582ae;
+    background-color: #abd1c6;
   }
-
+.guestLogin-button{
+   /* background-color: #f3d2c1; */
+    border: solid 5px #001858;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px #f582ae;
+    background-color: #eebbc3;
+}
   .page {
     padding: 30px;
 

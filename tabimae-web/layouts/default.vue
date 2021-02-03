@@ -65,9 +65,10 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <!-- <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer> -->
+    <v-footer :absolute="!fixed" app color="rgba(10,10,100,0.2)">
+      <span style="color:#001858">&copy; {{ new Date().getFullYear() }}</span>
+      <span></span>
+    </v-footer>
   </v-app>
 </template>
 
@@ -234,9 +235,11 @@
 <style>
 
 .v-app-bar{
-background: rgba(10,10,100,0.2);
 position: relative;
 	height: 50vh;
 }
-
+.v-footer{
+position: relative;
+	height: 8vh;
+}
 </style>>

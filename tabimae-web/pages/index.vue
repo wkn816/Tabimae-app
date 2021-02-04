@@ -257,7 +257,7 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    // box-shadow: 4px 4px #72757e;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #f9bc60;
   }
 
@@ -274,7 +274,7 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    // box-shadow: 4px 4px #72757e;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #abd1c6;
 
   }

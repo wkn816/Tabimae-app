@@ -275,7 +275,7 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-    background-color: #abd1c6;
+    background-color: #2cb67d;
 
   }
 

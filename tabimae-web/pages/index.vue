@@ -194,7 +194,7 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-    background-color: #f9bc60;
+    background-color: #d1d1e9;
     color: #001858;
   }
 
@@ -211,7 +211,7 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-    background-color: #ff8ba7;
+    background-color: #ffc0ad;
     color: #001858;
   }
 

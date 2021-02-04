@@ -255,7 +255,7 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 4px 4px #f582ae;
-    background-color: #4fc4cf;
+    background-color: #f9bc60;
   }
   .travellist-button{
     color: #001858;
@@ -271,7 +271,7 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 4px 4px #f582ae;
-        background-color: #ff8e3c;
+        background-color: #abd1c6;
 
   }
 

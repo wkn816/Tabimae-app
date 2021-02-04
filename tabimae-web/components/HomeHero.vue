@@ -8,7 +8,7 @@
         '＊旅は行く前から始まっている',
         '＊旅が織りなす物語を',
         '＊[タビマエ]で管理して',
-        '素敵な旅を創造しましょう',
+        '＊素敵な旅を創造しましょう',
         ]" erase-style="clear" :type-delay="100" :pre-type-delay="70" :erase-delay="300" :repeat="Infinity">
           </vue-typer>
         </v-col>

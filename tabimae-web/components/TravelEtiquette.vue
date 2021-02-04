@@ -1,6 +1,6 @@
 <template>
   <div>
-        <v-col offset-sm="3" sm="3" offset-md="3" md="3" offset-lg="8" lg="3">
+        <v-col offset-sm="3" sm="3" offset-md="3" md="3" offset-lg="3" lg="3">
       <img :src="image_src" @click="openModal" class="new_travel_info-img">
         </v-col>
       <Modal v-if="modalFlag" @close-modal="closeModal">
@@ -34,7 +34,7 @@
     data() {
       return {
         modalFlag: false,
-        image_src: require("../assets/img/new_travel_info.png"),
+        image_src: require("../assets/img/travel_e.JPG"),
       }
     },
     components: {
@@ -59,7 +59,7 @@
   }
 
   .new_travel_info-img {
-    width: 290px;
+    width: 320px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
     &:hover {
       transform: scale(1.04);

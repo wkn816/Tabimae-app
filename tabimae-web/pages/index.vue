@@ -7,7 +7,7 @@
         <div class="page">
           <div class="buttons">
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="3" lg="8">
-              <ButtonDefault to="/travel_new" class="button">
+              <ButtonDefault to="/travel_new" class="traveladd-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>タビ新規登録
                   <p class="btn-text">まずは、旅行情報を登録してみよう</p>
@@ -15,7 +15,7 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="8" xs="12" offset-md="3" md="9" offset-lg="3" lg="8">
-              <ButtonDefault to="/travel_list" class="button">
+              <ButtonDefault to="/travel_list" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>タビ一覧
                   <p class="btn-text">登録したタビの一覧を確認できます</p>
@@ -195,6 +195,7 @@
     align-items: center;
     box-shadow: 4px 4px #f582ae;
     background-color: #abd1c6;
+        color: #001858;
   }
 .guestLogin-button{
    /* background-color: #f3d2c1; */
@@ -210,6 +211,7 @@
     align-items: center;
     box-shadow: 4px 4px #f582ae;
     background-color: #eebbc3;
+        color: #001858;
 }
   .page {
     padding: 30px;
@@ -238,6 +240,39 @@
   .title {
     color: #001858;
     text-align: center;
+  }
+  .traveladd-button{
+    color: #001858;
+    /* background-color: #f3d2c1; */
+    border: solid 5px #001858;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px #f582ae;
+    background-color: #4fc4cf;
+  }
+  .travellist-button{
+    color: #001858;
+    /* background-color: #f3d2c1; */
+    border: solid 5px #001858;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px #f582ae;
+        background-color: #ff8e3c;
+
   }
 
 

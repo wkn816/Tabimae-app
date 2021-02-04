@@ -74,25 +74,25 @@
         </div>
       </v-row>
 
-        <About />
+      <About />
 
-    <v-col sm="11" md="11" lg="12">
-      <v-card color="#f3d2c1">
-        <v-card-title primary-title class="justify-center">
-          <v-icon large color="#001858">mdi-bag-checked</v-icon>
-          <span class="title">旅行出発前に知っておきたいこと</span>
-        </v-card-title>
-        <v-card-text color="#001858">
-          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
-        </v-card-text>
-        <v-row>
-          <Train />
-          <Air />
-          <TravelEtiquette />
-        </v-row>
-      </v-card>
-    </v-col>
-  </v-container>
+      <v-col sm="11" md="11" lg="12">
+        <v-card color="#f3d2c1">
+          <v-card-title primary-title class="justify-center">
+            <v-icon large color="#001858">mdi-bag-checked</v-icon>
+            <span class="title">旅行出発前に知っておきたいこと</span>
+          </v-card-title>
+          <v-card-text color="#001858">
+            <p>画像をクリックすると知っておきたい情報をチェックできます</p>
+          </v-card-text>
+          <v-row>
+            <Train />
+            <Air />
+            <TravelEtiquette />
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-container>
 
   </div>
 </template>
@@ -116,9 +116,9 @@
       Home,
       ButtonDefault
     },
-// created() {
-//      console.log("API_KEY:", process.env.API_KEY);
-//   },
+    // created() {
+    //      console.log("API_KEY:", process.env.API_KEY);
+    //   },
     data() {
       return {};
     },
@@ -193,12 +193,13 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px #f582ae;
-    background-color: #abd1c6;
-        color: #001858;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    background-color: #f9bc60;
+    color: #001858;
   }
-.guestLogin-button{
-   /* background-color: #f3d2c1; */
+
+  .guestLogin-button {
+    /* background-color: #f3d2c1; */
     border: solid 5px #001858;
     /*線*/
     border-radius: 10px;
@@ -209,10 +210,11 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px #f582ae;
-    background-color: #eebbc3;
-        color: #001858;
-}
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    background-color: #ff8ba7;
+    color: #001858;
+  }
+
   .page {
     padding: 30px;
 
@@ -241,7 +243,8 @@
     color: #001858;
     text-align: center;
   }
-  .traveladd-button{
+
+  .traveladd-button {
     color: #001858;
     /* background-color: #f3d2c1; */
     border: solid 5px #001858;
@@ -254,10 +257,11 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px #f582ae;
+    // box-shadow: 4px 4px #72757e;
     background-color: #f9bc60;
   }
-  .travellist-button{
+
+  .travellist-button {
     color: #001858;
     /* background-color: #f3d2c1; */
     border: solid 5px #001858;
@@ -270,10 +274,9 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px #f582ae;
-        background-color: #abd1c6;
+    // box-shadow: 4px 4px #72757e;
+    background-color: #abd1c6;
 
   }
-
 
 </style>

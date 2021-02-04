@@ -73,7 +73,6 @@
           </div>
         </div>
       </v-row>
-      </v-container>
 
         <About />
 
@@ -93,6 +92,7 @@
         </v-row>
       </v-card>
     </v-col>
+  </v-container>
 
   </div>
 </template>

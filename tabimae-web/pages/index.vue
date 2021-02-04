@@ -7,7 +7,7 @@
         <div class="page">
           <div class="buttons">
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="3" lg="8">
-              <ButtonDefault to="/travel_new" class="button">
+              <ButtonDefault to="/travel_new" class="traveladd-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>タビ新規登録
                   <p class="btn-text">まずは、旅行情報を登録してみよう</p>
@@ -15,7 +15,7 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="8" xs="12" offset-md="3" md="9" offset-lg="3" lg="8">
-              <ButtonDefault to="/travel_list" class="button">
+              <ButtonDefault to="/travel_list" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>タビ一覧
                   <p class="btn-text">登録したタビの一覧を確認できます</p>
@@ -73,26 +73,26 @@
           </div>
         </div>
       </v-row>
-      </v-container>
 
-        <About />
+      <About />
 
-    <v-col sm="11" md="11" lg="12">
-      <v-card color="#f3d2c1">
-        <v-card-title primary-title class="justify-center">
-          <v-icon large color="#001858">mdi-bag-checked</v-icon>
-          <span class="title">旅行出発前に知っておきたいこと</span>
-        </v-card-title>
-        <v-card-text color="#001858">
-          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
-        </v-card-text>
-        <v-row>
-          <Train />
-          <Air />
-          <TravelEtiquette />
-        </v-row>
-      </v-card>
-    </v-col>
+      <v-col sm="11" md="11" lg="12">
+        <v-card color="#f3d2c1">
+          <v-card-title primary-title class="justify-center">
+            <v-icon large color="#001858">mdi-bag-checked</v-icon>
+            <span class="title">旅行出発前に知っておきたいこと</span>
+          </v-card-title>
+          <v-card-text color="#001858">
+            <p>画像をクリックすると知っておきたい情報をチェックできます</p>
+          </v-card-text>
+          <v-row>
+            <Train />
+            <Air />
+            <TravelEtiquette />
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-container>
 
   </div>
 </template>
@@ -116,9 +116,9 @@
       Home,
       ButtonDefault
     },
-// created() {
-//      console.log("API_KEY:", process.env.API_KEY);
-//   },
+    // created() {
+    //      console.log("API_KEY:", process.env.API_KEY);
+    //   },
     data() {
       return {};
     },
@@ -193,11 +193,13 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px #f582ae;
-    background-color: #abd1c6;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    background-color: #d1d1e9;
+    color: #001858;
   }
-.guestLogin-button{
-   /* background-color: #f3d2c1; */
+
+  .guestLogin-button {
+    /* background-color: #f3d2c1; */
     border: solid 5px #001858;
     /*線*/
     border-radius: 10px;
@@ -208,9 +210,11 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px #f582ae;
-    background-color: #eebbc3;
-}
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    background-color: #ffc0ad;
+    color: #001858;
+  }
+
   .page {
     padding: 30px;
 
@@ -240,5 +244,39 @@
     text-align: center;
   }
 
+  .traveladd-button {
+    color: #001858;
+    /* background-color: #f3d2c1; */
+    border: solid 5px #001858;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    background-color: #f9bc60;
+  }
+
+  .travellist-button {
+    color: #001858;
+    /* background-color: #f3d2c1; */
+    border: solid 5px #001858;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+    text-decoration: none;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    background-color: #2cb67d;
+
+  }
 
 </style>

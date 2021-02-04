@@ -213,6 +213,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #ffc0ad;
     color: #001858;
+
   }
 
   .page {
@@ -227,21 +228,25 @@
 
   .btn-text {
     font-size: 12px;
+    font-family: 'TabimaeFont';
   }
 
   p {
     color: #001858;
     text-align: center;
+    font-family: 'TabimaeFont';
   }
 
   .v-card-title {
     text-align: center;
     font-weight: bolder;
+    font-family: 'TabimaeFont';
   }
 
   .title {
     color: #001858;
     text-align: center;
+    font-family: 'TabimaeFont';
   }
 
   .traveladd-button {
@@ -259,6 +264,7 @@
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #f9bc60;
+    font-family: 'TabimaeFont';
   }
 
   .travellist-button {
@@ -276,7 +282,7 @@
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #2cb67d;
-
+font-family: 'TabimaeFont';
   }
 
 </style>

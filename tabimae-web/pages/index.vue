@@ -49,7 +49,8 @@
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="5">
               <ButtonDefault to="/signup" class="button">
                 <template v-slot:label>
-                  <v-icon large color="#001858">mdi-account-plus</v-icon>新規会員登録
+                  <v-icon large color="#001858">mdi-account-plus</v-icon>
+                  新規会員登録
                   <p class="btn-text">はじめてご利用で履歴を残したい方</p>
                 </template>
               </ButtonDefault>
@@ -63,7 +64,7 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="6">
-              <ButtonDefault to="signup" class="guestLogin-button">
+              <ButtonDefault to="guestLogin" class="guestLogin-button">
                 <template v-slot:label @click="guestLogin">
                   <v-icon large color="#001858">mdi-briefcase-account</v-icon>ゲストログイン
                   <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
@@ -225,7 +226,6 @@
 
     >.buttons {
       display: -webkit-flex;
-
       >.button {}
     }
   }
@@ -294,7 +294,7 @@
     text-align: center;
     font-size: 35px;
     font-family: 'TabimaeFont';
-
   }
+
 
 </style>

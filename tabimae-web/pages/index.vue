@@ -49,7 +49,8 @@
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="5">
               <ButtonDefault to="/signup" class="button">
                 <template v-slot:label>
-                  <v-icon large color="#001858">mdi-account-plus</v-icon>新規会員登録
+                  <v-icon large color="#001858">mdi-account-plus</v-icon>
+                  新規会員登録
                   <p class="btn-text">はじめてご利用で履歴を残したい方</p>
                 </template>
               </ButtonDefault>
@@ -63,7 +64,7 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="6">
-              <ButtonDefault to="signup" class="guestLogin-button">
+              <ButtonDefault to="guestLogin" class="guestLogin-button">
                 <template v-slot:label @click="guestLogin">
                   <v-icon large color="#001858">mdi-briefcase-account</v-icon>ゲストログイン
                   <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
@@ -79,8 +80,12 @@
       <v-col sm="11" md="11" lg="12">
         <v-card color="#f3d2c1">
           <v-card-title primary-title class="justify-center">
-            <v-icon large color="#001858">mdi-bag-checked</v-icon>
-            <span class="title">旅行出発前に知っておきたいこと</span>
+            <v-icon x-large color=#e53170>
+              mdi-chevron-double-right
+            </v-icon>
+            <v-title class="display">出発前に知っておきたいこと</v-title>
+            <v-icon x-large color=#e53170>
+              mdi-chevron-double-left </v-icon>
           </v-card-title>
           <v-card-text color="#001858">
             <p>画像をクリックすると知っておきたい情報をチェックできます</p>
@@ -213,6 +218,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #ffc0ad;
     color: #001858;
+
   }
 
   .page {
@@ -220,28 +226,31 @@
 
     >.buttons {
       display: -webkit-flex;
-
       >.button {}
     }
   }
 
   .btn-text {
     font-size: 12px;
+    font-family: 'TabimaeFont';
   }
 
   p {
     color: #001858;
     text-align: center;
+    font-family: 'TabimaeFont';
   }
 
   .v-card-title {
     text-align: center;
     font-weight: bolder;
+    font-family: 'TabimaeFont';
   }
 
   .title {
     color: #001858;
     text-align: center;
+    font-family: 'TabimaeFont';
   }
 
   .traveladd-button {
@@ -259,6 +268,7 @@
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #f9bc60;
+    font-family: 'TabimaeFont';
   }
 
   .travellist-button {
@@ -276,7 +286,15 @@
     align-items: center;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     background-color: #2cb67d;
-
+    font-family: 'TabimaeFont';
   }
+
+  .display {
+    color: #001858;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'TabimaeFont';
+  }
+
 
 </style>

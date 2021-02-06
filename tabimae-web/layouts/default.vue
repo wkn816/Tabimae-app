@@ -209,27 +209,33 @@
   * {
     margin: 0;
     padding: 0;
-
+    font-family: 'TabimaeFont';
   }
 
   v-app {
     background-size: 100%;
+    font-family: 'TabimaeFont';
   }
 
   .bg {
     background-color: #ffffff;
     background-size: 100%;
     color: #001858;
+    font-family: 'TabimaeFont';
   }
 
   .list-item {
     color: #001858 !important;
+    font-family: 'TabimaeFont';
   }
   .header-item{
     color: #001858 !important;
+    font-family: 'TabimaeFont';
   }
   .v-toolbar__title{
     color: #001858;
+        font-family: 'HogeHogeFont';
+
   }
 </style>
 <style>

@@ -4,12 +4,17 @@
 <v-card color=#fef6e4>
   <v-card-title primary-title class="justify-center">
     <v-icon
-        large
-        color=#001858
+        x-large
+        color=#e53170
       >
-        mdi-bag-checked
+      mdi-chevron-double-right
       </v-icon>
-      <v-title class="title">タビマエ</v-title>
+      <v-title class="display">タビマエ</v-title>
+      <v-icon
+        x-large
+        color=#e53170
+      >
+      mdi-chevron-double-left      </v-icon>
   </v-card-title>
 <v-card-text color=#001858>
       <p>旅行のスケジュール管理、持ち物チェック管理ができます。<br>
@@ -42,21 +47,28 @@ export default {
   width: 100%;
   text-align: center;
   margin-bottom: 40px;
+  font-family: 'TabimaeFont';
+
 }
 .v-card-title{
   text-align: center;
   font-weight: bolder;
+  font-family: 'TabimaeFont';
 }
-
-.title{
+.display{
   color: #001858;
   text-align: center;
+  font-size: 39px;
+  font-family: 'TabimaeFont';
+
 }
 p{
   color: #001858;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 2.0em;
+  font-family: 'TabimaeFont';
+
 
 }
 

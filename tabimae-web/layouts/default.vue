@@ -193,7 +193,7 @@
               }
             })(error.code);
           });
-        this.$router.push("/travel_list");
+        this.$router.push("/");
       },
     }
   };

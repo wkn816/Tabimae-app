@@ -4,10 +4,18 @@
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
         <v-card color=#8bd3dd class="signup-card">
           <v-card-title primary-title class="justify-center">
-            <v-icon large color=#001858>
-              mdi-bag-checked
-            </v-icon>
-            <span class="title">新規会員登録</span>
+          <v-icon
+        x-large
+        color=#e53170
+      >
+      mdi-chevron-double-right
+      </v-icon>
+      <v-title class="display">新規会員登録</v-title>
+      <v-icon
+        x-large
+        color=#e53170
+      >
+      mdi-chevron-double-left      </v-icon>
           </v-card-title>
           <v-card-text color=#001858>
             <form>
@@ -161,5 +169,12 @@
   .signup-card {
     margin-top: 100px;
   }
+  .display{
+  color: #001858;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'TabimaeFont';
+
+}
 
 </style>

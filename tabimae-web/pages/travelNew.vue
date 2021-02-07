@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" offset-ms="1" sm="10" offset-md="1" md="11" offset-lg="1" lg="10">
-          <v-card color=#f3d2c1 elevation=“20” class="travelnew-card">
+          <v-card color=#f9bc60 elevation=“20” class="travelnew-card">
             <v-card-title primary-title class="justify-center">
               <v-icon large color=#001858>
                 mdi-bag-checked
@@ -25,8 +25,8 @@
             <v-container fluid class="ttt">
               <v-text>交通手段を選択してください</v-text>
               <v-radio-group row v-model="transport" mandatory>
-                <v-radio label="列車" value="train" color=#8bd3dd></v-radio>
-                <v-radio label="飛行機" value="air" color=#8bd3dd></v-radio>
+                <v-radio label="列車" value="train" color=#f9bc60></v-radio>
+                <v-radio label="飛行機" value="air" color=#f9bc60></v-radio>
               </v-radio-group>
             </v-container>
           </v-card>
@@ -303,9 +303,9 @@
 
 <style lang="scss" scoped>
   .ttt {
-    background-color: #001858;
+    background-color: #72757e;
     font-weight: bolder;
-    border: solid 5px #f3d2c1;
+    // border: solid 5px #f9bc60;
     /*線*/
     border-radius: 10px;
     /*角の丸み*/

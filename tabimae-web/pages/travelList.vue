@@ -85,7 +85,7 @@
 
 <script>
   import axios from "@/plugins/axios";
-  import TravelNew from "@/pages/travel_new";import Train from "~/components/Train.vue";
+  import TravelNew from "@/pages/travelNew";import Train from "~/components/Train.vue";
 import Air from "~/components/Air.vue";
 import TravelEtiquette from "~/components/TravelEtiquette.vue";
 

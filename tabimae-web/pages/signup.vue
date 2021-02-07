@@ -46,10 +46,18 @@
 
         <v-card color=#f3d2c1>
           <v-card-title primary-title class="justify-center">
-            <v-icon large color=#001858>
-              mdi-bag-checked
-            </v-icon>
-            <span class="title">登録せずにすぐご利用になりたい方はこちら</span>
+             <v-icon
+        x-large
+        color=#e53170
+      >
+      mdi-chevron-double-right
+      </v-icon>
+          <v-title class="display">すぐご利用になりたい方</v-title>
+          <v-icon
+        x-large
+        color=#e53170
+      >
+      mdi-chevron-double-left      </v-icon>
           </v-card-title>
           <v-card-text color=#001858>
             <v-hover v-slot:default="{ hover }">

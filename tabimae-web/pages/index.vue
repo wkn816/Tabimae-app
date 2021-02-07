@@ -10,8 +10,7 @@
               <ButtonDefault to="/travel_new" class="traveladd-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>
-                            <v-title class="top-btn">新規会員登録</v-title>
-
+                  <v-title class="top-btn">新規会員登録</v-title>
                   <p class="btn-text">まずは、旅行情報を登録してみよう</p>
                 </template>
               </ButtonDefault>
@@ -20,8 +19,7 @@
               <ButtonDefault to="/travel_list" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>
-                            <v-title class="top-btn">新規会員登録</v-title>
-
+                  <v-title class="top-btn">新規会員登録</v-title>
                   <p class="btn-text">登録したタビの一覧を確認できます</p>
                 </template>
               </ButtonDefault>
@@ -54,7 +52,7 @@
               <ButtonDefault to="/signup" class="button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-account-plus</v-icon>
-          <v-title class="top-btn">新規会員登録</v-title>
+                  <v-title class="top-btn">新規会員登録</v-title>
                   <p class="btn-text">はじめてご利用で履歴を残したい方</p>
                 </template>
               </ButtonDefault>
@@ -63,7 +61,7 @@
               <ButtonDefault to="login" class="button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-account-search</v-icon>
-                            <v-title class="top-btn">ログイン</v-title>
+                  <v-title class="top-btn">ログイン</v-title>
 
                   <p class="btn-text">既に会員登録がお済みの方</p>
                 </template>
@@ -73,8 +71,7 @@
               <ButtonDefault to="guestLogin" class="guestLogin-button">
                 <template v-slot:label @click="guestLogin">
                   <v-icon large color="#001858">mdi-briefcase-account</v-icon>
-                            <v-title class="top-btn">ゲストログイン</v-title>
-
+                  <v-title class="top-btn">ゲストログイン</v-title>
                   <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
                 </template>
               </ButtonDefault>
@@ -234,6 +231,7 @@
 
     >.buttons {
       display: -webkit-flex;
+
       >.button {}
     }
   }
@@ -303,9 +301,9 @@
     font-size: 35px;
     font-family: 'TabimaeFont';
   }
-  .top-btn{
-        font-family: 'TabimaeFont';
-  }
 
+  .top-btn {
+    font-family: 'TabimaeFont';
+  }
 
 </style>

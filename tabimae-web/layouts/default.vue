@@ -120,7 +120,7 @@
             {
               icon: "mdi-format-list-bulleted",
               title: "旅行一覧",
-              to: "/travel_list"
+              to: "/travelList"
             }
           ];
         } else {

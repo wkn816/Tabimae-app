@@ -1,10 +1,9 @@
 <template>
-  <div v-if="user">
-
+  <v-app class="bg">
     <v-container>
       <v-row>
         <v-col cols="12" offset-ms="1" sm="10" offset-md="1" md="11" offset-lg="1" lg="10">
-          <v-card color=#f3d2c1 elevation=“20”>
+          <v-card color=#f3d2c1 elevation=“20” class="travelnew-card">
             <v-card-title primary-title class="justify-center">
               <v-icon large color=#001858>
                 mdi-bag-checked
@@ -174,7 +173,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -338,6 +337,10 @@
       transform: scale(1.04);
       transition-duration: 40ms;
     }
+  }
+
+  .travelnew-card{
+    margin-top: 80px;
   }
 </style>
 <style>

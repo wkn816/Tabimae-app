@@ -3,10 +3,10 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color="#f3d2c1" elevation="“20”">
+          <v-card color="#f3d2c1" elevation="2" class="travellist-card">
             <v-card-title primary-title class="justify-center">
               <v-icon large color="#001858">mdi-bag-checked</v-icon>
-              <span class="title">旅行一覧</span>
+              <span class="travellist-title">旅行一覧</span>
             </v-card-title>
           </v-card>
         </v-col>
@@ -66,8 +66,18 @@
     <v-container>
       <v-card color="#f3d2c1">
         <v-card-title primary-title class="justify-center">
-          <v-icon large color="#001858">mdi-bag-checked</v-icon>
-          <span class="title">旅行出発前に知っておきたいこと</span>
+          <v-icon
+        x-large
+        color=#e53170
+      >
+      mdi-chevron-double-right
+      </v-icon>
+      <v-title class="display">旅行出発前に知っておきたいこと</v-title>
+      <v-icon
+        x-large
+        color=#e53170
+      >
+      mdi-chevron-double-left      </v-icon>
         </v-card-title>
         <v-card-text color="#001858">
           <p>画像をクリックすると知っておきたい情報をチェックできます</p>
@@ -178,13 +188,23 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   }
 
-  .title {
+  .travellist-title {
   color: #001858;
   text-align: center;
 }
 p {
   color: #001858;
   text-align: center;
+}
+.travellist-card{
+  margin-top: 80px;
+}
+.display{
+  color: #001858;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'TabimaeFont';
+
 }
 
 

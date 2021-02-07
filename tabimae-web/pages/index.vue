@@ -10,7 +10,7 @@
               <ButtonDefault to="/travelNew" class="traveladd-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>
-                  <v-title class="top-btn">新規会員登録</v-title>
+                  <v-title class="top-btn">タビを登録する</v-title>
                   <p class="btn-text">まずは、旅行情報を登録してみよう</p>
                 </template>
               </ButtonDefault>
@@ -19,7 +19,7 @@
               <ButtonDefault to="/travelList" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>
-                  <v-title class="top-btn">新規会員登録</v-title>
+                  <v-title class="top-btn">タビ一覧</v-title>
                   <p class="btn-text">登録したタビの一覧を確認できます</p>
                 </template>
               </ButtonDefault>

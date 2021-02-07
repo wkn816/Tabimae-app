@@ -266,7 +266,7 @@
           this.departure_day = "";
         }
 
-        this.$router.push("/travel_list");
+        this.$router.push("/travelList");
       }
     },
     computed: {

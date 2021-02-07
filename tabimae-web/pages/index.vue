@@ -7,7 +7,7 @@
         <div class="page">
           <div class="buttons">
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="3" lg="8">
-              <ButtonDefault to="/travel_new" class="traveladd-button">
+              <ButtonDefault to="/travelNew" class="traveladd-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>
                   <v-title class="top-btn">新規会員登録</v-title>
@@ -16,7 +16,7 @@
               </ButtonDefault>
             </v-col>
             <v-col cols="12" sm="8" xs="12" offset-md="3" md="9" offset-lg="3" lg="8">
-              <ButtonDefault to="/travel_list" class="travellist-button">
+              <ButtonDefault to="/travelList" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>
                   <v-title class="top-btn">新規会員登録</v-title>

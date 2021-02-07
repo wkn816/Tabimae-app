@@ -115,12 +115,12 @@
             {
               icon: "mdi-briefcase-plus-outline",
               title: "旅行新規登録",
-              to: "/travel_new"
+              to: "/travelNew"
             },
             {
               icon: "mdi-format-list-bulleted",
               title: "旅行一覧",
-              to: "/travel_list"
+              to: "/travelList"
             }
           ];
         } else {
@@ -162,7 +162,7 @@
         this.$router.push("/");
       },
       async travelNew() {
-        this.$router.push("/travel_new");
+        this.$router.push("/travelNew");
       },
       async travelList() {
         this.$router.push("/travel_list");

@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color="#f3d2c1" elevation="“20”">
+          <v-card color="#f3d2c1" elevation="2" class="travellist-card">
             <v-card-title primary-title class="justify-center">
               <v-icon large color="#001858">mdi-bag-checked</v-icon>
               <span class="title">旅行一覧</span>
@@ -185,6 +185,9 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
 p {
   color: #001858;
   text-align: center;
+}
+.travellist-card{
+  margin-top: 80px;
 }
 
 

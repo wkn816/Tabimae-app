@@ -165,7 +165,7 @@
         this.$router.push("/travelNew");
       },
       async travelList() {
-        this.$router.push("/travel_list");
+        this.$router.push("/travelList");
       },
       async travelTop() {
         this.$router.push("/");

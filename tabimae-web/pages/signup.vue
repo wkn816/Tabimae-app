@@ -69,8 +69,8 @@
         name: "",
         password: "",
         passwordConfirm: "",
-        show1: false,
-        show2: false,
+        show1: true,
+        show2: true,
         error: "",
       };
     },

@@ -61,7 +61,7 @@
       return {
         email: "",
         password: "",
-        show1: false,
+        show1: true,
         error: "",
       };
     },

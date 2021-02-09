@@ -92,11 +92,16 @@
                 <v-text-field outlined append-icon="mdi-comment-edit-outline" v-model="name" :counter="15"
                   label="旅行のテーマ" required></v-text-field>
               </v-col>
+            <!-- 決定ボタン -->
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="3" offset-lg="1" lg="3">
-                <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1" class="create">決定</v-btn>
+                <v-hover v-slot:default="{ hover }">
+                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1"
+                    class="create">
+                    <v-icon v-text="hover ? 'mdi-check-outline' : ''"></v-icon>決定
+                  </v-btn>
+                </v-hover>
               </v-col>
             </v-row>
-            <!-- 決定ボタン -->
             <v-row align="right" justify="right">
             </v-row>
             <!-- </template> -->
@@ -104,7 +109,7 @@
         </v-col>
       </v-row>
 
-    <!-- <v-container> -->
+      <!-- <v-container> -->
       <v-row>
         <v-col cols="12" offset-sm="1" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
           <v-card v-if="transport === 'air'" color=#001858 elevation=“24”>
@@ -162,9 +167,14 @@
                 <v-text-field outlined append-icon="mdi-comment-edit-outline" v-model="name" :counter="15"
                   label="旅行のテーマ" required></v-text-field>
               </v-col>
-            <!-- 決定ボタン -->
+              <!-- 決定ボタン -->
               <v-col cols="12" offset-sm="1" sm="3" offset-md="1" md="3" offset-lg="1" lg="3">
-                <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1" class="create">決定</v-btn>
+                <v-hover v-slot:default="{ hover }">
+                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1"
+                    class="create">
+                    <v-icon v-text="hover ? 'mdi-check-outline' : ''"></v-icon>決定
+                  </v-btn>
+                </v-hover>
               </v-col>
             </v-row>
             <v-row align="right" justify="right">
@@ -331,20 +341,24 @@
     text-align: center;
     padding-bottom: 20px;
   }
-  .create{
+
+  .create {
     color: black !important;
+
     &:hover {
       transform: scale(1.04);
       transition-duration: 40ms;
     }
   }
 
-  .travelnew-card{
+  .travelnew-card {
     margin-top: 80px;
   }
+
 </style>
 <style>
-.time-font {
+  .time-font {
     color: seashell !important;
   }
+
 </style>

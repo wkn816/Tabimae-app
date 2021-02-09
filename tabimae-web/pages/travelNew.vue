@@ -59,12 +59,12 @@
             <!-- 出発地・到着地入力フォーム -->
             <v-row align="center" justify="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="2" lg="4">
-                <v-text-field class="test" outlined append-icon="mdi-map-marker" v-model="departure_place" :counter="10"
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place" :counter="10"
                   label="出発地" required>
                 </v-text-field>
               </v-col>
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="1" lg="5">
-                <v-text-field class="test" outlined append-icon="mdi-map-marker" v-model="arrival_place" :counter="10"
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place" :counter="10"
                   label="到着地" required>
                 </v-text-field>
               </v-col>
@@ -134,12 +134,12 @@
             <!-- 出発地・到着地入力フォーム -->
             <v-row align="center" justify="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="2" md="4" offset-lg="2" lg="4">
-                <v-text-field class="test" outlined append-icon="mdi-map-marker" v-model="departure_place" :counter="10"
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place" :counter="10"
                   label="出発地" required>
                 </v-text-field>
               </v-col>
               <v-col cols="12" offset-sm="1" sm="5" offset-md="1" md="5" offset-lg="1" lg="5">
-                <v-text-field class="test" outlined append-icon="mdi-map-marker" v-model="arrival_place" :counter="10"
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place" :counter="10"
                   label="到着地" required>
                 </v-text-field>
               </v-col>
@@ -328,7 +328,7 @@
     // box-shadow: 4px 4px #f582ae;
   }
 
-  .test {
+  .place-form {
     float: left;
   }
 

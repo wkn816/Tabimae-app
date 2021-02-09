@@ -21,7 +21,7 @@
         <v-col cols="12" sm="11" offset-md="1" md="11" offset-lg="2" lg="8">
           <h2 v-if="success">登録したよ!</h2>
           <!-- <v-container class="px-0" fluid> -->
-          <v-card color=#f3d2c1 elevation=“20”>
+          <v-card elevation=“20”>
             <v-container fluid class="transport-radio">
               <v-text>交通手段を選択してください</v-text>
               <v-radio-group row v-model="transport" mandatory>
@@ -37,7 +37,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" offset-sm="2" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
-          <v-card v-if="transport === 'train'" color=#001858 elevation=“24”>
+          <v-card v-if="transport === 'train'" color=#0e172c elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-train</v-icon>
@@ -112,7 +112,7 @@
       <!-- <v-container> -->
       <v-row>
         <v-col cols="12" offset-sm="1" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
-          <v-card v-if="transport === 'air'" color=#001858 elevation=“24”>
+          <v-card v-if="transport === 'air'" color=#0e172c elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-airplane</v-icon>
@@ -313,7 +313,7 @@
 
 <style lang="scss" scoped>
   .transport-radio {
-    background-color: #72757e;
+    background-color: #0e172c;
     font-weight: bolder;
     // border: solid 5px #f9bc60;
     /*線*/
@@ -325,7 +325,8 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    // box-shadow: 4px 4px #f582ae;
+    box-shadow: 3px 3px  2px rgba(0, 0, 0, 0.883);
+    color: #fef6e4;
   }
 
   .place-form {

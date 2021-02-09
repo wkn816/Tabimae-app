@@ -6,7 +6,7 @@
           <v-card color="#f3d2c1">
             <v-card-title primary-title class="justify-center">
               <v-icon large color="#001858">mdi-bag-checked</v-icon>
-              <span class="test">旅行詳細</span>
+              <span class="travel-show-title">旅行詳細</span>
             </v-card-title>
           </v-card>
         </v-col>
@@ -370,7 +370,7 @@
     font-size: 60px;
   }
 
-  .test {
+  .travel-show-title {
     color: #001858;
   }
 

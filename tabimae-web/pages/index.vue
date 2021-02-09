@@ -1,5 +1,5 @@
 <template>
-  <div class="test">
+  <div>
     <Home />
 
     <v-container v-if="user">

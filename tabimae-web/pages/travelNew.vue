@@ -22,7 +22,7 @@
           <h2 v-if="success">登録したよ!</h2>
           <!-- <v-container class="px-0" fluid> -->
           <v-card color=#f3d2c1 elevation=“20”>
-            <v-container fluid class="ttt">
+            <v-container fluid class="transport-radio">
               <v-text>交通手段を選択してください</v-text>
               <v-radio-group row v-model="transport" mandatory>
                 <v-radio label="列車" value="train" color=#f9bc60></v-radio>
@@ -312,7 +312,7 @@
 </style>
 
 <style lang="scss" scoped>
-  .ttt {
+  .transport-radio {
     background-color: #72757e;
     font-weight: bolder;
     // border: solid 5px #f9bc60;

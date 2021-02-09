@@ -1,7 +1,6 @@
 <template>
-  <div class="test">
+  <v-app class="bg">
     <Home />
-
     <v-container v-if="user">
       <v-row>
         <div class="page">
@@ -104,7 +103,7 @@
       </v-col>
     </v-container>
 
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -305,5 +304,6 @@
   .top-btn {
     font-family: 'TabimaeFont';
   }
+
 
 </style>

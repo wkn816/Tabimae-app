@@ -143,9 +143,6 @@
     margin-top: 20px;
   }
 
-  .bg {
-    background-color: #fef6e4;
-  }
 
   .guest-btn {
     cursor: pointer;

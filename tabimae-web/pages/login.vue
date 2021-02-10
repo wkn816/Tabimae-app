@@ -97,10 +97,6 @@
     margin-top: 20px;
   }
 
-  .bg {
-    background-color: #fef6e4;
-  }
-
   .v-card-title {
     text-align: center;
     font-weight: bolder;

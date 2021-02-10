@@ -218,7 +218,7 @@
   }
 
   .bg {
-    background-color: #fef6e4;
+    background-color: #ffffff;
     background-size: 100%;
     color: #001858;
     font-family: 'TabimaeFont';

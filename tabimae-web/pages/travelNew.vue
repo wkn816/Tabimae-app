@@ -5,10 +5,13 @@
         <v-col cols="12" offset-ms="1" sm="10" offset-md="1" md="11" offset-lg="1" lg="10">
           <v-card color=#f9bc60 elevation=“20” class="travelnew-card">
             <v-card-title primary-title class="justify-center">
-              <v-icon large color=#001858>
-                mdi-bag-checked
+              <v-icon x-large color=#e53170>
+                mdi-chevron-double-right
               </v-icon>
-              <span class="title">旅行新規登録</span>
+              <v-title class="display">旅行新規登録</v-title>
+              <v-icon x-large color=#e53170>
+                mdi-chevron-double-left
+              </v-icon>
             </v-card-title>
           </v-card>
         </v-col>
@@ -37,7 +40,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" offset-sm="2" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
-          <v-card v-if="transport === 'train'" color=#0e172c elevation=“24”>
+          <v-card v-if="transport === 'train'" color=#232946 elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-train</v-icon>
@@ -59,13 +62,13 @@
             <!-- 出発地・到着地入力フォーム -->
             <v-row align="center" justify="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="2" lg="4">
-                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place" :counter="10"
-                  label="出発地" required>
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place"
+                  :counter="10" label="出発地" required>
                 </v-text-field>
               </v-col>
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="1" lg="5">
-                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place" :counter="10"
-                  label="到着地" required>
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place"
+                  :counter="10" label="到着地" required>
                 </v-text-field>
               </v-col>
             </v-row>
@@ -92,7 +95,7 @@
                 <v-text-field outlined append-icon="mdi-comment-edit-outline" v-model="name" :counter="15"
                   label="旅行のテーマ" required></v-text-field>
               </v-col>
-            <!-- 決定ボタン -->
+              <!-- 決定ボタン -->
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="3" offset-lg="1" lg="3">
                 <v-hover v-slot:default="{ hover }">
                   <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1"
@@ -100,7 +103,7 @@
 
                     <v-icon v-text="hover ? 'mdi-check-bold' : ''"></v-icon>決定
                   </v-btn>
-                  </v-hover>
+                </v-hover>
 
               </v-col>
             </v-row>
@@ -114,7 +117,7 @@
       <!-- <v-container> -->
       <v-row>
         <v-col cols="12" offset-sm="1" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
-          <v-card v-if="transport === 'air'" color=#0e172c elevation=“24”>
+          <v-card v-if="transport === 'air'" color=#232946 elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-airplane</v-icon>
@@ -136,13 +139,13 @@
             <!-- 出発地・到着地入力フォーム -->
             <v-row align="center" justify="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="2" md="4" offset-lg="2" lg="4">
-                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place" :counter="10"
-                  label="出発地" required>
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place"
+                  :counter="10" label="出発地" required>
                 </v-text-field>
               </v-col>
               <v-col cols="12" offset-sm="1" sm="5" offset-md="1" md="5" offset-lg="1" lg="5">
-                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place" :counter="10"
-                  label="到着地" required>
+                <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place"
+                  :counter="10" label="到着地" required>
                 </v-text-field>
               </v-col>
             </v-row>
@@ -176,7 +179,7 @@
                     class="create">
                     <v-icon v-text="hover ? 'mdi-check-bold' : ''"></v-icon>決定
                   </v-btn>
-                  </v-hover>
+                </v-hover>
               </v-col>
             </v-row>
             <v-row align="right" justify="right">
@@ -315,7 +318,7 @@
 
 <style lang="scss" scoped>
   .transport-radio {
-    background-color: #0e172c;
+    background-color: #232946;
     font-weight: bolder;
     // border: solid 5px #f9bc60;
     /*線*/
@@ -327,7 +330,7 @@
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 3px 3px  2px rgba(0, 0, 0, 0.883);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     color: #fef6e4;
   }
 
@@ -356,6 +359,13 @@
 
   .travelnew-card {
     margin-top: 80px;
+  }
+
+  .display {
+    color: #001858;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'TabimaeFont';
   }
 
 </style>

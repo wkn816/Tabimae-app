@@ -28,8 +28,8 @@
             <v-container fluid class="transport-radio">
               <v-text>交通手段を選択してください</v-text>
               <v-radio-group row v-model="transport" mandatory>
-                <v-radio label="列車" value="train" color=#001858></v-radio>
-                <v-radio label="飛行機" value="air" color=#001858></v-radio>
+                <v-radio label="列車" value="train" color=#f9bc60></v-radio>
+                <v-radio label="飛行機" value="air" color=#f9bc60></v-radio>
               </v-radio-group>
             </v-container>
           </v-card>
@@ -40,7 +40,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" offset-sm="2" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
-          <v-card v-if="transport === 'train'" color=#0e172c elevation=“24”>
+          <v-card v-if="transport === 'train'" color=#232946 elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-train</v-icon>
@@ -117,7 +117,7 @@
       <!-- <v-container> -->
       <v-row>
         <v-col cols="12" offset-sm="1" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
-          <v-card v-if="transport === 'air'" color=#0e172c elevation=“24”>
+          <v-card v-if="transport === 'air'" color=#232946 elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-airplane</v-icon>
@@ -318,7 +318,7 @@
 
 <style lang="scss" scoped>
   .transport-radio {
-    background-color: #f582ae;
+    background-color: #232946;
     font-weight: bolder;
     // border: solid 5px #f9bc60;
     /*線*/
@@ -331,7 +331,7 @@
     -webkit-align-items: center;
     align-items: center;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-    color: #001858;
+    color: #fef6e4;
   }
 
   .place-form {

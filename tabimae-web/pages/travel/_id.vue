@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color="#f3d2c1">
+          <v-card color="#f3d2c1" class="travelshow-card">
             <v-card-title primary-title class="justify-center">
               <v-icon large color="#001858">mdi-bag-checked</v-icon>
               <span class="travel-show-title">旅行詳細</span>
@@ -22,7 +22,7 @@
               <span class="title"></span>
             </v-card-title>
 
-            <v-btn large class="justify-center" @click="openModal" style="background-color:#f3d2c1">
+            <v-btn large class="justify-center ttt" @click="openModal" style="background-color:#f3d2c1">
               <h3 style="color:#001858">忘れ物リストを開く</h3>
             </v-btn>
 
@@ -158,16 +158,16 @@
               </v-col>
             </v-row>
           </v-card>
-        </v-col>
-      </v-row>
-
-      <v-row>
         <v-col cols="12" offset-lg="11" sm="11" md="11" lg="1">
-          <v-btn class="ma-2" fab outlined color="#001858" @click="deleteItem({ res_travel_show })">
+          <v-btn class="delete-btn" fab outlined color="#001858" @click="deleteItem({ res_travel_show })">
             <v-icon>mdi-trash-can-outline</v-icon>
           </v-btn>
         </v-col>
+        </v-col>
       </v-row>
+
+      <!-- <v-row> -->
+      <!-- </v-row> -->
     </v-container>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </div>
@@ -296,6 +296,8 @@
           deleteres = await axios.delete(
             `/v1/travels/${res_travel_show.res_travel_show.data.id}`
           );
+        }else{
+          this.$router.push("/travelList");
         }
         // debugger
         if (deleteres.status == 200) {
@@ -361,7 +363,9 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     color: #001858;
   }
-
+.travelshow-card{
+    margin-top: 80px;
+}
   .v-card {
     text-align: center;
   }
@@ -375,10 +379,23 @@
   }
 
   .ma-2 {
-    margin-top: 10px;
+    // margin-top: 10px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
   }
-
+  .delete-btn{
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    &:hover {
+      transform: scale(1.04);
+      transition-duration: 80ms;
+    }
+  }
+.v-btn{
+  &:hover {
+      transform: scale(1.04);
+      transition-duration: 80ms;
+    }
+}
   .remind-ms {
     color: #001858;
   }

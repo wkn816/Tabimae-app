@@ -2,7 +2,7 @@
   <section class="home-hero">
     <v-container fluid fill-height class="home-hero__content">
       <v-row>
-        <v-col class="home-hero__content-text">
+        <v-col cols="12" offset-sm="1" sm=11 offset-xs="1" xs="11" offset-md="1" md="11" offset-lg="1" lg="11" class="home-hero__content-text">
           <vue-typer text="タビマエ" :repeat="1"></vue-typer><br>
           <vue-typer :text="[
         '＊旅は行く前から始まっている',
@@ -41,7 +41,7 @@
 
     &-text {
       // text-align: center;
-      padding-left: 200px;
+      // padding-left: 200px;
       font-size: 30px;
       font-weight: bold;
       font-family: 'ヒラギノ角ゴシック', 'Hiragino Sans',

@@ -27,7 +27,7 @@
       <v-btn text color="#001858" @click="travelTop" v-text="title" />
       <v-spacer />
 
-      <v-container v-if="user">
+      <v-container v-if="user" class="header-item">
         <v-row>
           <v-col cols="12" offset-lg="6" offset-sm="7" offset-md="7" sm="5" md="5" lg="6">
             <v-btn text color="#001858" @click="travelTop">TOP</v-btn>
@@ -37,7 +37,7 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-container v-else>
+      <v-container v-else class="header-item">
         <v-row>
           <v-col cols="12" offset-lg="6" sm="11" md="11" lg="6">
             <v-btn text color="#001858" @click="travelTop">TOP</v-btn>
@@ -200,7 +200,26 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
   .errors {
     color: red;
     margin-top: 20px;
@@ -232,20 +251,26 @@
     color: #001858 !important;
     font-family: 'TabimaeFont';
   }
-  .v-toolbar__title{
-    color: #001858;
-        font-family: 'HogeHogeFont';
 
+  .header-item{
+    @include tab {
+            display: none;
+          }
+          @include sp {
+            display: none;
+          }
   }
 </style>
 <style>
-
 .v-app-bar{
 position: relative;
 	height: 50vh;
+
 }
+
 .v-footer{
 position: relative;
 	height: 8vh;
 }
+
 </style>>

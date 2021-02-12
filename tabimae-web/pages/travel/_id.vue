@@ -3,10 +3,15 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color="#f3d2c1">
+          <v-card color="#f3d2c1" class="travelshow-card">
             <v-card-title primary-title class="justify-center">
-              <v-icon large color="#001858">mdi-bag-checked</v-icon>
-              <span class="travel-show-title">旅行詳細</span>
+              <v-icon x-large color=#e53170>
+                mdi-chevron-double-right
+              </v-icon>
+              <span class="travelshow-title">旅行詳細</span>
+              <v-icon x-large color=#e53170>
+                mdi-chevron-double-left
+              </v-icon>
             </v-card-title>
           </v-card>
         </v-col>
@@ -22,8 +27,8 @@
               <span class="title"></span>
             </v-card-title>
 
-            <v-btn large class="justify-center" @click="openModal" style="background-color:#f3d2c1">
-              <h3 style="color:#001858">忘れ物リストを開く</h3>
+            <v-btn large class="justify-center" @click="openModal" style="background-color:#faae2b">
+              <h3 style="color:#001858">持ち物リストをひらく</h3>
             </v-btn>
 
             <v-card raised class="ma-2" color="#fef6e4" elevation="24">
@@ -61,20 +66,25 @@
 
               <ul style="background-color:#001858">
                 <li v-for="item in items" :key="item" class="belonging-list">
-                  <v-checkbox :label="item" :value="item" v-model="ex4" color="#fef6e4" hide-details
-                    @change="onChange(item);"></v-checkbox>
+                  <v-checkbox
+                  :label="item"
+                  :value="item"
+                  v-model="ex4"
+                  color="#fec7d7"
+                  hide-details
+                  ></v-checkbox>
                 </li>
 
                 <!-- <li> -->
-                  <v-col cols="12" sm="11" md="12" lg="6">
-                    <v-text-field label="持ち物追加" filled required v-model="item" :counter="15"></v-text-field>
-                    <v-btn fab dark small color="#f582ae" @click="travelitem">追加</v-btn>
-                  </v-col>
+                <v-col cols="12" sm="11" md="12" lg="6">
+                  <v-text-field label="持ち物追加" filled required v-model="item" :counter="15"></v-text-field>
+                  <v-btn fab dark small color="#f582ae" @click="travelitem">追加</v-btn>
+                </v-col>
 
-                  <!-- <v-btn @click="itemsubmit">送信</v-btn> -->
-                  <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
-                    <v-icon>mdi-close-thick</v-icon>
-                  </v-btn>
+                <!-- <v-btn @click="itemsubmit">送信</v-btn> -->
+                <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
+                  <v-icon>mdi-close-thick</v-icon>
+                </v-btn>
                 <!-- </／li> -->
               </ul>
 
@@ -158,16 +168,36 @@
               </v-col>
             </v-row>
           </v-card>
+          <v-col cols="12" offset-lg="11" sm="11" md="11" lg="1">
+            <v-btn class="delete-btn" fab outlined color="#001858" @click="deleteItem({ res_travel_show })">
+              <v-icon>mdi-trash-can-outline</v-icon>
+            </v-btn>
+          </v-col>
         </v-col>
       </v-row>
 
-      <v-row>
-        <v-col cols="12" offset-lg="11" sm="11" md="11" lg="1">
-          <v-btn class="ma-2" fab outlined color="#001858" @click="deleteItem({ res_travel_show })">
-            <v-icon>mdi-trash-can-outline</v-icon>
-          </v-btn>
-        </v-col>
-      </v-row>
+      <!-- <v-row> -->
+      <!-- </v-row> -->
+    </v-container>
+    <v-container>
+      <v-card color="#f3d2c1">
+        <v-card-title primary-title class="justify-center">
+          <v-icon x-large color=#e53170>
+            mdi-chevron-double-right
+          </v-icon>
+          <v-title class="display">旅行出発前に知っておきたいこと</v-title>
+          <v-icon x-large color=#e53170>
+            mdi-chevron-double-left </v-icon>
+        </v-card-title>
+        <v-card-text >
+          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
+        </v-card-text>
+        <v-row>
+          <Train />
+          <Air />
+          <TravelEtiquette />
+        </v-row>
+      </v-card>
     </v-container>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </div>
@@ -179,6 +209,10 @@
   import Vue from "vue";
   import VModal from "vue-js-modal";
   import Modal from "~/components/Modal.vue";
+  import Train from "~/components/Train.vue";
+  import Air from "~/components/Air.vue";
+  import TravelEtiquette from "~/components/TravelEtiquette.vue";
+
 
   Vue.use(VModal);
 
@@ -296,6 +330,8 @@
           deleteres = await axios.delete(
             `/v1/travels/${res_travel_show.res_travel_show.data.id}`
           );
+        } else {
+          this.$router.push("/travelList");
         }
         // debugger
         if (deleteres.status == 200) {
@@ -347,19 +383,8 @@
 </script>
 
 <style lang="scss" scoped>
-  .help_link__button {
-    border: solid px #f582ae;
-    /*線*/
-    border-radius: 10px;
-    /*角の丸み*/
-    text-decoration: none;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-    color: #001858;
+  .travelshow-card {
+    margin-top: 80px;
   }
 
   .v-card {
@@ -370,13 +395,31 @@
     font-size: 60px;
   }
 
-  .travel-show-title {
+  .travelshow-title {
     color: #001858;
+    font-size: 25px;
   }
 
   .ma-2 {
-    margin-top: 10px;
+    // margin-top: 10px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .delete-btn {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+
+    &:hover {
+      transform: scale(1.04);
+      transition-duration: 80ms;
+    }
+  }
+
+  .v-btn {
+    &:hover {
+      transform: scale(1.04);
+      transition-duration: 80ms;
+    }
   }
 
   .remind-ms {
@@ -392,6 +435,15 @@
   }
 
   .items {
+    color: #001858;
+  }
+
+  .display {
+    color: #001858;
+    text-align: center;
+    font-size: 30px;
+  }
+  .theme--dark.v-card > .v-card__text{
     color: #001858;
   }
 

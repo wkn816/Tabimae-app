@@ -128,7 +128,7 @@
               <v-col cols="12" offset-sm="1" sm="3" offset-md="2" md="5" offset-lg="2" lg="3">
                 <v-menu v-model="choice_departure_day" :close-on-content-click="false" max-width="290">
                   <template v-slot:activator="{ on, attrs }">
-                    <v-text-field outlined append-icon="mdi-calendar-month-outline" label="出発日" :value="departure_day"
+                    <v-text-field outlined append-icon="mdi-calendar-month-outline" label="搭乗日" :value="departure_day"
                       clearable readonly v-bind="attrs" v-on="on" @click:clear="departure_day = null"></v-text-field>
                   </template>
                   <v-date-picker v-model="departure_day" @change="choice_departure_day = departure_day">
@@ -140,12 +140,12 @@
             <v-row align="center" justify="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="2" md="4" offset-lg="2" lg="4">
                 <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place"
-                  :counter="10" label="出発地" required>
+                  :counter="10" label="出発空港" required>
                 </v-text-field>
               </v-col>
               <v-col cols="12" offset-sm="1" sm="5" offset-md="1" md="5" offset-lg="1" lg="5">
                 <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place"
-                  :counter="10" label="到着地" required>
+                  :counter="10" label="到着空港" required>
                 </v-text-field>
               </v-col>
             </v-row>

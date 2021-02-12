@@ -63,12 +63,12 @@
             <v-row align="center" justify="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="2" lg="4">
                 <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place"
-                  :counter="10" label="出発地" required>
+                  :counter="10" label="出発駅" required>
                 </v-text-field>
               </v-col>
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="1" lg="5">
                 <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="arrival_place"
-                  :counter="10" label="到着地" required>
+                  :counter="10" label="到着駅" required>
                 </v-text-field>
               </v-col>
             </v-row>

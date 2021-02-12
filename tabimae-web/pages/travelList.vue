@@ -3,10 +3,15 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color="#f3d2c1" elevation="2" class="travellist-card">
+          <v-card color="#ffc6c7" elevation="2" class="travellist-card">
             <v-card-title primary-title class="justify-center">
-              <v-icon large color="#001858">mdi-bag-checked</v-icon>
+              <v-icon x-large color=#e53170>
+                mdi-chevron-double-right
+              </v-icon>
               <span class="travellist-title">旅行一覧</span>
+              <v-icon x-large color=#e53170>
+                mdi-chevron-double-left
+              </v-icon>
             </v-card-title>
           </v-card>
         </v-col>
@@ -16,16 +21,16 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card elevation="“20”" color="#f3d2c1">
+          <v-card elevation="10">
             <v-simple-table class="list-table" style="color:#001858">
               <thead class="list-thead">
                 <tr>
-                  <th style="color:#001858">詳細</th>
-                  <th style="color:#001858">出発日</th>
-                  <th style="color:#001858">出発地</th>
-                  <th style="color:#001858">到着地</th>
-                  <th style="color:#001858">出発時間</th>
-                  <th style="color:#001858">到着時間</th>
+                  <th></th>
+                  <th style="color:#fffffe">出発日</th>
+                  <th style="color:#fffffe">出発地</th>
+                  <th style="color:#fffffe">到着地</th>
+                  <th style="color:#fffffe">出発時間</th>
+                  <th style="color:#fffffe">到着時間</th>
                 </tr>
               </thead>
               <!-- <v-card elevation="20" color=#f3d2c1> -->
@@ -39,11 +44,13 @@
                 > -->
                 <tr v-for="train in trains">
                   <!-- <tr v-for="train in travelData.data"> -->
+                  <!-- <v-hover v-slot:default="{ hover }"> -->
                   <td class="show-btn">
                     <router-link style="text-decoration: none;" :to="`/travel/${travel}`">
-                      <v-icon>mdi-feature-search-outline</v-icon>
+                      <v-icon mdi-feature-search-outline></v-icon>詳細
                     </router-link>
                   </td>
+                  <!-- </v-hover> -->
                   <td class="blue lighten-5">
                     {{ train.departure_day }}
                   </td>
@@ -66,18 +73,12 @@
     <v-container>
       <v-card color="#f3d2c1">
         <v-card-title primary-title class="justify-center">
-          <v-icon
-        x-large
-        color=#e53170
-      >
-      mdi-chevron-double-right
-      </v-icon>
-      <v-title class="display">旅行出発前に知っておきたいこと</v-title>
-      <v-icon
-        x-large
-        color=#e53170
-      >
-      mdi-chevron-double-left      </v-icon>
+          <v-icon x-large color=#e53170>
+            mdi-chevron-double-right
+          </v-icon>
+          <v-title class="display">旅行出発前に知っておきたいこと</v-title>
+          <v-icon x-large color=#e53170>
+            mdi-chevron-double-left </v-icon>
         </v-card-title>
         <v-card-text color="#001858">
           <p>画像をクリックすると知っておきたい情報をチェックできます</p>
@@ -95,9 +96,10 @@
 
 <script>
   import axios from "@/plugins/axios";
-  import TravelNew from "@/pages/travelNew";import Train from "~/components/Train.vue";
-import Air from "~/components/Air.vue";
-import TravelEtiquette from "~/components/TravelEtiquette.vue";
+  import TravelNew from "@/pages/travelNew";
+  import Train from "~/components/Train.vue";
+  import Air from "~/components/Air.vue";
+  import TravelEtiquette from "~/components/TravelEtiquette.vue";
 
   export default {
     // components: {
@@ -169,15 +171,14 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
   }
 
   .list-table {
-    background-color: #f3d2c1 !important;
+    background-color: #001858 !important;
     // font-size: 100px;
   }
 
   .show-btn {
-    background-color: #001858;
-    border: solid 3px #001858;
+    background-color: #e53170;
     /*線*/
-    border-radius: 10px;
+    // border-radius: 10px;
     /*角の丸み*/
     text-decoration: none;
     display: flex;
@@ -185,28 +186,45 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+
+    // box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    &:hover {
+      transform: scale(1.04);
+      transition-duration: 80ms;
+    }
   }
 
   .travellist-title {
-  color: #001858;
-  text-align: center;
-}
-p {
-  color: #001858;
-  text-align: center;
-}
-.travellist-card{
-  margin-top: 80px;
-}
-.display{
-  color: #001858;
-  text-align: center;
-  font-size: 25px;
-  font-family: 'TabimaeFont';
+    color: #001858;
+    text-align: center;
+  }
 
-}
+  p {
+    color: #001858;
+    text-align: center;
+  }
 
+  .travellist-card {
+    margin-top: 80px;
+  }
 
+  .display {
+    color: #001858;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'TabimaeFont';
+  }
+
+  .v-application a {
+    color: #fffffe;
+    font-weight: 100;
+    font-size: 18px;
+
+    &:hover {
+      transform: scale(1.04);
+      transition-duration: 40ms;
+      color: #271c19;
+    }
+  }
 
 </style>

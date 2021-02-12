@@ -364,7 +364,7 @@
   .display {
     color: #001858;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'TabimaeFont';
   }
 

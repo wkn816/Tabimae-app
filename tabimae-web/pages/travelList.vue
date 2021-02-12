@@ -3,7 +3,7 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
-          <v-card color="#2cb67d" elevation="2" class="travellist-card">
+          <v-card color="#ffc6c7" elevation="2" class="travellist-card">
             <v-card-title primary-title class="justify-center">
               <v-icon large color="#001858">mdi-bag-checked</v-icon>
               <span class="travellist-title">旅行一覧</span>
@@ -20,12 +20,12 @@
             <v-simple-table class="list-table" style="color:#001858">
               <thead class="list-thead">
                 <tr>
-                  <th style="color:#001858">詳細</th>
-                  <th style="color:#001858">出発日</th>
-                  <th style="color:#001858">出発地</th>
-                  <th style="color:#001858">到着地</th>
-                  <th style="color:#001858">出発時間</th>
-                  <th style="color:#001858">到着時間</th>
+                  <th style="color:#fffffe">詳細</th>
+                  <th style="color:#fffffe">出発日</th>
+                  <th style="color:#fffffe">出発地</th>
+                  <th style="color:#fffffe">到着地</th>
+                  <th style="color:#fffffe">出発時間</th>
+                  <th style="color:#fffffe">到着時間</th>
                 </tr>
               </thead>
               <!-- <v-card elevation="20" color=#f3d2c1> -->
@@ -169,15 +169,15 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
   }
 
   .list-table {
-    background-color: #94a1b2 !important;
+    background-color: #001858 !important;
     // font-size: 100px;
   }
 
   .show-btn {
-    background-color: #001858;
-    border: solid 3px #001858;
+    background-color: #f582ae;
+    // border:  4px #f582ae;
     /*線*/
-    border-radius: 10px;
+    // border-radius: 10px;
     /*角の丸み*/
     text-decoration: none;
     display: flex;
@@ -185,7 +185,7 @@ import TravelEtiquette from "~/components/TravelEtiquette.vue";
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    // box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   }
 
   .travellist-title {

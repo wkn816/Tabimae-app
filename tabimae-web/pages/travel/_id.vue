@@ -179,6 +179,26 @@
       <!-- <v-row> -->
       <!-- </v-row> -->
     </v-container>
+    <v-container>
+      <v-card color="#f3d2c1">
+        <v-card-title primary-title class="justify-center">
+          <v-icon x-large color=#e53170>
+            mdi-chevron-double-right
+          </v-icon>
+          <v-title class="display">旅行出発前に知っておきたいこと</v-title>
+          <v-icon x-large color=#e53170>
+            mdi-chevron-double-left </v-icon>
+        </v-card-title>
+        <v-card-text >
+          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
+        </v-card-text>
+        <v-row>
+          <Train />
+          <Air />
+          <TravelEtiquette />
+        </v-row>
+      </v-card>
+    </v-container>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </div>
 </template>
@@ -189,6 +209,10 @@
   import Vue from "vue";
   import VModal from "vue-js-modal";
   import Modal from "~/components/Modal.vue";
+  import Train from "~/components/Train.vue";
+  import Air from "~/components/Air.vue";
+  import TravelEtiquette from "~/components/TravelEtiquette.vue";
+
 
   Vue.use(VModal);
 
@@ -359,21 +383,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .help_link__button {
-    border: solid px #f582ae;
-    /*線*/
-    border-radius: 10px;
-    /*角の丸み*/
-    text-decoration: none;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-    color: #001858;
-  }
-
   .travelshow-card {
     margin-top: 80px;
   }
@@ -426,6 +435,15 @@
   }
 
   .items {
+    color: #001858;
+  }
+
+  .display {
+    color: #001858;
+    text-align: center;
+    font-size: 30px;
+  }
+  .theme--dark.v-card > .v-card__text{
     color: #001858;
   }
 

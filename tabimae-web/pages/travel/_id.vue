@@ -66,8 +66,13 @@
 
               <ul style="background-color:#001858">
                 <li v-for="item in items" :key="item" class="belonging-list">
-                  <v-checkbox :label="item" :value="item" v-model="ex4" color="#fef6e4" hide-details
-                    @change="onChange(item);"></v-checkbox>
+                  <v-checkbox
+                  :label="item"
+                  :value="item"
+                  v-model="ex4"
+                  color="#fef6e4"
+                  hide-details
+                  ></v-checkbox>
                 </li>
 
                 <!-- <li> -->

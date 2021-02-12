@@ -70,7 +70,7 @@
                   :label="item"
                   :value="item"
                   v-model="ex4"
-                  color="#fef6e4"
+                  color="#fec7d7"
                   hide-details
                   ></v-checkbox>
                 </li>

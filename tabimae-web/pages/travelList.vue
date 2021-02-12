@@ -197,6 +197,7 @@
   .travellist-title {
     color: #001858;
     text-align: center;
+    font-size: 25px;
   }
 
   p {
@@ -211,7 +212,7 @@
   .display {
     color: #001858;
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'TabimaeFont';
   }
 

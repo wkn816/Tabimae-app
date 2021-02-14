@@ -1,8 +1,8 @@
 <template>
   <div>
-        <v-col offset-sm="6" sm="4" offset-md="6" md="4" offset-lg="3" lg="3">
+        <!-- <v-col cols="12" offset-sm="6" sm="4" offset-md="6" md="4" offset-lg="3" lg="3"> -->
       <img :src="image_src" @click="openModal" class="air-img">
-    </v-col>
+    <!-- </v-col> -->
     <Modal v-if="modalFlag" @close-modal="closeModal">
       <v-col sm="11" md="10" lg="10">
         <h2 class="air-info-title">飛行機ご搭乗の際のご注意事項</h2>

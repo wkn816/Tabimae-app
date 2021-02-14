@@ -2,7 +2,7 @@
   <div>
 
       <img :src="image_src" @click="openModal" class="train-img">
-        </v-col>
+        <!-- </v-col> -->
 
       <Modal v-if="modalFlag" @close-modal="closeModal">
         <v-col sm="11" md="10" lg="10">
@@ -72,7 +72,7 @@
   }
 
   .train-img {
-    width: 320px;
+    width: 350px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
     &:hover {
       transform: scale(1.04);

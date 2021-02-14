@@ -59,7 +59,7 @@
   }
 
   .new_travel_info-img {
-    width: 320px;
+    width: 350px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
     &:hover {
       transform: scale(1.04);

@@ -2,11 +2,11 @@
   <v-app class="bg">
     <Home />
     <v-container v-if="user">
-        <div class="page">
-          <div class="buttons">
+      <div class="page">
+        <div class="buttons">
 
-      <v-row>
-        <v-col cols="12" offset-sm="1" sm="5" offset-md="2" md="2" offset-lg="1" lg="4">
+          <v-row>
+            <v-col cols="12" offset-sm="1" sm="5" offset-md="2" md="2" offset-lg="1" lg="4">
               <ButtonDefault to="/travelNew" class="traveladd-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>
@@ -16,7 +16,7 @@
               </ButtonDefault>
             </v-col>
 
-        <v-col offset-sm="1" sm="5" offset-md="2" md="10" offset-lg="" lg="4">
+            <v-col offset-sm="1" sm="5" offset-md="2" md="10" offset-lg="" lg="4">
               <ButtonDefault to="/travelList" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>
@@ -25,9 +25,9 @@
                 </template>
               </ButtonDefault>
             </v-col>
-            </v-row>
-          </div>
+          </v-row>
         </div>
+      </div>
 
       <v-card color="#f3d2c1">
         <v-card-title primary-title class="justify-center">
@@ -83,7 +83,7 @@
 
       <About />
 
-      <v-col sm="11" md="11" lg="12">
+      <!-- <v-col sm="12" md="12" lg="12"> -->
         <v-card color="#f3d2c1">
           <v-card-title primary-title class="justify-center">
             <v-icon x-large color=#e53170>
@@ -97,12 +97,19 @@
             <p>画像をクリックすると知っておきたい情報をチェックできます</p>
           </v-card-text>
           <v-row>
-            <Train />
-            <Air />
-            <TravelEtiquette />
+            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="1" lg="3">
+              <Train />
+            </v-col>
+            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="1" lg="2">
+              <Air />
+            </v-col>
+            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="1" lg="1">
+              <TravelEtiquette />
+            </v-col>
+
           </v-row>
         </v-card>
-      </v-col>
+      <!-- </v-col> -->
     </v-container>
 
   </v-app>

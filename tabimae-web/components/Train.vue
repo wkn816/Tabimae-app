@@ -1,7 +1,6 @@
 <template>
   <div>
 
-        <v-col offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="3" lg="3">
       <img :src="image_src" @click="openModal" class="train-img">
         </v-col>
 

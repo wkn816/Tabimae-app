@@ -71,6 +71,25 @@
 
 </script>
 <style lang="scss" scoped>
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
   h1 {
     color: black;
   }
@@ -83,6 +102,9 @@
       transform: scale(1.04);
       transition-duration: 40ms;
     }
+    @include sp {
+          width: 250px;
+          }
   }
 
 .modal-close{

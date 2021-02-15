@@ -1,6 +1,6 @@
 <template>
 <div class="about">
-    <v-col sm="11" md="11" lg="12">
+    <v-col sm="12" md="12" lg="12">
 <v-card color=#fef6e4>
   <v-card-title primary-title class="justify-center">
     <v-icon

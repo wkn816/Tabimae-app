@@ -180,24 +180,7 @@
       <!-- </v-row> -->
     </v-container>
     <v-container>
-      <v-card color="#f3d2c1">
-        <v-card-title primary-title class="justify-center">
-          <v-icon x-large color=#e53170>
-            mdi-chevron-double-right
-          </v-icon>
-          <v-title class="display">旅行出発前に知っておきたいこと</v-title>
-          <v-icon x-large color=#e53170>
-            mdi-chevron-double-left </v-icon>
-        </v-card-title>
-        <v-card-text >
-          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
-        </v-card-text>
-        <v-row>
-          <Train />
-          <Air />
-          <TravelEtiquette />
-        </v-row>
-      </v-card>
+      <TravelInfo />
     </v-container>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </div>
@@ -212,6 +195,7 @@
   import Train from "~/components/Train.vue";
   import Air from "~/components/Air.vue";
   import TravelEtiquette from "~/components/TravelEtiquette.vue";
+  import TravelInfo from "~/components/TravelInfo.vue";
 
 
   Vue.use(VModal);
@@ -383,6 +367,18 @@
 </script>
 
 <style lang="scss" scoped>
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
   .travelshow-card {
     margin-top: 80px;
   }
@@ -438,13 +434,7 @@
     color: #001858;
   }
 
-  .display {
-    color: #001858;
-    text-align: center;
-    font-size: 30px;
-  }
   .theme--dark.v-card > .v-card__text{
     color: #001858;
   }
-
 </style>

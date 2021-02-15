@@ -58,11 +58,7 @@
                   <td class="blue lighten-5">{{ train.arrival_place }}</td>
                   <td class="blue lighten-5">{{ train.departure_time }}</td>
                   <td class="blue lighten-5">{{ train.arrival_time }}</td>
-
                 </tr>
-                <!-- </v-card> -->
-                <!-- </div> -->
-
               </tbody>
             </v-simple-table>
           </v-card>
@@ -71,24 +67,7 @@
     </v-container>
 
     <v-container>
-      <v-card color="#f3d2c1">
-        <v-card-title primary-title class="justify-center">
-          <v-icon x-large color=#e53170>
-            mdi-chevron-double-right
-          </v-icon>
-          <v-title class="display">旅行出発前に知っておきたいこと</v-title>
-          <v-icon x-large color=#e53170>
-            mdi-chevron-double-left </v-icon>
-        </v-card-title>
-        <v-card-text color="#001858">
-          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
-        </v-card-text>
-        <v-row>
-          <Train />
-          <Air />
-          <TravelEtiquette />
-        </v-row>
-      </v-card>
+      <TravelInfo />
     </v-container>
 
   </div>
@@ -100,6 +79,7 @@
   import Train from "~/components/Train.vue";
   import Air from "~/components/Air.vue";
   import TravelEtiquette from "~/components/TravelEtiquette.vue";
+  import TravelInfo from "~/components/TravelInfo.vue";
 
   export default {
     // components: {
@@ -164,6 +144,7 @@
 </script>
 
 <style lang="scss" scoped>
+
   .v-card {
     width: 100%;
     // text-align: center;
@@ -200,22 +181,9 @@
     font-size: 25px;
   }
 
-  p {
-    color: #001858;
-    text-align: center;
-  }
-
   .travellist-card {
     margin-top: 80px;
   }
-
-  .display {
-    color: #001858;
-    text-align: center;
-    font-size: 30px;
-    font-family: 'TabimaeFont';
-  }
-
   .v-application a {
     color: #fffffe;
     font-weight: 100;
@@ -227,5 +195,6 @@
       color: #271c19;
     }
   }
+
 
 </style>

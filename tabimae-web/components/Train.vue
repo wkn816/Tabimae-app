@@ -1,9 +1,8 @@
 <template>
   <div>
 
-        <v-col offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="3" lg="3">
       <img :src="image_src" @click="openModal" class="train-img">
-        </v-col>
+        <!-- </v-col> -->
 
       <Modal v-if="modalFlag" @close-modal="closeModal">
         <v-col sm="11" md="10" lg="10">
@@ -68,17 +67,29 @@
 
 </script>
 <style lang="scss" scoped>
+
+$sp: 480px;  // スマホ
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
   h1 {
     color: black;
   }
 
   .train-img {
-    width: 320px;
+    width: 350px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
     &:hover {
       transform: scale(1.04);
       transition-duration: 40ms;
     }
+    @include sp {
+          width: 250px;
+          }
   }
 .modal-close{
     background-color: #001858;

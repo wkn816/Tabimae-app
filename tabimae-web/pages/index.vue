@@ -2,11 +2,11 @@
   <v-app class="bg">
     <Home />
     <v-container v-if="user">
-        <div class="page">
-          <div class="buttons">
+      <div class="page">
+        <div class="buttons">
 
-      <v-row>
-        <v-col cols="12" offset-sm="1" sm="5" offset-md="2" md="2" offset-lg="1" lg="4">
+          <v-row>
+            <v-col cols="12" offset-sm="1" sm="5" offset-md="2" md="2" offset-lg="1" lg="4">
               <ButtonDefault to="/travelNew" class="traveladd-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>
@@ -16,7 +16,7 @@
               </ButtonDefault>
             </v-col>
 
-        <v-col offset-sm="1" sm="5" offset-md="2" md="10" offset-lg="" lg="4">
+            <v-col offset-sm="1" sm="5" offset-md="2" md="10" offset-lg="" lg="4">
               <ButtonDefault to="/travelList" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>
@@ -25,84 +25,48 @@
                 </template>
               </ButtonDefault>
             </v-col>
-            </v-row>
-          </div>
+          </v-row>
         </div>
-
-      <v-card color="#f3d2c1">
-        <v-card-title primary-title class="justify-center">
-          <v-icon large color="#001858">mdi-bag-checked</v-icon>
-          <span class="title">旅行出発前に知っておきたいこと</span>
-        </v-card-title>
-        <v-card-text color="#001858">
-          <p>画像をクリックすると知っておきたい情報をチェックできます</p>
-        </v-card-text>
-        <v-row>
-          <Train />
-          <Air />
-          <TravelEtiquette />
-        </v-row>
-      </v-card>
+      </div>
+      <TravelInfo />
     </v-container>
 
     <v-container v-else>
-      <v-row>
         <div class="page">
           <div class="buttons">
-            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="5">
-              <ButtonDefault to="/signup" class="button">
-                <template v-slot:label>
-                  <v-icon large color="#001858">mdi-account-plus</v-icon>
-                  <v-title class="top-btn">新規会員登録</v-title>
-                  <p class="btn-text">はじめてご利用で履歴を残したい方</p>
-                </template>
-              </ButtonDefault>
-            </v-col>
-            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="5">
-              <ButtonDefault to="login" class="button">
-                <template v-slot:label>
-                  <v-icon large color="#001858">mdi-account-search</v-icon>
-                  <v-title class="top-btn">ログイン</v-title>
-
-                  <p class="btn-text">既に会員登録がお済みの方</p>
-                </template>
-              </ButtonDefault>
-            </v-col>
-            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="6">
-              <ButtonDefault to="guestLogin" class="guestLogin-button">
-                <template v-slot:label @click="guestLogin">
-                  <v-icon large color="#001858">mdi-briefcase-account</v-icon>
-                  <v-title class="top-btn">ゲストログイン</v-title>
-                  <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
-                </template>
-              </ButtonDefault>
-            </v-col>
+            <v-row>
+            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="3">
+                <ButtonDefault to="/signup" class="button">
+                  <template v-slot:label>
+                    <v-icon large color="#001858">mdi-account-plus</v-icon>
+                    <v-title class="top-btn">新規会員登録</v-title>
+                    <p class="btn-text">はじめてご利用で履歴を残したい方</p>
+                  </template>
+                </ButtonDefault>
+              </v-col>
+            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="3">
+                <ButtonDefault to="login" class="button">
+                  <template v-slot:label>
+                    <v-icon large color="#001858">mdi-account-search</v-icon>
+                    <v-title class="top-btn">ログイン</v-title>
+                    <p class="btn-text">既に会員登録がお済みの方</p>
+                  </template>
+                </ButtonDefault>
+              </v-col>
+            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="4">
+                <ButtonDefault to="guestLogin" class="guestLogin-button">
+                  <template v-slot:label @click="guestLogin">
+                    <v-icon large color="#001858">mdi-briefcase-account</v-icon>
+                    <v-title class="top-btn">ゲストログイン</v-title>
+                    <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
+                  </template>
+                </ButtonDefault>
+              </v-col>
+            </v-row>
           </div>
         </div>
-      </v-row>
-
       <About />
-
-      <v-col sm="11" md="11" lg="12">
-        <v-card color="#f3d2c1">
-          <v-card-title primary-title class="justify-center">
-            <v-icon x-large color=#e53170>
-              mdi-chevron-double-right
-            </v-icon>
-            <v-title class="display">出発前に知っておきたいこと</v-title>
-            <v-icon x-large color=#e53170>
-              mdi-chevron-double-left </v-icon>
-          </v-card-title>
-          <v-card-text color="#001858">
-            <p>画像をクリックすると知っておきたい情報をチェックできます</p>
-          </v-card-text>
-          <v-row>
-            <Train />
-            <Air />
-            <TravelEtiquette />
-          </v-row>
-        </v-card>
-      </v-col>
+      <TravelInfo />
     </v-container>
 
   </v-app>
@@ -113,12 +77,14 @@
   import TravelList from "@/components/TravelList";
   import axios from "@/plugins/axios";
   import firebase from "@/plugins/firebase";
-  import Home from "~/components/Home.vue"; // 今回追加
+  import Home from "~/components/Home.vue";
   import Train from "~/components/Train.vue";
   import Air from "~/components/Air.vue";
   import TravelEtiquette from "~/components/TravelEtiquette.vue";
+  import HowTo from "~/components/HowTo.vue";
   import About from "~/components/About.vue";
   import ButtonDefault from "~/components/ButtonDefault.vue";
+  import TravelInfo from "~/components/TravelInfo.vue";
 
   export default {
     components: {
@@ -172,19 +138,6 @@
       closeModal() {
         this.modalFlag = false;
       }
-      // .catch(error => {
-      //   console.log(error);
-      //   this.error = (code => {
-      //     switch (code) {
-      //       case "auth/user-not-found":
-      //         return "メールアドレスが間違っています";
-      //       case "auth/wrong-password":
-      //         return "※パスワードが正しくありません";
-      //       default:
-      //         return "※メールアドレスとパスワードをご確認ください";
-      //     }
-      //   })(error.code);
-      // });
     },
 
   };
@@ -192,6 +145,21 @@
 </script>
 
 <style lang="scss" scoped>
+  $tab: 680px; // タブレット
+  $sp: 480px; // スマホ
+
+  @mixin tab {
+    @media (max-width: ($tab)) {
+      @content;
+    }
+  }
+
+  @mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+  }
+
   .button {
     /* background-color: #f3d2c1; */
     border: solid 5px #001858;
@@ -296,15 +264,9 @@
     font-family: 'TabimaeFont';
   }
 
-  .display {
-    color: #001858;
-    text-align: center;
-    font-size: 35px;
-    font-family: 'TabimaeFont';
-  }
-
   .top-btn {
     font-family: 'TabimaeFont';
   }
+
 
 </style>

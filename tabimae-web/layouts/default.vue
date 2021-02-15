@@ -24,7 +24,9 @@
       <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn> -->
-      <v-btn text color="#001858" @click="travelTop" v-text="title" />
+      <!-- <v-btn @click="travelTop"> -->
+        <img :src="image_src" @click="travelTop" class="new_travel_info-img">
+      <!-- </v-btn> -->
       <v-spacer />
 
       <v-container v-if="user" class="header-item">
@@ -97,7 +99,7 @@
         miniVariant: false,
         right: true,
         rightDrawer: false,
-        title: "タビマエ"
+        image_src: require("../assets/img/logo1.png"),
       };
     },
     computed: {

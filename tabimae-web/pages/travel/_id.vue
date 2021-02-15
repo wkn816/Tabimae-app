@@ -193,10 +193,19 @@
           <p>画像をクリックすると知っておきたい情報をチェックできます</p>
         </v-card-text>
         <v-row>
-          <Train />
-          <Air />
-          <TravelEtiquette />
-        </v-row>
+            <v-col offset="" cols="1" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="2">
+              <Train />
+            </v-col>
+            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="2">
+              <Air />
+            </v-col>
+            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="3">
+              <TravelEtiquette />
+            </v-col>
+            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="1" lg="1">
+              <HowTo />
+            </v-col>
+          </v-row>
       </v-card>
     </v-container>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

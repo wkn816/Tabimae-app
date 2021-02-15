@@ -193,16 +193,16 @@
           <p>画像をクリックすると知っておきたい情報をチェックできます</p>
         </v-card-text>
         <v-row>
-            <v-col offset="" cols="1" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="2">
+            <v-col class="info-img" cols="12" offset-sm="3" sm="3" offset-md="3" md="3" offset-lg="2" lg="2">
               <Train />
             </v-col>
-            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="2">
+            <v-col class="info-img" cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="2">
               <Air />
             </v-col>
-            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="3">
+            <v-col class="info-img" cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="2" lg="3">
               <TravelEtiquette />
             </v-col>
-            <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="1" lg="1">
+            <v-col class="info-img" cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="1" lg="1">
               <HowTo />
             </v-col>
           </v-row>
@@ -454,6 +454,10 @@
   }
   .theme--dark.v-card > .v-card__text{
     color: #001858;
+  }
+  .info-img{
+    text-align: center;
+
   }
 
 </style>

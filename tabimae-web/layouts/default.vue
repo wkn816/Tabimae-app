@@ -8,7 +8,8 @@
             <v-icon color=#001858>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title class="list-item" v-text="item.title" />
+            <v-list-item-tit
+            le class="list-item" v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -123,6 +124,11 @@
               icon: "mdi-format-list-bulleted",
               title: "旅行一覧",
               to: "/travelList"
+            },
+            {
+              icon: "mdi-exit-to-app",
+              title: "ログアウト",
+              to: "/logOut"
             }
           ];
         } else {

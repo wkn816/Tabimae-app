@@ -76,6 +76,15 @@
 
 </script>
 <style lang="scss" scoped>
+
+$sp: 480px;  // スマホ
+
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
   h1 {
     color: black;
   }
@@ -88,6 +97,9 @@
       transform: scale(1.04);
       transition-duration: 40ms;
     }
+    @include sp {
+          width: 250px;
+          }
   }
 
 .modal-close{

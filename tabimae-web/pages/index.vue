@@ -107,7 +107,7 @@
               <TravelEtiquette />
             </v-col>
             <v-col cols="12" offset-sm="6" sm="4" offset-md="3" md="3" offset-lg="1" lg="1">
-              <TravelEtiquette />
+              <HowTo />
             </v-col>
 
           </v-row>
@@ -127,6 +127,7 @@
   import Train from "~/components/Train.vue";
   import Air from "~/components/Air.vue";
   import TravelEtiquette from "~/components/TravelEtiquette.vue";
+  import HowTo from "~/components/HowTo.vue";
   import About from "~/components/About.vue";
   import ButtonDefault from "~/components/ButtonDefault.vue";
 

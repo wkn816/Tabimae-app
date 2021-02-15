@@ -123,7 +123,7 @@
   import TravelList from "@/components/TravelList";
   import axios from "@/plugins/axios";
   import firebase from "@/plugins/firebase";
-  import Home from "~/components/Home.vue"; // 今回追加
+  import Home from "~/components/Home.vue";
   import Train from "~/components/Train.vue";
   import Air from "~/components/Air.vue";
   import TravelEtiquette from "~/components/TravelEtiquette.vue";

@@ -14,7 +14,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar fixed color="rgba(10,10,100,0.2)">
+    <v-app-bar fixed hide-on-scroll color="rgba(10,10,100,0.2)">
       <v-app-bar-nav-icon color="#001858" @click.stop="drawer = !drawer" />
       <!-- <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>

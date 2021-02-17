@@ -4,7 +4,7 @@
       <img :src="image_src" @click="openModal" class="howto-img">
     <!-- </v-col> -->
     <Modal v-if="modalFlag" @close-modal="closeModal">
-      <v-col sm="11" md="10" lg="10">
+      <v-col cols="12" sm="12" md="12" lg="12">
         <h1 class="howto-info-title">タビマエの使い方</h1>
         <ul class="howto-info-text">
           <h2>はじめに</h2>
@@ -49,6 +49,7 @@
   import Vue from 'vue'
   import VModal from 'vue-js-modal'
   import Modal from '~/components/Modal.vue'
+
   Vue.use(VModal)
 
   export default {

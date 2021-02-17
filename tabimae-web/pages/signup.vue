@@ -37,14 +37,13 @@
 
     <v-row>
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
-
         <v-card color=#f3d2c1>
           <v-card-title primary-title class="justify-center">
-            <v-icon x-large color=#e53170>
+            <v-icon large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
             <v-title class="display">すぐご利用になりたい方</v-title>
-            <v-icon x-large color=#e53170>
+            <v-icon large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>
           <v-card-text color=#001858>
@@ -166,7 +165,7 @@
   .display {
     color: #001858;
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
     font-family: 'TabimaeFont';
 
   }

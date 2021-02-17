@@ -1,6 +1,7 @@
 <template>
 <div class="about">
-    <v-col sm="12" md="12" lg="12">
+
+<v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="12">
 <v-card color=#fef6e4>
   <v-card-title primary-title class="justify-center">
     <v-icon
@@ -9,7 +10,7 @@
       >
       mdi-chevron-double-right
       </v-icon>
-      <v-title class="display">タビマエ</v-title>
+      <v-text class="display">タビマエ</v-text>
       <v-icon
         x-large
         color=#e53170
@@ -58,7 +59,7 @@ export default {
 .display{
   color: #001858;
   text-align: center;
-  font-size: 39px;
+  font-size: 32px;
   font-family: 'TabimaeFont';
 
 }
@@ -68,8 +69,6 @@ p{
   font-size: 16px;
   line-height: 2.0em;
   font-family: 'TabimaeFont';
-
-
 }
 
 </style>

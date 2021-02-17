@@ -12,6 +12,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+
 export default Vue.extend({
   methods: {
     closeModal() {
@@ -35,6 +37,7 @@ export default Vue.extend({
       height: 100%;
       width: 100%;
       background: rgba(0, 0, 0, 0.7);
+      overflow: scroll;
     }
 
     &__window {

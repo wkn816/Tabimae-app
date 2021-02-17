@@ -8,9 +8,12 @@
 
 ・旅行慣れしてない方向けの情報をモーダル処理にて表示。  
 
-<img width="720" alt="スクリーンショット 2021-01-31 12 10 38" src="https://user-images.githubusercontent.com/71075728/106373972-30e43700-63c2-11eb-8826-12d2487741e1.png">
-<img width="1435" alt="スクリーンショット 2021-01-31 12 12 05" src="https://user-images.githubusercontent.com/71075728/106373986-422d4380-63c2-11eb-99f6-15c219627fc8.png">
-<img width="1435" alt="スクリーンショット 2021-01-31 12 47 43" src="https://user-images.githubusercontent.com/71075728/106374030-8d475680-63c2-11eb-9610-941994c42a5a.png">
+<img width="1440" alt="スクリーンショット 2021-02-15 23 03 53" src="https://user-images.githubusercontent.com/71075728/107956315-57b98480-6fe2-11eb-90c1-9ef04679985f.png">
+
+<img width="1439" alt="スクリーンショット 2021-02-15 22 55 41" src="https://user-images.githubusercontent.com/71075728/107956250-3c4e7980-6fe2-11eb-9b97-affb38dc9ab0.png">
+<img width="1440" alt="スクリーンショット 2021-02-15 23 00 39" src="https://user-images.githubusercontent.com/71075728/107956268-43758780-6fe2-11eb-8601-dda4a58a986b.png">
+<img width="1440" alt="スクリーンショット 2021-02-15 23 01 43" src="https://user-images.githubusercontent.com/71075728/107956288-4bcdc280-6fe2-11eb-8f31-a6d2e1eda734.png">
+
 
 
 

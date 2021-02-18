@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <v-row>
-        <v-col cols="12" sm="11" md="11" lg="12">
+        <v-col cols="12" sm="12" md="12" lg="12">
           <v-card color="#ffc6c7" elevation="2" class="travellist-card">
             <v-card-title primary-title class="justify-center">
               <v-icon x-large color=#e53170>

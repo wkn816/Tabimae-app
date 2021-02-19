@@ -9,7 +9,7 @@
         '＊旅が織りなす物語を',
         '＊[タビマエ]で管理して',
         '＊素敵な旅を創造しましょう',
-        ]" erase-style="clear" :type-delay="100" :pre-type-delay="70" :erase-delay="300" :repeat="Infinity">
+        ]" erase-style="clear" :type-delay="80" :pre-type-delay="40" :erase-delay="50" :repeat="Infinity" :pre-erase-delay="1500">
           </vue-typer>
         </v-col>
 

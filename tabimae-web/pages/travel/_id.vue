@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <v-container>
       <v-row>
         <v-col cols="12" sm="11" md="11" lg="12">
@@ -75,22 +76,15 @@
                   ></v-checkbox>
                 </li>
 
-                <!-- <li> -->
                 <v-col cols="12" sm="11" md="12" lg="6">
                   <v-text-field label="持ち物追加" filled required v-model="item" :counter="15"></v-text-field>
                   <v-btn fab dark small color="#f582ae" @click="travelitem">追加</v-btn>
                 </v-col>
 
-                <!-- <v-btn @click="itemsubmit">送信</v-btn> -->
                 <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
                   <v-icon>mdi-close-thick</v-icon>
                 </v-btn>
-                <!-- </／li> -->
               </ul>
-
-              <!-- <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
-                <v-icon>mdi-plus-box</v-icon>
-              </v-btn> -->
 
             </Modal>
           </v-card>
@@ -168,16 +162,13 @@
               </v-col>
             </v-row>
           </v-card>
-          <v-col cols="12" offset-lg="11" sm="11" md="11" lg="1">
+          <v-col offset="9" cols="1" offset-sm="11" sm="1" offset-md="11" md="1" offset-lg="11" lg="1">
             <v-btn class="delete-btn" fab outlined color="#001858" @click="deleteItem({ res_travel_show })">
               <v-icon>mdi-trash-can-outline</v-icon>
             </v-btn>
           </v-col>
         </v-col>
       </v-row>
-
-      <!-- <v-row> -->
-      <!-- </v-row> -->
     </v-container>
     <v-container>
       <TravelInfo />

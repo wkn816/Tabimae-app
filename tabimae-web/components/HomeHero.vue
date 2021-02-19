@@ -9,7 +9,7 @@
         '＊旅が織りなす物語を',
         '＊[タビマエ]で管理して',
         '＊素敵な旅を創造しましょう',
-        ]" erase-style="clear" :type-delay="100" :pre-type-delay="70" :erase-delay="300" :repeat="Infinity">
+        ]" erase-style="clear" :type-delay="80" :pre-type-delay="40" :erase-delay="50" :repeat="Infinity" :pre-erase-delay="1500">
           </vue-typer>
         </v-col>
 
@@ -32,12 +32,38 @@
 
 </script>
 <style lang="scss" scoped>
+$tab: 680px; // タブレット
+$sp: 480px;  // スマホ
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
   .home-hero__content {
-    background: url("../assets/img/top2.jpg");
+    background: url("../assets/img/top.jpg");
     background-size: cover;
     object-fit: cover;
     width: 100%;
     height: 60vh;
+    @include sp {
+          background: url("../assets/img/top2.jpg");
+          background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 60vh;
+          }
+    @include tab {
+          background: url("../assets/img/top2.jpg");
+          background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 60vh;
+          }
 
     &-text {
       // text-align: center;
@@ -46,13 +72,11 @@
       font-weight: bold;
       font-family: 'ヒラギノ角ゴシック', 'Hiragino Sans',
         sans-serif;
+        @include sp {
+          font-size: 20px;
+          }
     }
   }
-
-  .test {
-    font-size: 100px;
-  }
-
 </style>
 <style>
   .vue-typer .custom.char {

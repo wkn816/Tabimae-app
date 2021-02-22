@@ -5,7 +5,7 @@
             <v-icon x-large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
-            <v-text class="test">出発前に知っておきたいこと</v-text>
+            <v-text class="travelinfo-title">出発前に知っておきたいこと</v-text>
             <v-icon x-large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>
@@ -83,7 +83,7 @@ $sp: 480px;  // スマホ
     font-family: 'TabimaeFont';
   }
 
-  .test {
+  .travelinfo-title {
     color: #001858;
     text-align: center;
     font-size: 35px;

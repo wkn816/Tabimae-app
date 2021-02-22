@@ -288,13 +288,10 @@
       user() {
         return this.$store.state.auth.currentUser;
       },
-      //83行目でtravelsが持っている値のみ画面上に表示¥
+      //83行目でtravelsが持っている値のみ画面上に表示
       travels() {
         return this.$store.state.auth.travels;
       }
-      // departure_day_test () {
-      //   return this.choice_departure_day ? moment(this.choice_departure_daye).format('dddd, MMMM Do YYYY') : ''
-      // },
     },
     created() {
       console.log(format(parseISO(new Date().toISOString()), "yyyy-MM-dd"));

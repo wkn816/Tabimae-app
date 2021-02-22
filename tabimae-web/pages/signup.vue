@@ -78,7 +78,6 @@
         if (this.password !== this.passwordConfirm) {
           this.error = "※パスワードとパスワード確認が一致していません";
         }
-
         const res = await firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
@@ -96,21 +95,21 @@
               }
             })(error.code);
           });
-
+          this.$router.push("/");
         const user = {
           email: res.user.email,
           name: this.name,
           uid: res.user.uid,
         };
-
         await axios.post("/v1/users", {
           user
-        }).catch((err) => {
+        })
+        .catch((err) => {
           console.log({
             err
           });
         });
-        this.$router.push("/");
+        // this.$router.go({path: "/", force: true})
       },
       async guestLogin() {
         firebase
@@ -133,7 +132,6 @@
       },
     },
   };
-
 </script>
 
 <style lang="scss" scoped>

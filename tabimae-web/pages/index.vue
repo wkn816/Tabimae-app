@@ -15,6 +15,7 @@
                 </template>
               </ButtonDefault>
             </v-col>
+    <!-- <p>{{user.name}}</p> -->
 
             <v-col offset-sm="1" sm="5" offset-md="2" md="10" offset-lg="" lg="4">
               <ButtonDefault to="/travelList" class="travellist-button">
@@ -93,20 +94,21 @@
       Home,
       ButtonDefault
     },
+      computed: {
+        user() {
+          return this.$store.state.auth.currentUser;
+        }
+      },
     // created() {
     //      console.log("API_KEY:", process.env.API_KEY);
     //   },
     data() {
       return {};
     },
-    computed: {
-      user() {
-        return this.$store.state.auth.currentUser;
-      }
-    },
     async fetch() {
       // console.log(this.$store.state.auth.currentUser.id);
       const user = this.$store.state.auth.currentUser;
+
     },
     methods: {
       async guestLogin() {

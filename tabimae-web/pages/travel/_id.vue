@@ -192,12 +192,10 @@
   Vue.use(VModal);
 
   export default {
-    // props: ["travel"],
     data() {
       return {
         res_travel_show: {},
         res_delete: {},
-        test: {},
         checkbox: true,
         modalFlag: false,
         modalFlag: false,
@@ -221,7 +219,6 @@
       params
     }) {
       try {
-        // debugger
         const res_travel_show = await axios.get(
           // `${process.env.BASE_URL}/v1/travels/${params.id}`
           // `http://localhost:8080/travels/${params.id}`
@@ -274,7 +271,6 @@
           text5 = "新型コロナウイルスの影響で営業形態が変更になっている場合があるから出発前にしっかり確認！";
           text6 = "天気予報もしっかり確認しよう";
         }
-        // console.log(res_travel_show);
         return {
           res_travel_show,
           checkeditems,
@@ -290,14 +286,12 @@
         console.log("err", err);
       }
 
-      // const daylimit =
     },
     components: {
       Modal
     },
     methods: {
       async deleteItem(res_travel_show) {
-        // debugger
         console.log(res_travel_show);
         const res = confirm("本当に削除しますか？");
         let deleteres;
@@ -308,7 +302,6 @@
         } else {
           this.$router.push("/travelList");
         }
-        // debugger
         if (deleteres.status == 200) {
           this.$router.push("/");
         }
@@ -340,7 +333,7 @@
       onChange(item) {
         const checkeditem = this.checkeditems.some(
           checkeditem => checkeditem === item
-        ); //アロー関数
+        ); 
         if (checkeditem) {
           this.checkeditems = this.checkeditems.filter(n => n !== item);
           console.log(this.checkeditems);

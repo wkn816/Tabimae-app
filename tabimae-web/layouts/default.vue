@@ -257,6 +257,9 @@ $sp: 480px;  // スマホ
             display: none;
           }
   }
+  .v-app-bar{
+    padding-left: 120px;
+  }
 </style>
 <style>
 .v-app-bar{

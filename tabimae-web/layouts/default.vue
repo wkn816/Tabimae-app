@@ -16,18 +16,7 @@
     </v-navigation-drawer>
     <v-app-bar fixed hide-on-scroll color="rgba(10,10,100,0.2)">
       <v-app-bar-nav-icon color="#001858" @click.stop="drawer = !drawer" />
-      <!-- <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-bag-checked</v-icon>
-      </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
-        <v-icon>mdi-minus</v-icon>
-      </v-btn> -->
-      <!-- <v-btn @click="travelTop"> -->
         <img :src="image_src" @click="travelTop" class="new_travel_info-img">
-      <!-- </v-btn> -->
       <v-spacer />
 
       <v-container v-if="user" class="header-item">

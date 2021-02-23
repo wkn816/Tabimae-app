@@ -258,7 +258,13 @@ $sp: 480px;  // スマホ
           }
   }
   .v-app-bar{
-    padding-left: 120px;
+      padding-left: 120px;
+          @include tab {
+      padding-left: 0px;
+          }
+          @include sp {
+      padding-left: 0px;
+          }
   }
 </style>
 <style>

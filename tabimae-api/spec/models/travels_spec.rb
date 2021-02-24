@@ -6,7 +6,7 @@ RSpec.describe Travel, type: :model do
       @user = Travel.create(:user)
     end
 
-    it 'Todoを追加' do
+    it 'Travelを追加' do
       user = @user
       Travel = Travel.new(
         user_id: 1,
@@ -15,25 +15,11 @@ RSpec.describe Travel, type: :model do
       expect(Travel).to be_valid
     end
 
-    it 'Todoを削除' do
+    it 'Travelを削除' do
       user = @user
-      todo =FactoryBot.create(:todo)
-      todo.destroy
-      expect{Todo.find(1)}.to raise_exception(ActiveRecord::RecordNotFound)
-    end
-
-    it 'Todoのtitleを編集' do
-      user = @user
-      todo =FactoryBot.create(:todo)
-      todo.update(title: "new-title")
-      expect(todo.title).to eq "new-title"
-    end
-
-    it 'Todoのpointを編集' do
-      user = @user
-      todo =FactoryBot.create(:todo)
-      todo.update(point: 2)
-      expect(todo.point).to eq 2
+      travel =FactoryBot.create(:travel)
+      travel.destroy
+      expect{Travel.find(1)}.to raise_exception(ActiveRecord::RecordNotFound)
     end
 
   end

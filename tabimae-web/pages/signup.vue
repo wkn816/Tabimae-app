@@ -152,6 +152,7 @@
   .errors {
     color: red;
     margin-top: 20px;
+    text-align: center;
   }
 
 

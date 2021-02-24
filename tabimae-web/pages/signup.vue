@@ -77,6 +77,20 @@
       async signup() {
         if (this.password !== this.passwordConfirm) {
           this.error = "※パスワードとパスワード確認が一致していません";
+          return
+        }
+        if (this.name == "") {
+          this.error = "名前を入力してください";
+          return
+        }if (this.email == "") {
+          this.error = "メールアドレスを入力してください";
+          return
+        }if (this.password == "") {
+          this.error = "パスワードを入力してください";
+          return
+        }if (this.passwordConfirm == "") {
+          this.error = "パスワードは確認用で2回入力してください";
+          return
         }
         const res = await firebase
           .auth()
@@ -138,6 +152,7 @@
   .errors {
     color: red;
     margin-top: 20px;
+    text-align: center;
   }
 
 

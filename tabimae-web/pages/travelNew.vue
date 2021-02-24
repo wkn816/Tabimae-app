@@ -110,6 +110,7 @@
             <v-row align="right" justify="right">
             </v-row>
             <!-- </template> -->
+            <p v-if="error" class="errors">{{ error }}</p>
           </v-card>
         </v-col>
       </v-row>
@@ -184,6 +185,7 @@
             </v-row>
             <v-row align="right" justify="right">
             </v-row>
+              <p v-if="error" class="errors">{{ error }}</p>
           </v-card>
         </v-col>
       </v-row>
@@ -216,11 +218,36 @@
         arrival_time: "",
         departure_day: "",
         success: false,
-        choice_departure_day: false
+        choice_departure_day: false,
+        error: "",
       };
     },
     methods: {
       async createTravel() {
+        if (this.departure_day == "") {
+          this.error = "出発日を入力してください";
+          return
+        }
+        if (this.departure_place == "") {
+          this.error = "出発地を入力してください";
+          return
+        }
+        if (this.arrival_place == "") {
+          this.error = "到着地を入力してください";
+          return
+        }
+        if (this.departure_time == "") {
+          this.error = "出発時間を入力してください";
+          return
+        }
+        if (this.arrival_time == "") {
+          this.error = "到着時間を入力してください";
+          return
+        }
+        if (this.name == "") {
+          this.error = "旅行のテーマを入力してください";
+          return
+        }
         const travel_params = {
           transport: this.transport,
           name: this.name,
@@ -314,6 +341,11 @@
 </style>
 
 <style lang="scss" scoped>
+.errors {
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+  }
   .transport-radio {
     background-color: #232946;
     font-weight: bolder;

@@ -7,7 +7,7 @@
             <v-icon x-large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
-            <v-title class="display">新規会員登録</v-title>
+            <v-title class="signin-title">新規会員登録</v-title>
             <v-icon x-large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>
@@ -39,11 +39,11 @@
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
         <v-card color=#f3d2c1>
           <v-card-title primary-title class="justify-center">
-            <v-icon large color=#e53170>
+            <v-icon x-large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
-            <v-title class="display">すぐご利用になりたい方</v-title>
-            <v-icon large color=#e53170>
+            <v-title class="signin-title">すぐご利用になりたい方はこちら</v-title>
+            <v-icon x-large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>
           <v-card-text color=#001858>
@@ -175,7 +175,7 @@
     margin-top: 100px;
   }
 
-  .display {
+  .signin-title {
     color: #001858;
     text-align: center;
     font-size: 24px;

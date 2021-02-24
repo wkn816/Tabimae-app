@@ -4,10 +4,12 @@
       <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
         <v-card color=#8bd3dd class="login-card">
           <v-card-title primary-title class="justify-center">
-            <v-icon large color=#001858>
-              mdi-bag-checked
+            <v-icon x-large color=#e53170>
+              mdi-chevron-double-right
             </v-icon>
-            <span class="login-title">ログイン</span>
+            <v-title class="login-title">ログイン</v-title>
+            <v-icon x-large color=#e53170>
+              mdi-chevron-double-left </v-icon>
           </v-card-title>
           <v-card-text color=#fef6e4>
             <form>
@@ -33,10 +35,12 @@
 
         <v-card color=#f3d2c1>
           <v-card-title primary-title class="justify-center">
-            <v-icon large color=#001858>
-              mdi-bag-checked
+            <v-icon x-large color=#e53170>
+              mdi-chevron-double-right
             </v-icon>
-            <span class="signin-title">初めてご利用の方はこちらから</span>
+            <v-title class="login-title">はじめての方はこちら</v-title>
+            <v-icon x-large color=#e53170>
+              mdi-chevron-double-left </v-icon>
           </v-card-title>
           <v-card-text color=#001858>
             <v-hover v-slot:default="{ hover }">

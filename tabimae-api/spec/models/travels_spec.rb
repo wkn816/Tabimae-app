@@ -6,15 +6,6 @@ RSpec.describe Travel, type: :model do
       @user = Travel.create(:user)
     end
 
-    it 'Travelを追加' do
-      user = @user
-      Travel = Travel.new(
-        user_id: 1,
-        name: "test",
-      )
-      expect(Travel).to be_valid
-    end
-
     it 'Travelを削除' do
       user = @user
       travel =FactoryBot.create(:travel)

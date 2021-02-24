@@ -67,6 +67,14 @@
     },
     methods: {
       async login() {
+        if (this.email == "") {
+          this.error = "メールアドレスを入力してください";
+          return
+        }
+        if (this.password == "") {
+          this.error = "パスワードを入力してください";
+          return
+        }
         await firebase
           .auth()
           .signInWithEmailAndPassword(this.email, this.password)
@@ -95,6 +103,7 @@
   .errors {
     color: red;
     margin-top: 20px;
+    text-align: center;
   }
 
   .v-card-title {

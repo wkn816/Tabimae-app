@@ -59,7 +59,7 @@
       return {
         image_src: require("../assets/img/air_info.JPG"),
         dialogm1: '',
-      dialog: false,
+        dialog: false,
       }
     },
     components: {

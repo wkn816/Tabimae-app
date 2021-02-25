@@ -9,9 +9,9 @@
               <img :src="image_src" v-bind="attrs" v-on="on" class="air-img">
           </template>
         <v-card>
-        <v-card-title class="air-info-title">飛行機ご搭乗の際のご注意事項</v-card-title>
+        <p class="air-info-title" text-center>飛行機ご搭乗の際のご注意事項</p>
           <v-divider></v-divider>
-          <v-card-text>
+      <v-card-text>
         <ul class="air-info-text">
           <h3>チェックイン前</h3>
           <li>羽田・成田空港発着の場合、航空会社によって発着ターミナルが異なります。</li>
@@ -77,10 +77,10 @@ $sp: 480px;  // スマホ
     @content;
   }
 }
-.v-card{
-  background-color: aliceblue;
-  width: 1000px;
-}
+  .v-card{
+    background-color: aliceblue;
+    width: 1000px;
+  }
   .air-img {
     width: 350px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
@@ -92,12 +92,24 @@ $sp: 480px;  // スマホ
           width: 250px;
           }
   }
-.air-info-title{
-  color: #001858;
-  text-align: center;
-}
-.air-info-text{
-  color: #001858;
-  text-align: left;
-}
+  .air-info-title{
+    color: #001858;
+    text-align: center;
+    font-size: 30px;
+      @include sp {
+      font-size: 20px;
+      }
+  }
+  .air-info-text{
+    color: #001858;
+    text-align: left;
+  }
+  ul li{
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+  h3{
+    padding-left: -1em;
+    text-indent: -1em;
+  }
 </style>

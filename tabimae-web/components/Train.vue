@@ -69,7 +69,7 @@
   }
 
   .v-card {
-    background-color: aliceblue;
+    background-color: aliceblue !important;
     width: 1000px;
   }
 

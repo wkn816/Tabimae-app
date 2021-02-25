@@ -5,7 +5,7 @@
         <img :src="image_src" v-bind="attrs" v-on="on" class="train-img">
       </template>
       <v-card>
-        <v-card-title class="train-info-title">列車ご乗車の際のご注意事項</v-card-title>
+        <p class="train-info-title" text-center>列車ご乗車の際のご注意事項</p>
         <v-divider></v-divider>
         <v-card-text>
           <ul class="train-info-text">
@@ -89,9 +89,13 @@
     }
   }
 
-  .train-info-title {
+  .train-info-title{
     color: #001858;
     text-align: center;
+    font-size: 30px;
+    @include sp {
+    font-size: 20px;
+    }
   }
 
   .train-info-text {
@@ -101,9 +105,9 @@
   ul li{
     padding-left: 1em;
     text-indent: -1em;
-}
-h3{
-  padding-left: -1em;
-  text-indent: -1em;
-}
+  }
+  h3{
+    padding-left: -1em;
+    text-indent: -1em;
+  }
 </style>

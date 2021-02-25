@@ -1,22 +1,24 @@
 <template>
   <div>
-        <!-- <v-col cols="12" offset-sm="3" sm="3" offset-md="3" md="3" offset-lg="3" lg="3"> -->
-      <img :src="image_src" @click="openModal" class="new_travel_info-img">
-        <!-- </v-col> -->
-      <Modal v-if="modalFlag" @close-modal="closeModal">
-<v-badge>
-<img src="../assets/img/new_travel_style.png" height="500" width="400" alt="サンプル画像" align="bottom" ><br>
+    <v-dialog v-model="dialog" scrollable max-width="500px" max-height="900">
+      <template v-slot:activator="{ on, attrs }">
+        <img :src="image_src" v-bind="attrs" v-on="on" class="new_travel_info-img">
+      </template>
+      <v-badge>
+        <v-card>
+                    <v-divider></v-divider>
 
-<v-btn class="mx-2"
-        fab
-        dark
-        small
-        color="primary"
-        @click="closeModal">
-          <v-icon>mdi-close-thick</v-icon>
+        <img src="../assets/img/new_travel_style.png" height="670" width="500" alt="サンプル画像">
+                  <v-divider></v-divider>
+
+        <v-btn color="blue darken-1" text @click="dialog = false">
+          <v-icon>
+            mdi-close-circle-outline
+          </v-icon>
         </v-btn>
-</v-badge>
-            </Modal>
+        </v-card>
+      </v-badge>
+    </v-dialog>
   </div>
 </template>
 
@@ -33,8 +35,9 @@
   export default {
     data() {
       return {
-        modalFlag: false,
         image_src: require("../assets/img/travel_e.JPG"),
+        dialogm1: '',
+        dialog: false,
       }
     },
     components: {
@@ -42,27 +45,16 @@
       Modal,
 
     },
-    methods: {
-      openModal() {
-        this.modalFlag = true
-      },
-      closeModal() {
-        this.modalFlag = false
-      }
-    }
   }
 
 </script>
 <style lang="scss" scoped>
-$sp: 480px;  // スマホ
+  $sp: 480px; // スマホ
 
-@mixin sp {
-  @media (max-width: ($sp)) {
-    @content;
-  }
-}
-  h1 {
-    color: black;
+  @mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
   }
 
   .new_travel_info-img {
@@ -73,17 +65,14 @@ $sp: 480px;  // スマホ
       transition-duration: 40ms;
     }
     @include sp {
-          width: 250px;
-          }
+      width: 250px;
+    }
   }
-  // .main-introduction {
-  //     margin: 2em 0;
-  //     position: relative;
-  //     padding: 0.5em 1.5em;
-  //     border-top: solid 2px white;
-  //     border-bottom: solid 2px white;
-  //     font-size: 20px;
-  //     font-family: "dot";
-  //     letter-spacing: 10px;
-  //
+  .v-card{
+  background-color: aliceblue;
+}
+ .v-card{
+   text-align: center;
+ }
+
 </style>

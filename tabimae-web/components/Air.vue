@@ -1,11 +1,17 @@
 <template>
   <div>
-        <!-- <v-col cols="12" offset-sm="6" sm="4" offset-md="6" md="4" offset-lg="3" lg="3"> -->
-      <img :src="image_src" @click="openModal" class="air-img">
-    <!-- </v-col> -->
-    <Modal v-if="modalFlag" @close-modal="closeModal">
-      <v-col sm="11" md="10" lg="10">
-        <h2 class="air-info-title">飛行機ご搭乗の際のご注意事項</h2>
+    <v-dialog
+        v-model="dialog"
+        scrollable
+        max-width="1060px"
+      >
+          <template v-slot:activator="{ on, attrs }">
+              <img :src="image_src" v-bind="attrs" v-on="on" class="air-img">
+          </template>
+        <v-card>
+        <p class="air-info-title" text-center>飛行機ご搭乗の際のご注意事項</p>
+          <v-divider></v-divider>
+      <v-card-text>
         <ul class="air-info-text">
           <h3>チェックイン前</h3>
           <li>羽田・成田空港発着の場合、航空会社によって発着ターミナルが異なります。</li>
@@ -22,17 +28,19 @@
           <li>保安検査所では、手荷物・身に付けているアクセサリーなどの検査を行います</li>
           <li>保安検査所通過後、フライトの１０分〜２０分前に指定された搭乗口に到着しましょう。</li>
         </ul>
-        <v-btn class="mx-2"
-        fab
-        dark
-        small
-        color="primary"
-        @click="closeModal">
-          <v-icon>mdi-close-thick</v-icon>
-        </v-btn>
-      </v-col>
-
-    </Modal>
+        </v-card-text>
+          <v-divider></v-divider>
+        <v-btn
+              color="blue darken-1"
+              text
+              @click="dialog = false"
+            >
+            <v-icon>
+              mdi-close-circle-outline
+            </v-icon>
+            </v-btn>
+        </v-card>
+</v-dialog>
   </div>
 </template>
 
@@ -43,61 +51,36 @@
   import moment from "moment";
   import Vue from 'vue'
   import VModal from 'vue-js-modal'
-  import Modal from '~/components/Modal.vue'
   Vue.use(VModal)
 
   export default {
     data() {
       return {
-        modalFlag: false,
-        image_src: require("../assets/img/air_info.JPG") // ←
-
+        image_src: require("../assets/img/air_info.JPG"),
+        dialogm1: '',
+        dialog: false,
       }
     },
     components: {
       VueTyper,
-      Modal,
-
     },
-    methods: {
-      openModal() {
-        this.modalFlag = true
-      },
-      closeModal() {
-        this.modalFlag = false
-      }
-    }
   }
 
 </script>
 <style lang="scss" scoped>
-$pc: 1024px; // PC
-$tab: 680px; // タブレット
 $sp: 480px;  // スマホ
-
-@mixin pc {
-  @media (max-width: ($pc)) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (max-width: ($tab)) {
-    @content;
-  }
-}
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
   }
 }
-  h1 {
-    color: black;
+  .v-card{
+    background-color: aliceblue;
+    width: 1000px;
   }
-
   .air-img {
     width: 350px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
-
     &:hover {
       transform: scale(1.04);
       transition-duration: 40ms;
@@ -106,29 +89,24 @@ $sp: 480px;  // スマホ
           width: 250px;
           }
   }
-
-.modal-close{
-    background-color: #001858;
-    font-weight: bolder;
-    // border: solid 5px #f582ae;
-    /*線*/
-    border-radius: 10px;
-    /*角の丸み*/
-    text-decoration: none;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.883);
-    padding: 7px;
-}
-.air-info-title{
-  color: #001858;
-  text-align: center;
-}
-.air-info-text{
-  color: #001858;
-  text-align: left;
-}
+  .air-info-title{
+    color: #001858;
+    text-align: center;
+    font-size: 30px;
+      @include sp {
+      font-size: 20px;
+      }
+  }
+  .air-info-text{
+    color: #001858;
+    text-align: left;
+  }
+  ul li{
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+  h3{
+    padding-left: -1em;
+    text-indent: -1em;
+  }
 </style>

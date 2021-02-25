@@ -74,8 +74,6 @@
 </template>
 
 <script>
-  import NewTravel from "@/components/NewTravel";
-  import TravelList from "@/components/TravelList";
   import axios from "@/plugins/axios";
   import firebase from "@/plugins/firebase";
   import Home from "~/components/Home.vue";
@@ -89,8 +87,6 @@
 
   export default {
     components: {
-      NewTravel,
-      TravelList,
       Home,
       ButtonDefault
     },
@@ -199,12 +195,6 @@
 
   .page {
     padding: 30px;
-
-    >.buttons {
-      display: -webkit-flex;
-
-      >.button {}
-    }
   }
 
   .btn-text {

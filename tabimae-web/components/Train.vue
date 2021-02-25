@@ -92,7 +92,6 @@
   .train-info-text {
     color: #001858;
     text-align: left;
-    padding-top: 60px;
   }
 
 </style>

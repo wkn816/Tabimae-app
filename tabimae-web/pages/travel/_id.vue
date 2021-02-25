@@ -201,8 +201,6 @@
         res_travel_show: {},
         res_delete: {},
         checkbox: true,
-        modalFlag: false,
-        modalFlag: false,
         items: [
           "運転免許証",
           "保険証",
@@ -314,17 +312,8 @@
           this.$router.push("/");
         }
       },
-      openModal() {
-        this.modalFlag = true;
-      },
       hide() {
         this.$modal.hide("modal-content");
-      },
-      openModal() {
-        this.modalFlag = true;
-      },
-      closeModal() {
-        this.modalFlag = false;
       },
       travelitem() {
         this.items.push(this.item);

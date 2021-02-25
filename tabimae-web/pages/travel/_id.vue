@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div>
 
     <v-container>
@@ -27,10 +27,33 @@
               <v-icon large>mdi-bag-checked</v-icon>
               <span class="title"></span>
             </v-card-title>
-
-            <v-btn large class="justify-center" @click="openModal" style="background-color:#faae2b">
-              <h3 style="color:#001858">持ち物リストをひらく</h3>
-            </v-btn>
+        <v-dialog v-model="dialog" scrollable max-width="500px" max-height="900">
+            <template v-slot:activator="{ on, attrs }">
+                <v-btn large class="justify-center" v-bind="attrs" v-on="on" style="background-color:#faae2b">
+                  <h3 style="color:#001858">持ち物リストをひらく</h3>
+                </v-btn>
+            </template>
+              <ul style="background-color:#001858">
+                <li v-for="item in items" :key="item" class="belonging-list">
+                  <v-checkbox
+                  :label="item"
+                  :value="item"
+                  v-model="ex4"
+                  color="#fec7d7"
+                  hide-details
+                  ></v-checkbox>
+                </li>
+                  <v-text-field label="持ち物追加" filled required v-model="item" :counter="15"></v-text-field>
+                  <v-btn fab dark small color="#f582ae" @click="travelitem">追加</v-btn>
+                  <v-col cols="12" offset="4" sm="11" md="11" lg="3">
+                <v-btn color="#f3d2c1 darken-1" text @click="dialog = false">
+                    <v-icon x-large>
+                      mdi-close-circle-outline
+                    </v-icon>
+                </v-btn>
+                  </v-col>
+              </ul>
+          </v-dialog>
 
             <v-card raised class="ma-2" color="#fef6e4" elevation="24">
               <v-alert border="left" colored-border color="#8bd3dd" elevation="2" class="list">
@@ -63,30 +86,7 @@
               </v-alert>
             </v-card>
 
-            <Modal v-if="modalFlag">
 
-              <ul style="background-color:#001858">
-                <li v-for="item in items" :key="item" class="belonging-list">
-                  <v-checkbox
-                  :label="item"
-                  :value="item"
-                  v-model="ex4"
-                  color="#fec7d7"
-                  hide-details
-                  ></v-checkbox>
-                </li>
-
-                <v-col cols="12" sm="11" md="12" lg="6">
-                  <v-text-field label="持ち物追加" filled required v-model="item" :counter="15"></v-text-field>
-                  <v-btn fab dark small color="#f582ae" @click="travelitem">追加</v-btn>
-                </v-col>
-
-                <v-btn class="mx-2" fab dark small color="#8bd3dd" @click="closeModal">
-                  <v-icon>mdi-close-thick</v-icon>
-                </v-btn>
-              </ul>
-
-            </Modal>
           </v-card>
         </v-col>
 
@@ -170,6 +170,7 @@
         </v-col>
       </v-row>
     </v-container>
+
     <v-container>
       <TravelInfo />
     </v-container>
@@ -179,6 +180,9 @@
 
 <script>
   import axios from "@/plugins/axios";
+  import {
+    VueTyper
+  } from 'vue-typer'
   import moment from "moment";
   import Vue from "vue";
   import VModal from "vue-js-modal";
@@ -211,7 +215,9 @@
         ],
         checkeditems: [],
         main: "main",
-        item: ""
+        item: "",
+        dialogm1: '',
+        dialog: false,
       };
     },
 
@@ -288,7 +294,9 @@
 
     },
     components: {
-      Modal
+      Modal,
+      VueTyper,
+
     },
     methods: {
       async deleteItem(res_travel_show) {
@@ -333,7 +341,7 @@
       onChange(item) {
         const checkeditem = this.checkeditems.some(
           checkeditem => checkeditem === item
-        ); 
+        );
         if (checkeditem) {
           this.checkeditems = this.checkeditems.filter(n => n !== item);
           console.log(this.checkeditems);

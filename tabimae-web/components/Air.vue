@@ -3,15 +3,11 @@
     <v-dialog
         v-model="dialog"
         scrollable
-        max-width="900px"
+        max-width="1060px"
       >
-        <!-- <v-col cols="12" offset-sm="6" sm="4" offset-md="6" md="4" offset-lg="3" lg="3"> -->
           <template v-slot:activator="{ on, attrs }">
               <img :src="image_src" v-bind="attrs" v-on="on" class="air-img">
           </template>
-    <!-- </v-col> -->
-    <!-- <Modal v-if="modalFlag" @close-modal="closeModal"> -->
-      <!-- <v-col sm="11" md="10" lg="10"> -->
         <v-card>
         <v-card-title class="air-info-title">飛行機ご搭乗の際のご注意事項</v-card-title>
           <v-divider></v-divider>
@@ -44,10 +40,6 @@
             </v-icon>
             </v-btn>
         </v-card>
-      <!-- </v-col> -->
-
-    <!-- </Modal> -->
-
 </v-dialog>
   </div>
 </template>
@@ -65,7 +57,6 @@
   export default {
     data() {
       return {
-        modalFlag: false,
         image_src: require("../assets/img/air_info.JPG"),
         dialogm1: '',
       dialog: false,
@@ -76,40 +67,16 @@
       Modal,
 
     },
-    methods: {
-      openModal() {
-        this.modalFlag = true
-      },
-      closeModal() {
-        this.modalFlag = false
-      }
-    }
   }
 
 </script>
 <style lang="scss" scoped>
-$pc: 1024px; // PC
-$tab: 680px; // タブレット
 $sp: 480px;  // スマホ
-
-@mixin pc {
-  @media (max-width: ($pc)) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (max-width: ($tab)) {
-    @content;
-  }
-}
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
   }
 }
-  h1 {
-    color: black;
-  }
 .v-card{
   background-color: aliceblue;
   width: 1000px;
@@ -117,7 +84,6 @@ $sp: 480px;  // スマホ
   .air-img {
     width: 350px;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.883);
-
     &:hover {
       transform: scale(1.04);
       transition-duration: 40ms;
@@ -126,23 +92,6 @@ $sp: 480px;  // スマホ
           width: 250px;
           }
   }
-
-// .modal-close{
-//     background-color: #001858;
-//     font-weight: bolder;
-//     // border: solid 5px #f582ae;
-//     /*線*/
-//     border-radius: 10px;
-//     /*角の丸み*/
-//     text-decoration: none;
-//     display: flex;
-//     -webkit-justify-content: center;
-//     justify-content: center;
-//     -webkit-align-items: center;
-//     align-items: center;
-//     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.883);
-//     padding: 7px;
-// }
 .air-info-title{
   color: #001858;
   text-align: center;

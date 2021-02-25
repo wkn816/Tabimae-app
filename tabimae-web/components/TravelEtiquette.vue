@@ -29,7 +29,6 @@
   import moment from "moment";
   import Vue from 'vue'
   import VModal from 'vue-js-modal'
-  import Modal from '~/components/Modal.vue'
   Vue.use(VModal)
 
   export default {
@@ -42,8 +41,6 @@
     },
     components: {
       VueTyper,
-      Modal,
-
     },
   }
 

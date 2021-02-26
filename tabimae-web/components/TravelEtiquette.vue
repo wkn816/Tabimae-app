@@ -34,7 +34,7 @@
   export default {
     data() {
       return {
-        image_src: require("../assets/img/travel_e.JPG"),
+        image_src: require("../assets/img/newTraveltyp.JPG"),
         dialogm1: '',
         dialog: false,
       }

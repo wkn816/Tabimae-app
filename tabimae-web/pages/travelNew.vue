@@ -248,6 +248,8 @@
           this.error = "旅行のテーマを入力してください";
           return
         }
+              this.$store.commit("loading/setLoading", true);
+
         const travel_params = {
           transport: this.transport,
           name: this.name,
@@ -306,6 +308,7 @@
           this.arrival_time = "";
           this.departure_day = "";
         }
+      this.$store.commit("loading/setLoading", false);
 
         this.$router.push("/travelList");
       }

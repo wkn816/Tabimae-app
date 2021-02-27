@@ -1,5 +1,6 @@
 <template>
   <v-app class="bg">
+    <Loading />
     <v-navigation-drawer absolute
         temporary v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed color=#f3d2c1>
       <v-list>
@@ -67,6 +68,7 @@
 <script>
   import firebase from "@/plugins/firebase";
   import axios from "@/plugins/axios";
+  import Loading from "@/components/Loading";
 
   export default {
     data() {
@@ -92,6 +94,9 @@
         image_src: require("../assets/img/logo1.png"),
       };
     },
+    components: {
+    Loading
+  },
     computed: {
       user() {
         return this.$store.state.auth.currentUser;

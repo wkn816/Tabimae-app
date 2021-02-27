@@ -92,6 +92,7 @@
           this.error = "パスワードは確認用で2回入力してください";
           return
         }
+        this.$store.commit("loading/setLoading", true);
         const res = await firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
@@ -109,20 +110,18 @@
               }
             })(error.code);
           });
-          this.$router.push("/");
         const user = {
           email: res.user.email,
           name: this.name,
           uid: res.user.uid,
         };
-        await axios.post("/v1/users", {
-          user
-        })
-        .catch((err) => {
-          console.log({
-            err
-          });
-        });
+        const { data } = await axios.post("/v1/users", { user }).catch((err) => {
+        console.log({ err });
+      });
+
+      this.$store.commit("loading/setLoading", false);
+      this.$store.commit("auth/setUser", data);
+      this.$router.push("/");
         // this.$router.go({path: "/", force: true})
       },
       async guestLogin() {

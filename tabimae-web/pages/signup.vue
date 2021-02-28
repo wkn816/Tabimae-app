@@ -119,7 +119,10 @@
         console.log({ err });
       });
 
-      this.$store.commit("loading/setLoading", false);
+      // this.$store.commit("loading/setLoading", false);
+      setTimeout(() => {
+              this.$store.commit("loading/setLoading", false);
+            }, 2500);
       this.$store.commit("auth/setUser", data);
       this.$router.push("/");
         // this.$router.go({path: "/", force: true})

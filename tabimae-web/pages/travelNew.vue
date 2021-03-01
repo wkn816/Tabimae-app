@@ -308,8 +308,9 @@
           this.arrival_time = "";
           this.departure_day = "";
         }
-      this.$store.commit("loading/setLoading", false);
-
+setTimeout(() => {
+              this.$store.commit("loading/setLoading", false);
+            }, 1000);
         this.$router.push("/travelList");
       }
     },

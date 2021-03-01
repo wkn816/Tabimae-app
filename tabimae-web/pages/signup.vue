@@ -119,18 +119,23 @@
         console.log({ err });
       });
 
-      // this.$store.commit("loading/setLoading", false);
       setTimeout(() => {
               this.$store.commit("loading/setLoading", false);
-            }, 2500);
+            }, 1000);
       this.$store.commit("auth/setUser", data);
       this.$router.push("/");
-        // this.$router.go({path: "/", force: true})
       },
+
       async guestLogin() {
+          this.$store.commit("loading/setLoading", true);
         firebase
           .auth()
           .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
+          .then(() => {
+          setTimeout(() => {
+              this.$store.commit("loading/setLoading", false);
+            }, 1000);
+            })
           .catch(error => {
             console.log(error);
             this.error = (code => {

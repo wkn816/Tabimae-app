@@ -1,6 +1,6 @@
 <template>
 <div>
-<v-card color="#f3d2c1">
+<v-card color="#f3d2c1" class="travel-info">
           <v-card-title primary-title class="justify-center">
             <v-icon x-large color=#e53170>
               mdi-chevron-double-right
@@ -97,7 +97,9 @@ $sp: 480px;  // スマホ
   }
   .info-img{
     text-align: center;
-
+  }
+  .travel-info{
+    padding: 40px 0 60px 0;
   }
 
 </style>

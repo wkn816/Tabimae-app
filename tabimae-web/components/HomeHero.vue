@@ -70,8 +70,8 @@ $sp: 480px;  // スマホ
       // padding-left: 200px;
       font-size: 30px;
       font-weight: bold;
-      font-family: 'ヒラギノ角ゴシック', 'Hiragino Sans',
-        sans-serif;
+          font-family: 'TabimaeFont';
+
         @include sp {
           font-size: 20px;
           }

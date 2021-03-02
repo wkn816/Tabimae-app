@@ -1,5 +1,5 @@
 <template>
-<div class="about">
+<div>
 
 <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="12">
 <v-card color=#fef6e4>
@@ -49,6 +49,8 @@ export default {
   text-align: center;
   margin-bottom: 40px;
   font-family: 'TabimaeFont';
+  padding: 30px 0 30px 0;
+  margin-top: 40px;
 
 }
 .v-card-title{

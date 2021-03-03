@@ -19,7 +19,7 @@
                 :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="show1 = !show1"></v-text-field>
               <v-hover v-slot:default="{ hover }">
-                <v-btn block dark class="mr-4" @click="login" color="#001858" elevation="5">
+                <v-btn block dark class="login-btn" @click="login" color="#001858" elevation="5">
                   <v-icon v-text="hover ? 'mdi-account-search' : ''">mdi-account-search-outline</v-icon>ログイン
 
                 </v-btn>
@@ -125,7 +125,7 @@
     text-align: center;
   }
 
-  .mr-4 {
+  .login-btn {
     cursor: pointer;
     display: block;
     text-align: center;
@@ -136,7 +136,7 @@
   }
 
   .login-card {
-    margin-top: 200px;
+    margin-top: 170px;
   }
 
 </style>

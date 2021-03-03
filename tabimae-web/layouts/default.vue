@@ -76,18 +76,6 @@
         clipped: false,
         drawer: false,
         fixed: false,
-        // items: [
-        //   {
-        //     icon: 'mdi-apps',
-        //     title: '新規登録',
-        //     to: '/travel_new'
-        //   },
-        //   {
-        //     icon: 'mdi-chart-bubble',
-        //     title: '旅行一覧',
-        //     to: '/travel_list'
-        //   }
-        // ],
         miniVariant: false,
         right: true,
         rightDrawer: false,

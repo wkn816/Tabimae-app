@@ -85,8 +85,6 @@
                 <h5 class="remind-ms">{{ text6 }}</h5>
               </v-alert>
             </v-card>
-
-
           </v-card>
         </v-col>
 
@@ -224,8 +222,6 @@
     }) {
       try {
         const res_travel_show = await axios.get(
-          // `${process.env.BASE_URL}/v1/travels/${params.id}`
-          // `http://localhost:8080/travels/${params.id}`
           `/v1/travels/${params.id}`
         );
         const departure_day = moment(
@@ -378,7 +374,6 @@ $sp: 480px;  // スマホ
   }
 
   .ma-2 {
-    // margin-top: 10px;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
   }
 

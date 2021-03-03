@@ -13,7 +13,8 @@ import "loaders.css";
 export default {
   computed: {
     loading() {
-      return this.$store.state.loading.isLoading;　//storeから読み込む
+      return this.$store.state.loading.isLoading;
+      //storeから読み込む
     }
   }
 };

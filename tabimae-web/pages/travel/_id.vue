@@ -85,8 +85,6 @@
                 <h5 class="remind-ms">{{ text6 }}</h5>
               </v-alert>
             </v-card>
-
-
           </v-card>
         </v-col>
 

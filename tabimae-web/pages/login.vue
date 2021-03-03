@@ -136,7 +136,7 @@
   }
 
   .login-card {
-    margin-top: 200px;
+    margin-top: 170px;
   }
 
 </style>

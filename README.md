@@ -1,4 +1,6 @@
 # タビマエ
+![introduction](https://user-images.githubusercontent.com/71075728/109951384-f8b57880-7d20-11eb-85b2-90225c24a175.gif)
+
 <h2 align="center">Frontend</h2>
 <p align="center">
   <a href="https://vuetifyjs.com/ja/"><img src="https://user-images.githubusercontent.com/71075728/109930753-5939bb00-7d0b-11eb-8ca4-2538ea8cb2a0.png" height="70px;" /></a>

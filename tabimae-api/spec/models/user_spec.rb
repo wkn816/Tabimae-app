@@ -1,7 +1,8 @@
 RSpec.describe User, type: :model do
   before do
-    @user = build(:user)
+    @user = FactoryBot.create(:user)
   end
+
   it "必要項目が存在すれば有効" do
     expect(@user).to be_valid
   end

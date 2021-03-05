@@ -19,6 +19,14 @@
   <a href="https://rspec.info/"><img src="https://user-images.githubusercontent.com/71075728/109933243-89cf2400-7d0e-11eb-90db-07d76e9b9757.jpeg" height="100px;" /></a>
  </p>
  
+ <h2 align="center">Responsive</h2>
+<p align="center">
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070566-9f4f5700-7dbd-11eb-87e1-f4c8b6af343a.JPG" height="45px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070581-a4aca180-7dbd-11eb-8683-5a32210a742b.JPG" height="45px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070593-a8d8bf00-7dbd-11eb-9e67-a76e81df1083.JPG" height="40px;" /></a>
+ </p>
+ 
+ 
 ## サイト概要
 ・旅行の基本情報を登録していつでも登録した旅行情報が手軽に確認できるので、思い込みによる出発時間のミスを防げます。  
 

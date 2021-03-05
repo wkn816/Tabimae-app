@@ -21,9 +21,9 @@
  
  <h2 align="center">Responsive</h2>
 <p align="center">
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070566-9f4f5700-7dbd-11eb-87e1-f4c8b6af343a.JPG" height="290px;" /></a>
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110073247-6a91ce80-7dc2-11eb-986d-98e26e85e188.JPG" height="290px;" /></a>
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070593-a8d8bf00-7dbd-11eb-9e67-a76e81df1083.JPG" height="290px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070566-9f4f5700-7dbd-11eb-87e1-f4c8b6af343a.JPG" height="270px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110073247-6a91ce80-7dc2-11eb-986d-98e26e85e188.JPG" height="220px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070593-a8d8bf00-7dbd-11eb-9e67-a76e81df1083.JPG" height="220px;" /></a>
  </p>
  
  
@@ -33,15 +33,6 @@
 ・出発日までの日数に応じて、旅行における注意点や「どんな準備をすれば良いか」をリマインド/斡旋するアプリ。  
 
 ・旅行慣れしてない方向けの情報をモーダル処理にて表示。  
-
-<img width="1440" alt="スクリーンショット 2021-02-15 23 03 53" src="https://user-images.githubusercontent.com/71075728/107956315-57b98480-6fe2-11eb-90c1-9ef04679985f.png">
-
-<img width="1439" alt="スクリーンショット 2021-02-15 22 55 41" src="https://user-images.githubusercontent.com/71075728/107956250-3c4e7980-6fe2-11eb-9b97-affb38dc9ab0.png">
-<img width="1440" alt="スクリーンショット 2021-02-15 23 00 39" src="https://user-images.githubusercontent.com/71075728/107956268-43758780-6fe2-11eb-8601-dda4a58a986b.png">
-<img width="1440" alt="スクリーンショット 2021-02-15 23 01 43" src="https://user-images.githubusercontent.com/71075728/107956288-4bcdc280-6fe2-11eb-8f31-a6d2e1eda734.png">
-
-
-
 
 ### サイトテーマ
 〜タビはいく前から始まっている〜

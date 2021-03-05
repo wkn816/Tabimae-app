@@ -21,9 +21,9 @@
  
  <h2 align="center">Responsive</h2>
 <p align="center">
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070566-9f4f5700-7dbd-11eb-87e1-f4c8b6af343a.JPG" height="45px;" /></a>
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070581-a4aca180-7dbd-11eb-8683-5a32210a742b.JPG" height="45px;" /></a>
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070593-a8d8bf00-7dbd-11eb-9e67-a76e81df1083.JPG" height="40px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070566-9f4f5700-7dbd-11eb-87e1-f4c8b6af343a.JPG" height="290px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110073247-6a91ce80-7dc2-11eb-986d-98e26e85e188.JPG" height="290px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070593-a8d8bf00-7dbd-11eb-9e67-a76e81df1083.JPG" height="290px;" /></a>
  </p>
  
  

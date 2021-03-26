@@ -1,17 +1,19 @@
 <template>
-  <nuxt-link v-bind="$attrs" class="button-default">
+  <div class="button-default">
     <slot />
     <p>
       <slot name="label" />
     </p>
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .button-default {
   cursor: pointer;
   display: block;
@@ -19,6 +21,7 @@ export default {};
   // height: 150px;
   border-radius: 8px;
   border: 1px solid #dddddd;
+
 
   &:hover {
     transform: scale(1.04);

@@ -98,7 +98,7 @@
               <!-- 決定ボタン -->
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="3" offset-lg="1" lg="3">
                 <v-hover v-slot:default="{ hover }">
-                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1"
+                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel"
                     class="create">
 
                     <v-icon v-text="hover ? 'mdi-check-bold' : ''"></v-icon>決定
@@ -176,7 +176,7 @@
               <!-- 決定ボタン -->
               <v-col cols="12" offset-sm="1" sm="3" offset-md="1" md="3" offset-lg="1" lg="3">
                 <v-hover v-slot:default="{ hover }">
-                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel" color="#f3d2c1"
+                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel"
                     class="create">
                     <v-icon v-text="hover ? 'mdi-check-bold' : ''"></v-icon>決定
                   </v-btn>
@@ -383,7 +383,7 @@ setTimeout(() => {
 
   .create {
     color: black !important;
-
+    background-color: #ffc6c7 !important;
     &:hover {
       transform: scale(1.04);
       transition-duration: 40ms;

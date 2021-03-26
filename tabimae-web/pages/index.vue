@@ -55,7 +55,7 @@
               </v-col>
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="4">
                 <div @click="guestLogin">
-                <GuestLoginButton class="guestLogin-button" @click="guestLogin">
+                <GuestLoginButton class="guestLogin-button">
                   <template v-slot:label>
                     <v-icon large color="#001858">mdi-briefcase-account</v-icon>
                     <v-title class="top-btn">ゲストログイン</v-title>

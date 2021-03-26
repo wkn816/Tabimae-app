@@ -21,49 +21,48 @@
  
  <h2 align="center">Responsive</h2>
 <p align="center">
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070566-9f4f5700-7dbd-11eb-87e1-f4c8b6af343a.JPG" height="270px;" /></a>
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110073247-6a91ce80-7dc2-11eb-986d-98e26e85e188.JPG" height="220px;" /></a>
-  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070593-a8d8bf00-7dbd-11eb-9e67-a76e81df1083.JPG" height="220px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070566-9f4f5700-7dbd-11eb-87e1-f4c8b6af343a.JPG" height="220px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110073247-6a91ce80-7dc2-11eb-986d-98e26e85e188.JPG" height="170px;" /></a>
+  <a href="https://tabimae.work/"><img src="https://user-images.githubusercontent.com/71075728/110070593-a8d8bf00-7dbd-11eb-9e67-a76e81df1083.JPG" height="140px;" /></a>
  </p>
  
  
-## サイト概要
-・旅行の基本情報を登録していつでも登録した旅行情報が手軽に確認できるので、思い込みによる出発時間のミスを防げます。  
+## :pencil2:概要
+・旅行リマインド/旅行準備斡旋SPA
 
-・出発日までの日数に応じて、旅行における注意点や「どんな準備をすれば良いか」をリマインド/斡旋するアプリ。  
-
-・旅行慣れしてない方向けの情報をモーダル処理にて表示。  
-
-### サイトテーマ
-〜タビはいく前から始まっている〜
-・旅マエ⇨旅ナカ⇨旅アトがある中で  
+### :dart:サイトテーマ
+〜タビはいく前から始まっている〜  
+旅マエ⇨旅ナカ⇨旅アトがある中で  
 旅マエからしっかり準備、下調べするすることで悔いのない素敵な旅行を創造します。
 
-### テーマを選んだ理由
+### :globe_with_meridians:APP URL
+**https://tabimae.work/** 
+
+### :love_letter:開発の想い
 前職の旅行代理店でカウンタースタッフとして勤めていた時、お客様から   
 「旅行は楽しみだけど、どんな準備が必要？」  
 「水族館が休業中で計画が台無しになった」  
-「切符を持っていくのを忘れた」　などの声を多く聞いてきました  
-そんな経験から、「出発前に十分な準備をして欲しい」。という思いから、 
-どんなことを準備すれば、旅行がより良いもになるかを斡旋するアプリケーションを作ろうと思いました。
+「切符を持っていくのを忘れた」　などの声を多く聞いてきました。  
+そんな経験の、「出発前に十分な準備をして欲しい」。という思いから、 
+どんなことを準備すれば、旅行がより良いもになるかを斡旋するアプリケーションを開発しようと思いました。
 
-### ターゲットユーザ
+### :busts_in_silhouette:ターゲットユーザ
 旅行慣れしてない方  
 ビジネスマン
 
-### 主な利用シーン
+### :star:主な利用シーン
 旅行出発前
 
 
-## チャレンジ要素一覧
+## :chart_with_upwards_trend:チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
 
 
-## 機能一覧
+## :memo:機能一覧
 https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
 
 
-## 開発環境
+## :memo:開発環境
 - OS：Linux(CentOS)  
 - 環境  
 Ruby: 2.6.3  

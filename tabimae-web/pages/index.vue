@@ -54,13 +54,15 @@
                 </ButtonDefault>
               </v-col>
             <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="4">
-                <ButtonDefault to="guestLogin" class="guestLogin-button">
-                  <template v-slot:label @click="guestLogin">
+                <div @click="guestLogin">
+                <GuestLoginButton class="guestLogin-button" @click="guestLogin">
+                  <template v-slot:label>
                     <v-icon large color="#001858">mdi-briefcase-account</v-icon>
                     <v-title class="top-btn">ゲストログイン</v-title>
                     <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
                   </template>
-                </ButtonDefault>
+                </GuestLoginButton>
+                </div>
               </v-col>
             </v-row>
           </div>
@@ -68,7 +70,6 @@
       <About />
       <TravelInfo />
     </v-container>
-
   </v-app>
 </template>
 
@@ -82,12 +83,14 @@
   import HowTo from "~/components/HowTo.vue";
   import About from "~/components/About.vue";
   import ButtonDefault from "~/components/ButtonDefault.vue";
+  import GuestLoginButton from "~/components/GuestLoginButton.vue";
   import TravelInfo from "~/components/TravelInfo.vue";
 
   export default {
     components: {
       Home,
-      ButtonDefault
+      ButtonDefault,
+      GuestLoginButton
     },
       computed: {
         user() {
@@ -104,12 +107,15 @@
     },
     methods: {
       async guestLogin() {
-        await firebase
+          this.$store.commit("loading/setLoading", true);
+        firebase
           .auth()
-          .signInWithEmailAndPassword(
-            process.env.GUEST_LOGIN_EMAIL,
-            process.env.GUESTPW
-          )
+          .signInWithEmailAndPassword(process.env.GUEST_LOGIN_EMAIL, process.env.GUESTPW)
+          .then(() => {
+          setTimeout(() => {
+              this.$store.commit("loading/setLoading", false);
+            }, 1000);
+            })
           .catch(error => {
             console.log(error);
             this.error = (code => {

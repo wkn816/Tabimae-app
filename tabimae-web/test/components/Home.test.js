@@ -3,7 +3,7 @@ import Home from "../../components/Home";
 
 describe('Home', () => {
 	test('コンポーネントが存在する', () => {
-		// Logoコンポーネントをマウントする
+		// Homeコンポーネントをマウントする
 		const wrapper = mount(Home)
 		// expect()の中身がtrueだったらテスト合格
 		expect(wrapper.exists()).toBeTruthy()

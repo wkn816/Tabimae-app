@@ -9,8 +9,9 @@
             <v-icon color=#001858>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-tit
-            le class="list-item" v-text="item.title" />
+            <v-list-item-title
+            class="list-item"
+            v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>

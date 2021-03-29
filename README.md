@@ -16,8 +16,8 @@
 </p>
 <h2 align="center">Test</h2>
 <p align="center">
-  <a href="https://rspec.info/"><img src="https://user-images.githubusercontent.com/71075728/109933243-89cf2400-7d0e-11eb-90db-07d76e9b9757.jpeg" height="110px;" /></a>
-<a href="https://jestjs.io/ja/"><img src="https://user-images.githubusercontent.com/71075728/112827157-ed0f6480-90c8-11eb-8e3e-d0a75162b29d.png" height="70px;" /></a>
+  <a href="https://rspec.info/"><img src="https://user-images.githubusercontent.com/71075728/109933243-89cf2400-7d0e-11eb-90db-07d76e9b9757.jpeg" height="100px;" /></a>
+<a href="https://jestjs.io/ja/"><img src="https://user-images.githubusercontent.com/71075728/112827795-c867bc80-90c9-11eb-8d7f-d8ccc4ce6340.png" height="100px;" /></a>
  </p>
  
  <h2 align="center">Responsive</h2>

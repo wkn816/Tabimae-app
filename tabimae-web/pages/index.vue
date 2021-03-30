@@ -8,9 +8,9 @@
           <v-row>
             <v-col cols="12" offset-sm="1" sm="5" offset-md="2" md="2" offset-lg="1" lg="4">
               <ButtonDefault to="/travelNew" class="traveladd-button">
-                <template v-slot:label>
+                <template v-slot:label class="test">
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>
-                  <v-title class="top-btn">タビを登録する</v-title>
+                  <span class="top-btn">タビを登録する</span>
                   <p class="btn-text">まずは、旅行情報を登録してみよう</p>
                 </template>
               </ButtonDefault>
@@ -20,7 +20,7 @@
               <ButtonDefault to="/travelList" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>
-                  <v-title class="top-btn">タビ一覧</v-title>
+                  <span class="top-btn">タビ一覧</span>
                   <p class="btn-text">登録したタビの一覧を確認できます</p>
                 </template>
               </ButtonDefault>
@@ -39,7 +39,7 @@
                 <ButtonDefault to="/signup" class="button">
                   <template v-slot:label>
                     <v-icon large color="#001858">mdi-account-plus</v-icon>
-                    <v-title class="top-btn">新規会員登録</v-title>
+                    <span class="top-btn">新規会員登録</span>
                     <p class="btn-text">はじめてご利用で履歴を残したい方</p>
                   </template>
                 </ButtonDefault>
@@ -48,7 +48,7 @@
                 <ButtonDefault to="login" class="button">
                   <template v-slot:label>
                     <v-icon large color="#001858">mdi-account-search</v-icon>
-                    <v-title class="top-btn">ログイン</v-title>
+                    <span class="top-btn">ログイン</span>
                     <p class="btn-text">既に会員登録がお済みの方</p>
                   </template>
                 </ButtonDefault>
@@ -58,7 +58,7 @@
                 <GuestLoginButton class="guestLogin-button">
                   <template v-slot:label>
                     <v-icon large color="#001858">mdi-briefcase-account</v-icon>
-                    <v-title class="top-btn">ゲストログイン</v-title>
+                    <span class="top-btn">ゲストログイン</span>
                     <p class="btn-text">はじめてのご利用で一回限りご利用の方</p>
                   </template>
                 </GuestLoginButton>
@@ -76,15 +76,15 @@
 <script>
   import axios from "@/plugins/axios";
   import firebase from "@/plugins/firebase";
-  import Home from "~/components/Home.vue";
-  import Train from "~/components/Train.vue";
-  import Air from "~/components/Air.vue";
-  import TravelEtiquette from "~/components/TravelEtiquette.vue";
-  import HowTo from "~/components/HowTo.vue";
-  import About from "~/components/About.vue";
-  import ButtonDefault from "~/components/ButtonDefault.vue";
-  import GuestLoginButton from "~/components/GuestLoginButton.vue";
-  import TravelInfo from "~/components/TravelInfo.vue";
+  import Home from "@/components/Home.vue";
+  import Train from "@/components/Train.vue";
+  import Air from "@/components/Air.vue";
+  import TravelEtiquette from "@/components/TravelEtiquette.vue";
+  import HowTo from "@/components/HowTo.vue";
+  import About from "@/components/About.vue";
+  import ButtonDefault from "@/components/ButtonDefault.vue";
+  import GuestLoginButton from "@/components/GuestLoginButton.vue";
+  import TravelInfo from "@/components/TravelInfo.vue";
 
   export default {
     components: {
@@ -203,11 +203,11 @@
 
   .page {
     padding: 30px;
+
   }
 
   .btn-text {
     font-size: 12px;
-    font-family: 'TabimaeFont';
   }
 
   p {
@@ -266,6 +266,10 @@
 
   .top-btn {
     font-family: 'TabimaeFont';
+  }
+  .buttons{
+        font-family: 'TabimaeFont';
+
   }
 
 

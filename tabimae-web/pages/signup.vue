@@ -7,7 +7,7 @@
             <v-icon x-large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
-            <v-title class="signin-title">新規会員登録</v-title>
+            <v-card-title class="signin-title">新規会員登録</v-card-title>
             <v-icon x-large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>
@@ -42,7 +42,7 @@
             <v-icon x-large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
-            <v-title class="signin-title">すぐご利用になりたい方はこちら</v-title>
+            <v-card-title class="signin-title">すぐご利用になりたい方はこちら</v-card-title>
             <v-icon x-large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>

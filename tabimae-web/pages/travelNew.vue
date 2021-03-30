@@ -8,7 +8,7 @@
               <v-icon x-large color=#e53170>
                 mdi-chevron-double-right
               </v-icon>
-              <v-title class="display">旅行新規登録</v-title>
+              <v-card-title class="display">旅行新規登録</v-card-title>
               <v-icon x-large color=#e53170>
                 mdi-chevron-double-left
               </v-icon>
@@ -26,7 +26,7 @@
           <!-- <v-container class="px-0" fluid> -->
           <v-card elevation=“20”>
             <v-container fluid class="transport-radio">
-              <v-text>交通手段を選択してください</v-text>
+              <v-card-title>交通手段を選択してください</v-card-title>
               <v-radio-group row v-model="transport" mandatory>
                 <v-radio label="列車" value="train" color=#f9bc60></v-radio>
                 <v-radio label="飛行機" value="air" color=#f9bc60></v-radio>
@@ -60,7 +60,7 @@
               </v-col>
             </v-row>
             <!-- 出発地・到着地入力フォーム -->
-            <v-row align="center" justify="center">
+            <v-row justify="center" align-content="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="2" lg="4">
                 <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place"
                   :counter="10" label="出発駅" required>
@@ -73,7 +73,7 @@
               </v-col>
             </v-row>
             <!-- 出発時間・到着時間入力フォーム -->
-            <v-row align="center" justify="center">
+            <v-row justify="center" align-content="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="1" lg="4">
                 <p class="my-time-picker">
                   <vue-timepicker v-model="departure_time" format="A:h:mm:" hour-label="時" minute-label="分"
@@ -107,7 +107,7 @@
 
               </v-col>
             </v-row>
-            <v-row align="right" justify="right">
+            <v-row justify="center" align-content="center">
             </v-row>
             <!-- </template> -->
             <p v-if="error" class="errors">{{ error }}</p>
@@ -138,7 +138,7 @@
               </v-col>
             </v-row>
             <!-- 出発地・到着地入力フォーム -->
-            <v-row align="center" justify="center">
+            <v-row justify="center" align-content="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="2" md="4" offset-lg="2" lg="4">
                 <v-text-field class="place-form" outlined append-icon="mdi-map-marker" v-model="departure_place"
                   :counter="10" label="出発空港" required>
@@ -151,7 +151,7 @@
               </v-col>
             </v-row>
             <!-- 出発時間・到着時間入力フォーム -->
-            <v-row align="center" justify="center">
+            <v-row justify="center" align-content="center">
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="4" offset-lg="1" lg="4">
                 <p class="my-time-picker">
                   <vue-timepicker v-model="departure_time" format="A:h:mm:" hour-label="時" minute-label="分"
@@ -183,7 +183,7 @@
                 </v-hover>
               </v-col>
             </v-row>
-            <v-row align="right" justify="right">
+            <v-row justify="center" align-content="center">
             </v-row>
               <p v-if="error" class="errors">{{ error }}</p>
           </v-card>

@@ -9,8 +9,9 @@
             <v-icon color=#001858>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-tit
-            le class="list-item" v-text="item.title" />
+            <v-list-item-title
+            class="list-item"
+            v-text="item.title" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -60,7 +61,7 @@
     </v-navigation-drawer>
     <v-footer :absolute="!fixed" app color="rgba(10,10,100,0.2)">
       <span style="color:#001858">&copy; {{ new Date().getFullYear() }}</span>
-      <span></span>
+      <!-- <span></span> -->
     </v-footer>
   </v-app>
 </template>

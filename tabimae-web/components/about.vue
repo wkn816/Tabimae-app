@@ -7,7 +7,7 @@
           <v-icon x-large color=#e53170>
             mdi-chevron-double-right
           </v-icon>
-          <v-text class="display">タビマエ</v-text>
+          <v-card-title class="display">タビマエ</v-card-title>
           <v-icon x-large color=#e53170>
             mdi-chevron-double-left </v-icon>
         </v-card-title>
@@ -28,6 +28,10 @@
 
   </div>
 </template>
+<script>
+export default {
+};
+</script>
 
 
 <style lang="scss" scoped>

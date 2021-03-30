@@ -7,7 +7,7 @@
             <v-icon x-large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
-            <v-title class="login-title">ログイン</v-title>
+            <v-card-title class="login-title">ログイン</v-card-title>
             <v-icon x-large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>
@@ -38,7 +38,7 @@
             <v-icon x-large color=#e53170>
               mdi-chevron-double-right
             </v-icon>
-            <v-title class="login-title">はじめての方はこちら</v-title>
+            <v-card-title class="login-title">はじめての方はこちら</v-card-title>
             <v-icon x-large color=#e53170>
               mdi-chevron-double-left </v-icon>
           </v-card-title>

@@ -38,7 +38,6 @@
                   <v-checkbox
                   :label="item"
                   :value="item"
-                  v-model="ex4"
                   color="#fec7d7"
                   hide-details
                   ></v-checkbox>

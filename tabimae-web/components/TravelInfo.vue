@@ -2,11 +2,11 @@
   <div>
     <v-card color="#f3d2c1" class="travel-info">
       <v-card-title primary-title class="justify-center">
-        <v-icon x-large color=#e53170>
+        <v-icon large color=#e53170 class="test">
           mdi-chevron-double-right
         </v-icon>
-        <v-text class="travelinfo-title">出発前に知っておきたいこと</v-text>
-        <v-icon x-large color=#e53170>
+        <div class="travelinfo-title">出発前に知っておきたいこと</div>
+        <v-icon large color=#e53170>
           mdi-chevron-double-left </v-icon>
       </v-card-title>
       <v-card-text color="#001858">

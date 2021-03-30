@@ -22,7 +22,6 @@ export default {
   border-radius: 8px;
   border: 1px solid #dddddd;
 
-
   &:hover {
     transform: scale(1.04);
     transition-duration: 40ms;
@@ -30,9 +29,10 @@ export default {
 
   > p {
     margin-top: 20px;
-    font-family: "Noto Sans CJK JP";
     font-size: 20px;
     letter-spacing: 0.1em;
+    font-family: 'TabimaeFont';
+
   }
 }
 </style>

@@ -89,8 +89,14 @@
   export default {
     components: {
       Home,
+      Train,
+      Air,
+      TravelEtiquette,
+      HowTo,
+      About,
       ButtonDefault,
-      GuestLoginButton
+      GuestLoginButton,
+      TravelInfo
     },
       computed: {
         user() {

@@ -24,6 +24,15 @@ describe('signup', () => {
 		expect(wrapper.vm.$route.path).toBe('/')
 		// 期待結果
 	})
+  // it('名前エラーになるか', () => {
+	// 	const name = []
+	// 	const email = "hoge@example.com"
+	// 	const password = "aaaaaa"
+	// 	const passwordConfirm = "aaaaaa"
+	// 	wrapper.vm.signup(name, email, password, passwordConfirm)
+	// 	expect(wrapper.vm.$route.path).toBe("名前を入力してください")
+	// 	// 期待結果
+	// })
   it('正常にゲストログインできるか', () => {
 		const GUEST_LOGIN_EMAIL = process.env.GUEST_LOGIN_EMAIL
 		const GUESTPW = process.env.GUESTPW
@@ -32,7 +41,4 @@ describe('signup', () => {
 	})
 	// サインアップしたユーザー登録を削除する記述書く
 
-  // it('sampleMethodsのテスト(落ちるパターン)', () => {
-  //   expect(wrapper.vm.sampleMethod).toBe('hey') // NG
-  // })
 })

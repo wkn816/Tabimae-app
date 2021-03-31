@@ -22,9 +22,8 @@
                 :type="show2 ? 'text' : 'password'" :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="show2 = !show2"></v-text-field>
               <v-hover v-slot:default="{ hover }">
-                <v-btn block dark class="mr-4" @click="signup" color="#001858" elevation="5">
+                <v-btn block dark class="mr-4" @click="signup(name, email, password, passwordConfirm)" color="#001858" elevation="5">
                   <v-icon v-text="hover ? 'mdi-account-plus' : ''">mdi-account-plus-outline</v-icon>入力完了
-
                 </v-btn>
               </v-hover>
               <p v-if="error" class="errors">{{ error }}</p>
@@ -48,7 +47,7 @@
           </v-card-title>
           <v-card-text color=#001858>
             <v-hover v-slot:default="{ hover }">
-              <v-btn block dark class="guest-btn" @click="guestLogin" color="#001858" elevation="10">
+              <v-btn block dark class="guest-btn" @click="guestLogin(GUEST_LOGIN_EMAIL,GUESTPW)" color="#001858" elevation="10">
                 <v-icon v-text="hover ? 'mdi-briefcase-account' : ''">mdi-briefcase-account-outline</v-icon>ゲストログインですぐ利用
               </v-btn>
             </v-hover>
@@ -74,28 +73,28 @@
       };
     },
     methods: {
-      async signup() {
-        if (this.password !== this.passwordConfirm) {
+      async signup(name, email, password, passwordConfirm) {
+        if (password !== passwordConfirm) {
           this.error = "※パスワードとパスワード確認が一致していません";
           return
         }
-        if (this.name == "") {
+        if (name == "") {
           this.error = "名前を入力してください";
           return
-        }if (this.email == "") {
+        }if (email == "") {
           this.error = "メールアドレスを入力してください";
           return
-        }if (this.password == "") {
+        }if (password == "") {
           this.error = "パスワードを入力してください";
           return
-        }if (this.passwordConfirm == "") {
+        }if (passwordConfirm == "") {
           this.error = "パスワードは確認用で2回入力してください";
           return
         }
         this.$store.commit("loading/setLoading", true);
         const res = await firebase
           .auth()
-          .createUserWithEmailAndPassword(this.email, this.password)
+          .createUserWithEmailAndPassword(email, password)
           .catch((error) => {
             this.error = ((code) => {
               switch (code) {
@@ -112,21 +111,21 @@
           });
         const user = {
           email: res.user.email,
-          name: this.name,
+          name,
           uid: res.user.uid,
         };
         const { data } = await axios.post("/v1/users", { user }).catch((err) => {
         console.log({ err });
-      });
+        });
 
-      setTimeout(() => {
-              this.$store.commit("loading/setLoading", false);
-            }, 1000);
-      this.$store.commit("auth/setUser", data);
-      this.$router.push("/");
+        setTimeout(() => {
+          this.$store.commit("loading/setLoading", false);
+        }, 1000);
+        this.$store.commit("auth/setUser", data);
+        this.$router.push("/");
       },
 
-      async guestLogin() {
+      async guestLogin(GUEST_LOGIN_EMAIL,GUESTPW) {
           this.$store.commit("loading/setLoading", true);
         firebase
           .auth()

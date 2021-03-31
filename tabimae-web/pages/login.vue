@@ -71,12 +71,16 @@
     },
     methods: {
       async login(email,password) {
+        const errorMessage = [
+        "メールアドレスを入力してください",
+        "パスワードを入力してください",
+      ];
         if (email == "") {
-          this.error = "メールアドレスを入力してください";
+          this.error = errorMessage[0];
           return
         }
         if (password == "") {
-          this.error = "パスワードを入力してください";
+          this.error = errorMessage[1];
           return
         }
         await firebase

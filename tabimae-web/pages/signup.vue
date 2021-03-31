@@ -116,7 +116,7 @@ export default {
 
   methods: {
     async signup(name, email, password, passwordConfirm) {
-      const test = [
+      const errorMessage = [
         "※パスワードとパスワード確認が一致していません",
         "名前を入力してください",
         "メールアドレスを入力してください",
@@ -124,24 +124,24 @@ export default {
         "パスワードは確認用で2回入力してください"
       ];
       if (password !== passwordConfirm) {
-        this.error = test[0];
+        this.error = errorMessage[0];
         return;
       }
       console.log(test[0]);
       if (name == "") {
-        this.error = test[1]
+        this.error = errorMessage[1]
         return
       }
       if (email == "") {
-        this.error = test[2]
+        this.error = errorMessage[2]
         return;
       }
       if (password == "") {
-        this.error = test[3];
+        this.error = errorMessage[3];
         return;
       }
       if (passwordConfirm == "") {
-        this.error = test[4];
+        this.error = errorMessage[4];
         return;
       }
       this.$store.commit("loading/setLoading", true);

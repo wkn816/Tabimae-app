@@ -19,7 +19,7 @@
                 :type="show1 ? 'text' : 'password'" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                 @click:append="show1 = !show1"></v-text-field>
               <v-hover v-slot:default="{ hover }">
-                <v-btn block dark class="login-btn" @click="login" color="#001858" elevation="5">
+                <v-btn block dark class="login-btn" @click="login(email,password)" color="#001858" elevation="5">
                   <v-icon v-text="hover ? 'mdi-account-search' : ''">mdi-account-search-outline</v-icon>ログイン
 
                 </v-btn>
@@ -70,12 +70,12 @@
       };
     },
     methods: {
-      async login() {
-        if (this.email == "") {
+      async login(email,password) {
+        if (email == "") {
           this.error = "メールアドレスを入力してください";
           return
         }
-        if (this.password == "") {
+        if (password == "") {
           this.error = "パスワードを入力してください";
           return
         }

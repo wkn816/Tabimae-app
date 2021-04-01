@@ -25,7 +25,7 @@ describe('signup', () => {
 		// 期待結果
 	})
   // it('名前エラーになるか', () => {
-	// 	const name = []
+	// 	const name = ""
 	// 	const email = "hoge@example.com"
 	// 	const password = "aaaaaa"
 	// 	const passwordConfirm = "aaaaaa"

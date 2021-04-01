@@ -127,7 +127,6 @@ export default {
         this.error = errorMessage[0];
         return;
       }
-      console.log(test[0]);
       if (name == "") {
         this.error = errorMessage[1]
         return

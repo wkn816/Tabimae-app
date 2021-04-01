@@ -249,7 +249,7 @@
           this.error = "旅行のテーマを入力してください";
           return
         }
-              this.$store.commit("loading/setLoading", true);
+          this.$store.commit("loading/setLoading", true);
 
         const travel_params = {
           transport: this.transport,
@@ -309,10 +309,10 @@
           this.arrival_time = "";
           this.departure_day = "";
         }
-setTimeout(() => {
-              this.$store.commit("loading/setLoading", false);
-            }, 1000);
-        this.$router.push("/travelList");
+        setTimeout(() => {
+          this.$store.commit("loading/setLoading", false);
+        }, 1000);
+          this.$router.push("/travelList");
       }
     },
     computed: {

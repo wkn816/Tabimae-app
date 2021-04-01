@@ -98,18 +98,19 @@
       GuestLoginButton,
       TravelInfo
     },
-      computed: {
-        user() {
-          return this.$store.state.auth.currentUser;
-        }
-      },
+
+    computed: {
+      user() {
+        return this.$store.state.auth.currentUser;
+      }
+    },
 
     data() {
       return {};
     },
+
     async fetch() {
       const user = this.$store.state.auth.currentUser;
-
     },
     methods: {
       async guestLogin() {
@@ -140,7 +141,6 @@
       openModal() {
         this.modalFlag = true;
       },
-
       closeModal() {
         this.modalFlag = false;
       }

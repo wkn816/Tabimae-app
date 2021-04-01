@@ -39,42 +39,34 @@ export default Vue.extend({
       background: rgba(0, 0, 0, 0.7);
       overflow: scroll;
     }
-
     &__window {
       height: 80%;
       width: 70%;
       overflow: hidden;
       background-color: #fef6e4;
     }
-
     &__content {
       height: 100%;
       // padding: 200px;
     }
   }
-
   // transition
   .modal-enter-active,
   .modal-leave-active {
     transition: opacity 0.4s;
-
     .modal__window {
       transition: opacity 0.4s, transform 0.4s;
     }
   }
-
   .modal-leave-active {
     transition: opacity 0.6s ease 0.4s;
   }
-
   .modal-enter,
   .modal-leave-to {
     opacity: 0;
-
     .modal__window {
       opacity: 0;
       transform: translateY(-20px);
     }
   }
-
 </style>

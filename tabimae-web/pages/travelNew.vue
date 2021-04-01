@@ -46,6 +46,7 @@
               <v-icon large color=#fef6e4>mdi-train</v-icon>
               列車で行く
             </h1>
+                <p v-if="error" class="errors">{{ error }}</p>
             <!-- 出発日入力フォーム -->
             <v-row>
               <v-col cols="12" offset-sm="2" sm="3" offset-md="2" md="3" offset-lg="2" lg="3">
@@ -110,7 +111,6 @@
             <v-row justify="center" align-content="center">
             </v-row>
             <!-- </template> -->
-            <p v-if="error" class="errors">{{ error }}</p>
           </v-card>
         </v-col>
       </v-row>
@@ -124,6 +124,7 @@
               <v-icon large color=#fef6e4>mdi-airplane</v-icon>
               飛行機で行く
             </h1>
+            <p v-if="error" class="errors">{{ error }}</p>
             <!-- 出発日入力フォーム -->
             <v-row>
               <v-col cols="12" offset-sm="1" sm="3" offset-md="2" md="5" offset-lg="2" lg="3">
@@ -185,7 +186,7 @@
             </v-row>
             <v-row justify="center" align-content="center">
             </v-row>
-              <p v-if="error" class="errors">{{ error }}</p>
+
           </v-card>
         </v-col>
       </v-row>
@@ -248,7 +249,7 @@
           this.error = "旅行のテーマを入力してください";
           return
         }
-              this.$store.commit("loading/setLoading", true);
+          this.$store.commit("loading/setLoading", true);
 
         const travel_params = {
           transport: this.transport,
@@ -308,10 +309,10 @@
           this.arrival_time = "";
           this.departure_day = "";
         }
-setTimeout(() => {
-              this.$store.commit("loading/setLoading", false);
-            }, 1000);
-        this.$router.push("/travelList");
+        setTimeout(() => {
+          this.$store.commit("loading/setLoading", false);
+        }, 1000);
+          this.$router.push("/travelList");
       }
     },
     computed: {

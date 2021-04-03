@@ -60,8 +60,7 @@ https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTP
 
 
 ## :memo:機能一覧
-https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
-
+https://docs.google.com/spreadsheets/d/1sdf1dsAB6SSMDOo8qLS8f9YByXWxT3qj2QQlbRW0rcw/edit?usp=sharing
 
 ## :memo:開発環境
 - OS：Linux(CentOS)  

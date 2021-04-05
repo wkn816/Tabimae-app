@@ -99,7 +99,7 @@
               <!-- 決定ボタン -->
               <v-col cols="12" offset-sm="1" sm="4" offset-md="1" md="3" offset-lg="1" lg="3">
                 <v-hover v-slot:default="{ hover }">
-                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel"
+                  <v-btn elevation="2" outlined raised rounded x-large @click="createTravel(departure_day,departure_place,arrival_place,departure_time,arrival_time,name)"
                     class="create">
 
                     <v-icon v-text="hover ? 'mdi-check-bold' : ''"></v-icon>決定
@@ -225,27 +225,27 @@
     },
     methods: {
       async createTravel() {
-        if (this.departure_day == "") {
+        if (departure_day == "") {
           this.error = "出発日を入力してください";
           return
         }
-        if (this.departure_place == "") {
+        if (departure_place == "") {
           this.error = "出発地を入力してください";
           return
         }
-        if (this.arrival_place == "") {
+        if (arrival_place == "") {
           this.error = "到着地を入力してください";
           return
         }
-        if (this.departure_time == "") {
+        if (departure_time == "") {
           this.error = "出発時間を入力してください";
           return
         }
-        if (this.arrival_time == "") {
+        if (arrival_time == "") {
           this.error = "到着時間を入力してください";
           return
         }
-        if (this.name == "") {
+        if (name == "") {
           this.error = "旅行のテーマを入力してください";
           return
         }
@@ -291,11 +291,11 @@
         } else {
           const train_params = {
             travel_id: data.id,
-            departure_place: this.departure_place,
-            arrival_place: this.arrival_place,
-            departure_time: this.departure_time,
-            arrival_time: this.arrival_time,
-            departure_day: this.departure_day,
+            departure_place: departure_place,
+            arrival_place: arrival_place,
+            departure_time: departure_time,
+            arrival_time: arrival_time,
+            departure_day: departure_day,
             user_id: this.$store.state.auth.currentUser.id
           };
           console.log(train_params);
@@ -303,11 +303,11 @@
             train: train_params
           });
           console.log(res_train);
-          this.departure_place = "";
-          this.arrival_place = "";
-          this.departure_time = "";
-          this.arrival_time = "";
-          this.departure_day = "";
+          departure_place = "";
+          arrival_place = "";
+          departure_time = "";
+          arrival_time = "";
+          departure_day = "";
         }
         setTimeout(() => {
           this.$store.commit("loading/setLoading", false);

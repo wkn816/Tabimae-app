@@ -80,7 +80,6 @@ vuex:3.6.9
 firebase:8.1.2  
 vue-typer:1.2.0  
 vue2-timepicker:1.1.5  
-vuedraggable:2.24.3  
 vue-js-modal:2.0.0.6  
 vuetify:2.4.0  
 

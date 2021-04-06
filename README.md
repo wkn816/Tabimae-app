@@ -77,7 +77,6 @@ gem 'mysql2'
 @babel/core:7.12.9  
 @nuxtjs/axios:5.12.2  
 vuex:3.6.9  
-vuedraggable:2.24.3  
 firebase:8.1.2  
 vue-typer:1.2.0  
 vue2-timepicker:1.1.5  

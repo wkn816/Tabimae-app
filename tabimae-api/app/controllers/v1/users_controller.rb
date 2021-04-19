@@ -3,7 +3,6 @@ class V1::UsersController < ApplicationController
 def index
   if params[:uid]
     @user = User.find_by(uid: params[:uid])
-    # @travels = @user.travels
     render json: @user
   else
     @users = User.all

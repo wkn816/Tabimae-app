@@ -43,8 +43,8 @@
 前職の旅行代理店でカウンタースタッフとして勤めていた時、お客様から   
 「旅行は楽しみだけど、どんな準備が必要？」  
 「水族館が休業中で計画が台無しになった」  
-「切符を持っていくのを忘れた」　などの声を多く聞いてきました。  
-そんな経験の、「出発前に十分な準備をして欲しい」。という思いから、 
+「切符を持っていくのを忘れた」　などの声を多く聞いてきました。   
+そんな経験の、「出発前に十分な準備をして欲しい」。という思いから、  
 どんなことを準備すれば、旅行がより良いもになるかを斡旋するアプリケーションを開発しようと思いました。
 
 ### :busts_in_silhouette:ターゲットユーザ
@@ -55,13 +55,11 @@
 旅行出発前
 
 
-## :chart_with_upwards_trend:チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
-
+## :chart_with_upwards_trend:ER
+https://drive.google.com/file/d/1Co4aclr6Axivuetsd7CMCioOOXezoBVW/view?usp=sharing
 
 ## :memo:機能一覧
-https://docs.google.com/spreadsheets/d/1ycHRHydNdjSXjSsLYKZRRjUeNOtfL_c1qjOgCWTPUdE/edit?usp=sharing
-
+https://docs.google.com/spreadsheets/d/1sdf1dsAB6SSMDOo8qLS8f9YByXWxT3qj2QQlbRW0rcw/edit?usp=sharing
 
 ## :memo:開発環境
 - OS：Linux(CentOS)  
@@ -79,12 +77,11 @@ gem 'mysql2'
 @babel/core:7.12.9  
 @nuxtjs/axios:5.12.2  
 vuex:3.6.9  
-vuedraggable:2.24.3  
 firebase:8.1.2  
 vue-typer:1.2.0  
-vue2-timepicker:1.1.5  
-vuedraggable:2.24.3  
-vue-js-modal:2.0.0.6  
-vuetify:2.4.0  
+vue2-timepicker:1.1.5<br>
+nuxtjs/moment:1.6.1<br>
+vue-js-modal:2.0.0.6<br>
+vuetify:2.4.0
 
 

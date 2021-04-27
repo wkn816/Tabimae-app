@@ -24,6 +24,8 @@ describe('signup', () => {
 		expect(wrapper.vm.$route.path).toBe('/')
 		// 期待結果
 	})
+
+	// 調整中のためコメント化
   // it('名前エラーになるか', () => {
 	// 	const name = ""
 	// 	const email = "hoge@example.com"
@@ -33,6 +35,7 @@ describe('signup', () => {
 	// 	expect(wrapper.vm.$route.path).toBe("名前を入力してください")
 	// 	// 期待結果
 	// })
+	
   it('正常にゲストログインできるか', () => {
 		const GUEST_LOGIN_EMAIL = process.env.GUEST_LOGIN_EMAIL
 		const GUESTPW = process.env.GUESTPW

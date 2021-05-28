@@ -1,16 +1,9 @@
 class V1::TravelsController < ApplicationController
 
   def index
-    # if params[:id]
-    #   @travel = Travel.find_by(id: params[:id])
-    #   render json: @travel
-    # else
-
     id = JSON.parse!(params[:user], symbolize_names: true)[:id]
     user = User.find(id)
-    # @travels = user.travels.where('departure_day > ?', Date.today)
     @travels = user.travels.select do |travel|
-      # binding.pry
       if travel.trains.present?
       travel.trains[0].departure_day > Date.today
       else
@@ -18,7 +11,6 @@ class V1::TravelsController < ApplicationController
       end
     end
     render json: @travels,include: [:trains, :airs, :travelitems]
-    # end
   end
 
   def sabdelete

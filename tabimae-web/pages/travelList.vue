@@ -34,25 +34,24 @@
                 </tr>
               </thead>
 
-              <tbody>
 
-                <tr v-for="train in trains">
-                  <td class="show-btn">
+                <tbody>
+                    <tr v-for="train in trains">
+                      <td class="show-btn">
                     <router-link style="text-decoration: none;" :to="`/travel/${travel}`">
                       <v-icon mdi-feature-search-outline></v-icon>詳細
                     </router-link>
                   </td>
-                  <!-- </v-hover> -->
-                  <td class="blue lighten-5">
-                    {{ train.departure_day }}
-                  </td>
-                  <td class="blue lighten-5">{{ train.departure_place }}</td>
-                  <td class="blue lighten-5">{{ train.arrival_place }}</td>
-                  <td class="blue lighten-5">{{ train.departure_time }}</td>
-                  <td class="blue lighten-5">{{ train.arrival_time }}</td>
-                </tr>
-              </tbody>
+                      <td class="blue lighten-5">{{train.trains[0].departure_day}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].departure_place}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].arrival_place}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].departure_time}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].arrival_time}}</td>
+                    </tr>
+                </tbody>
             </v-simple-table>
+
+
           </v-card>
         </v-col>
       </v-row>
@@ -78,9 +77,6 @@
       return {
         travelData: [],
         trains: [],
-        travel: "",
-        transport: "",
-        userName: {},
       };
     },
     async fetch() {
@@ -91,11 +87,14 @@
             user
           }
         });
-
-        //filterで作り直された配列がtravelNameに入る
-        console.log(this.travelData);
-        console.log(this.travelData.data[0].trains[0].departure_day);
-        this.trains = this.travelData.data[0].trains;
+        // console.log(this.travelData);
+        // console.log(this.travelData.data);
+        // console.log(this.travelData.data[0].trains[0].departure_day);
+        const travel = [this.travelData.data];
+        //travel配列の各項目を全て読み取る
+        for(let trains of travel){
+        this.trains = trains;
+        }
         this.travel = this.travelData.data[0].id;
       }
     },

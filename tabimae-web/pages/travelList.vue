@@ -36,7 +36,7 @@
 
 
                 <tbody>
-                    <tr v-for="train in trains">
+                    <tr v-for="train in trains" v-bind:key="train">
                       <td class="show-btn">
                     <router-link style="text-decoration: none;" :to="`/travel/${travel}`">
                       <v-icon mdi-feature-search-outline></v-icon>詳細

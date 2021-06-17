@@ -118,7 +118,8 @@
     background-color: #e53170;
     /*角の丸み*/
     text-decoration: none;
-    display: flex;
+    text-align: center;
+    // display: flex;
     -webkit-justify-content: center;
     justify-content: center;
     -webkit-align-items: center;

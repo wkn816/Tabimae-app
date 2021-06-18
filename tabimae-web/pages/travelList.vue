@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <v-app class="bg">
     <v-container>
       <v-row>
-        <v-col cols="12" sm="12" md="12" lg="12">
+        <v-col cols="12" offset-ms="1" sm="10" offset-md="1" md="11" offset-lg="1" lg="10">
           <v-card color="#ffc6c7" elevation="2" class="travellist-card">
             <v-card-title primary-title class="justify-center">
               <v-icon x-large color=#e53170>
@@ -20,7 +20,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" sm="11" md="11" lg="12">
+        <v-col cols="12" sm="11" offset-md="1" md="11" lg="10">
           <v-card elevation="10">
             <v-simple-table class="list-table" style="color:#001858">
               <thead class="list-thead">
@@ -34,25 +34,24 @@
                 </tr>
               </thead>
 
-              <tbody>
 
-                <tr v-for="train in trains">
-                  <td class="show-btn">
+                <tbody>
+                    <tr v-for="train in trains" v-bind:key="train">
+                      <td class="show-btn">
                     <router-link style="text-decoration: none;" :to="`/travel/${travel}`">
                       <v-icon mdi-feature-search-outline></v-icon>詳細
                     </router-link>
                   </td>
-                  <!-- </v-hover> -->
-                  <td class="blue lighten-5">
-                    {{ train.departure_day }}
-                  </td>
-                  <td class="blue lighten-5">{{ train.departure_place }}</td>
-                  <td class="blue lighten-5">{{ train.arrival_place }}</td>
-                  <td class="blue lighten-5">{{ train.departure_time }}</td>
-                  <td class="blue lighten-5">{{ train.arrival_time }}</td>
-                </tr>
-              </tbody>
+                      <td class="blue lighten-5">{{train.trains[0].departure_day}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].departure_place}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].arrival_place}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].departure_time}}</td>
+                      <td class="blue lighten-5">{{train.trains[0].arrival_time}}</td>
+                    </tr>
+                </tbody>
             </v-simple-table>
+
+
           </v-card>
         </v-col>
       </v-row>
@@ -62,7 +61,7 @@
       <TravelInfo />
     </v-container>
 
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -78,9 +77,6 @@
       return {
         travelData: [],
         trains: [],
-        travel: "",
-        transport: "",
-        userName: {},
       };
     },
     async fetch() {
@@ -91,11 +87,14 @@
             user
           }
         });
-
-        //filterで作り直された配列がtravelNameに入る
-        console.log(this.travelData);
-        console.log(this.travelData.data[0].trains[0].departure_day);
-        this.trains = this.travelData.data[0].trains;
+        // console.log(this.travelData);
+        // console.log(this.travelData.data);
+        // console.log(this.travelData.data[0].trains[0].departure_day);
+        const travel = [this.travelData.data];
+        //travel配列の各項目を全て読み取る
+        for(let trains of travel){
+        this.trains = trains;
+        }
         this.travel = this.travelData.data[0].id;
       }
     },
@@ -119,7 +118,8 @@
     background-color: #e53170;
     /*角の丸み*/
     text-decoration: none;
-    display: flex;
+    text-align: center;
+    // display: flex;
     -webkit-justify-content: center;
     justify-content: center;
     -webkit-align-items: center;

@@ -113,7 +113,7 @@
       </v-row>
 
       <v-row>
-        <v-col cols="12" offset-sm="1" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
+        <v-col cols="12" offset-lg="2" lg="8">
           <v-card v-if="transport === 'air'" color=#232946 elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">

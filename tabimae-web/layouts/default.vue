@@ -17,7 +17,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-app-bar fixed hide-on-scroll color="rgba(10,10,100,0.2)">
-      <v-app-bar-nav-icon color="#001858" @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon class="nav-menu-icon" color="#001858" @click.stop="drawer = !drawer" />
         <img :src="image_src" @click="travelTop" class="new_travel_info-img">
       <v-spacer />
 
@@ -198,15 +198,9 @@
 </script>
 
 <style lang="scss" scoped>
-$pc: 1024px; // PC
-$tab: 680px; // タブレット
+$tab: 768px; // タブレット
 $sp: 480px;  // スマホ
 
-@mixin pc {
-  @media (max-width: ($pc)) {
-    @content;
-  }
-}
 @mixin tab {
   @media (max-width: ($tab)) {
     @content;
@@ -266,7 +260,18 @@ $sp: 480px;  // スマホ
       padding-left: 0px;
           }
   }
+
+
+@media screen and (min-width:769px){
+/* PC用CSS -------------- */
+.nav-menu-icon{
+display: none;
+}
+}
+
 </style>
+
+
 <style>
 .v-app-bar{
 position: relative;

@@ -87,7 +87,7 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" sm="11" md="11" lg="9">
+        <v-col cols="12" lg="9">
           <v-card color="#001858" elevation="20">
             <v-row>
               <v-col cols="12" sm="11" md="11" lg="12">

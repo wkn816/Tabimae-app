@@ -35,7 +35,7 @@
         <div class="page">
           <div class="buttons">
             <v-row>
-            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="3">
+            <v-col cols="12" offset-lg="0" lg="3">
                 <ButtonDefault to="/signup" class="button">
                   <template v-slot:label>
                     <v-icon large color="#001858">mdi-account-plus</v-icon>
@@ -44,7 +44,7 @@
                   </template>
                 </ButtonDefault>
               </v-col>
-            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="3">
+            <v-col cols="12" offset-lg="1" lg="3">
                 <ButtonDefault to="login" class="button">
                   <template v-slot:label>
                     <v-icon large color="#001858">mdi-account-search</v-icon>
@@ -53,7 +53,7 @@
                   </template>
                 </ButtonDefault>
               </v-col>
-            <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="1" lg="4">
+            <v-col cols="12"offset-lg="1" lg="4">
                 <div @click="guestLogin">
                 <GuestLoginButton class="guestLogin-button">
                   <template v-slot:label>

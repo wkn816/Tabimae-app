@@ -38,7 +38,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" offset-sm="2" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
+        <v-col cols="12" offset-lg="2" lg="8">
           <v-card v-if="transport === 'train'" color=#232946 elevation=“24”>
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-train</v-icon>

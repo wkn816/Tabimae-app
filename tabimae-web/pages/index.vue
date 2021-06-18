@@ -6,7 +6,7 @@
         <div class="buttons">
 
           <v-row>
-            <v-col cols="12" offset-sm="1" sm="5" offset-md="2" md="2" offset-lg="1" lg="4">
+            <v-col cols="12" offset-lg="1" lg="4">
               <ButtonDefault to="/travelNew" class="traveladd-button">
                 <template v-slot:label class="test">
                   <v-icon large color="#001858">mdi-briefcase-plus-outline</v-icon>
@@ -16,7 +16,7 @@
               </ButtonDefault>
             </v-col>
 
-            <v-col offset-sm="1" sm="5" offset-md="2" md="10" offset-lg="" lg="4">
+            <v-col cols="12" offset-lg="2" lg="4">
               <ButtonDefault to="/travelList" class="travellist-button">
                 <template v-slot:label>
                   <v-icon large color="#001858">mdi-format-list-bulleted</v-icon>

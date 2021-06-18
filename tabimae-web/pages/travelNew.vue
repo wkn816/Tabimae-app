@@ -2,7 +2,7 @@
   <v-app class="bg">
     <v-container>
       <v-row>
-        <v-col cols="12" offset-ms="1" sm="10" offset-md="1" md="11" offset-lg="1" lg="10">
+        <v-col cols="12" offset-lg="1" lg="10">
           <v-card color=#f9bc60 elevation=“20” class="travelnew-card">
             <v-card-title primary-title class="justify-center">
               <v-icon x-large color=#e53170>
@@ -21,7 +21,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" sm="11" offset-md="1" md="11" offset-lg="2" lg="8">
+        <v-col cols="12" offset-lg="2" lg="8">
           <h2 v-if="success">登録したよ!</h2>
           <v-card elevation=“20”>
             <v-container fluid class="transport-radio">
@@ -38,7 +38,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" offset-sm="2" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
+        <v-col cols="12" offset-lg="2" lg="8">
           <v-card v-if="transport === 'train'" color=#232946 elevation=“24”>
             <h1 class="transport-title">
               <v-icon large color=#fef6e4>mdi-train</v-icon>
@@ -113,7 +113,7 @@
       </v-row>
 
       <v-row>
-        <v-col cols="12" offset-sm="1" sm="8" offset-md="1" md="11" offset-lg="2" lg="8">
+        <v-col cols="12" offset-lg="2" lg="8">
           <v-card v-if="transport === 'air'" color=#232946 elevation=“24”>
             <!-- <template v-if="transport === 'train'"> -->
             <h1 class="transport-title">

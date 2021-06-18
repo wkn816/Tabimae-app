@@ -3,7 +3,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" sm="11" md="11" lg="12">
+        <v-col cols="12" lg="12">
           <v-card color="#f3d2c1" class="travelshow-card">
             <v-card-title primary-title class="justify-center">
               <v-icon x-large color=#e53170>
@@ -21,7 +21,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" sm="11" md="11" lg="3">
+        <v-col cols="12" lg="3">
           <v-card color="#001858" elevation="24">
             <v-card-title primary-title class="justify-center">
               <v-icon large>mdi-bag-checked</v-icon>
@@ -87,7 +87,7 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" sm="11" md="11" lg="9">
+        <v-col cols="12" lg="9">
           <v-card color="#001858" elevation="20">
             <v-row>
               <v-col cols="12" sm="11" md="11" lg="12">

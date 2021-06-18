@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="12">
+    <!-- <v-col cols="12" sm="8" offset-xs="3" xs="8" offset-md="3" md="9" offset-lg="0" lg="12"> -->
       <v-card color=#fef6e4>
         <v-card-title primary-title class="justify-center">
           <v-icon x-large color=#e53170>
@@ -24,7 +24,7 @@
             旅行後（タビアト）に後悔のない素敵な旅行を”タビマエ”と創造しましょう！</p>
         </v-card-text>
       </v-card>
-    </v-col>
+    <!-- </v-col> -->
 
   </div>
 </template>

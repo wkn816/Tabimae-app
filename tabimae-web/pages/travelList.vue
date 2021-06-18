@@ -2,7 +2,7 @@
   <v-app class="bg">
     <v-container>
       <v-row>
-        <v-col cols="12" offset-ms="1" sm="10" offset-md="1" md="11" offset-lg="1" lg="10">
+        <v-col cols="12" offset-lg="1" lg="10">
           <v-card color="#ffc6c7" elevation="2" class="travellist-card">
             <v-card-title primary-title class="justify-center">
               <v-icon x-large color=#e53170>
@@ -20,7 +20,7 @@
 
     <v-container>
       <v-row>
-        <v-col cols="12" sm="11" offset-md="1" md="11" lg="10">
+        <v-col cols="12" offset-lg="1" lg="10">
           <v-card elevation="10">
             <v-simple-table class="list-table" style="color:#001858">
               <thead class="list-thead">

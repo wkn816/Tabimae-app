@@ -1,7 +1,7 @@
 <template>
 <v-app class="bg">
     <!-- <v-row> -->
-    <v-col cols="12" sm="10" md="6" lg="6" offset-lg="3">
+    <v-col cols="12" lg="6" offset-lg="3">
       <v-card color=#f3d2c1 class="guestcard">
         <v-card-title primary-title class="justify-center">
         </v-card-title>

@@ -37,7 +37,7 @@
 旅マエ⇨旅ナカ⇨旅アトがある中で  
 旅マエからしっかり準備、下調べするすることで悔いのない素敵な旅行を創造します。
 
-### :globe_with_meridians:APP URL
+### :globe_with_meridians:APP URL(現在停止中)
 **https://tabimae.work/** 
 
 ### :love_letter:開発の想い
